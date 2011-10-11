@@ -36,8 +36,9 @@ class AccountsController < ApplicationController
 
   # GET /accounts/1/edit
   def edit
-    @account = Account.find(params[:id])
-    @clients = Client.all.collect{|c| [c.name, c.id]}
+    @account  = Account.find(params[:id])
+    @clients  = Client.all.collect{|c| [c.name, c.id]}
+    @packages = Package.actives.collect{|c| [c.description, c.id]}
   end
 
   # POST /accounts

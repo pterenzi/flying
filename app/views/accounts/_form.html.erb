@@ -16,6 +16,11 @@
     <%= f.label :client_id %><br />
     <%= f.select :client_id , @clients%>
   </div>
+  <div class="field">
+    <%= f.label :due_date %><br />
+    <%= f.date_select :due_date %>
+  </div>
+
   <% if @account.credit? %>
     <div class="field">
       <%= f.label :packages %><br />
@@ -42,10 +47,6 @@
     <div class="field">
       <%= f.label :barcode %><br />
       <%= f.text_field :barcode %>
-    </div>
-    <div class="field">
-      <%= f.label :due_date %><br />
-      <%= f.date_select :due_date %>
     </div>
 
     <div class="field">

@@ -1,7 +1,8 @@
 class Account < ActiveRecord::Base
   
   belongs_to :client
-  
+  belongs_to :package
+    
   validates_numericality_of :value, :on => [:create, :update], :message => "is not a number"
   validates_presence_of :value, :on => [:create, :update], :message => "can't be blank"
   

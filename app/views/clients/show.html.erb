@@ -64,7 +64,16 @@
   <b>Credit:</b>
   <%= @client.credit %>
 </p>
+<p>
+  Sales of this client
+</p>
 
+<% @client.sales.each do |sale| %>
+  <%= sale.due_date %> |
+  <%= sale.package.description %> |
+  <%= sale.value %>
+  <br />
+<% end %>
 
 <%= link_to 'Edit', edit_client_path(@client) %> |
 <%= link_to 'Back', clients_path %>
