@@ -24,8 +24,9 @@ class AccountsController < ApplicationController
   # GET /accounts/new
   # GET /accounts/new.json
   def new
-    @account = Account.new
+    @account = Account.new(:credit => paras[:credit])
     @clients = Client.all.collect{|c| [c.name, c.id]}
+    @packages = Package.active
     respond_to do |format|
       format.html # new.html.erb
       format.json { render :json => @account }

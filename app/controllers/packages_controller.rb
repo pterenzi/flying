@@ -27,7 +27,7 @@ class PackagesController < ApplicationController
   # GET /packages/new.json
   def new
     @package = Package.new
-    @aircraft_types = AircraftType.all.collect{|c| [c.name, c.id]}
+    @aircraft_types = AircraftType.by_name.collect{|c| [c.name, c.id]}
 
     respond_to do |format|
       format.html # new.html.erb
@@ -50,7 +50,7 @@ class PackagesController < ApplicationController
         format.html { redirect_to @package, :notice => 'Package was successfully created.' }
         format.json { render :json => @package, :status => :created, :location => @package }
       else
-        @aircraft_types = AircraftType.all.collect{|c| [c.name, c.id]}
+        @aircraft_types = AircraftType.by_name.collect{|c| [c.name, c.id]}
 
         format.html { render :action => "new" }
         format.json { render :json => @package.errors, :status => :unprocessable_entity }
