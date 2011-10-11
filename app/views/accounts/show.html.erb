@@ -1,0 +1,65 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Client:</b>
+  <%= @account.client_id %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @account.type %>
+</p>
+
+<p>
+  <b>Company:</b>
+  <%= @account.company_id %>
+</p>
+
+<p>
+  <b>Due date:</b>
+  <%= @account.due_date %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @account.description %>
+</p>
+
+<p>
+  <b>Value:</b>
+  <%= @account.value %>
+</p>
+
+<p>
+  <b>Barcode:</b>
+  <%= @account.barcode %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @account.status %>
+</p>
+
+<p>
+  <b>Payment date:</b>
+  <%= @account.payment_date %>
+</p>
+
+<p>
+  <b>Interest:</b>
+  <%= @account.interest %>
+</p>
+
+<p>
+  <b>Discount:</b>
+  <%= @account.discount %>
+</p>
+
+<p>
+  <b>Comments:</b>
+  <%= @account.comments %>
+</p>
+
+
+<%= link_to 'Edit', edit_account_path(@account) %> |
+<%= link_to 'Back', accounts_path %>

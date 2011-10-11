@@ -1,0 +1,454 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+pt-BR:
+
+  Actions: "Ações"
+  Active: "Ativo"
+  Add: "Adicionar"
+  Add new: "Adicionar novo"
+  Are you sure?: "Tem certeza?"
+  Are you sure you want to sign out and end your session?: "Tem certeza que quer sair e encerrar sua sessão?"
+  List : "Listar"
+
+  Change %{attribute}?: "Mudar %{attribute}?"
+  Create %{resource}: "Criar %{resource}"
+
+  Dashboard: "Painel"
+  Down: "Descer"
+
+  Edit: "Editar"
+  Edit %{resource}: "Editar %{resource}"
+  Enter your email below to create the first user: "Digite seu email para criar o primeiro usuário"
+
+  False: "Falso"
+  Filter: "Filtrar"
+
+  I remember my password: "Lembro minha senha"
+  If you didn't request a password update, you can ignore this message: "Se você não pediu uma renovação de senha, por favor ignore esta mensagem."
+  If you have made any changes to the fields without clicking the Save/Update entry button, your changes will be lost: "Se você fez alterações nos campos e não clicou no botão de Salvar/Atualizar, suas alterações serão perdidas"
+  Inactive: "Inativo"
+
+  Last few days: "Últimos dias"
+  Last 30 days: "Últimos 30 dias"
+  Last 7 days: "Últimos 7 dias"
+  List: "Listar"
+  Logged as: "Logado como"
+  Login: "Login"
+  Please set a new password.: "Por favor crie sua nova senha"
+
+  New: "Novo"
+  New %{resource}: "Novo %{resource}"
+  Next: "Próximo"
+  No %{resources} found: "Ainda não há nada cadastrado."
+  Admin: "Administração"
+  Password recovery link sent to your email: "Link para recuperar senha enviado para seu email."
+  Previous: "Anterior"
+  Flying: "Controle de Vôos"
+  Trash: "Excluir"
+  Name: "Nome"
+  Phone: "Telefone"
+  Cel: "Celular"
+  Planes: "Aviões"
+  Plane: "Avião"
+  Instructors: "Instrutores"
+  Instructor: "Instrutor"
+  Packages: "Pacotes"
+  Package: "Pacote"
+  Client: "Cliente"
+  Clients: "Clientes"
+  Flights: "Vôos"
+  Flight: "Vôo"
+  provider client: "Fornecedor/cliente"
+  All: "Todos"
+  role: "nível"
+  Prefix: "Prefixo"
+  user_admin: "usuário"
+  Typus_admin: "Usuário"
+  Record moved %{to}: "Registro movido %{to}."
+  Recover password: "Recuperar senha"
+  Remove: "Remover"
+  Remove %{resource}?: "Excluir %{resource}?"
+  Reset password: "Trocar senha"
+  Resources: "Recursos"
+
+  Save %{resource}: "Salvar %{resource}"
+  Search: "Busca"
+  Show: "Detalhes"
+  Show all dates: "Mostrar tudo"
+  Show by %{attribute}: "Mostrar por %{attribute}"
+  Show %{resource}: "Mostrar %{resource}"
+  Sign in: "Entrar"
+  Sign out: "Sair"
+  Sign up: "Criar conta"
+  System Users Administration: "Administrar usuários do sistema"
+  Account: "Conta"
+  
+  Flight Report: "Relatório de Vôo"
+  Registration: "Matrícula"
+  Passenger: "Passageiro"
+  Origin: "Origem"
+  Destination: "Destino"
+  Hour Meter: "Horímetro"
+  Flight time: "Tempo de vôo"
+  Departure: "Partida"
+  Cut: "Corte"
+  License: "Licença"
+  Comments: "Observações"
+  Degree: "Grau"
+  Dangerous: "Perigoso"
+  Poor: "Deficiente"
+  Satisfactory: "Satisfatório"
+  Good: "Bom"
+  Excelent: "Excelente"
+  
+  History: "Histórico"
+  Instructions: "instruções"
+  Film/Photo: "Filmagem/Foto"
+  Panoramic Flight: "Vôo panorâmico"
+  Transport: "Transporte"
+  Maintenance: "Manutenção"
+  Training: "Treinamento"
+  Private: "Particular"
+  Desmonstration: "Demonstração"
+
+  Phase: "Fase"  
+  Pre-ground: "Pré-solo"
+  Maneuver: "Manobra"
+  Navigation: "Navegação"
+  Ground: "Solo"
+  Check: "Cheque"
+  Course: "Curso"
+  
+  Inspections: "Inspeções"
+  Departure: "Partida"
+  Checks: "Cheques"
+  Taxi: "Taxi"
+  Vertical drop: "Descida vertical"
+  Normal drop: "Descida normal"
+  Drop down: "Descida corrida"
+  Max. performance drop: "Descida max performance"
+  Level flight: "Vôo nivelado"
+  Hovering flight: "Vôo pairado"
+  Back flight: "Vôo de ré"
+  Side flying: "Vôo lateral"
+  Corrections: "Correções"
+  Turns: "Giros"
+  Speed variation: "Variação de velocidade"
+  Direct autorotation: "Auto-rotação direta"
+  Autorotation (90º): "Auto-rotação (90º)"
+  Autorotation (180º): "Auto-rotação (180º)"
+  Autorotation (360º): "Auto-rotação (360º)"
+  Auto-rotation Hovering DES: "Auto-rotação pairado DES"
+  Auto-rotation Hovering FES: "Auto-rotação pairado FES"
+  Normal approach: "Aprox. Normal"
+  Big Angle approach: "Aprox grande ângulo"
+  Restrict approach: "Aprox. restrita"
+  Normal landing: "Pouso normal"
+  Landing in 4 noses: "Pouso nas 4 proas"
+  Run Landing: "Pouso corrido"
+  Landing incline land: "Pouso terreno inclinado"
+  Direct landing: "Pouso direto"
+  Constant square nose: "Quadrado proa constante"
+  Variable square nose: "Quadrado proa variável"
+  Normal traffic: "Tráfego normal"
+  Hovered 1000ft: "Pairado 1000 pés"
+  Landing on helipad: "Pouso em heliponto"
+  Quick Stop: "Parada rápida"
+  Parking/cutting: "Estacionamento/corte"
+  Oper. In Mountain: "Oper. em montanha"
+  Oper. with crosswind: "Oper. com vento de través"
+  Meteorology: "Meteorologia"
+  Planning: "Planejamento"
+  Plan/notification: "Plano/notificação"
+  Fonia: "Fonia"
+  Traffic rules: "Regras de tráfego"
+  Flight route: "Vôo em rota"
+  Visual navigation: "Navegação visual"
+  Overnight procedure: "Procedimento para pernoite"
+  Handling publications: "Manuseio de publicaçãoes"
+  Initiative: "Iniciativa"
+  
+  status: "recebimento"
+  barcode: "Código de barras"    
+  
+  aircraft: "Aeronave"
+  accounts: "Contas"
+  
+  
+  Today: "Hoje"
+  
+  
+  True: "Verdadeiro"
+
+  Unrelate: "Desvincular"
+  Up: "Subir"
+
+  View all %{attribute}: "Visualizar todos %{attribute}"
+  View site: "Ver site"
+
+  You can't toggle your status: "Você não pode mudar seu status."
+  You can update your password at: "Você pode atualizar sua senha em"
+  You can't change your role: "Você não pode mudar sua própria função no sistema."
+
+  %{errors} prohibited this page from being saved:
+  %{model} successfully created: "%{model} criado com sucesso."
+  %{model} successfully removed: "%{model} removido com sucesso."
+  %{model} successfully updated: "%{model} atualizado com sucesso."
+ 
+  date:
+    formats:
+      default: "%d/%m/%Y"
+      short: "%d de %B"
+      long: "%d de %B de %Y"
+
+    day_names: [Domingo, Segunda, Terça, Quarta, Quinta, Sexta, Sábado]
+    abbr_day_names: [Dom, Seg, Ter, Qua, Qui, Sex, Sáb]
+
+    month_names: [~, Janeiro, Fevereiro, Março, Abril, Maio, Junho, Julho, Agosto, Setembro, Outubro, Novembro, Dezembro]
+    abbr_month_names: [~, Jan, Fev, Mar, Abr, Mai, Jun, Jul, Ago, Set, Out, Nov, Dez]
+    order:
+      - :day
+      - :month
+      - :year
+  
+  time:
+    formats:
+      default: "%A, %d de %B de %Y, %H:%M h"
+      short: "%d/%m, %H:%M h"
+      long: "%A, %d de %B de %Y, %H:%M h"
+    am: ''
+    pm: ''
+
+  # Usado no Array.to_sentence
+  support:
+    array:
+      words_connector: ", "
+      two_words_connector: " e "
+      last_word_connector: " e "
+
+    select:
+      prompt: "Por favor selecione"
+
+  number:
+    format:
+      separator: ','
+      delimiter: '.'
+      precision: 3
+      significant: false
+      strip_insignificant_zeros: false
+
+    currency:
+      format:
+        format: '%u %n'
+        unit: 'R$'
+        separator: ','
+        delimiter: '.'
+        precision: 2
+        significant: false
+        strip_insignificant_zeros: false
+
+    percentage:
+      format:
+        delimiter: '.'
+
+    precision:
+      format:
+        delimiter: '.'
+
+    human:
+      format:
+        delimiter: '.'
+        precision: 2
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: "Byte"
+            other: "Bytes"
+          kb: "KB"
+          mb: "MB"
+          gb: "GB"
+          tb: "TB"
+      # number_to_human()
+      # new in rails 3: please add to other locales
+      decimal_units:
+        format: "%n %u"
+        units:
+          unit: ""     
+          thousand: "mil"
+          million:
+            one: milhão
+            other: milhões
+          billion:
+            one: bilhão
+            other: bilhões
+          trillion:
+            one: trilhão
+            other: trilhões
+          quadrillion:
+            one: quatrilhão
+            other: quatrilhões
+
+  # distancia do tempo em palavras
+  datetime:
+    distance_in_words:
+      half_a_minute: 'meio minuto'
+      less_than_x_seconds:
+        one: 'menos de 1 segundo'
+        other: 'menos de %{count} segundos'
+      x_seconds:
+        one: '1 segundo'
+        other: '%{count} segundos'
+      less_than_x_minutes:
+        one: 'menos de um minuto'
+        other: 'menos de %{count} minutos'
+      x_minutes:
+        one: '1 minuto'
+        other: '%{count} minutos'
+      about_x_hours:
+        one: 'aproximadamente 1 hora'
+        other: 'aproximadamente %{count} horas'
+      x_days:
+        one: '1 dia'
+        other: '%{count} dias'
+      about_x_months:
+        one: 'aproximadamente 1 mês'
+        other: 'aproximadamente %{count} meses'
+      x_months:
+        one: '1 mês'
+        other: '%{count} meses'
+      about_x_years:
+        one: 'aproximadamente 1 ano'
+        other: 'aproximadamente %{count} anos'
+      over_x_years:
+        one: 'mais de 1 ano'
+        other: 'mais de %{count} anos'
+      almost_x_years:
+        one: 'quase 1 ano'
+        other: 'quase %{count} anos'
+    prompts:
+      year:   "Ano"
+      month:  "Mês"
+      day:    "Dia"
+      hour:   "Hora"
+      minute: "Minuto"
+      second: "Segundo"
+
+  helpers:
+    select:
+      prompt: "Por favor selecione"
+
+    submit:
+      create: 'Criar %{model}'
+      update: 'Atualizar %{model}'
+      submit: 'Salvar %{model}'
+
+  errors:
+    format: "%{attribute} %{message}"
+
+    template:
+      header:
+        one: "Não foi possível gravar %{model}: 1 erro"
+        other: "Não foi possível gravar %{model}: %{count} erros."
+      body: "Por favor, verifique o(s) seguinte(s) campo(s):"
+
+    messages: &errors_messages
+      inclusion: "não está incluído na lista"
+      exclusion: "não está disponível"
+      invalid: "não é válido"
+      confirmation: "não está de acordo com a confirmação"
+      accepted: "deve ser aceito"
+      empty: "não pode ficar vazio"
+      blank: "não pode ficar em branco"
+      too_long: "é muito longo (máximo: %{count} caracteres)"
+      too_short: "é muito curto (mínimo: %{count} caracteres)"
+      wrong_length: "não possui o tamanho esperado (%{count} caracteres)"
+      not_a_number: "não é um número"
+      not_an_integer: "não é um número inteiro"
+      greater_than: "deve ser maior que %{count}"
+      greater_than_or_equal_to: "deve ser maior ou igual a %{count}"
+      equal_to: "deve ser igual a %{count}"
+      less_than: "deve ser menor que %{count}"
+      less_than_or_equal_to: "deve ser menor ou igual a %{count}"
+      odd: "deve ser ímpar"
+      even: "deve ser par"
+
+  activerecord:
+    models:
+     client: "Cliente"
+    attributes:
+          client:
+            name: "Nome"
+            email: "email"
+            cel: "Celular"
+            phone: "Telefone"
+            birthday: "Data de nascimento"
+            address: "Endereço"
+            city: "Cidade"
+            client_dac: "DAC"
+
+    models:
+     instructor: "Instrutor"
+    attributes:
+          instructor:
+            name: "Nome"
+            level: "Nível"
+            hour_price: "Valor da hora"
+
+    models:
+     package: "Pacote"
+    attributes:
+          package:
+            name: "Nome"
+            quantity: "Total de horas"
+            price: "Preço"
+            
+    models:
+     aircraft: "Aeronave"
+    attributes:
+          aircraft:
+            prefix: "Prefixo"
+            manufacturer: "Fabricante"
+            owner: "Pertence à escola"
+            model: "Modelo"
+            color: "Cor"
+            hourmeter: "Horímetro"
+            maintenance_break: "Intervalo de manutenção"
+            last_maintenance: "Última manutenção (horímetro)"
+            flight_hour_value: "Preço da hora de vôo"
+            details: "Detalhes"
+            speed: "Velocidade máxima"
+            operator: "Operador"
+            
+    models:
+     account: "Conta"
+    attributes:
+          account:
+            client_id: "Fornecedor/Cliente"
+            company_id: "Empresa"
+            due_date: "Vencimento"
+            description: "Descritivo"
+            value: "Valor"
+            barcode: "Código de barras"
+            status: "Recebimento"
+            payment_date: "Data de pagamento"
+            interest: "Juros"
+            discount: "Desconto"
+            comments: "Observações"
+    errors:
+      template:
+        header:
+          one: "Não foi possível gravar %{model}: 1 erro"
+          other: "Não foi possível gravar %{model}: %{count} erros."
+        body: "Por favor, verifique o(s) seguinte(s) campo(s):"
+
+      messages:
+        taken: "já está em uso"
+        record_invalid: "A validação falhou: %{errors}"
+        <<: *errors_messages
+
+      full_messages:
+        format: "%{attribute}%{message}"

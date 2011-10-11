@@ -1,0 +1,73 @@
+<%= form_for(@aircraft) do |f| %>
+  <% if @aircraft.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@aircraft.errors.count, "error") %> prohibited this aircraft from being saved:</h2>
+
+      <ul>
+      <% @aircraft.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :prefix %><br />
+    <%= f.text_field :prefix %>
+  </div>
+  <div class="field">
+    <%= f.label :type %><br />
+    <%= f.select :aircraft_type_id, @aircraft_types %>
+  </div>
+  <div class="field">
+    <%= f.label :owner %><br />
+    <%= f.text_field :owner %>
+  </div>
+  <div class="field">
+    <%= f.label :manufacturer %><br />
+    <%= f.text_field :manufacturer %>
+  </div>
+  <div class="field">
+    <%= f.label :model %><br />
+    <%= f.text_field :model %>
+  </div>
+  <div class="field">
+    <%= f.label :color %><br />
+    <%= f.text_field :color %>
+  </div>
+  <div class="field">
+    <%= f.label :hourmeter %><br />
+    <%= f.time_select :hourmeter %>
+  </div>
+  <div class="field">
+    <%= f.label :maintenance_break %><br />
+    <%= f.date_select :maintenance_break %>
+  </div>
+  <div class="field">
+    <%= f.label :last_maintenance %><br />
+    <%= f.date_select :last_maintenance %>
+  </div>
+  <div class="field">
+    <%= f.label :flyght_hours %><br />
+    <%= f.time_select :flyght_hours %>
+  </div>
+  <div class="field">
+    <%= f.label :details %><br />
+    <%= f.text_field :details %>
+  </div>
+  <div class="field">
+    <%= f.label :equipment %><br />
+    <%= f.text_field :equipment %>
+  </div>
+  <div class="field">
+    <%= f.label :speed %><br />
+    <%= f.text_field :speed %>
+  </div>
+  <div class="field">
+    <%= f.label :operator %><br />
+    <%= f.text_field :operator %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

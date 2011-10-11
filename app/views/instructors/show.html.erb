@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @instructor.name %>
+</p>
+
+<p>
+  <b>Level:</b>
+  <%= @instructor.level %>
+</p>
+
+<p>
+  <b>Rg:</b>
+  <%= @instructor.rg %>
+</p>
+
+<p>
+  <b>Cpf:</b>
+  <%= @instructor.cpf %>
+</p>
+
+<p>
+  <b>Instructor dac:</b>
+  <%= @instructor.instructor_dac %>
+</p>
+
+<p>
+  <b>Birthday:</b>
+  <%= @instructor.birthday %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @instructor.address %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @instructor.phone %>
+</p>
+
+<p>
+  <b>Cel:</b>
+  <%= @instructor.cel %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @instructor.email %>
+</p>
+
+<p>
+  <b>Hour price:</b>
+  <%= @instructor.hour_price %>
+</p>
+
+
+<%= link_to 'Edit', edit_instructor_path(@instructor) %> |
+<%= link_to 'Back', instructors_path %>

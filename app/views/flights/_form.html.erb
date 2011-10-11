@@ -1,0 +1,325 @@
+<%= form_for(@flight) do |f| %>
+  <% if @flight.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@flight.errors.count, "error") %> prohibited this flight from being saved:</h2>
+
+      <ul>
+      <% @flight.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :prefix_id %><br />
+    <%= f.number_field :prefix_id %>
+  </div>
+  <div class="field">
+    <%= f.label :number %><br />
+    <%= f.number_field :number %>
+  </div>
+  <div class="field">
+    <%= f.label :type_id %><br />
+    <%= f.number_field :type_id %>
+  </div>
+  <div class="field">
+    <%= f.label :equipment %><br />
+    <%= f.text_field :equipment %>
+  </div>
+  <div class="field">
+    <%= f.label :departure_aerodrome %><br />
+    <%= f.text_field :departure_aerodrome %>
+  </div>
+  <div class="field">
+    <%= f.label :level %><br />
+    <%= f.text_field :level %>
+  </div>
+  <div class="field">
+    <%= f.label :route %><br />
+    <%= f.text_field :route %>
+  </div>
+  <div class="field">
+    <%= f.label :destination_aerodrome %><br />
+    <%= f.text_field :destination_aerodrome %>
+  </div>
+  <div class="field">
+    <%= f.label :total_ett %><br />
+    <%= f.time_select :total_ett %>
+  </div>
+  <div class="field">
+    <%= f.label :alternate_aerodrome %><br />
+    <%= f.text_field :alternate_aerodrome %>
+  </div>
+  <div class="field">
+    <%= f.label :other_information %><br />
+    <%= f.text_field :other_information %>
+  </div>
+  <div class="field">
+    <%= f.label :endurance %><br />
+    <%= f.time_select :endurance %>
+  </div>
+  <div class="field">
+    <%= f.label :persons_on_board %><br />
+    <%= f.number_field :persons_on_board %>
+  </div>
+  <div class="field">
+    <%= f.label :aircraft_colors_and_marks %><br />
+    <%= f.text_field :aircraft_colors_and_marks %>
+  </div>
+  <div class="field">
+    <%= f.label :client_id %><br />
+    <%= f.number_field :client_id %>
+  </div>
+  <div class="field">
+    <%= f.label :client_dac %><br />
+    <%= f.text_field :client_dac %>
+  </div>
+  <div class="field">
+    <%= f.label :instructor_id %><br />
+    <%= f.number_field :instructor_id %>
+  </div>
+  <div class="field">
+    <%= f.label :instructor_dac %><br />
+    <%= f.number_field :instructor_dac %>
+  </div>
+  <div class="field">
+    <%= f.label :registration %><br />
+    <%= f.text_field :registration %>
+  </div>
+  <div class="field">
+    <%= f.label :passenger %><br />
+    <%= f.text_field :passenger %>
+  </div>
+  <div class="field">
+    <%= f.label :hourmeter %><br />
+    <%= f.text_field :hourmeter %>
+  </div>
+  <div class="field">
+    <%= f.label :flight_date %><br />
+    <%= f.date_select :flight_date %>
+  </div>
+  <div class="field">
+    <%= f.label :flight_time %><br />
+    <%= f.time_select :flight_time %>
+  </div>
+  <div class="field">
+    <%= f.label :cruising_speed %><br />
+    <%= f.number_field :cruising_speed %>
+  </div>
+  <div class="field">
+    <%= f.label :departure %><br />
+    <%= f.text_field :departure %>
+  </div>
+  <div class="field">
+    <%= f.label :cut %><br />
+    <%= f.text_field :cut %>
+  </div>
+  <div class="field">
+    <%= f.label :license %><br />
+    <%= f.text_field :license %>
+  </div>
+  <div class="field">
+    <%= f.label :comments %><br />
+    <%= f.text_area :comments %>
+  </div>
+  <div class="field">
+    <%= f.label :degree %><br />
+    <%= f.number_field :degree %>
+  </div>
+  <div class="field">
+    <%= f.label :inspections %><br />
+    <%= f.number_field :inspections %>
+  </div>
+  <div class="field">
+    <%= f.label :departure %><br />
+    <%= f.number_field :departure %>
+  </div>
+  <div class="field">
+    <%= f.label :checks %><br />
+    <%= f.text_field :checks %>
+  </div>
+  <div class="field">
+    <%= f.label :taxi %><br />
+    <%= f.text_field :taxi %>
+  </div>
+  <div class="field">
+    <%= f.label :vertical_drop %><br />
+    <%= f.number_field :vertical_drop %>
+  </div>
+  <div class="field">
+    <%= f.label :normal_drop %><br />
+    <%= f.number_field :normal_drop %>
+  </div>
+  <div class="field">
+    <%= f.label :drop_down %><br />
+    <%= f.number_field :drop_down %>
+  </div>
+  <div class="field">
+    <%= f.label :max_performance_drop %><br />
+    <%= f.number_field :max_performance_drop %>
+  </div>
+  <div class="field">
+    <%= f.label :level_flight %><br />
+    <%= f.number_field :level_flight %>
+  </div>
+  <div class="field">
+    <%= f.label :hovering_flight %><br />
+    <%= f.number_field :hovering_flight %>
+  </div>
+  <div class="field">
+    <%= f.label :back_flight %><br />
+    <%= f.number_field :back_flight %>
+  </div>
+  <div class="field">
+    <%= f.label :side_flying %><br />
+    <%= f.number_field :side_flying %>
+  </div>
+  <div class="field">
+    <%= f.label :corrections %><br />
+    <%= f.number_field :corrections %>
+  </div>
+  <div class="field">
+    <%= f.label :turns %><br />
+    <%= f.number_field :turns %>
+  </div>
+  <div class="field">
+    <%= f.label :speed_variation %><br />
+    <%= f.number_field :speed_variation %>
+  </div>
+  <div class="field">
+    <%= f.label :direct_autorotation %><br />
+    <%= f.number_field :direct_autorotation %>
+  </div>
+  <div class="field">
+    <%= f.label :autorotation_90º %><br />
+    <%= f.number_field :autorotation_90º %>
+  </div>
+  <div class="field">
+    <%= f.label :autorotation_180º %><br />
+    <%= f.number_field :autorotation_180º %>
+  </div>
+  <div class="field">
+    <%= f.label :autorotation_360º %><br />
+    <%= f.number_field :autorotation_360º %>
+  </div>
+  <div class="field">
+    <%= f.label :autorotation_Hovering_DES %><br />
+    <%= f.number_field :autorotation_Hovering_DES %>
+  </div>
+  <div class="field">
+    <%= f.label :autorotation_Hovering_FES %><br />
+    <%= f.number_field :autorotation_Hovering_FES %>
+  </div>
+  <div class="field">
+    <%= f.label :normal_approach %><br />
+    <%= f.number_field :normal_approach %>
+  </div>
+  <div class="field">
+    <%= f.label :big_angle_approach %><br />
+    <%= f.number_field :big_angle_approach %>
+  </div>
+  <div class="field">
+    <%= f.label :restrict_approach %><br />
+    <%= f.number_field :restrict_approach %>
+  </div>
+  <div class="field">
+    <%= f.label :normal_landing %><br />
+    <%= f.number_field :normal_landing %>
+  </div>
+  <div class="field">
+    <%= f.label :landing_in_4_noses %><br />
+    <%= f.number_field :landing_in_4_noses %>
+  </div>
+  <div class="field">
+    <%= f.label :run_landing %><br />
+    <%= f.number_field :run_landing %>
+  </div>
+  <div class="field">
+    <%= f.label :landing_incline_land %><br />
+    <%= f.number_field :landing_incline_land %>
+  </div>
+  <div class="field">
+    <%= f.label :direct_landing %><br />
+    <%= f.number_field :direct_landing %>
+  </div>
+  <div class="field">
+    <%= f.label :constant_square_nose %><br />
+    <%= f.number_field :constant_square_nose %>
+  </div>
+  <div class="field">
+    <%= f.label :variable_square_nose %><br />
+    <%= f.number_field :variable_square_nose %>
+  </div>
+  <div class="field">
+    <%= f.label :normal_traffic %><br />
+    <%= f.number_field :normal_traffic %>
+  </div>
+  <div class="field">
+    <%= f.label :hovered_1000ft %><br />
+    <%= f.number_field :hovered_1000ft %>
+  </div>
+  <div class="field">
+    <%= f.label :landing_on_helipad %><br />
+    <%= f.number_field :landing_on_helipad %>
+  </div>
+  <div class="field">
+    <%= f.label :quick_stop %><br />
+    <%= f.number_field :quick_stop %>
+  </div>
+  <div class="field">
+    <%= f.label :parking_cutting %><br />
+    <%= f.number_field :parking_cutting %>
+  </div>
+  <div class="field">
+    <%= f.label :oper_in_mountain %><br />
+    <%= f.number_field :oper_in_mountain %>
+  </div>
+  <div class="field">
+    <%= f.label :oper_with_crosswind %><br />
+    <%= f.number_field :oper_with_crosswind %>
+  </div>
+  <div class="field">
+    <%= f.label :meteorology %><br />
+    <%= f.number_field :meteorology %>
+  </div>
+  <div class="field">
+    <%= f.label :planning %><br />
+    <%= f.number_field :planning %>
+  </div>
+  <div class="field">
+    <%= f.label :plan_notification %><br />
+    <%= f.number_field :plan_notification %>
+  </div>
+  <div class="field">
+    <%= f.label :fonia %><br />
+    <%= f.number_field :fonia %>
+  </div>
+  <div class="field">
+    <%= f.label :traffic_rules %><br />
+    <%= f.number_field :traffic_rules %>
+  </div>
+  <div class="field">
+    <%= f.label :flight_route %><br />
+    <%= f.number_field :flight_route %>
+  </div>
+  <div class="field">
+    <%= f.label :visual_navigation %><br />
+    <%= f.number_field :visual_navigation %>
+  </div>
+  <div class="field">
+    <%= f.label :overnight_procedure %><br />
+    <%= f.number_field :overnight_procedure %>
+  </div>
+  <div class="field">
+    <%= f.label :handling_publications %><br />
+    <%= f.number_field :handling_publications %>
+  </div>
+  <div class="field">
+    <%= f.label :initiative %><br />
+    <%= f.number_field :initiative %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

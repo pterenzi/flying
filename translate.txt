@@ -1,0 +1,41 @@
+
+
+
+FLIGHT REPORT 
+DATE 
+REGISTRATION 
+PASSENGER 
+DATE 
+ORIGIN 
+DESTINATION 
+Hour Meter 
+DAC 
+FLIGHT TIME 
+DEPARTURE 
+CUT 
+LICENSE 
+TIME 
+COMMENTS: 
+STUDENT / PILOT / PASSENGER: Instructor: 
+DEGREE Dangerous  Poor Satisfactory Good Excellent History 1 - Statement 2 - Film / Photo 3 - Widescreen 4 - Transport 5 - 6 Maintenance - Training 7 - Private 8 - Demonstration Phase 1 - Pre-ground 2 - Maneuver 3 - Navigation 4 - Solo 5 - Get PPH PCH INVH Course 01 - Inspection 19 - Self-rotation (900) 37 - Quick Stop 02 - Departure 20-Auto-rotation (180 °) 38 - Parking / Court 03 - 21 checks - Auto-rotation (3600) 39 - Oper. In Mountain 04 - Taxi 22 - Auto-rotation Hovering DES 40 - Oper. With crosswind 05 - Dec. 23 Vertical - Hovering Autorotation FES 41 - Weather 06 - Dec. 24-Normal Approx. Normal 42 - Navigation 07 - Dec. 25 Direct-Large Angle Approx 43 - Planning 08 - Dec. 26 Racing - Approx. Restricted 44 - Plan / Notification 09 - Dec. Más. Perforrnance 27 - 45 Normal Landing - SSB 10 - 28 level flight - Landing in Prows 4 46 - 11 Traffic Rules - hovering 29 - 47 Corrido Landing - Flight on Route 12 - Flight 30 D - 48 Prone Land Landing - Visual Navigation Side-FLY 13 31 - 49 Direct Landing - Proc. Overnight for 14 - 32 Patches - Square Bow Constant 50 - Handling Publications 15 - 33 Turns - 51 Square Stern Variable - Initiative 16 - 34 Speed ​​Range - Normal Traffic 17 - Maintenance Bow 35 - Pair 1000ft 18 Direct-Auto-rotation 36 - Landing Heliport in
+
+
+RELATÓRIO DE VÔO 
+DATA 
+MATRiCuLA 
+ALUNO/PILOTO 
+INSTRUTOR/PILOTO 
+PASSAGEIRO 
+DATA 
+ORIGEM 
+DESTINO 
+HORIMETRO 
+DAC 
+TEMPO DE vôo
+PARTIDA 
+CORTE 
+LICENÇA 
+TEMPO 
+COMENTÁRIOS: 
+ALUNO/PILOTO/PASSAGEIRO: INStRUcToR: 
+GRAU Perigoso  Deficiente Satisfatório  Bom  Excelente Histórico 1 - Instrução 2 - Filmagem/Foto 3 - Panorâmico 4 - Transporte 5 - Manutenção 6 - Treinamento 7 - Particular 8 - Demonstração Fase 1 - Pré-solo 2 - Manobras 3 - Navegação 4 - Solo 5 - Cheque Curso PPH PCH INVH 01 - Inspeções 19 - Auto-rotação (900) 37 - Parada rápida 02 - Partida 20 -Auto-rotação (180°) 38 - Estacionamento/Corte 03 - Cheques 21 - Auto-rotação (3600) 39 - Oper. Em Montanha 04 - Táxi 22 - Auto-rotação Pairado DES 40 - Oper. Com Vento de Traves 05 - Dec. Vertical 23 - Auto-rotação Pairado FES 41 - Meteorologia 06 - Dec. Normal 24 -Aprox. Normal 42 - Navegação 07 - Dec. Direta 25 -Aprox Grande Ângulo 43 - Planejamento 08 - Dec. Corrida 26 - Aprox. Restrita 44 - Plano/Notificação 09 - Dec. Más. Perforrnance 27- Pouso Normal 45 - Fonia 10- VOO Nivelado 28 - Pouso nas 4 Proas 46 - Regras de Tráfego 11 - Voo Pairado 29 - Pouso Corrido 47 - Vôo em Rota 12- Vôo de Ré 30 - Pouso Terreno Inclinado 48 - Navegação Visual 13 -VOO Lateral 31 - Pouso Direto 49 - Proc. Para Pernoite 14- Correções 32 - Quadrado Proa Constante 50 - Manuseio de Publicações 15- Giros 33- Quadrado Proa Variável 51 - Iniciativa 16- Variação de Velocidade 34 - Tráfego Normal 17- Manutenção de Proa 35- Pairado 1000ft 18 -Auto-rotação Direta 36 - Pouso em Heliponto

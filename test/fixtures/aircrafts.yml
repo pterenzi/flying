@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  prefix: MyString
+  type: 
+  owner: MyString
+  manufacturer: MyString
+  model: MyString
+  color: MyString
+  hourmeter: 2011-09-17 11:35:28
+  maintenance_break: 2011-09-17
+  last_maintenance: 2011-09-17
+  flyght_hours: 2011-09-17 11:35:28
+  details: MyString
+  equipment: MyString
+  speed: MyString
+  operator: MyString
+
+two:
+  prefix: MyString
+  type: 
+  owner: MyString
+  manufacturer: MyString
+  model: MyString
+  color: MyString
+  hourmeter: 2011-09-17 11:35:28
+  maintenance_break: 2011-09-17
+  last_maintenance: 2011-09-17
+  flyght_hours: 2011-09-17 11:35:28
+  details: MyString
+  equipment: MyString
+  speed: MyString
+  operator: MyString

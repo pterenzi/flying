@@ -1,0 +1,175 @@
+<h1>Listing flights</h1>
+
+<table>
+  <tr>
+    <th>Prefix</th>
+    <th>Number</th>
+    <th>Type</th>
+    <th>Equipment</th>
+    <th>Departure aerodrome</th>
+    <th>Level</th>
+    <th>Route</th>
+    <th>Destination aerodrome</th>
+    <th>Total ett</th>
+    <th>Alternate aerodrome</th>
+    <th>Other information</th>
+    <th>Endurance</th>
+    <th>Persons on board</th>
+    <th>Aircraft colors and marks</th>
+    <th>Client</th>
+    <th>Client dac</th>
+    <th>Instructor</th>
+    <th>Instructor dac</th>
+    <th>Registration</th>
+    <th>Passenger</th>
+    <th>Hourmeter</th>
+    <th>Flight date</th>
+    <th>Flight time</th>
+    <th>Cruising speed</th>
+    <th>Departure</th>
+    <th>Cut</th>
+    <th>License</th>
+    <th>Comments</th>
+    <th>Degree</th>
+    <th>Inspections</th>
+    <th>Departure</th>
+    <th>Checks</th>
+    <th>Taxi</th>
+    <th>Vertical drop</th>
+    <th>Normal drop</th>
+    <th>Drop down</th>
+    <th>Max performance drop</th>
+    <th>Level flight</th>
+    <th>Hovering flight</th>
+    <th>Back flight</th>
+    <th>Side flying</th>
+    <th>Corrections</th>
+    <th>Turns</th>
+    <th>Speed variation</th>
+    <th>Direct autorotation</th>
+    <th>Autorotation 90º</th>
+    <th>Autorotation 180º</th>
+    <th>Autorotation 360º</th>
+    <th>Autorotation hovering des</th>
+    <th>Autorotation hovering fes</th>
+    <th>Normal approach</th>
+    <th>Big angle approach</th>
+    <th>Restrict approach</th>
+    <th>Normal landing</th>
+    <th>Landing in 4 noses</th>
+    <th>Run landing</th>
+    <th>Landing incline land</th>
+    <th>Direct landing</th>
+    <th>Constant square nose</th>
+    <th>Variable square nose</th>
+    <th>Normal traffic</th>
+    <th>Hovered 1000ft</th>
+    <th>Landing on helipad</th>
+    <th>Quick stop</th>
+    <th>Parking cutting</th>
+    <th>Oper in mountain</th>
+    <th>Oper with crosswind</th>
+    <th>Meteorology</th>
+    <th>Planning</th>
+    <th>Plan notification</th>
+    <th>Fonia</th>
+    <th>Traffic rules</th>
+    <th>Flight route</th>
+    <th>Visual navigation</th>
+    <th>Overnight procedure</th>
+    <th>Handling publications</th>
+    <th>Initiative</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @flights.each do |flight| %>
+  <tr>
+    <td><%= flight.prefix_id %></td>
+    <td><%= flight.number %></td>
+    <td><%= flight.type_id %></td>
+    <td><%= flight.equipment %></td>
+    <td><%= flight.departure_aerodrome %></td>
+    <td><%= flight.level %></td>
+    <td><%= flight.route %></td>
+    <td><%= flight.destination_aerodrome %></td>
+    <td><%= flight.total_ett %></td>
+    <td><%= flight.alternate_aerodrome %></td>
+    <td><%= flight.other_information %></td>
+    <td><%= flight.endurance %></td>
+    <td><%= flight.persons_on_board %></td>
+    <td><%= flight.aircraft_colors_and_marks %></td>
+    <td><%= flight.client_id %></td>
+    <td><%= flight.client_dac %></td>
+    <td><%= flight.instructor_id %></td>
+    <td><%= flight.instructor_dac %></td>
+    <td><%= flight.registration %></td>
+    <td><%= flight.passenger %></td>
+    <td><%= flight.hourmeter %></td>
+    <td><%= flight.flight_date %></td>
+    <td><%= flight.flight_time %></td>
+    <td><%= flight.cruising_speed %></td>
+    <td><%= flight.departure %></td>
+    <td><%= flight.cut %></td>
+    <td><%= flight.license %></td>
+    <td><%= flight.comments %></td>
+    <td><%= flight.degree %></td>
+    <td><%= flight.inspections %></td>
+    <td><%= flight.departure %></td>
+    <td><%= flight.checks %></td>
+    <td><%= flight.taxi %></td>
+    <td><%= flight.vertical_drop %></td>
+    <td><%= flight.normal_drop %></td>
+    <td><%= flight.drop_down %></td>
+    <td><%= flight.max_performance_drop %></td>
+    <td><%= flight.level_flight %></td>
+    <td><%= flight.hovering_flight %></td>
+    <td><%= flight.back_flight %></td>
+    <td><%= flight.side_flying %></td>
+    <td><%= flight.corrections %></td>
+    <td><%= flight.turns %></td>
+    <td><%= flight.speed_variation %></td>
+    <td><%= flight.direct_autorotation %></td>
+    <td><%= flight.autorotation_90º %></td>
+    <td><%= flight.autorotation_180º %></td>
+    <td><%= flight.autorotation_360º %></td>
+    <td><%= flight.autorotation_Hovering_DES %></td>
+    <td><%= flight.autorotation_Hovering_FES %></td>
+    <td><%= flight.normal_approach %></td>
+    <td><%= flight.big_angle_approach %></td>
+    <td><%= flight.restrict_approach %></td>
+    <td><%= flight.normal_landing %></td>
+    <td><%= flight.landing_in_4_noses %></td>
+    <td><%= flight.run_landing %></td>
+    <td><%= flight.landing_incline_land %></td>
+    <td><%= flight.direct_landing %></td>
+    <td><%= flight.constant_square_nose %></td>
+    <td><%= flight.variable_square_nose %></td>
+    <td><%= flight.normal_traffic %></td>
+    <td><%= flight.hovered_1000ft %></td>
+    <td><%= flight.landing_on_helipad %></td>
+    <td><%= flight.quick_stop %></td>
+    <td><%= flight.parking_cutting %></td>
+    <td><%= flight.oper_in_mountain %></td>
+    <td><%= flight.oper_with_crosswind %></td>
+    <td><%= flight.meteorology %></td>
+    <td><%= flight.planning %></td>
+    <td><%= flight.plan_notification %></td>
+    <td><%= flight.fonia %></td>
+    <td><%= flight.traffic_rules %></td>
+    <td><%= flight.flight_route %></td>
+    <td><%= flight.visual_navigation %></td>
+    <td><%= flight.overnight_procedure %></td>
+    <td><%= flight.handling_publications %></td>
+    <td><%= flight.initiative %></td>
+    <td><%= link_to 'Show', flight %></td>
+    <td><%= link_to 'Edit', edit_flight_path(flight) %></td>
+    <td><%= link_to 'Destroy', flight, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Flight', new_flight_path %>

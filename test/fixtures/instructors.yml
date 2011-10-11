@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  level: 1
+  rg: MyString
+  cpf: MyString
+  instructor_dac: MyString
+  birthday: 2011-09-17
+  address: MyString
+  phone: MyString
+  cel: MyString
+  email: MyString
+  hour_price: 9.99
+
+two:
+  name: MyString
+  level: 1
+  rg: MyString
+  cpf: MyString
+  instructor_dac: MyString
+  birthday: 2011-09-17
+  address: MyString
+  phone: MyString
+  cel: MyString
+  email: MyString
+  hour_price: 9.99

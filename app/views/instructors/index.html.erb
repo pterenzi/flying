@@ -1,0 +1,43 @@
+<h1>Listing instructors</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Level</th>
+    <th>Rg</th>
+    <th>Cpf</th>
+    <th>Instructor dac</th>
+    <th>Birthday</th>
+    <th>Address</th>
+    <th>Phone</th>
+    <th>Cel</th>
+    <th>Email</th>
+    <th>Hour price</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @instructors.each do |instructor| %>
+  <tr>
+    <td><%= instructor.name %></td>
+    <td><%= instructor.level %></td>
+    <td><%= instructor.rg %></td>
+    <td><%= instructor.cpf %></td>
+    <td><%= instructor.instructor_dac %></td>
+    <td><%= instructor.birthday %></td>
+    <td><%= instructor.address %></td>
+    <td><%= instructor.phone %></td>
+    <td><%= instructor.cel %></td>
+    <td><%= instructor.email %></td>
+    <td><%= instructor.hour_price %></td>
+    <td><%= link_to 'Show', instructor %></td>
+    <td><%= link_to 'Edit', edit_instructor_path(instructor) %></td>
+    <td><%= link_to 'Destroy', instructor, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Instructor', new_instructor_path %>
