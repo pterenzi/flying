@@ -2,7 +2,8 @@ class AccountsController < ApplicationController
   # GET /accounts
   # GET /accounts.json
   def index
-    @accounts = Account.all
+    @sales    = Account.sales
+    @payments = Account.payments
 
     respond_to do |format|
       format.html # index.html.erb
