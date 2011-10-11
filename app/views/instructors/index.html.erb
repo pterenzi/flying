@@ -1,4 +1,4 @@
-<h1>Listing instructors</h1>
+<h1>Instrutores</h1>
 
 <table>
   <tr>
@@ -23,9 +23,11 @@
     <td><%= instructor.cel %></td>
     <td><%= instructor.email %></td>
     <td><%= instructor.hour_price %></td>
-    <td><%= link_to 'Show', instructor %></td>
-    <td><%= link_to 'Edit', edit_instructor_path(instructor) %></td>
-    <td><%= link_to 'Destroy', instructor, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td align="right"><%= link_to image_tag("images/info.png", :size=>"16x16", :border=>0), instructor %></td>
+    <td align="center"><%= link_to image_tag("images/edit.png", :size=>"16x16", :border=>0), edit_instructor_path(instructor) %></td>
+    <td align="left"><%= link_to image_tag("images/trash.png",:size=>"16x16", :border=>0), instructor, :confirm => 'Are you sure?', :method => :delete %></td>
+
+
   </tr>
 <% end %>
 </table>

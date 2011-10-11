@@ -7,7 +7,7 @@ class CreateAircraftTypes < ActiveRecord::Migration
     end
     
     AircraftType.create(:name =>"Helicóptero")
-    AircraftType.create(:name =>"Avião")
+    AircraftType.create(:name =>"Autogyro")
     AircraftType.create(:name =>"Ultra-leve")
   end
 end
