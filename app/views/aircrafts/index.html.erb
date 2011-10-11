@@ -4,18 +4,8 @@
   <tr>
     <th>Prefix</th>
     <th>Type</th>
-    <th>Owner</th>
     <th>Manufacturer</th>
     <th>Model</th>
-    <th>Color</th>
-    <th>Hourmeter</th>
-    <th>Maintenance break</th>
-    <th>Last maintenance</th>
-    <th>Flyght hours</th>
-    <th>Details</th>
-    <th>Equipment</th>
-    <th>Speed</th>
-    <th>Operator</th>
     <th></th>
     <th></th>
     <th></th>
@@ -25,18 +15,8 @@
   <tr>
     <td><%= aircraft.prefix %></td>
     <td><%= aircraft.type %></td>
-    <td><%= aircraft.owner %></td>
     <td><%= aircraft.manufacturer %></td>
     <td><%= aircraft.model %></td>
-    <td><%= aircraft.color %></td>
-    <td><%= aircraft.hourmeter %></td>
-    <td><%= aircraft.maintenance_break %></td>
-    <td><%= aircraft.last_maintenance %></td>
-    <td><%= aircraft.flyght_hours %></td>
-    <td><%= aircraft.details %></td>
-    <td><%= aircraft.equipment %></td>
-    <td><%= aircraft.speed %></td>
-    <td><%= aircraft.operator %></td>
     <td><%= link_to 'Show', aircraft %></td>
     <td><%= link_to 'Edit', edit_aircraft_path(aircraft) %></td>
     <td><%= link_to 'Destroy', aircraft, :confirm => 'Are you sure?', :method => :delete %></td>

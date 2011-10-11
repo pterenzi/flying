@@ -8,12 +8,7 @@
     <th>Due date</th>
     <th>Description</th>
     <th>Value</th>
-    <th>Barcode</th>
     <th>Status</th>
-    <th>Payment date</th>
-    <th>Interest</th>
-    <th>Discount</th>
-    <th>Comments</th>
     <th></th>
     <th></th>
     <th></th>
@@ -27,12 +22,7 @@
     <td><%= account.due_date %></td>
     <td><%= account.description %></td>
     <td><%= account.value %></td>
-    <td><%= account.barcode %></td>
     <td><%= account.status %></td>
-    <td><%= account.payment_date %></td>
-    <td><%= account.interest %></td>
-    <td><%= account.discount %></td>
-    <td><%= account.comments %></td>
     <td><%= link_to 'Show', account %></td>
     <td><%= link_to 'Edit', edit_account_path(account) %></td>
     <td><%= link_to 'Destroy', account, :confirm => 'Are you sure?', :method => :delete %></td>

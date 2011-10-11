@@ -5,6 +5,10 @@
  *= require_self
  *= require_tree . 
 */
+
+th {
+	width: auto;
+}
 #sidebar ul li.header {
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
@@ -33,8 +37,11 @@
   color: white;
 }
 
+#sidebar ul li a:hover{
+  color: #8ce6fc;
+}
 #sidebar ul ul li a {
-  color: black;
+  color: #242527;
 }
 
 #sidebar a {
