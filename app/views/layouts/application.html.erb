@@ -7,8 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= render :partial => 'layouts/menu'%>
-<%= yield %>
-
+	<div id="pagewidth" >
+		<div id="header"><h2>Controle de Vôos</h2></div>
+		<div id="wrapper" class="clearfix">
+				<div id="maincol"><%= yield %></div>
+			<div id="leftcol"><%= render :partial => 'layouts/menu'%></div>
+		</div>
+		<div id="footer"><h2></h2></div>
+		</div>
 </body>
 </html>

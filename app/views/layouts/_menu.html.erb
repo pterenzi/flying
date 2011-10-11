@@ -1,10 +1,12 @@
-<ul class="menu">
-  <li><%= link_to 'Clientes', clients_path %> </li>
-  <li><%= link_to 'Instrutores', instructors_path %></li>
-  <li><%= link_to 'Aeronaves', aircrafts_path %></li>
-  <li><%= link_to 'Pacotes', packages_path %></li>
-  <li><%= link_to 'Vôos', flights_path %></li>
-  <li><%= link_to 'Financeiro', accounts_path %></li>
-  <li><%= link_to 'Venda', new_account_path(:credit => true) %></li>
-  <li><%= link_to 'Pagamento', new_account_path(:credit => false) %></li>
+<div id="sidebar">
+<ul>
+  <li class="header"><%= link_to 'Clientes', clients_path %> </li>
+  <li class="header"><%= link_to 'Instrutores', instructors_path %></li>
+  <li class="header"><%= link_to 'Aeronaves', aircrafts_path %></li>
+  <li class="header"><%= link_to 'Pacotes', packages_path %></li>
+  <li class="header"><%= link_to 'Vôos', flights_path %></li>
+  <li class="header"><%= link_to 'Financeiro', accounts_path %></li>
+  <li class="header"><%= link_to 'Venda', new_account_path(:credit => true) %></li>
+  <li class="header"><%= link_to 'Pagamento', new_account_path(:credit => false) %></li>
 </ul>
+</div>

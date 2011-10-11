@@ -37,7 +37,7 @@ pt-BR:
   Login: "Login"
   Please set a new password.: "Por favor crie sua nova senha"
 
-  New: "Novo"
+  New: "Adicionar"
   New %{resource}: "Novo %{resource}"
   Next: "Próximo"
   No %{resources} found: "Ainda não há nada cadastrado."
