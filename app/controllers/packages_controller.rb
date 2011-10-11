@@ -26,7 +26,7 @@ class PackagesController < ApplicationController
   # GET /packages/new
   # GET /packages/new.json
   def new
-    @package = Package.new
+    @package        = Package.new
     @aircraft_types = AircraftType.by_name.collect{|c| [c.name, c.id]}
 
     respond_to do |format|
@@ -37,7 +37,9 @@ class PackagesController < ApplicationController
 
   # GET /packages/1/edit
   def edit
-    @package = Package.find(params[:id])
+    @package        = Package.find(params[:id])
+    @aircraft_types = AircraftType.by_name.collect{|c| [c.name, c.id]}
+
   end
 
   # POST /packages
