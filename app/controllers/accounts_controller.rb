@@ -27,7 +27,7 @@ class AccountsController < ApplicationController
   def new
     @account  = Account.new(:credit => params[:credit])
     @clients  = Client.all.collect{|c| [c.name, c.id]}
-    @packages = Package.actives.collect{|c| [c.description, c.id]}
+    @packages = Package.actives.collect{|c| [c.name, c.id]}
     respond_to do |format|
       format.html # new.html.erb
       format.json { render :json => @account }
@@ -38,7 +38,7 @@ class AccountsController < ApplicationController
   def edit
     @account  = Account.find(params[:id])
     @clients  = Client.all.collect{|c| [c.name, c.id]}
-    @packages = Package.actives.collect{|c| [c.description, c.id]}
+    @packages = Package.actives.collect{|c| [c.name, c.id]}
   end
 
   # POST /accounts
