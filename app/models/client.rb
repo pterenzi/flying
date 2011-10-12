@@ -5,4 +5,9 @@ class Client < ActiveRecord::Base
   def sales
     Account.where(:client_id => self.id)
   end
+  
+  def credit
+    
+  end
+  
 end
