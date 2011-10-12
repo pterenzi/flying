@@ -11,7 +11,6 @@ class Flight < ActiveRecord::Base
                      :date       => self.due_date,
                      :hours      => self.duration,
                      :aircraft_type_id => self.package.aircraft_type.id)
-    end  
   end
 
 end
