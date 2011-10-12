@@ -2,14 +2,14 @@
 
 <table>
   <tr>
-    <th>Prefix</th>
-    <th>Number</th>
-    <th>Type</th>
-    <th>Equipment</th>
-    <th>Client</th>
-    <th>Instructor</th>
-    <th>Flight date</th>
-    <th>Flight time</th>
+    <th>Prefixo</th>
+    <th>Número</th>
+    <th>Tipo</th>
+    <th>Equipamento</th>
+    <th>Cliente</th>
+    <th>Instrutor</th>
+    <th>Data</th>
+    <th>Tempo de vôo</th>
     <th></th>
     <th></th>
     <th></th>
@@ -18,20 +18,21 @@
 <% @flights.each do |flight| %>
   <tr>
     <td><%= flight.prefix_id %></td>
-    <td><%= flight.number %></td>
+    <td><%= link_to flight.number, flight %></td>
     <td><%= flight.type_id %></td>
     <td><%= flight.equipment %></td>
     <td><%= flight.client_id %></td>
     <td><%= flight.instructor_id %></td>
     <td><%= flight.flight_date %></td>
     <td><%= flight.flight_time %></td>
-    <td><%= link_to 'Show', flight %></td>
-    <td><%= link_to 'Edit', edit_flight_path(flight) %></td>
-    <td><%= link_to 'Destroy', flight, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+    <td align="right"><%= link_to image_tag("info.png", :size=>"16x16", :border=>0), flight %></td>
+    <td align="center"><%= link_to image_tag("edit.png", :size=>"16x16", :border=>0), edit_flight_path(flight) %></td>
+    <td align="left"><%= link_to image_tag("trash.jpg",:size=>"16x16", :border=>0), flight, :confirm => 'Are you sure?', :method => :delete %></td>
+
 <% end %>
+<hr>
+
 </table>
 
 <br />
-
-<%= link_to 'New Flight', new_flight_path %>
+<%= link_to image_tag("plus2.png", :size=>"40x40", :border=>0, :title=>"Adicionar"), new_flight_path %>

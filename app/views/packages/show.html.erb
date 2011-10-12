@@ -1,29 +1,29 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
+  <b>Nome:</b>
   <%= @package.name %>
 </p>
 
 <p>
-  <b>Quantity:</b>
+  <b>Horas do pacote:</b>
   <%= @package.quantity %>
 </p>
 
 <p>
-  <b>Price:</b>
+  <b>Valor:</b>
   <%= @package.price %>
 </p>
 
 <p>
-  <b>Hourly Price:</b>
+  <b>Valor da hora:</b>
   <%= @package.hourly_price %>
 </p>
 
 <p>
-  <b>Active</b>
+  <b>Ativo</b>
   <%= @package.active %>
 </p>
 
-<%= link_to 'Edit', edit_package_path(@package) %> |
-<%= link_to 'Back', packages_path %>
+<%= link_to image_tag("left_arrow.png", :size=>"40x40", :border=>0, :title=>"Voltar", :title=>"Voltar"), packages_path %>
+<%= link_to image_tag("edit.png", :size=>"40x40", :border=>0, :title=>"Editar"), edit_package_path(@package) %>

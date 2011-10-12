@@ -1,11 +1,11 @@
 <h1>Aeronaves</h1>
 
-<table>
+<table width="90%">
   <tr>
-    <th>Prefix</th>
-    <th>Type</th>
-    <th>Manufacturer</th>
-    <th>Model</th>
+    <th>Prefixo</th>
+    <th>Typo</th>
+    <th>Fabricante</th>
+    <th>Modelo</th>
     <th></th>
     <th></th>
     <th></th>
@@ -13,17 +13,19 @@
 
 <% @aircrafts.each do |aircraft| %>
   <tr>
-    <td><%= aircraft.prefix %></td>
+    <td><%= link_to aircraft.prefix, aircraft %></td>
     <td><%= aircraft.type %></td>
     <td><%= aircraft.manufacturer %></td>
     <td><%= aircraft.model %></td>
-    <td><%= link_to 'Show', aircraft %></td>
-    <td><%= link_to 'Edit', edit_aircraft_path(aircraft) %></td>
-    <td><%= link_to 'Destroy', aircraft, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td align="right" width="25px"><%= link_to image_tag("info.png", :size=>"20x20", :border=>0, :title=>"Detalhes"), aircraft %></td>
+    <td align="center" width="25px"><%= link_to image_tag("edit.png", :size=>"20x20", :border=>0, :title=>"Editar"), edit_aircraft_path(aircraft) %></td>
+    <td align="left" width="25px"><%= link_to image_tag("trash.jpg",:size=>"20x20", :border=>0, :title=>"Excluir"), aircraft, :confirm => 'Tem certeza que quer excluir o registro?', :method => :delete %></td>
   </tr>
+<hr>
+
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Aircraft', new_aircraft_path %>
+<%= link_to image_tag("plus2.png", :size=>"40x40", :border=>0, :title=>"Adicionar"), new_aircraft_path %>

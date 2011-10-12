@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111011212107) do
+ActiveRecord::Schema.define(:version => 20111012210217) do
 
   create_table "accounts", :force => true do |t|
     t.integer  "client_id"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(:version => 20111011212107) do
     t.boolean  "credit",       :default => false
     t.integer  "package_id"
     t.integer  "supplier_id"
+    t.integer  "hours"
   end
 
   create_table "admin_users", :force => true do |t|
@@ -77,7 +78,7 @@ ActiveRecord::Schema.define(:version => 20111011212107) do
   create_table "balances", :force => true do |t|
     t.integer  "client_id"
     t.datetime "date"
-    t.integer  "sale_id"
+    t.integer  "account_id"
     t.integer  "flight_id"
     t.integer  "aircraft_type_id"
     t.integer  "hours"
@@ -85,9 +86,9 @@ ActiveRecord::Schema.define(:version => 20111011212107) do
     t.datetime "updated_at"
   end
 
+  add_index "balances", ["account_id"], :name => "index_balances_on_account_id"
   add_index "balances", ["client_id"], :name => "index_balances_on_client_id"
   add_index "balances", ["flight_id"], :name => "index_balances_on_flight_id"
-  add_index "balances", ["sale_id"], :name => "index_balances_on_sale_id"
 
   create_table "clients", :force => true do |t|
     t.string   "name"

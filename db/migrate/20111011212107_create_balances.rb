@@ -3,7 +3,7 @@ class CreateBalances < ActiveRecord::Migration
     create_table :balances do |t|
       t.references :client
       t.datetime   :date
-      t.references :sale
+      t.references :account
       t.references :flight
       t.references :aircraft_type
       t.integer    :hours
@@ -11,7 +11,7 @@ class CreateBalances < ActiveRecord::Migration
       t.timestamps
     end
     add_index :balances, :client_id
-    add_index :balances, :sale_id
+    add_index :balances, :account_id
     add_index :balances, :flight_id
   end
 end

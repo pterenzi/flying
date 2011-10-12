@@ -7,7 +7,7 @@
   </tr>
 <% @client.balances.each do |balance| %>
   <tr>
-    <td>balance.date</td>
+    <td><%= balance.date %></td>
     <% if balance.credit? %>
       <td><%= balance.hours %></td>
       <td>&nbsp;</td>
@@ -16,9 +16,6 @@
       <td><%= balance.hours %></td>
     <% end %>
   </tr>
-  <%=  %> |
-  <%= balance.hours %> |
-  <%= sale.value %>
   <br />
 <% end %>
 </table>

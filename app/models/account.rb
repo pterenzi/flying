@@ -19,9 +19,10 @@ class Account < ActiveRecord::Base
   
   def create_balance
     if self.credit?
-      Balance.create(:client_id => self.client_id,
-                     :sale_id   => self.id,
-                     :date      => self.due_date,
+      Balance.create(:client_id  => self.client_id,
+                     :account_id => self.id,
+                     :date       => self.due_date,
+                     :hours      => self.hours,
                      :aircraft_type_id => self.package.aircraft_type.id)
     end  
   end

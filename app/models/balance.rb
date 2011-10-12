@@ -1,10 +1,10 @@
 class Balance < ActiveRecord::Base
   belongs_to :client
-  belongs_to :sale
+  belongs_to :account
   belongs_to :flight
   
   def credit?
-    self.sale.present?
+    self.account_id.present?
   end
   
   def debit?

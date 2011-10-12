@@ -1,37 +1,43 @@
-<h1>Instrutores</h1>
+<h1>Instrutores</h1> 
 
 <table>
   <tr>
-    <th>Name</th>
-    <th>Level</th>
-    <th>Birthday</th>
-    <th>Phone</th>
-    <th>Cel</th>
+    <th>Nome</th>
+    <th>Nível</th>
+    <th>Data de nascimento</th>
+    <th>Telefone</th>
+    <th>Celular</th>
     <th>Email</th>
-    <th>Hour price</th>
+    <th>Valor hora</th>
     <th></th>
     <th></th>
     <th></th>
   </tr>
 
 <% @instructors.each do |instructor| %>
-  <tr>
-    <td><%= instructor.name %></td>
+
+
+<tr>
+    <td><%= link_to instructor.name, instructor %></td>
     <td><%= instructor.level %></td>
     <td><%= instructor.birthday %></td>
     <td><%= instructor.phone %></td>
     <td><%= instructor.cel %></td>
     <td><%= instructor.email %></td>
     <td><%= instructor.hour_price %></td>
-    <td align="right"><%= link_to image_tag("images/info.png", :size=>"16x16", :border=>0), instructor %></td>
-    <td align="center"><%= link_to image_tag("images/edit.png", :size=>"16x16", :border=>0), edit_instructor_path(instructor) %></td>
-    <td align="left"><%= link_to image_tag("images/trash.png",:size=>"16x16", :border=>0), instructor, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td align="right"><%= link_to image_tag("info.png", :size=>"20x20", :border=>0, :title=>"Detalhes"), instructor %></td>
+    <td align="center"><%= link_to image_tag("edit.png", :size=>"20x20", :border=>0, :title=>"Editar"), edit_instructor_path(instructor) %></td>
+    <td align="left"><%= link_to image_tag("trash.jpg",:size=>"20x20", :border=>0, :title=>"Excluir"), instructor, :confirm => 'Tem certeza que quer excluir o registro?', :method => :delete %></td>
 
 
   </tr>
+
 <% end %>
+
+<hr>
+
 </table>
 
 <br />
+<%= link_to image_tag("plus2.png", :size=>"40x40", :border=>0, :title=>"Adicionar"), new_instructor_path %>
 
-<%= link_to 'New Instructor', new_instructor_path %>

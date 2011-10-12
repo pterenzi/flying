@@ -10,7 +10,11 @@ Flying::Application.routes.draw do
 
   resources :flights
 
-  resources :packages
+  resources :packages do
+    member do
+      get 'busca_pacote'
+    end
+  end
 
   resources :instructors
 

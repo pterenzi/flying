@@ -12,24 +12,24 @@
   <% end %>
   
   <div class="field">
-    <%= f.label :aircraft_type %><br />
+    <%= f.label "Tipo de aeronave" %><br />
     <%= f.select :aircraft_type_id, @aircraft_types %>
   </div>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label "Nome" %><br />
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :quantity %><br />
+    <%= f.label "Horas do pacote" %><br />
     <%= f.number_field :quantity %>
   </div>
   <div class="field">
-    <%= f.label :price %><br />
+    <%= f.label "Valor" %><br />
     <%= f.text_field :price %>
   </div>
   <div class="field">
-    <%= f.label :active %><br />
+    <%= f.label "Ativo" %><br />
     <%= f.check_box :active %>
   </div>
   <div class="actions">

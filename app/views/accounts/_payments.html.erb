@@ -1,13 +1,13 @@
-<h1>Listing payments</h1>
+<h1>Pagamentos</h1>
 
-<table>
+<table width="90%">
   <tr>
-    <th>Client</th>
-    <th>Type</th>
-    <th>Company</th>
-    <th>Due date</th>
-    <th>Description</th>
-    <th>Value</th>
+    <th>Cliente</th>
+    <th>Tipo</th>
+    <th>Empresa</th>
+    <th>Vencimento</th>
+    <th>Descritivo</th>
+    <th>Valor</th>
     <th>Status</th>
     <th></th>
     <th></th>
@@ -23,13 +23,14 @@
     <td><%= account.description %></td>
     <td><%= account.value %></td>
     <td><%= account.status %></td>
-    <td><%= link_to 'Show', account %></td>
-    <td><%= link_to 'Edit', edit_account_path(account) %></td>
-    <td><%= link_to 'Destroy', account, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td align="right" width="25px"><%= link_to image_tag("info.png", :size=>"20x20", :border=>0, :title=>"Detalhes"), account %></td>
+    <td align="center" width="25px"><%= link_to image_tag("edit.png", :size=>"20x20", :border=>0, :title=>"Editar"), edit_account_path(account) %></td>
+    <td align="left" width="25px"><%= link_to image_tag("trash.jpg",:size=>"20x20", :border=>0, :title=>"Excluir"), account, :confirm => 'Tem certeza que quer excluir o registro?', :method => :delete %></td>
   </tr>
 <% end %>
+<hr>
 </table>
 
 <br />
 
-<%= link_to 'New Account', new_account_path %>
+<%= link_to image_tag("plus2.png", :size=>"40x40", :border=>0, :title=>"Adicionar"), new_account_path %>

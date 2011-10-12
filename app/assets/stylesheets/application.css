@@ -6,8 +6,39 @@
  *= require_tree . 
 */
 
+a:hover {background:#ffffff; text-decoration:none;} /* background-color e necessario para o IE6 */
+a.tooltip span {display:none; padding:2px 3px; margin-left:8px; width:130px;}
+a.tooltip:hover span{display:inline; position:absolute; background:#ffffff; border:1px solid #cccccc; color:#6c6c6c;}
+
 th {
-	width: auto;
+	text-align:left;
+} 
+
+tr {
+	text-align:left;
+} 
+
+table {
+	width:90%;
+}
+#table_form {
+	width: 90%;
+	margin: 0px auto;
+	border-collapse: collapse;
+	border: 1px solid #fff;
+ }
+#table_form .rowa {
+	background: #ffffff;
+	height: 20px;
+}
+#table_form .rowb {
+	background: #f0f0f0;
+	height: 20px;
+}
+#table_form .cell {
+	padding: 2px;
+	border: 1px solid #fff;
+	height:25px;
 }
 #sidebar ul li.header {
   -moz-border-radius: 4px;
@@ -15,7 +46,6 @@ th {
   background: #242527;
   color: #FFF;
   font-size: 14px;
-  font-weight: bold;
   padding: 0.25em 0.5em;
   margin: 0.5em 0;
 }
@@ -38,7 +68,7 @@ th {
 }
 
 #sidebar ul li a:hover{
-  color: #8ce6fc;
+  color: #6e9aeb;
 }
 #sidebar ul ul li a {
   color: #242527;
@@ -80,8 +110,18 @@ html, body{
  padding-right: 20px;
  position: relative; 
  width:82%;
- float:right; 
+ float:right;
  }
+
+#maincol a{
+	background-color:white;
+	text-decoration: none;
+}
+
+#maincol a:hover {
+	background-color:white;
+	color:#6e9aeb;
+}
  
 #footer{
  height:70px; 

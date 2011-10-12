@@ -71,5 +71,5 @@
 <%= render :partial => 'client_sales' %>
 <%= render :partial => 'client_balance' %>
 
-<%= link_to 'Edit', edit_client_path(@client) %> |
-<%= link_to 'Back', clients_path %>
+<%= link_to image_tag("left_arrow.png", :size=>"40x40", :border=>0, :title=>"Voltar"), clients_path %>
+<%= link_to image_tag("edit.png", :size=>"40x40", :border=>0, :title=>"Editar"), edit_client_path(@client) %>

@@ -1,6 +1,7 @@
-<h1>Editing package</h1>
+<h1>Editar Pacote de Vôo</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @package %> |
-<%= link_to 'Back', packages_path %>
+
+<%= link_to image_tag("left_arrow.png", :size=>"40x40", :border=>0, :title=>"Voltar"), packages_path %>
+<%= link_to image_tag("info.png", :size=>"40x40", :border=>0, :title=>"Detalhes"), @package%>

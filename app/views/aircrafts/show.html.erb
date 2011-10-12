@@ -1,75 +1,32 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Prefix:</b>
-  <%= @aircraft.prefix %>
-</p>
+<table class="table" id="table_form" cellspacing="0" cellpadding="0">
+	<tr class="rowa">
+		<td class="col1 cell"><b>Prefixo:</b> <%= @aircraft.prefix %></td>
+		<td class="col2 cell"><b>Tipo:</b> <%= @aircraft.type %> </td>
+		<td class="col3 cell"><b>Pertence à escola:</b> <%= @aircraft.owner %></td>
+	</tr>
+ 	<tr class="rowa">
+		<td class="col1 cell"><b>Fabricante:</b> <%= @aircraft.manufacturer %></td>
+		<td class="col2 cell"><b>Modelo:</b> <%= @aircraft.model %> </td>
+		<td class="col3 cell"><b>Cor:</b> <%= @aircraft.color %>  </td>
+	</tr>
+ 	<tr class="rowa">
+		<td class="col1 cell"><b>Horímetro:</b> <%= @aircraft.hourmeter %> </td>
+		<td class="col2 cell"><b>Parada p/ manutenção:</b> <%= @aircraft.maintenance_break %></td>
+		<td class="col3 cell"><b>Última manutenção:</b> <%= @aircraft.last_maintenance %> </td>
+	</tr>
+ 	<tr class="rowa">
+		<td class="col1 cell">Horas de vôo:</b> <%= @aircraft.flyght_hours %> </td>
+		<td class="col2 cell"><b>Detalhes:</b> <%= @aircraft.details %> </td>
+		<td class="col3 cell"><b>Equipamento:</b> <%= @aircraft.equipment %> </td>
+	</tr>
+ 	<tr class="rowa">
+		<td class="col1 cell"><b>Velocidade:</b> <%= @aircraft.speed %> </td>
+		<td class="col2 cell"><b>Operador:</b> <%= @aircraft.operator %> </td>
+		<td class="col3 cell"> </td>
+	</tr>
+ </table>
 
-<p>
-  <b>Type:</b>
-  <%= @aircraft.type %>
-</p>
-
-<p>
-  <b>Owner:</b>
-  <%= @aircraft.owner %>
-</p>
-
-<p>
-  <b>Manufacturer:</b>
-  <%= @aircraft.manufacturer %>
-</p>
-
-<p>
-  <b>Model:</b>
-  <%= @aircraft.model %>
-</p>
-
-<p>
-  <b>Color:</b>
-  <%= @aircraft.color %>
-</p>
-
-<p>
-  <b>Hourmeter:</b>
-  <%= @aircraft.hourmeter %>
-</p>
-
-<p>
-  <b>Maintenance break:</b>
-  <%= @aircraft.maintenance_break %>
-</p>
-
-<p>
-  <b>Last maintenance:</b>
-  <%= @aircraft.last_maintenance %>
-</p>
-
-<p>
-  <b>Flyght hours:</b>
-  <%= @aircraft.flyght_hours %>
-</p>
-
-<p>
-  <b>Details:</b>
-  <%= @aircraft.details %>
-</p>
-
-<p>
-  <b>Equipment:</b>
-  <%= @aircraft.equipment %>
-</p>
-
-<p>
-  <b>Speed:</b>
-  <%= @aircraft.speed %>
-</p>
-
-<p>
-  <b>Operator:</b>
-  <%= @aircraft.operator %>
-</p>
-
-
-<%= link_to 'Edit', edit_aircraft_path(@aircraft) %> |
-<%= link_to 'Back', aircrafts_path %>
+<%= link_to image_tag("left_arrow.png", :size=>"40x40", :border=>0, :title=>"Voltar"), aircrafts_path %>
+<%= link_to image_tag("edit.png", :size=>"40x40", :border=>0, :title=>"Editar"), edit_aircraft_path(@aircraft) %>
