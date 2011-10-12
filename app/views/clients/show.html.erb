@@ -68,12 +68,8 @@
   Sales of this client
 </p>
 
-<% @client.sales.each do |sale| %>
-  <%= sale.due_date %> |
-  <%= sale.package.description %> |
-  <%= sale.value %>
-  <br />
-<% end %>
+<%= render :partial => 'client_sales' %>
+<%= render :partial => 'client_balance' %>
 
 <%= link_to 'Edit', edit_client_path(@client) %> |
 <%= link_to 'Back', clients_path %>

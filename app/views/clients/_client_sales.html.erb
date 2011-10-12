@@ -1,0 +1,6 @@
+<% @client.sales.each do |sale| %>
+  <%= sale.due_date %> |
+  <%= sale.package.description %> |
+  <%= sale.value %>
+  <br />
+<% end %>

@@ -13,15 +13,16 @@
 
   <%= f.hidden_field :credit %>
   <div class="field">
-    <%= f.label :client_id %><br />
-    <%= f.select :client_id , @clients%>
-  </div>
-  <div class="field">
     <%= f.label :due_date %><br />
-    <%= f.date_select :due_date %>
+    <%= f.date_select :due_date,  :order => [:day,:month,:year] %>
   </div>
 
   <% if @account.credit? %>
+    <div class="field">
+      <%= f.label :client_id %><br />
+      <%= f.select :client_id , @clients%>
+    </div>
+
     <div class="field">
       <%= f.label :packages %><br />
       <%= f.select :package_id, @packages %>
@@ -30,28 +31,18 @@
   <% else %>
   
     <div class="field">
+      <%= f.label :supplier_id %><br />
+      <%= f.select :supplier_id , @suppliers%>
+    </div>
+
+    <div class="field">
       <%= f.label :description %><br />
       <%= f.text_field :description %>
     </div>
 
     <div class="field">
-      <%= f.label :type %><br />
-      <%= f.number_field :type %>
-    </div>
-
-    <div class="field">
-      <%= f.label :company_id %><br />
-      <%= f.number_field :company_id %>
-    </div>
-
-    <div class="field">
-      <%= f.label :barcode %><br />
-      <%= f.text_field :barcode %>
-    </div>
-
-    <div class="field">
       <%= f.label :payment_date %><br />
-      <%= f.date_select :payment_date %>
+      <%= f.date_select :payment_date , :order => [:day,:month,:year] %>
     </div>
     
     <div class="field">

@@ -2,7 +2,7 @@ class SuppliersController < ApplicationController
   # GET /suppliers
   # GET /suppliers.json
   def index
-    @suppliers = Supplier.all
+    @suppliers = Supplier.all(:order=>:name)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -24,7 +24,7 @@ class SuppliersController < ApplicationController
   # GET /suppliers/new
   # GET /suppliers/new.json
   def new
-    @supplier = Supplier.new
+    @supplier = Supplier.new(:active => true)
 
     respond_to do |format|
       format.html # new.html.erb
