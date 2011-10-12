@@ -2,8 +2,8 @@ class AccountsController < ApplicationController
   # GET /accounts
   # GET /accounts.json
   def index
-    @sales    = Account.sales
-    @payments = Account.payments
+    @sales    = Account.sales(:order => :payment_date)
+    @payments = Account.payments(:order => :due_date)
 
     respond_to do |format|
       format.html # index.html.erb

@@ -2,7 +2,7 @@ class InstructorsController < ApplicationController
   # GET /instructors
   # GET /instructors.json
   def index
-    @instructors = Instructor.all
+    @instructors = Instructor.all(:order => :name)
 
     respond_to do |format|
       format.html # index.html.erb
