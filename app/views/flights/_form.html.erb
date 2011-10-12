@@ -15,7 +15,7 @@
 <table class="table" id="table_form" cellspacing="0" cellpadding="0">
 	<tr class="rowa">
 		<td class="col1 cell"><%= f.label "Aeronave" %><br />
-	    <%= f.number_field :prefix_id %></td>
+	    <%= f.select :aircraft_id, @aircrafts %></td>
 		<td class="col2 cell"><%= f.label "Número" %><br />
 	    <%= f.number_field :number %> </td>
 		<td class="col3 cell"><%= f.label "tipo" %><br />

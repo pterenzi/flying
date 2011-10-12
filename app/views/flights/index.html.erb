@@ -21,10 +21,10 @@
     <td><%= link_to flight.number, flight %></td>
     <td><%= flight.type_id %></td>
     <td><%= flight.equipment %></td>
-    <td><%= flight.client_id %></td>
-    <td><%= flight.instructor_id %></td>
+    <td><%= flight.client.name %></td>
+    <td><%= flight.instructor.name %></td>
     <td><%= flight.flight_date %></td>
-    <td><%= flight.flight_time %></td>
+    <td><%= flight.duration %></td>
     <td align="right"><%= link_to image_tag("info.png", :size=>"16x16", :border=>0), flight %></td>
     <td align="center"><%= link_to image_tag("edit.png", :size=>"16x16", :border=>0), edit_flight_path(flight) %></td>
     <td align="left"><%= link_to image_tag("trash.jpg",:size=>"16x16", :border=>0), flight, :confirm => 'Are you sure?', :method => :delete %></td>

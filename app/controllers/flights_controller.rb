@@ -27,7 +27,7 @@ class FlightsController < ApplicationController
     @flight      = Flight.new(:duration => 2)
     @clients     = Client.all(:order=>:name).collect{|c| [c.name, c.id]}
     @instructors = Instructor.all(:order=>:name).collect{|c| [c.name, c.id]}
-
+    @aircrafts   = Aircraft.all.collect{|c| [c.prefix, c.id]}
     respond_to do |format|
       format.html # new.html.erb
       format.json { render :json => @flight }
@@ -43,7 +43,7 @@ class FlightsController < ApplicationController
   # POST /flights.json
   def create
     @flight = Flight.new(params[:flight])
-
+debugger
     respond_to do |format|
       if @flight.save
         format.html { redirect_to @flight, :notice => 'Flight was successfully created.' }
