@@ -17,9 +17,9 @@
     <td><%= aircraft.type %></td>
     <td><%= aircraft.manufacturer %></td>
     <td><%= aircraft.model %></td>
-    <td align="right" width="25px"><%= link_to image_tag("info.png", :size=>"20x20", :border=>0), aircraft %></td>
-    <td align="center" width="25px"><%= link_to image_tag("edit.png", :size=>"20x20", :border=>0), edit_aircraft_path(aircraft) %></td>
-    <td align="left" width="25px"><%= link_to image_tag("trash.jpg",:size=>"20x20", :border=>0), aircraft, :confirm => 'Tem certeza que quer excluir o registro?', :method => :delete %></td>
+    <td align="right" width="25px"><%= link_to image_tag("info.png", :size=>"20x20", :border=>0, :title=>"Detalhes"), aircraft %></td>
+    <td align="center" width="25px"><%= link_to image_tag("edit.png", :size=>"20x20", :border=>0, :title=>"Editar"), edit_aircraft_path(aircraft) %></td>
+    <td align="left" width="25px"><%= link_to image_tag("trash.jpg",:size=>"20x20", :border=>0, :title=>"Excluir"), aircraft, :confirm => 'Tem certeza que quer excluir o registro?', :method => :delete %></td>
   </tr>
 <hr>
 
@@ -28,4 +28,4 @@
 
 <br />
 
-<%= link_to image_tag("plus2.png", :size=>"40x40", :border=>0), new_aircraft_path %>
+<%= link_to image_tag("plus2.png", :size=>"40x40", :border=>0, :title=>"Adicionar"), new_aircraft_path %>

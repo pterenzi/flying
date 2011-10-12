@@ -21,9 +21,9 @@
     <td><%= package.price %></td>
     <td><%= package.hourly_price %></td>
     <td><%= package.active %></td>
-    <td align="right" width="25px"><%= link_to image_tag("info.png", :size=>"20x20", :border=>0), package %></td>
-    <td align="center" width="25px"><%= link_to image_tag("edit.png", :size=>"20x20", :border=>0), edit_package_path(package) %></td>
-    <td align="left" width="25px"><%= link_to image_tag("trash.jpg",:size=>"20x20", :border=>0), package, :confirm => 'Tem certeza que quer excluir o registro?', :method => :delete %></td>
+    <td align="right" width="25px"><%= link_to image_tag("info.png", :size=>"20x20", :border=>0, :title=>"Detalhes"), package %></td>
+    <td align="center" width="25px"><%= link_to image_tag("edit.png", :size=>"20x20", :border=>0, :title=>"Editar"), edit_package_path(package) %></td>
+    <td align="left" width="25px"><%= link_to image_tag("trash.jpg",:size=>"20x20", :border=>0, :title=>"Excluir"), package, :confirm => 'Tem certeza que quer excluir o registro?', :method => :delete %></td>
   </tr>
 <% end %>
 <hr>
@@ -32,4 +32,4 @@
 
 <br />
 
-<%= link_to image_tag("plus2.png", :size=>"40x40", :border=>0), new_package_path %>
+<%= link_to image_tag("plus2.png", :size=>"40x40", :border=>0, :title=>"Adicionar"), new_package_path %>

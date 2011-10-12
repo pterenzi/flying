@@ -25,9 +25,9 @@
     <td><%= instructor.cel %></td>
     <td><%= instructor.email %></td>
     <td><%= instructor.hour_price %></td>
-    <td align="right"><%= link_to image_tag("info.png", :size=>"20x20", :border=>0), instructor %></td>
-    <td align="center"><%= link_to image_tag("edit.png", :size=>"20x20", :border=>0), edit_instructor_path(instructor) %></td>
-    <td align="left"><%= link_to image_tag("trash.jpg",:size=>"20x20", :border=>0), instructor, :confirm => 'Tem certeza que quer excluir o registro?', :method => :delete %></td>
+    <td align="right"><%= link_to image_tag("info.png", :size=>"20x20", :border=>0, :title=>"Detalhes"), instructor %></td>
+    <td align="center"><%= link_to image_tag("edit.png", :size=>"20x20", :border=>0, :title=>"Editar"), edit_instructor_path(instructor) %></td>
+    <td align="left"><%= link_to image_tag("trash.jpg",:size=>"20x20", :border=>0, :title=>"Excluir"), instructor, :confirm => 'Tem certeza que quer excluir o registro?', :method => :delete %></td>
 
 
   </tr>
@@ -39,5 +39,5 @@
 </table>
 
 <br />
-<%= link_to image_tag("plus2.png", :size=>"40x40", :border=>0), new_instructor_path %>
+<%= link_to image_tag("plus2.png", :size=>"40x40", :border=>0, :title=>"Adicionar"), new_instructor_path %>
 

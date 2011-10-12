@@ -21,9 +21,9 @@
     <td><%= client.cel %></td>
     <td><%= client.email %></td>
     <td><%= client.credit %></td>
-    <td align="right" width="25px"><%= link_to image_tag("info.png", :size=>"20x20", :border=>0), client %></td>
-    <td align="center" width="25px"><%= link_to image_tag("edit.png", :size=>"20x20", :border=>0), edit_client_path(client) %></td>
-    <td align="left" width="25px"><%= link_to image_tag("trash.jpg",:size=>"20x20", :border=>0), client, :confirm => 'Tem certeza que quer excluir o registro?', :method => :delete %></td>
+    <td align="right" width="25px"><%= link_to image_tag("info.png", :size=>"20x20", :border=>0, :title=>"Detalhes"), client %></td>
+    <td align="center" width="25px"><%= link_to image_tag("edit.png", :size=>"20x20", :border=>0, :title=>"Editar"), edit_client_path(client) %></td>
+    <td align="left" width="25px"><%= link_to image_tag("trash.jpg",:size=>"20x20", :border=>0, :title=>"Excluir"), client, :confirm => 'Tem certeza que quer excluir o registro?', :method => :delete %></td>
   </tr>
 <hr>
 <% end %>
@@ -31,4 +31,4 @@
 
 <br />
 
-<%= link_to image_tag("plus2.png", :size=>"40x40", :border=>0), new_client_path %>
+<%= link_to image_tag("plus2.png", :size=>"40x40", :border=>0, :title=>"Adicionar"), new_client_path %>

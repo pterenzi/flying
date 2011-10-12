@@ -25,5 +25,5 @@
   <%= @package.active %>
 </p>
 
-<%= link_to image_tag("left_arrow.png", :size=>"40x40", :border=>0), packages_path %>
-<%= link_to image_tag("edit.png", :size=>"40x40", :border=>0), edit_package_path(@package) %>
+<%= link_to image_tag("left_arrow.png", :size=>"40x40", :border=>0, :title=>"Voltar", :title=>"Voltar"), packages_path %>
+<%= link_to image_tag("edit.png", :size=>"40x40", :border=>0, :title=>"Editar"), edit_package_path(@package) %>
