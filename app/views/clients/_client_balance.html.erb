@@ -5,16 +5,20 @@
     <th>Debit</th>
     <th>Balance</th>
   </tr>
+<% total = 0 %>
 <% @client.balances.each do |balance| %>
   <tr>
     <td><%= balance.date %></td>
     <% if balance.credit? %>
       <td><%= balance.hours.to_s + balance.account.package.name %></td>
       <td>&nbsp;</td>
+      <% total += balance.hours %>
     <% else %>
       <td>&nbsp;</td>
       <td><%= balance.hours   %></td>
+      <% total -= balance.hours %>
     <% end %>
+    <td><%= total %></td>
   </tr>
   <br />
 <% end %>
