@@ -76,8 +76,9 @@
  	<tr class="rowa">
 		<td class="col1 cell"><%= f.label "Data do vôo" %><br />
 	    <%= f.date_select :flight_date %></td>
-		<td class="col2 cell"><%= f.label "Tempo de vôo" %><br />
-	    <%= f.select :flight_time , [0.5,1,1.5,2,2.5,3,3.5,4,4.5]%></td>
+		<td class="col2 cell">
+		  <%= f.label "Duração de vôo" %><br />
+	    <%= f.select :duration , [0.5,1,1.5,2,2.5,3,3.5,4,4.5]%></td>
 		<td class="col3 cell"><%= f.label "Velocidade de cruzeiro" %><br />
 	    <%= f.number_field :cruising_speed %>
 		</td>
