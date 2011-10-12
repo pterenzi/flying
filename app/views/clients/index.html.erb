@@ -1,13 +1,13 @@
 <h1>Clientes</h1>
 
-<table>
+<table width="90%">
   <tr>
-    <th>Name</th>
-    <th>Birthday</th>
-    <th>Phone</th>
-    <th>Cel</th>
+    <th>Nome</th>
+    <th>Data de nascimento</th>
+    <th>Telefone</th>
+    <th>Celular</th>
     <th>Email</th>
-    <th>Credit</th>
+    <th>Creditos</th>
     <th></th>
     <th></th>
     <th></th>
@@ -15,19 +15,20 @@
 
 <% @clients.each do |client| %>
   <tr>
-    <td><%= client.name %></td>
+    <td><%= link_to client.name, client %></td>
     <td><%= client.birthday %></td>
     <td><%= client.phone %></td>
     <td><%= client.cel %></td>
     <td><%= client.email %></td>
     <td><%= client.credit %></td>
-    <td><%= link_to 'Show', client %></td>
-    <td><%= link_to 'Edit', edit_client_path(client) %></td>
-    <td><%= link_to 'Destroy', client, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td align="right" width="25px"><%= link_to image_tag("info.png", :size=>"20x20", :border=>0), client %></td>
+    <td align="center" width="25px"><%= link_to image_tag("edit.png", :size=>"20x20", :border=>0), edit_client_path(client) %></td>
+    <td align="left" width="25px"><%= link_to image_tag("trash.jpg",:size=>"20x20", :border=>0), client, :confirm => 'Tem certeza que quer excluir o registro?', :method => :delete %></td>
   </tr>
+<hr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Client', new_client_path %>
+<%= link_to image_tag("plus2.png", :size=>"40x40", :border=>0), new_client_path %>

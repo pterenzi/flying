@@ -1,0 +1,34 @@
+Erros:
+
+Editar aeronaves
+Showing /Users/terenzi/work/flying/app/views/aircrafts/_form.html.erb where line #20 raised:
+
+You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.map
+Extracted source (around line #20):
+
+17:   </div>
+18:   <div class="field">
+19:     <%= f.label "Tipo" %><br />
+20:     <%= f.select :aircraft_type_id, @aircraft_types %>
+21:   </div>
+22:   <div class="field">
+23:     <%= f.label "Pertence à escola" %><br />
+
+
+Show Clientes
+NoMethodError in Clients#show
+
+Showing /Users/terenzi/work/flying/app/views/clients/show.html.erb where line #73 raised:
+
+undefined method `description' for nil:NilClass
+Extracted source (around line #73):
+
+70: 
+71: <% @client.sales.each do |sale| %>
+72:   <%= sale.due_date %> |
+73:   <%= sale.package.description %> |
+74:   <%= sale.value %>
+75:   <br />
+76: <% end %>

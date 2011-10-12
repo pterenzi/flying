@@ -1,37 +1,37 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Client:</b>
+  <b>Cliente:</b>
   <%= @account.client_id %>
 </p>
 
 <p>
-  <b>Type:</b>
+  <b>Tipo:</b>
   <%= @account.type %>
 </p>
 
 <p>
-  <b>Company:</b>
+  <b>Empresa:</b>
   <%= @account.company_id %>
 </p>
 
 <p>
-  <b>Due date:</b>
+  <b>Data de vencimento:</b>
   <%= @account.due_date %>
 </p>
 
 <p>
-  <b>Description:</b>
+  <b>Descritivo:</b>
   <%= @account.description %>
 </p>
 
 <p>
-  <b>Value:</b>
+  <b>Valor:</b>
   <%= @account.value %>
 </p>
 
 <p>
-  <b>Barcode:</b>
+  <b>Código de barras:</b>
   <%= @account.barcode %>
 </p>
 
@@ -41,25 +41,25 @@
 </p>
 
 <p>
-  <b>Payment date:</b>
+  <b>Data de pagamento:</b>
   <%= @account.payment_date %>
 </p>
 
 <p>
-  <b>Interest:</b>
+  <b>Juros:</b>
   <%= @account.interest %>
 </p>
 
 <p>
-  <b>Discount:</b>
+  <b>Desconto:</b>
   <%= @account.discount %>
 </p>
 
 <p>
-  <b>Comments:</b>
+  <b>Observações:</b>
   <%= @account.comments %>
 </p>
 
 
-<%= link_to 'Edit', edit_account_path(@account) %> |
-<%= link_to 'Back', accounts_path %>
+<%= link_to image_tag("left_arrow.png", :size=>"40x40", :border=>0), accounts_path %>
+<%= link_to image_tag("edit.png", :size=>"40x40", :border=>0), edit_account_path(@account) %>
