@@ -16,6 +16,25 @@ tr {
 table {
 	width:90%;
 }
+#table_form {
+	width: 90%;
+	margin: 0px auto;
+	border-collapse: collapse;
+	border: 1px solid #fff;
+ }
+#table_form .rowa {
+	background: #ffffff;
+	height: 20px;
+}
+#table_form .rowb {
+	background: #f0f0f0;
+	height: 20px;
+}
+#table_form .cell {
+	padding: 2px;
+	border: 1px solid #fff;
+	height:25px;
+}
 #sidebar ul li.header {
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;

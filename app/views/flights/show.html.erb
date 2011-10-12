@@ -1,389 +1,139 @@
-<p id="notice"><%= notice %></p>
+<p id="notice"><%= notice %> </p>
+
+<table class="table" id="table_form" cellspacing="0" cellpadding="0">
+	<tr class="rowa">
+		<td class="col1 cell"><b>Prefixo:</b> <%= @flight.prefix_id %>	  
+		<td class="col2 cell"><b>Número:</b> <%= @flight.number %> </td>
+		<td class="col3 cell"><b>Tipo:</b> <%= @flight.type_id %> </td> </td>
+	</tr>
+ 	<tr class="rowa">
+		<td class="col1 cell"><b>Equipamento:</b> <%= @flight.equipment %></td>
+		<td class="col2 cell"><b>Aeroporto de partida:</b> <%= @flight.departure_aerodrome %> </td>
+		<td class="col3 cell"><b>Nível:</b> <%= @flight.level %> </td>
+	</tr>
+ 	<tr class="rowa">
+		<td class="col1 cell"><b>Rota:</b> <%= @flight.route %></td>
+		<td class="col2 cell"><b>Aeroporto de destino:</b> <%= @flight.destination_aerodrome %> </td>
+		<td class="col3 cell"><b>Total ett:</b> <%= @flight.total_ett %> </td>
+	</tr>
+ 	<tr class="rowa">
+		<td class="col1 cell"><b>Aeroporto alternativo:</b> <%= @flight.alternate_aerodrome %></td>
+		<td class="col2 cell"><b>Outras informações:</b> <%= @flight.other_information %> </td>
+		<td class="col3 cell"><b>Duração:</b> <%= @flight.endurance %> </td>
+	</tr>
+ 	<tr class="rowa">
+		<td class="col1 cell"><b>Pessoas a bordo:</b> <%= @flight.persons_on_board %></td>
+		<td class="col2 cell"><b>Cores e marcas da aeronave:</b> <%= @flight.aircraft_colors_and_marks %> </td>
+		<td class="col3 cell"><b>Cliente:</b> <%= @flight.client_id %> </td>
+	</tr>
+ 	<tr class="rowa">
+		<td class="col1 cell"><b>DAC Cliente:</b> <%= @flight.client_dac %></td>
+		<td class="col2 cell"><b>Instrutor:</b> <%= @flight.instructor_id %></td>
+		<td class="col3 cell"><b>DAC Instructor:</b> <%= @flight.instructor_dac %></td>
+	</tr>
+ 	<tr class="rowa">
+		<td class="col1 cell"><b>Registro:</b> <%= @flight.registration %></td>
+		<td class="col2 cell"><b>Passageiro:</b> <%= @flight.passenger %> </td>
+		<td class="col3 cell"><b>Horímetro:</b> <%= @flight.hourmeter %> </td>
+	</tr>
+ 	<tr class="rowa">
+		<td class="col1 cell"><b>Data do vôo:</b> <%= @flight.flight_date %></td>
+		<td class="col2 cell"><b>Tempo de vôo:</b> <%= @flight.flight_time %></td>
+		<td class="col3 cell"><b>Velocidade de cruzeiro:</b> <%= @flight.cruising_speed %></td>
+	</tr>
+ 	<tr class="rowa">
+		<td class="col1 cell"><b>Partida:</b> <%= @flight.departure %></td>
+		<td class="col2 cell"><b>Corte:</b> <%= @flight.cut %></td>
+		<td class="col3 cell"><b>Licença:</b> <%= @flight.license %></td>
+	</tr>
+ 	<tr class="rowa">
+		<td class="col1 cell"><b>Observações:</b> <%= @flight.comments %></td>
+		<td class="col2 cell"><b>Grau:</b> <%= @flight.degree %></td>
+		<td class="col3 cell"><b>Inspeções:</b> <%= @flight.inspections %></td>
+	</tr>
+ 	<tr class="rowa">
+		<td class="col1 cell"><b>Partida:</b> <%= @flight.departure %></td>
+		<td class="col2 cell"><b>Checagens:</b> <%= @flight.checks %></td>
+		<td class="col3 cell"><b>Taxi:</b> <%= @flight.taxi %></td>
+	</tr>
+ 	<tr class="rowa">
+		<td class="col1 cell"><b>Vertical drop:</b> <%= @flight.vertical_drop %></td>
+		<td class="col2 cell"><b>Normal drop:</b> <%= @flight.normal_drop %></td>
+		<td class="col3 cell"><b>Drop down:</b> <%= @flight.drop_down %></td>
+	</tr>
+ 	<tr class="rowa">
+		<td class="col1 cell"><b>Max performance drop:</b> <%= @flight.max_performance_drop %></td>
+		<td class="col2 cell"><b>Nível do vôo:</b> <%= @flight.level_flight %></td>
+		<td class="col3 cell"><b>Hovering flight:</b> <%= @flight.hovering_flight %></td>
+	</tr>
+ 	<tr class="rowa">
+		<td class="col1 cell"><b>Back flight:</b> <%= @flight.back_flight %></td>
+		<td class="col2 cell"><b>Side flying:</b> <%= @flight.side_flying %></td>
+		<td class="col3 cell"><b>Correções:</b> <%= @flight.corrections %></td>
+	</tr>
+ 	<tr class="rowa">
+		<td class="col1 cell"><b>Turns:</b> <%= @flight.turns %></td>
+		<td class="col2 cell"><b>Variação de velocidade:</b> <%= @flight.speed_variation %></td>
+		<td class="col3 cell"><b>Auto rotação direta:</b> <%= @flight.direct_autorotation %></td>
+	</tr>
+ 	<tr class="rowa">
+		<td class="col1 cell"><b>Auto rotação 90º:</b> <%= @flight.autorotation_90º %></td>
+		<td class="col2 cell"><b>Auto rotação 180º:</b> <%= @flight.autorotation_180º %></td>
+		<td class="col3 cell"><b>Auto rotação 360º:</b> <%= @flight.autorotation_360º %></td>
+	</tr>
+
+ 	<tr class="rowa">
+		<td class="col1 cell"><b>Auto rotação hovering des:</b> <%= @flight.autorotation_Hovering_DES %></td>
+		<td class="col2 cell"><b>Auto rotação hovering fes:</b> <%= @flight.autorotation_Hovering_FES %></td>
+		<td class="col3 cell"><b>Aproximação normal:</b> <%= @flight.normal_approach %></td>
+	</tr>
+ 	<tr class="rowa">
+		<td class="col1 cell"><b>Aproximação grande ângulo:</b> <%= @flight.big_angle_approach %></td>
+		<td class="col2 cell"><b>Aproximação restrita:</b> <%= @flight.restrict_approach %></td>
+		<td class="col3 cell"><b>Pouso normal:</b> <%= @flight.normal_landing %></td>
+	</tr>
+ 	<tr class="rowa">
+		<td class="col1 cell"><b>Pouso em 4 noses:</b> <%= @flight.landing_in_4_noses %></td>
+		<td class="col2 cell"><b>Run landing:</b> <%= @flight.run_landing %></td>
+		<td class="col3 cell"><b>Landing incline land:</b> <%= @flight.landing_incline_land %></td>
+	</tr>
+ 	<tr class="rowa">
+		<td class="col1 cell"><b>Pouso direto:</b> <%= @flight.direct_landing %></td>
+		<td class="col2 cell"><b>Constant square nose:</b> <%= @flight.constant_square_nose %></td>
+		<td class="col3 cell"><b>Variable square nose:</b> <%= @flight.variable_square_nose %></td>
+	</tr>
+ 	<tr class="rowa">
+		<td class="col1 cell"><b>Tráfego normal:</b> <%= @flight.normal_traffic %></td>
+		<td class="col2 cell"><b>Hovered 1000ft:</b> <%= @flight.hovered_1000ft %></td>
+		<td class="col3 cell"><b>Landing on helipad:</b> <%= @flight.landing_on_helipad %></td>
+	</tr>
+ 	<tr class="rowa">
+		<td class="col1 cell"><b>Parada rápida:</b> <%= @flight.quick_stop %></td>
+		<td class="col2 cell"><b>Parking cutting:</b> <%= @flight.parking_cutting %></td>
+		<td class="col3 cell"><b>Operação em montanha:</b> <%= @flight.oper_in_mountain %></td>
+	</tr>
+ 	<tr class="rowa">
+		<td class="col1 cell"><b>Oper with crosswind:</b> <%= @flight.oper_with_crosswind %></td>
+		<td class="col2 cell"><b>Meteorologia:</b> <%= @flight.meteorology %></td>
+		<td class="col3 cell"><b>Planejamento:</b> <%= @flight.planning %></td>
+	</tr>
+ 	<tr class="rowa">
+		<td class="col1 cell"><b>Notificação de vôo:</b> <%= @flight.plan_notification %></td>
+		<td class="col2 cell"><b>Fonia:</b> <%= @flight.fonia %></td>
+		<td class="col3 cell"><b>Regras de tráfego:</b> <%= @flight.traffic_rules %></td>
+	</tr>
+ 	<tr class="rowa">
+		<td class="col1 cell"><b>Rota de vôo:</b> <%= @flight.flight_route %></td>
+		<td class="col2 cell"><b>Navegação visual:</b> <%= @flight.visual_navigation %></td>
+		<td class="col3 cell"><b>Procedimento de pernoite:</b> <%= @flight.overnight_procedure %></td>
+	</tr>
+ 	<tr class="rowa">
+		<td class="col1 cell"><b>Handling publications:</b> <%= @flight.handling_publications %></td>
+		<td class="col2 cell"><b>Iniciativa:</b> <%= @flight.initiative %></td>
+		<td class="col3 cell"> </td>
+	</tr>
+ </table>
 
-<p>
-  <b>Prefixo:</b>
-  <%= @flight.prefix_id %>
-</p>
-
-<p>
-  <b>Número:</b>
-  <%= @flight.number %>
-</p>
-
-<p>
-  <b>Tipo:</b>
-  <%= @flight.type_id %>
-</p>
-
-<p>
-  <b>Equipamento:</b>
-  <%= @flight.equipment %>
-</p>
-
-<p>
-  <b>Aeroporto de partida:</b>
-  <%= @flight.departure_aerodrome %>
-</p>
-
-<p>
-  <b>Nível:</b>
-  <%= @flight.level %>
-</p>
-
-<p>
-  <b>Rota:</b>
-  <%= @flight.route %>
-</p>
-
-<p>
-  <b>Aeroporto de destino:</b>
-  <%= @flight.destination_aerodrome %>
-</p>
-
-<p>
-  <b>Total ett:</b>
-  <%= @flight.total_ett %>
-</p>
-
-<p>
-  <b>Aeroporto alternativo:</b>
-  <%= @flight.alternate_aerodrome %>
-</p>
-
-<p>
-  <b>Outras informações:</b>
-  <%= @flight.other_information %>
-</p>
-
-<p>
-  <b>Duração:</b>
-  <%= @flight.endurance %>
-</p>
-
-<p>
-  <b>Pessoas a bordo:</b>
-  <%= @flight.persons_on_board %>
-</p>
-
-<p>
-  <b>Cores e marcas da aeronave:</b>
-  <%= @flight.aircraft_colors_and_marks %>
-</p>
-
-<p>
-  <b>Cliente:</b>
-  <%= @flight.client_id %>
-</p>
-
-<p>
-  <b>DAC Cliente:</b>
-  <%= @flight.client_dac %>
-</p>
-
-<p>
-  <b>Instrutor:</b>
-  <%= @flight.instructor_id %>
-</p>
-
-<p>
-  <b>DAC Instructor:</b>
-  <%= @flight.instructor_dac %>
-</p>
-
-<p>
-  <b>Registro:</b>
-  <%= @flight.registration %>
-</p>
-
-<p>
-  <b>Passageiro:</b>
-  <%= @flight.passenger %>
-</p>
-
-<p>
-  <b>Horímetro:</b>
-  <%= @flight.hourmeter %>
-</p>
-
-<p>
-  <b>Data do vôo:</b>
-  <%= @flight.flight_date %>
-</p>
-
-<p>
-  <b>Tempo de vôo:</b>
-  <%= @flight.flight_time %>
-</p>
-
-<p>
-  <b>Velocidade de cruzeiro:</b>
-  <%= @flight.cruising_speed %>
-</p>
-
-<p>
-  <b>Partida:</b>
-  <%= @flight.departure %>
-</p>
-
-<p>
-  <b>Corte:</b>
-  <%= @flight.cut %>
-</p>
-
-<p>
-  <b>Licença:</b>
-  <%= @flight.license %>
-</p>
-
-<p>
-  <b>Observações:</b>
-  <%= @flight.comments %>
-</p>
-
-<p>
-  <b>Grau:</b>
-  <%= @flight.degree %>
-</p>
-
-<p>
-  <b>Inspeções:</b>
-  <%= @flight.inspections %>
-</p>
-
-<p>
-  <b>Partida:</b>
-  <%= @flight.departure %>
-</p>
-
-<p>
-  <b>Checagens:</b>
-  <%= @flight.checks %>
-</p>
-
-<p>
-  <b>Taxi:</b>
-  <%= @flight.taxi %>
-</p>
-
-<p>
-  <b>Vertical drop:</b>
-  <%= @flight.vertical_drop %>
-</p>
-
-<p>
-  <b>Normal drop:</b>
-  <%= @flight.normal_drop %>
-</p>
-
-<p>
-  <b>Drop down:</b>
-  <%= @flight.drop_down %>
-</p>
-
-<p>
-  <b>Max performance drop:</b>
-  <%= @flight.max_performance_drop %>
-</p>
-
-<p>
-  <b>Nível do vôo:</b>
-  <%= @flight.level_flight %>
-</p>
-
-<p>
-  <b>Hovering flight:</b>
-  <%= @flight.hovering_flight %>
-</p>
-
-<p>
-  <b>Back flight:</b>
-  <%= @flight.back_flight %>
-</p>
-
-<p>
-  <b>Side flying:</b>
-  <%= @flight.side_flying %>
-</p>
-
-<p>
-  <b>Correções:</b>
-  <%= @flight.corrections %>
-</p>
-
-<p>
-  <b>Turns:</b>
-  <%= @flight.turns %>
-</p>
-
-<p>
-  <b>Variação de velocidade:</b>
-  <%= @flight.speed_variation %>
-</p>
-
-<p>
-  <b>Auto rotação direta:</b>
-  <%= @flight.direct_autorotation %>
-</p>
-
-<p>
-  <b>Auto rotação 90º:</b>
-  <%= @flight.autorotation_90º %>
-</p>
-
-<p>
-  <b>Auto rotação 180º:</b>
-  <%= @flight.autorotation_180º %>
-</p>
-
-<p>
-  <b>Auto rotação 360º:</b>
-  <%= @flight.autorotation_360º %>
-</p>
-
-<p>
-  <b>Auto rotação hovering des:</b>
-  <%= @flight.autorotation_Hovering_DES %>
-</p>
-
-<p>
-  <b>Auto rotação hovering fes:</b>
-  <%= @flight.autorotation_Hovering_FES %>
-</p>
-
-<p>
-  <b>Aproximação normal:</b>
-  <%= @flight.normal_approach %>
-</p>
-
-<p>
-  <b>Aproximação grande ângulo:</b>
-  <%= @flight.big_angle_approach %>
-</p>
-
-<p>
-  <b>Aproximação restrita:</b>
-  <%= @flight.restrict_approach %>
-</p>
-
-<p>
-  <b>Pouso normal:</b>
-  <%= @flight.normal_landing %>
-</p>
-
-<p>
-  <b>Pouso em 4 noses:</b>
-  <%= @flight.landing_in_4_noses %>
-</p>
-
-<p>
-  <b>Run landing:</b>
-  <%= @flight.run_landing %>
-</p>
-
-<p>
-  <b>Landing incline land:</b>
-  <%= @flight.landing_incline_land %>
-</p>
-
-<p>
-  <b>Pouso direto:</b>
-  <%= @flight.direct_landing %>
-</p>
-
-<p>
-  <b>Constant square nose:</b>
-  <%= @flight.constant_square_nose %>
-</p>
-
-<p>
-  <b>Variable square nose:</b>
-  <%= @flight.variable_square_nose %>
-</p>
-
-<p>
-  <b>Tráfego normal:</b>
-  <%= @flight.normal_traffic %>
-</p>
-
-<p>
-  <b>Hovered 1000ft:</b>
-  <%= @flight.hovered_1000ft %>
-</p>
-
-<p>
-  <b>Landing on helipad:</b>
-  <%= @flight.landing_on_helipad %>
-</p>
-
-<p>
-  <b>Parada rápida:</b>
-  <%= @flight.quick_stop %>
-</p>
-
-<p>
-  <b>Parking cutting:</b>
-  <%= @flight.parking_cutting %>
-</p>
-
-<p>
-  <b>Operação em montanha:</b>
-  <%= @flight.oper_in_mountain %>
-</p>
-
-<p>
-  <b>Oper with crosswind:</b>
-  <%= @flight.oper_with_crosswind %>
-</p>
-
-<p>
-  <b>Meteorologia:</b>
-  <%= @flight.meteorology %>
-</p>
-
-<p>
-  <b>Planejamento:</b>
-  <%= @flight.planning %>
-</p>
-
-<p>
-  <b>Notificação de vôo:</b>
-  <%= @flight.plan_notification %>
-</p>
-
-<p>
-  <b>Fonia:</b>
-  <%= @flight.fonia %>
-</p>
-
-<p>
-  <b>Regras de tráfego:</b>
-  <%= @flight.traffic_rules %>
-</p>
-
-<p>
-  <b>Rota de vôo:</b>
-  <%= @flight.flight_route %>
-</p>
-
-<p>
-  <b>Navegação visual:</b>
-  <%= @flight.visual_navigation %>
-</p>
-
-<p>
-  <b>Procedimento de pernoite:</b>
-  <%= @flight.overnight_procedure %>
-</p>
-
-<p>
-  <b>Handling publications:</b>
-  <%= @flight.handling_publications %>
-</p>
-
-<p>
-  <b>Iniciativa:</b>
-  <%= @flight.initiative %>
-</p>
 
 
 <%= link_to image_tag("left_arrow.png", :size=>"40x40", :border=>0), flights_path %>
