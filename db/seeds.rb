@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Emanuel', :city => cities.first)
+
+Client.create(:name=>'Marcio')
+
+Package.create(:name => 'heli10', :quantity => 10, :price => 980.00, :aircraft_type_id => 1, :active => true)
+Package.create(:name => 'gyro15', :quantity => 15, :price => 670.00, :aircraft_type_id => 2, :active => true)
+Package.create(:name => 'ultra20', :quantity => 20, :price => 1280.00, :aircraft_type_id => 3, :active => true)
