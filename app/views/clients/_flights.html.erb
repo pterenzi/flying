@@ -1,0 +1,14 @@
+<div>
+  <p><b>Flights</b></p>
+  <table>
+    <% @client.flights.each do |fl| %>
+      <tr>
+        <td><%= fl.aircraft.prefix %></td>
+        <td><%= fl.flight_date %></td>
+        <td><%= fl.instructor.name %></td>
+        <td><%= fl.duration %></td>
+        <td><%= fl.aircraft.aircraft_type.name %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
