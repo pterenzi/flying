@@ -9,11 +9,11 @@
   <tr>
     <td><%= balance.date %></td>
     <% if balance.credit? %>
-      <td><%= balance.hours %></td>
+      <td><%= balance.hours.to_s + balance.account.package.name %></td>
       <td>&nbsp;</td>
     <% else %>
       <td>&nbsp;</td>
-      <td><%= balance.hours %></td>
+      <td><%= balance.hours   %></td>
     <% end %>
   </tr>
   <br />

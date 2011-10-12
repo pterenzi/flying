@@ -24,7 +24,9 @@ class FlightsController < ApplicationController
   # GET /flights/new
   # GET /flights/new.json
   def new
-    @flight = Flight.new
+    @flight      = Flight.new(:duration => 2)
+    @clients     = Client.all(:order=>:name).collect{|c| [c.name, c.id]}
+    @instructors = Instructor.all(:order=>:name).collect{|c| [c.name, c.id]}
 
     respond_to do |format|
       format.html # new.html.erb
