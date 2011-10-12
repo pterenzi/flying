@@ -1,3 +1,18 @@
+<script type='text/javascript'>
+  $(function() {
+    $("#account_package_id").change(function(){
+      $.ajax({
+        url: '/packages/' + $("#account_package_id").val() + '/busca_pacote',
+        type: 'GET',
+        data: { id: $("#account_package_id").val() },
+        success: function(data){
+          $("#account_value").val(data.price);
+          $("#account_hours").val(data.quantity);
+        }
+      });
+    });
+  });
+</script>
 <%= form_for(@account) do |f| %>
   <% if @account.errors.any? %>
     <div id="error_explanation">
@@ -12,24 +27,47 @@
   <% end %>
 
   <%= f.hidden_field :credit %>
-  <div class="field">
-    <%= f.label "Cliente" %><br />
-    <%= f.select :client_id , @clients%>
-  </div>
-  <div class="field">
-    <%= f.label "Data de vencimento" %><br />
-    <%= f.date_select :due_date %>
-  </div>
 
   <% if @account.credit? %>
+    <div class="field">
+      <%= f.label :client_id %><br />
+      <%= f.select :client_id , @clients%>
+    </div>
+
     <div class="field">
       <%= f.label "Pacote" %><br />
       <%= f.select :package_id, @packages %>
     </div>
+    
+    <div class='field'>
+      <%= f.label "Horas" %><br />
+      <%= f.text_field :hours %>
+      
+    </div>
+    
+    <div class="field">
+      <%= f.label :Data %><br />
+      <%= f.date_select :due_date , :order => [:day,:month,:year] %>
+    </div>
+
   
   <% else %>
   
     <div class="field">
+      <%= f.label :supplier_id %><br />
+      <%= f.select :supplier_id , @suppliers%>
+    </div>
+
+    <div class="field">
+      <%= f.label :description %><br />
+      <%= f.text_field :description %>
+    </div>
+
+    <div class="field">
+      <%= f.label :payment_date %><br />
+      <%= f.date_select :payment_date , :order => [:day,:month,:year] %>
+    </div>
+    <div>
       <%= f.label "Descritivo" %><br />
       <%= f.text_field :description %>
     </div>
@@ -64,10 +102,6 @@
   <div class="field">
     <%= f.label :value %><br />
     <%= f.text_field :value %>
-  </div>
-  <div class="field">
-    <%= f.label :discount %><br />
-    <%= f.text_field :discount %>
   </div>
   <div class="field">
     <%= f.label :comments %><br />

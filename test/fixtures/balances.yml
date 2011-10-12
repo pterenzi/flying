@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  client: 
+  date: 2011-10-11 18:21:07
+  sale: 
+  flight: 
+
+two:
+  client: 
+  date: 2011-10-11 18:21:07
+  sale: 
+  flight: 

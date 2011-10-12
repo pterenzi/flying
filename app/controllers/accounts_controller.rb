@@ -1,4 +1,6 @@
 class AccountsController < ApplicationController
+  
+  
   # GET /accounts
   # GET /accounts.json
   def index
@@ -25,9 +27,10 @@ class AccountsController < ApplicationController
   # GET /accounts/new
   # GET /accounts/new.json
   def new
-    @account  = Account.new(:credit => params[:credit])
-    @clients  = Client.all.collect{|c| [c.name, c.id]}
-    @packages = Package.actives.collect{|c| [c.name, c.id]}
+    @account   = Account.new(:credit => params[:credit])
+    @clients   = Client.all(:order=>:name).collect{|c| [c.name, c.id]}
+    @suppliers = Supplier.all(:order=>:name).collect{|c| [c.name, c.id]}
+    @packages  = Package.actives.collect{|c| [c.name, c.id]}
     respond_to do |format|
       format.html # new.html.erb
       format.json { render :json => @account }
@@ -36,9 +39,10 @@ class AccountsController < ApplicationController
 
   # GET /accounts/1/edit
   def edit
-    @account  = Account.find(params[:id])
-    @clients  = Client.all.collect{|c| [c.name, c.id]}
-    @packages = Package.actives.collect{|c| [c.name, c.id]}
+    @account   = Account.find(params[:id])
+    @clients   = Client.all(:order=>:name).collect{|c| [c.name, c.id]}
+    @suppliers = Supplier.all(:order=>:name).collect{|c| [c.name, c.id]}
+    @packages  = Package.actives.collect{|c| [c.name, c.id]}
   end
 
   # POST /accounts

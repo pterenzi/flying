@@ -16,10 +16,10 @@
 
 <% data.each do |account| %>
   <tr>
-    <td><%= account.client.name %></td>
+    <td><%= account.supplier && account.supplier.name %></td>
     <td><%= account.type %></td>
     <td><%= account.company_id %></td>
-    <td><%= account.due_date %></td>
+    <td><%= I18n.t account.due_date %></td>
     <td><%= account.description %></td>
     <td><%= account.value %></td>
     <td><%= account.status %></td>

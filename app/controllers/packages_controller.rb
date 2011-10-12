@@ -87,4 +87,10 @@ class PackagesController < ApplicationController
       format.json { head :ok }
     end
   end
+  
+  def busca_pacote
+    @package = Package.find(params[:id])
+    
+    render :json => @package.to_json
+  end
 end

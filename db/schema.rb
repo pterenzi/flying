@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111011105947) do
+ActiveRecord::Schema.define(:version => 20111012210217) do
 
   create_table "accounts", :force => true do |t|
     t.integer  "client_id"
@@ -29,6 +29,8 @@ ActiveRecord::Schema.define(:version => 20111011105947) do
     t.datetime "updated_at"
     t.boolean  "credit",       :default => false
     t.integer  "package_id"
+    t.integer  "supplier_id"
+    t.integer  "hours"
   end
 
   create_table "admin_users", :force => true do |t|
@@ -72,6 +74,21 @@ ActiveRecord::Schema.define(:version => 20111011105947) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "balances", :force => true do |t|
+    t.integer  "client_id"
+    t.datetime "date"
+    t.integer  "account_id"
+    t.integer  "flight_id"
+    t.integer  "aircraft_type_id"
+    t.integer  "hours"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "balances", ["account_id"], :name => "index_balances_on_account_id"
+  add_index "balances", ["client_id"], :name => "index_balances_on_client_id"
+  add_index "balances", ["flight_id"], :name => "index_balances_on_flight_id"
 
   create_table "clients", :force => true do |t|
     t.string   "name"
@@ -140,9 +157,9 @@ ActiveRecord::Schema.define(:version => 20111011105947) do
     t.integer  "turns"
     t.integer  "speed_variation"
     t.integer  "direct_autorotation"
-    t.integer  "autorotation_90\302\272"
-    t.integer  "autorotation_180\302\272"
-    t.integer  "autorotation_360\302\272"
+    t.integer  "autorotation_90º"
+    t.integer  "autorotation_180º"
+    t.integer  "autorotation_360º"
     t.integer  "autorotation_Hovering_DES"
     t.integer  "autorotation_Hovering_FES"
     t.integer  "normal_approach"
@@ -202,6 +219,13 @@ ActiveRecord::Schema.define(:version => 20111011105947) do
     t.datetime "updated_at"
     t.integer  "aircraft_type_id"
     t.boolean  "active",           :default => true
+  end
+
+  create_table "suppliers", :force => true do |t|
+    t.string   "name"
+    t.boolean  "active"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
