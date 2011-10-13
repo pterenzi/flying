@@ -1,3 +1,5 @@
+<%= select_tag :client_id, options_for_select(@clients, params[:client_id]), :include_blank => true %>
+
 <%= render :partial => '/shared/date_range' %>
 <%= render :partial => 'sales' , :locals => {:data => @sales} %>
 <%= render :partial => 'payments' , :locals => {:data => @payments}  %>

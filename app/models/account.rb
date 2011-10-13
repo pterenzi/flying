@@ -7,8 +7,11 @@ class Account < ActiveRecord::Base
   validates_numericality_of :value, :on => [:create, :update], :message => "is not a number"
   validates_presence_of :value, :on => [:create, :update], :message => "can't be blank"
   
-  after_save :create_balance
+  after_save :copy_date_when_credit
+  after_save  :create_balance
   
+  scope :by_client, lambda{|id| where("client_id = ? ", id)}                
+
   scope :by_date, lambda {|start_date,end_date| 
                     where("payment_date between  ? and  ? ", start_date, end_date)
                   }
@@ -30,5 +33,10 @@ class Account < ActiveRecord::Base
                      :aircraft_type_id => self.package.aircraft_type.id)
     end  
   end
-  
+
+  def copy_date_when_credit
+    if self.credit?
+      self.update_attribute("payment_date", self.due_date)
+    end
+  end
 end
