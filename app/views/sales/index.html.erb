@@ -1,0 +1,30 @@
+<h1>Listing sales</h1>
+<%= select_tag :client_id, options_for_select(@clients, params[:client_id]), :include_blank => true %>
+<%= render :partial => '/shared/date_range' %>
+<table>
+  <tr>
+    <th>Data</th>
+    <th>Cliente</th>
+    <th>Pacote</th>
+    <th>Valor</th>
+    <th>&nbsp;</th>
+    <th>&nbsp;</th>
+    <th>&nbsp;</th>
+  </tr>
+
+<% @sales.each do |sale| %>
+  <tr>
+    <td><%= sale.date %></td>
+    <td><%= sale.client.name %></td>
+    <td><%= sale.package.name %></td>
+    <td><%= sale.value %></td>
+    <td><%= link_to 'Show', sale %></td>
+    <td><%= link_to 'Edit', edit_sale_path(sale) %></td>
+    <td><%= link_to 'Destroy', sale, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Sale', new_sale_path %>

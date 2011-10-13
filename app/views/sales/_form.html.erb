@@ -1,0 +1,75 @@
+<script type='text/javascript'>
+  $(function() {
+    $("#sale_package_id").change(function(){
+      retrieve_package();
+    });
+    retrieve_package();
+  });
+  
+  function retrieve_package(){
+    $.ajax({
+        url: '/packages/' + $("#sale_package_id").val() + '/busca_pacote',
+        type: 'GET',
+        data: { id: $("#sale_package_id").val() },
+        success: function(data){
+          $("#value").html(data.price);
+          $("#hours").html(data.quantity);
+          $("#sale_value").val(data.price);
+          $("#sale_hours").val(data.quantity);
+        }
+      });
+
+  }
+</script>
+
+
+<%= form_for(@sale) do |f| %>
+  <% if @sale.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sale.errors.count, "error") %> prohibited this sale from being saved:</h2>
+
+      <ul>
+      <% @sale.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div class="field">
+      <%= f.label :client_id %><br />
+      <%= f.select :client_id , @clients%>
+    </div>
+
+    <div class="field">
+      <%= f.label "Pacote" %><br />
+      <%= f.select :package_id, @packages %>
+    </div>
+    
+    <div class='field'> 
+      <%= f.label "Horas" %><br />
+      <span id="hours"></span>
+      <%= f.hidden_field :hours  %>
+    </div>
+
+    <div class="field">
+      <%= f.label :value %><br />
+      <span id="value"></span>
+      <%= f.hidden_field :value %>
+    </div>
+    
+    <div class="field">
+      <%= f.label :Data %><br />
+      <%= f.date_select :date , :order => [:day,:month,:year] %>
+    </div>
+
+    <div class='field'> 
+      <%= f.label "Descrição" %><br />
+      <%= f.text_field :description %>
+    </div>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

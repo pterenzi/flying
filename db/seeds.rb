@@ -7,6 +7,7 @@
 #   Mayor.create(:name => 'Emanuel', :city => cities.first)
 Client.delete_all
 Client.create(:name=>'Marcio')
+Client.create(:name=>'Bonifácio')
 
 Package.delete_all
 Package.create(:name => 'heli10', :quantity => 10, :price => 980.00, :aircraft_type_id => 1, :active => true)

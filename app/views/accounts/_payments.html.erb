@@ -4,13 +4,10 @@
 
 <table width="90%">
   <tr>
-    <th>Cliente</th>
-    <th>Tipo</th>
-    <th>Empresa</th>
-    <th>Vencimento</th>
+    <th>Data</th>
+    <th>Fornecedor</th>
     <th>Descritivo</th>
     <th>Valor</th>
-    <th>Status</th>
     <th></th>
     <th></th>
     <th></th>
@@ -18,13 +15,10 @@
 
 <% data.each do |account| %>
   <tr>
-    <td><%= account.supplier && account.supplier.name %></td>
-    <td><%= account.type %></td>
-    <td><%= account.company_id %></td>
     <td><%= account.payment_date %></td>
+    <td><%= account.supplier && account.supplier.name %></td>
     <td><%= account.description %></td>
     <td><%= account.value %></td>
-    <td><%= account.status %></td>
     <td align="right" width="25px"><%= link_to image_tag("info.png", :size=>"20x20", :border=>0, :title=>"Detalhes"), account %></td>
     <td align="center" width="25px"><%= link_to image_tag("edit.png", :size=>"20x20", :border=>0, :title=>"Editar"), edit_account_path(account) %></td>
     <td align="left" width="25px"><%= link_to image_tag("trash.jpg",:size=>"20x20", :border=>0, :title=>"Excluir"), account, :confirm => 'Tem certeza que quer excluir o registro?', :method => :delete %></td>

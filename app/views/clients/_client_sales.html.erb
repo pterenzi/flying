@@ -1,6 +1,17 @@
+<p>
+  <b>Vendas</b>
+</p>
+<table>
+  <tr>
+    <td>Data</td>
+    <td>Descrição</td>
+    <td>Valor</td>
+  </tr>
 <% @client.sales.each do |sale| %>
-  <%= sale.due_date %> |
-  <%= sale.package && sale.package.description %> |
-  <%= sale.value %>
-  <br />
+  <tr>
+    <td><%= sale.due_date %></td>
+    <td><%= sale.package && sale.package.description %></td>
+    <td><%= sale.value %></td>
+  </tr>
 <% end %>
+</table>

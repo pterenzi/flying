@@ -7,9 +7,6 @@ class Account < ActiveRecord::Base
   validates_numericality_of :value, :on => [:create, :update], :message => "is not a number"
   validates_presence_of :value, :on => [:create, :update], :message => "can't be blank"
   
-  after_save :copy_date_when_credit
-  after_save  :create_balance
-  
   scope :by_client, lambda{|id| where("client_id = ? ", id)}                
 
   scope :by_date, lambda {|start_date,end_date| 
@@ -17,7 +14,7 @@ class Account < ActiveRecord::Base
                   }
   scope :by_supplier, lambda{|id| where("supplier_id = ? ", id)}  
   scope :pay_by_date, :order => :payment_date
-  scope :payments, where(:credit => false)
+  scope :payments, where("credit IS NULL or credit = ?",false)
   scope :sales, where(:credit => true)
   
   
@@ -35,6 +32,10 @@ class Account < ActiveRecord::Base
     end  
   end
 
+  def due_date
+    self.payment_date
+  end
+  
   def copy_date_when_credit
     if self.credit?
       self.update_attribute("payment_date", self.due_date)

@@ -1,0 +1,18 @@
+<p>
+  <b>Recebimentos</b>
+</p>
+
+<table>
+  <tr>
+    <th>Data</th>
+    <th>Descrição</th>
+    <th>Valor</th>
+  </tr>
+<% @client.entries.each do |r| %>
+  <tr>
+    <td><%= r.date %></td>
+    <td><%= r.description %></td>
+    <td><%= r.value %></td>
+  </tr>
+<% end %>
+</table>

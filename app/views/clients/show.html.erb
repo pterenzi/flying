@@ -66,14 +66,11 @@
   <b>Credit:</b>
   <%= @client.credit %>
 </p>
-<hr>
-<p>
-  <b>Vendas</b>
-</p>
+
 <hr>
 <%= render :partial => 'client_sales' %>
 <hr>
-<%= render :partial => 'client_receives' %>
+<%= render :partial => 'client_entries' %>
 <hr>
 <%= render :partial => 'flights' %>
 <hr>
