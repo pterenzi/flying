@@ -32,6 +32,36 @@ GEM
       multi_json (~> 1.0)
     arel (2.2.1)
     bcrypt-ruby (3.0.1)
+    brI18n (3.0.4)
+      actionpack (>= 3.0.0)
+      activerecord (>= 3.0.0)
+      activesupport (>= 3.0.0)
+    brazilian-rails (3.0.4)
+      brI18n (= 3.0.4)
+      brcep (= 3.0.4)
+      brcpfcnpj (= 3.0.4)
+      brdata (= 3.0.4)
+      brdinheiro (= 3.0.4)
+      brhelper (= 3.0.4)
+      brnumeros (= 3.0.4)
+      brstring (= 3.0.4)
+    brcep (3.0.4)
+    brcpfcnpj (3.0.4)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
+    brdata (3.0.4)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
+    brdinheiro (3.0.4)
+      actionpack (>= 3.0.0)
+      activerecord (>= 3.0.0)
+      brnumeros (= 3.0.4)
+    brhelper (3.0.4)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
+    brnumeros (3.0.4)
+    brstring (3.0.4)
+      activesupport (>= 3.0.0)
     builder (3.0.0)
     coffee-script (2.2.0)
       coffee-script-source
@@ -114,6 +144,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  brazilian-rails
   coffee-script
   jquery-rails
   json (= 1.4.6)

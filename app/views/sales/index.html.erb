@@ -24,7 +24,7 @@
 <% @sales.each do |sale| %>
   <tr>
     <td><%= sale.date %></td>
-    <td><%= sale.client.name %></td>
+    <td><%= link_to sale.client.name, client_path(sale.client) %></td>
     <td><%= sale.package.name %></td>
     <td><%= sale.value %></td>
     <td align="right"><%= link_to image_tag("info.png", :size=>"20x20", :border=>0, :title=>"Detalhes"), sale %></td>

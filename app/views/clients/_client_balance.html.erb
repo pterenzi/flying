@@ -1,5 +1,5 @@
 <p>
-  <b>Crédito de horas</b>
+  <h2>Crédito de horas</h2>
 </p>
 
 <table>
@@ -10,7 +10,7 @@
     <th>Saldo</th>
   </tr>
 <% total = 0 %>
-<% @client.balances.each do |balance| %>
+<% @client.balances.order(:date).each do |balance| %>
   <tr>
     <td><%= balance.date %></td>
     <% if balance.credit? %>
