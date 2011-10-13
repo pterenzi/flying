@@ -4,8 +4,10 @@ class AccountsController < ApplicationController
   # GET /accounts
   # GET /accounts.json
   def index
-    @sales    = Account.sales(:order => :payment_date)
-    @payments = Account.payments(:order => :due_date)
+
+    date_params
+    @sales    = Account.sales.by_date(@start_date, @end_date)
+    @payments = Account.payments.by_date(@start_date, @end_date).pay_by_date
 
     respond_to do |format|
       format.html # index.html.erb

@@ -27,6 +27,8 @@
 		<td class="col3 cell"> </td>
 	</tr>
  </table>
+ 
+<%= render :partial => 'flights'%>
 
 <%= link_to image_tag("left_arrow.png", :size=>"40x40", :border=>0, :title=>"Voltar"), aircrafts_path %>
 <%= link_to image_tag("edit.png", :size=>"40x40", :border=>0, :title=>"Editar"), edit_aircraft_path(@aircraft) %>
