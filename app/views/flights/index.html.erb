@@ -3,6 +3,9 @@
 
 <%= select_tag :client_id, options_for_select(@clients, params[:client_id]), :include_blank => true %>
 
+<%= select_tag :aircraft_id, options_for_select(@aircrafts, params[:aircraft_id]), :include_blank => true %>
+
+
 <%= render :partial => '/shared/date_range' %>
 
 <table>
@@ -22,7 +25,7 @@
 
 <% @flights.each do |flight| %>
   <tr>
-    <td><%= flight.prefix_id %></td>
+    <td><%= flight.aircraft.prefix %></td>
     <td><%= link_to flight.number, flight %></td>
     <td><%= flight.type_id %></td>
     <td><%= flight.equipment %></td>

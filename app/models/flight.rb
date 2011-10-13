@@ -5,6 +5,8 @@ class Flight < ActiveRecord::Base
   
   after_save :create_balance
   
+
+  scope :by_aircraft, lambda{|id| where("aircraft_id = ? ", id)}                
   scope :by_client, lambda{|id| where("client_id = ? ", id)}                
   
   scope :by_date, lambda {|start_date,end_date| 

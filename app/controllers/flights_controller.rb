@@ -10,8 +10,13 @@ class FlightsController < ApplicationController
     if params[:client_id] && params[:client_id].to_i > 0
       @flights = @flights.by_client(params[:client_id])
     end
+    if params[:aircraft_id] && params[:aircraft_id].to_i > 0
+      @flights = @flights.by_aircraft(params[:aircraft_id])
+    end
+
     @instructors = Instructor.all.collect{ |i| [i.name, i.id] }
     @clients     = Client.all.collect{ |c| [c.name, c.id] }
+    @aircrafts   = Aircraft.all.collect{ |a| [a.prefix, a.id] }
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @flights }
