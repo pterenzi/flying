@@ -3,7 +3,7 @@ class PackagesController < ApplicationController
   # GET /packages
   # GET /packages.json
   def index
-    @packages       = Package.all
+    @packages       = Package.all(:order => :name)
     @aircratf_types = AircraftType.all.collect{|c| [c.name, c.id]}
 
     respond_to do |format|

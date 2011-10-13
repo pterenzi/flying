@@ -2,7 +2,7 @@ class AircraftsController < ApplicationController
   # GET /aircrafts
   # GET /aircrafts.json
   def index
-    @aircrafts = Aircraft.all
+    @aircrafts = Aircraft.all(:order => :prefix)
 
     respond_to do |format|
       format.html # index.html.erb
