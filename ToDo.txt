@@ -1,0 +1,11 @@
+1- Implementar recebimento
+
+2- Clients:
+
+3- Supliers:
+		criar os campos nome, CNPJ, contato, endereço, bairro, cidade, estado, CEP, telefone, fax, email, site
+		
+4- Aircrafts:
+ 		alterar o campo "Pertence a escola" para um radio button
+		alterar o campo "horimetro" para integer
+		alterar o campo "horas de vôo" para integer
