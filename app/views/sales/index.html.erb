@@ -1,6 +1,15 @@
-<h1>Listing sales</h1>
-<%= select_tag :client_id, options_for_select(@clients, params[:client_id]), :include_blank => true %>
-<%= render :partial => '/shared/date_range' %>
+<h1>Vendas</h1>
+<table>
+	<tr>
+		<th>Cliente:</th>
+		<th>Data:</th>
+	</tr>
+	 	<td><%= select_tag :client_id, options_for_select(@clients, params[:client_id]), :include_blank => true %></td>
+	    <td><%= render :partial => '/shared/date_range' %></td>
+	</tr>
+</table>
+<hr>
+
 <table>
   <tr>
     <th>Data</th>
@@ -18,13 +27,13 @@
     <td><%= sale.client.name %></td>
     <td><%= sale.package.name %></td>
     <td><%= sale.value %></td>
-    <td><%= link_to 'Show', sale %></td>
-    <td><%= link_to 'Edit', edit_sale_path(sale) %></td>
-    <td><%= link_to 'Destroy', sale, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td align="right"><%= link_to image_tag("info.png", :size=>"20x20", :border=>0, :title=>"Detalhes"), sale %></td>
+    <td align="center"><%= link_to image_tag("edit.png", :size=>"20x20", :border=>0, :title=>"Editar"), edit_sale_path(sale) %></td>
+    <td align="left"><%= link_to image_tag("trash.jpg",:size=>"20x20", :border=>0, :title=>"Excluir"), sale, :confirm => 'Tem certeza que quer excluir o registro?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
-
-<%= link_to 'New Sale', new_sale_path %>
+<hr>
+<%= link_to image_tag("plus2.png", :size=>"40x40", :border=>0, :title=>"Adicionar"), new_sale_path %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111012222522) do
+ActiveRecord::Schema.define(:version => 20111013171428) do
 
   create_table "accounts", :force => true do |t|
     t.integer  "client_id"
@@ -78,15 +78,14 @@ ActiveRecord::Schema.define(:version => 20111012222522) do
   create_table "balances", :force => true do |t|
     t.integer  "client_id"
     t.datetime "date"
-    t.integer  "account_id"
     t.integer  "flight_id"
     t.integer  "aircraft_type_id"
     t.float    "hours"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "sale_id"
   end
 
-  add_index "balances", ["account_id"], :name => "index_balances_on_account_id"
   add_index "balances", ["client_id"], :name => "index_balances_on_client_id"
   add_index "balances", ["flight_id"], :name => "index_balances_on_flight_id"
 
@@ -110,6 +109,15 @@ ActiveRecord::Schema.define(:version => 20111012222522) do
 
   create_table "debts", :force => true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "entries", :force => true do |t|
+    t.date     "date"
+    t.integer  "client_id"
+    t.decimal  "value",       :precision => 8, :scale => 2
+    t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -223,9 +231,40 @@ ActiveRecord::Schema.define(:version => 20111012222522) do
     t.boolean  "active",           :default => true
   end
 
+  create_table "receives", :force => true do |t|
+    t.date     "date"
+    t.string   "description"
+    t.decimal  "value",       :precision => 8, :scale => 2
+    t.integer  "client_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sales", :force => true do |t|
+    t.integer  "client_id"
+    t.date     "date"
+    t.integer  "package_id"
+    t.decimal  "value",       :precision => 8, :scale => 2
+    t.decimal  "hours",       :precision => 2, :scale => 1
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "suppliers", :force => true do |t|
     t.string   "name"
     t.boolean  "active"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "vendas", :force => true do |t|
+    t.integer  "client_id"
+    t.date     "date"
+    t.integer  "package_id"
+    t.decimal  "value",       :precision => 8, :scale => 2
+    t.decimal  "hours",       :precision => 2, :scale => 1
+    t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

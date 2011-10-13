@@ -1,6 +1,6 @@
-<h1>Editing sale</h1>
-
+<h1>Editar Venda</h1>
+<hr>
 <%= render 'form' %>
-
-<%= link_to 'Show', @sale %> |
-<%= link_to 'Back', sales_path %>
+<hr>
+<%= link_to image_tag("left_arrow.png", :size=>"40x40", :border=>0, :title=>"Voltar"), sales_path %>
+<%= link_to image_tag("info.png", :size=>"40x40", :border=>0, :title=>"Detalhes"), @sale%>

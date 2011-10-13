@@ -19,6 +19,7 @@ class FlightsController < ApplicationController
     @aircrafts   = Aircraft.all.collect{ |a| [a.prefix, a.id] }
     respond_to do |format|
       format.html # index.html.erb
+      format.js # index.js.erb
       format.json { render :json => @flights }
     end
   end
