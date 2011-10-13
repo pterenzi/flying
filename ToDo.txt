@@ -1,4 +1,3 @@
-1- Implementar recebimento
 
 2- Pagamentos:
 		Incluir os campos número do documento, data de vencimento, Status (check box pago/não pago) descritivo, código de barras, juros, desconto, valor pago (ou total),data de pagamento (label pode ser "pago em"), observações
@@ -10,6 +9,11 @@
  		alterar o campo "Pertence a escola" para check box
 		alterar o campo "horimetro" para integer
 		alterar o campo "horas de vôo" para integer
-5- Locale de datas e números
 
 6- Ajustar tamanho do date pick
+
+FEITO
+
+1- Implementar recebimento
+
+5- Locale de datas e números
