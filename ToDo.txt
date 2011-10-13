@@ -1,11 +1,12 @@
 1- Implementar recebimento
 
-2- Clients:
+2- Pagamentos:
+		Incluir os campos número do documento, data de vencimento, Status (check box pago/não pago) descritivo, código de barras, juros, desconto, valor pago (ou total),data de pagamento (label pode ser "pago em"), observações
 
 3- Supliers:
 		criar os campos nome, CNPJ, contato, endereço, bairro, cidade, estado, CEP, telefone, fax, email, site
 		
 4- Aircrafts:
- 		alterar o campo "Pertence a escola" para um radio button
+ 		alterar o campo "Pertence a escola" para check box
 		alterar o campo "horimetro" para integer
 		alterar o campo "horas de vôo" para integer
