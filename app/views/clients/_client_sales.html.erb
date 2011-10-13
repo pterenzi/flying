@@ -1,5 +1,5 @@
 <p>
-  <b>Vendas</b>
+  <h2>Vendas</h2>
 </p>
 <table>
   <tr>
@@ -7,9 +7,9 @@
     <td>Descrição</td>
     <td>Valor</td>
   </tr>
-<% @client.sales.each do |sale| %>
+<% @client.sales.order(:date).each do |sale| %>
   <tr>
-    <td><%= sale.due_date %></td>
+    <td><%= sale.date %></td>
     <td><%= sale.package && sale.package.description %></td>
     <td><%= sale.value %></td>
   </tr>

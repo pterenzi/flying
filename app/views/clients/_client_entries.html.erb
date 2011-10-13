@@ -1,5 +1,5 @@
 <p>
-  <b>Recebimentos</b>
+  <h2>Recebimentos</h2>
 </p>
 
 <table>
@@ -8,7 +8,7 @@
     <th>Descrição</th>
     <th>Valor</th>
   </tr>
-<% @client.entries.each do |r| %>
+<% @client.entries.order(:date).each do |r| %>
   <tr>
     <td><%= r.date %></td>
     <td><%= r.description %></td>
