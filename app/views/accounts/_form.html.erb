@@ -11,36 +11,6 @@
     </div>
   <% end %>
 
-  <%= f.hidden_field :credit %>
-
-  <% if @account.credit? %>
-    <div class="field">
-      <%= f.label :client_id %><br />
-      <%= f.select :client_id , @clients%>
-    </div>
-
-    <div class="field">
-      <%= f.label "Pacote" %><br />
-      <%= f.select :package_id, @packages %>
-    </div>
-    
-    <div class='field'>
-      <%= f.label "Horas" %><br />
-      <%= f.text_field :hours,  :disabled=>true  %>
-    </div>
-
-    <div class="field">
-      <%= f.label :value %><br />
-      <%= f.text_field :value,  :disabled=>true %>
-    </div>
-    
-    <div class="field">
-      <%= f.label :Data %><br />
-      <%= f.date_select :due_date , :order => [:day,:month,:year] %>
-    </div>
-
-  
-  <% else %>
   
     <div class="field">
       <%= f.label :supplier_id %><br />
@@ -57,7 +27,6 @@
       <%= f.text_field :value %>
     </div>
 
-  <% end %>
   <div class="field">
     <%= f.label :comments %><br />
     <%= f.text_area :comments, :rows=>3 %>

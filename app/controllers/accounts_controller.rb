@@ -39,7 +39,7 @@ class AccountsController < ApplicationController
   # GET /accounts/new
   # GET /accounts/new.json
   def new
-    @account   = Account.new(:credit => params[:credit])
+    @account   = Account.new()
     @clients   = Client.all(:order=>:name).collect{|c| [c.name, c.id]}
     @suppliers = Supplier.all(:order=>:name).collect{|c| [c.name, c.id]}
     @packages  = Package.actives.collect{|c| [c.name, c.id]}
