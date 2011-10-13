@@ -4,16 +4,9 @@ class AccountsController < ApplicationController
   # GET /accounts
   # GET /accounts.json
   def index
-
     date_params
-    @sales      = Entry.by_date(@start_date, @end_date)
     @payments   = Account.payments.by_date(@start_date, @end_date).pay_by_date
-    @clients    = Client.all.collect{ |c| [c.name, c.id] }
     @suppliers  = Supplier.all.collect{ |s| [s.name, s.id] }
-
-    if params[:client_id] && params[:client_id].to_i > 0
-      @sales = @sales.by_client(params[:client_id])
-    end
 
     if params[:supplier_id] && params[:supplier_id].to_i > 0
       @payments = @payments.by_supplier(params[:supplier_id])
@@ -98,6 +91,28 @@ class AccountsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to accounts_url }
       format.json { head :ok }
+    end
+  end
+  
+  
+  def cash_flow
+    date_params
+    @sales      = Entry.by_date(@start_date, @end_date)
+    @payments   = Account.payments.by_date(@start_date, @end_date).pay_by_date
+    @clients    = Client.all.collect{ |c| [c.name, c.id] }
+    @suppliers  = Supplier.all.collect{ |s| [s.name, s.id] }
+
+    if params[:client_id] && params[:client_id].to_i > 0
+      @sales = @sales.by_client(params[:client_id])
+    end
+
+    if params[:supplier_id] && params[:supplier_id].to_i > 0
+      @payments = @payments.by_supplier(params[:supplier_id])
+    end
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render :json => @accounts }
     end
   end
 end
