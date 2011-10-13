@@ -1,7 +1,13 @@
 <script type='text/javascript'>
   $(function() {
     $("#account_package_id").change(function(){
-      $.ajax({
+      retrieve_package();
+    });
+    retrieve_package();
+  });
+  
+  function retrieve_package(){
+    $.ajax({
         url: '/packages/' + $("#account_package_id").val() + '/busca_pacote',
         type: 'GET',
         data: { id: $("#account_package_id").val() },
@@ -10,8 +16,8 @@
           $("#account_hours").val(data.quantity);
         }
       });
-    });
-  });
+
+  }
 </script>
 <%= form_for(@account) do |f| %>
   <% if @account.errors.any? %>
