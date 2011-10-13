@@ -5,7 +5,7 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Emanuel', :city => cities.first)
-
+Client.delete_all
 Client.create(:name=>'Marcio')
 
 Package.delete_all
@@ -17,3 +17,7 @@ Instructor.delete_all
 Instructor.create(:name => 'Joaquim', :instructor_dac => '234532', :hour_price=>90)
 Instructor.create(:name => 'Manuel', :instructor_dac => 'fsdsf3', :hour_price=>100)
 
+Supplier.delete_all
+Supplier.create(:name => 'luz')
+Supplier.create(:name => 'salário')
+Supplier.create(:name => 'contador')
