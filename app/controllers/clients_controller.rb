@@ -2,8 +2,12 @@ class ClientsController < ApplicationController
   # GET /clients
   # GET /clients.json
   def index
-    @clients = Client.all
-
+    if params[:initials]
+      @clients = Client.starting_with(params[:initials])
+    else
+      @clients = Client.all
+    end
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @clients }

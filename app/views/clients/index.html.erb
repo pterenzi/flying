@@ -1,5 +1,8 @@
 <h1>Clientes</h1>
 
+<%= text_field_tag :name, params[:initials]%>
+<%= submit_tag :search, :onclick => 'javascript:search();'%>
+
 <table width="90%">
   <tr>
     <th>Nome</th>
