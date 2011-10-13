@@ -9,6 +9,10 @@ class Account < ActiveRecord::Base
   
   after_save :create_balance
   
+  scope :by_date, lambda {|start_date,end_date| 
+                    where("payment_date between  ? and  ? ", start_date, end_date)
+                  }
+  scope :pay_by_date, :order => :payment_date
   scope :payments, where(:credit => false)
   scope :sales, where(:credit => true)
   

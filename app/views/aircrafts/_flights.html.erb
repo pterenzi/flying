@@ -1,10 +1,11 @@
 <div>
   <p><b>Flights</b></p>
   <table>
-    <% @instructor.flights.each do |fl| %>
+    <% @aircraft.flights.each do |fl| %>
       <tr>
-        <td><%= link_to fl.aircraft.prefix, aircraft_path(fl.aircraft) %></td>
+        <td><%= fl.client.name %></td>
         <td><%= fl.flight_date %></td>
+        <td><%= link_to fl.instructor.name, instructor_path(fl.instructor) %></td>
         <td><%= fl.duration %></td>
         <td><%= fl.aircraft.aircraft_type.name %></td>
       </tr>
