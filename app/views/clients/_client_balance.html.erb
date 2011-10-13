@@ -14,7 +14,7 @@
   <tr>
     <td><%= balance.date %></td>
     <% if balance.credit? %>
-      <td><%= balance.hours.to_s + balance.account.package.name %></td>
+      <td><%= balance.hours.to_s + balance.sale.package.name %></td>
       <td>&nbsp;</td>
       <% total += balance.hours %>
     <% else %>

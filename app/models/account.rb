@@ -1,13 +1,13 @@
 class Account < ActiveRecord::Base
   
-  belongs_to :client
-  belongs_to :package
+  # belongs_to :client
+  # belongs_to :package
   belongs_to :supplier
     
   validates_numericality_of :value, :on => [:create, :update], :message => "is not a number"
   validates_presence_of :value, :on => [:create, :update], :message => "can't be blank"
   
-  scope :by_client, lambda{|id| where("client_id = ? ", id)}                
+  # scope :by_client, lambda{|id| where("client_id = ? ", id)}                
 
   scope :by_date, lambda {|start_date,end_date| 
                     where("payment_date between  ? and  ? ", start_date, end_date)

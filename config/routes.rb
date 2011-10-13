@@ -1,5 +1,7 @@
 Flying::Application.routes.draw do
   
+  resources :sales
+
   resources :entries
 
   resources :suppliers
