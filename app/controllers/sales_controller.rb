@@ -54,8 +54,11 @@ class SalesController < ApplicationController
 
     respond_to do |format|
       if @sale.save
-        format.html { redirect_to @sale, :notice => 'Sale was successfully created.' }
+        # format.html { redirect_to @sale, :notice => 'Sale was successfully created.' }
         format.json { render :json => @sale, :status => :created, :location => @sale }
+        format.html {redirect_to new_entry_path(:client_id=> @sale.client_id, 
+                        :date => @sale.date, :value => @sale.value, 
+                        :description=>@sale.package.name)}
       else
         @clients   = Client.all(:order=>:name).collect{|c| [c.name, c.id]}
         @packages  = Package.actives.collect{|c| [c.name, c.id]}
