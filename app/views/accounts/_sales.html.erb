@@ -22,7 +22,7 @@
     <td><%= receive.description %></td>
     <td><%= receive.value %></td>
     <td align="right" width="25px"><%= link_to image_tag("info.png", :size=>"20x20", :border=>0, :title=>"Detalhes"), receive %></td>
-    <td align="center" width="25px"><%= link_to image_tag("edit.png", :size=>"20x20", :border=>0, :title=>"Editar"), edit_receife_path(receive) %></td>
+    <td align="center" width="25px"><%= link_to image_tag("edit.png", :size=>"20x20", :border=>0, :title=>"Editar"), edit_entry_path(receive) %></td>
     <td align="left" width="25px"><%= link_to image_tag("trash.jpg",:size=>"20x20", :border=>0, :title=>"Excluir"), receive, :confirm => 'Tem certeza que quer excluir o registro?', :method => :delete %></td>
   </tr>
 <% end %>
@@ -31,4 +31,4 @@
 
 <br />
 
-<%= link_to image_tag("plus2.png", :size=>"40x40", :border=>0, :title=>"Adicionar"), new_receife_path %>
+<%= link_to image_tag("plus2.png", :size=>"40x40", :border=>0, :title=>"Adicionar"), new_entry_path %>

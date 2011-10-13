@@ -1,0 +1,26 @@
+<h1>Listing entries</h1>
+
+<table>
+  <tr>
+    <th>Data</th>
+    <th>Cliente</th>
+    <th>Descrição</th>
+    <th>Valor</th>
+  </tr>
+
+<% @entries.each do |entry| %>
+  <tr>
+    <td><%= entry.date %></td>
+    <td><%= entry.client.name if entry.client %></td>
+    <td><%= entry.description %></td>
+    <td><%= entry.value %></td>
+    <td><%= link_to 'Show', entry %></td>
+    <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
+    <td><%= link_to 'Destroy', entry, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Entry', new_entry_path %>

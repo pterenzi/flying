@@ -1,6 +1,6 @@
 Flying::Application.routes.draw do
   
-  resources :receives
+  resources :entries
 
   resources :suppliers
 

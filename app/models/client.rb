@@ -2,6 +2,7 @@ class Client < ActiveRecord::Base
 
   # has_many :fligths
   has_many :balances
+  has_many :entries
   
   scope :starting_with, lambda { |i| where('name like (?)', i+'%')}
   
