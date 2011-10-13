@@ -1,5 +1,8 @@
 <h1>Vôos</h1>
 <%= select_tag :instructor_id, options_for_select(@instructors, params[:instructor_id]), :include_blank => true %>
+
+<%= select_tag :client_id, options_for_select(@clients, params[:client_id]), :include_blank => true %>
+
 <%= render :partial => '/shared/date_range' %>
 
 <table>
