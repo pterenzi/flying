@@ -2,7 +2,8 @@ class FlightsController < ApplicationController
   # GET /flights
   # GET /flights.json
   def index
-    @flights = Flight.all
+    date_params
+    @flights = Flight.by_date(@start_date, @end_date)
 
     respond_to do |format|
       format.html # index.html.erb

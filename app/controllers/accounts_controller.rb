@@ -5,13 +5,7 @@ class AccountsController < ApplicationController
   # GET /accounts.json
   def index
     # debugger
-    if params[:start_date]
-      @start_date = params[:start_date].to_date
-      @end_date   = params[:end_date].to_date
-    else
-      @start_date = Date.today
-      @end_date   = Date.today
-    end
+    date_params
     @sales    = Account.sales.by_date(@start_date, @end_date)
     @payments = Account.payments.by_date(@start_date, @end_date).pay_by_date
     respond_to do |format|
