@@ -15,6 +15,7 @@ class Account < ActiveRecord::Base
   scope :by_date, lambda {|start_date,end_date| 
                     where("payment_date between  ? and  ? ", start_date, end_date)
                   }
+  scope :by_supplier, lambda{|id| where("supplier_id = ? ", id)}  
   scope :pay_by_date, :order => :payment_date
   scope :payments, where(:credit => false)
   scope :sales, where(:credit => true)
