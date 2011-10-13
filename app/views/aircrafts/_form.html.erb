@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label "Pertence à escola" %><br />
-    <%= f.text_field :owner %>
+    <%= f.check_box :owner %>
   </div>
   <div class="field">
     <%= f.label "Fabricante" %><br />
@@ -37,7 +37,7 @@
   </div>
   <div class="field">
     <%= f.label "Horímetro" %><br />
-    <%= f.time_select :hourmeter %>
+    <%= f.text_field :hourmeter %>
   </div>
   <div class="field">
     <%= f.label "Parada p/ manutenção" %><br />
@@ -49,7 +49,7 @@
   </div>
   <div class="field">
     <%= f.label "Horas de vôo" %><br />
-    <%= f.time_select :flyght_hours %>
+    <%= f.text_field :flyght_hours %>
   </div>
   <div class="field">
     <%= f.label  "Observações" %><br />
