@@ -6,7 +6,7 @@ class AccountsController < ApplicationController
   def index
 
     date_params
-    @sales      = Account.sales.by_date(@start_date, @end_date)
+    @sales      = Receive.by_date(@start_date, @end_date)
     @payments   = Account.payments.by_date(@start_date, @end_date).pay_by_date
     @clients    = Client.all.collect{ |c| [c.name, c.id] }
     @suppliers  = Supplier.all.collect{ |s| [s.name, s.id] }

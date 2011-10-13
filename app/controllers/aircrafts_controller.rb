@@ -24,7 +24,7 @@ class AircraftsController < ApplicationController
   # GET /aircrafts/new
   # GET /aircrafts/new.json
   def new
-    @aircraft = Aircraft.new
+    @aircraft       = Aircraft.new
     @aircraft_types = AircraftType.by_name.collect{|at| [at.name, at.id]}
     respond_to do |format|
       format.html # new.html.erb
@@ -34,7 +34,8 @@ class AircraftsController < ApplicationController
 
   # GET /aircrafts/1/edit
   def edit
-    @aircraft = Aircraft.find(params[:id])
+    @aircraft       = Aircraft.find(params[:id])
+    @aircraft_types = AircraftType.by_name.collect{|at| [at.name, at.id]}
   end
 
   # POST /aircrafts
@@ -47,6 +48,8 @@ class AircraftsController < ApplicationController
         format.html { redirect_to @aircraft, :notice => 'Aircraft was successfully created.' }
         format.json { render :json => @aircraft, :status => :created, :location => @aircraft }
       else
+        @aircraft_types = AircraftType.by_name.collect{|at| [at.name, at.id]}
+
         format.html { render :action => "new" }
         format.json { render :json => @aircraft.errors, :status => :unprocessable_entity }
       end
@@ -63,6 +66,8 @@ class AircraftsController < ApplicationController
         format.html { redirect_to @aircraft, :notice => 'Aircraft was successfully updated.' }
         format.json { head :ok }
       else
+        @aircraft_types = AircraftType.by_name.collect{|at| [at.name, at.id]}
+
         format.html { render :action => "edit" }
         format.json { render :json => @aircraft.errors, :status => :unprocessable_entity }
       end

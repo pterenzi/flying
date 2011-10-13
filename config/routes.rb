@@ -1,5 +1,7 @@
 Flying::Application.routes.draw do
   
+  resources :receives
+
   resources :suppliers
 
   root :to => 'accounts#index'

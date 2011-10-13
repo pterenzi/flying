@@ -1,0 +1,26 @@
+<h1>Listing receives</h1>
+
+<table>
+  <tr>
+    <th>Data</th>
+    <th>Cliente</th>
+    <th>Descrição</th>
+    <th>Valor</th>
+  </tr>
+
+<% @receives.each do |receive| %>
+  <tr>
+    <td><%= receive.date %></td>
+    <td><%= receive.client.name if receive.client %></td>
+    <td><%= receive.description %></td>
+    <td><%= receive.value %></td>
+    <td><%= link_to 'Show', receive %></td>
+    <td><%= link_to 'Edit', edit_receife_path(receive) %></td>
+    <td><%= link_to 'Destroy', receive, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Receive', new_receife_path %>

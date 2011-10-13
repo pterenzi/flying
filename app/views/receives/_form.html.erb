@@ -1,0 +1,37 @@
+<%= form_for(@receive) do |f| %>
+  <% if @receive.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@receive.errors.count, "error") %> prohibited this receive from being saved:</h2>
+
+      <ul>
+      <% @receive.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :client %><br />
+    <%= f.select :client_id, @clients, :include_blank => true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :date %><br />
+    <%= f.date_select :date , :order => [:day,:month,:year] %>
+  </div>
+
+  <div class="field">
+    <%= f.label :value %><br />
+    <%= f.text_field :value  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description  %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
