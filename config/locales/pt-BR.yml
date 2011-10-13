@@ -425,11 +425,12 @@ pt-BR:
             operator: "Operador"
             
     models:
-     account: "Conta"
+     account: "Registro"
     attributes:
           account:
-            client_id: "Fornecedor/Cliente"
+            client_id: "Cliente"
             company_id: "Empresa"
+            supplier_id: "Fornecedor"
             due_date: "Vencimento"
             description: "Descritivo"
             value: "Valor"

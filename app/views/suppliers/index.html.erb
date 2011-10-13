@@ -1,9 +1,15 @@
-<h1>Listing suppliers</h1>
+<table>
+	<tr>
+		<td><h1>Fornecedores</h1><td>
+	<td><%= text_field_tag :name, params[:initials]%><%= submit_tag :search, :onclick => 'javascript:search();'%></td>
+	</tr>
+</table>
 
+<hr>
 <table>
   <tr>
-    <th>Name</th>
-    <th>Active</th>
+    <th>Nome</th>
+    <th>Ativo</th>
     <th></th>
     <th></th>
     <th></th>
@@ -11,15 +17,16 @@
 
 <% @suppliers.each do |supplier| %>
   <tr>
-    <td><%= supplier.name %></td>
+    <td><%= link_to supplier.name, supplier %></td>
     <td><%= supplier.active %></td>
-    <td><%= link_to 'Show', supplier %></td>
-    <td><%= link_to 'Edit', edit_supplier_path(supplier) %></td>
-    <td><%= link_to 'Destroy', supplier, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td align="right" width="25px"><%= link_to image_tag("info.png", :size=>"20x20", :border=>0, :title=>"Detalhes"), supplier %></td>
+    <td align="center" width="25px"><%= link_to image_tag("edit.png", :size=>"20x20", :border=>0, :title=>"Editar"), edit_supplier_path(supplier) %></td>
+    <td align="left" width="25px"><%= link_to image_tag("trash.jpg",:size=>"20x20", :border=>0, :title=>"Excluir"), supplier, :confirm => 'Tem certeza que quer excluir o registro?', :method => :delete %></td>
   </tr>
+
 <% end %>
 </table>
 
 <br />
-
-<%= link_to 'New Supplier', new_supplier_path %>
+<hr>
+<%= link_to image_tag("plus2.png", :size=>"40x40", :border=>0, :title=>"Adicionar"), new_supplier_path %>

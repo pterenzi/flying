@@ -2,7 +2,11 @@ class SuppliersController < ApplicationController
   # GET /suppliers
   # GET /suppliers.json
   def index
-    @suppliers = Supplier.all(:order=>:name)
+    if params[:initials]
+      @suppliers = Supplier.starting_with(params[:initials])
+    else
+      @suppliers = Supplier.all
+    end
 
     respond_to do |format|
       format.html # index.html.erb

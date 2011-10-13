@@ -2,7 +2,11 @@ class InstructorsController < ApplicationController
   # GET /instructors
   # GET /instructors.json
   def index
-    @instructors = Instructor.all(:order => :name)
+    if params[:initials]
+      @instructors = Instructor.starting_with(params[:initials])
+    else
+      @instructors = Instructor.all(:order => :name)
+  end
 
     respond_to do |format|
       format.html # index.html.erb

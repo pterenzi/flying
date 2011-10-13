@@ -1,4 +1,6 @@
 <p id="notice"><%= notice %></p>
+<h1>Detalhes do Pacote</h1>
+<hr>
 
 <p>
   <b>Nome:</b>
@@ -24,6 +26,6 @@
   <b>Ativo</b>
   <%= @package.active %>
 </p>
-
+<hr>
 <%= link_to image_tag("left_arrow.png", :size=>"40x40", :border=>0, :title=>"Voltar", :title=>"Voltar"), packages_path %>
 <%= link_to image_tag("edit.png", :size=>"40x40", :border=>0, :title=>"Editar"), edit_package_path(@package) %>

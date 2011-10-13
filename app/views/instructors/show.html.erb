@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
-
+<h1>Detalhes do Instrutor</h1>
+<hr>
 <p>
   <b>Nome:</b>
   <%= @instructor.name %>
@@ -55,8 +56,8 @@
   <%= @instructor.hour_price %>
 </p>
 
-
+<hr>
 <%= render :partial => 'flights'%>
-
+<hr>
 <%= link_to image_tag("left_arrow.png", :size=>"40x40", :border=>0, :title=>"Voltar"), instructors_path %>
 <%= link_to image_tag("edit.png", :size=>"40x40", :border=>0, :title=>"Editar"), edit_instructor_path(@instructor) %>

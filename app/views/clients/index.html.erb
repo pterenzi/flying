@@ -1,9 +1,12 @@
-<h1>Clientes</h1>
+<table>
+	<tr>
+		<td><h1>Clientes</h1><td>
+	<td><%= text_field_tag :name, params[:initials]%><%= submit_tag :search, :onclick => 'javascript:search();'%></td>
+	</tr>
+</table>
 
-<%= text_field_tag :name, params[:initials]%>
-<%= submit_tag :search, :onclick => 'javascript:search();'%>
-
-<table width="90%">
+<hr>
+<table>
   <tr>
     <th>Nome</th>
     <th>Data de nascimento</th>
@@ -28,10 +31,11 @@
     <td align="center" width="25px"><%= link_to image_tag("edit.png", :size=>"20x20", :border=>0, :title=>"Editar"), edit_client_path(client) %></td>
     <td align="left" width="25px"><%= link_to image_tag("trash.jpg",:size=>"20x20", :border=>0, :title=>"Excluir"), client, :confirm => 'Tem certeza que quer excluir o registro?', :method => :delete %></td>
   </tr>
-<hr>
+
 <% end %>
 </table>
 
 <br />
+<hr>
 
 <%= link_to image_tag("plus2.png", :size=>"40x40", :border=>0, :title=>"Adicionar"), new_client_path %>

@@ -17,6 +17,8 @@ Extracted source (around line #20):
 23:     <%= f.label "Pertence à escola" %><br />
 
 
+************************************************************************************************
+************************************************************************************************
 Show Clientes
 NoMethodError in Clients#show
 
@@ -32,3 +34,112 @@ Extracted source (around line #73):
 74:   <%= sale.value %>
 75:   <br />
 76: <% end %>
+
+************************************************************************************************
+************************************************************************************************
+Criar venda
+
+SystemStackError in AccountsController#create
+
+stack level too deep
+Rails.root: /Users/terenzi/work/flying
+
+Application Trace | Framework Trace | Full Trace
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/models/account.rb:40:in `copy_date_when_credit'
+app/controllers/accounts_controller.rb:66:in `create'
+app/controllers/accounts_controller.rb:65:in `create'
+Request
+
+Parameters:
+
+{"commit"=>"Criar Conta",
+ "account"=>{"package_id"=>"3",
+ "comments"=>"",
+ "due_date(1i)"=>"2011",
+ "due_date(2i)"=>"10",
+ "credit"=>"true",
+ "due_date(3i)"=>"13",
+ "client_id"=>"1"},
+ "authenticity_token"=>"/VrPUJpQb+ZjKk1sR6E7XzImknm2FzU0QD/8HHHA2YU=",
+ "utf8"=>"\342\234\223"}
+********************************************************************************
+********************************************************************************

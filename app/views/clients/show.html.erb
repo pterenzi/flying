@@ -1,4 +1,6 @@
 <p id="notice"><%= notice %></p>
+<h1>Detalhes do Cliente</h1>
+<hr>
 
 <p>
   <b>Name:</b>
@@ -64,13 +66,16 @@
   <b>Credit:</b>
   <%= @client.credit %>
 </p>
+<hr>
 <p>
-  Sales of this client
+  <b>Vendas</b>
 </p>
-
+<hr>
 <%= render :partial => 'client_sales' %>
+<hr>
 <%= render :partial => 'flights' %>
+<hr>
 <%= render :partial => 'client_balance' %>
-
+<hr>
 <%= link_to image_tag("left_arrow.png", :size=>"40x40", :border=>0, :title=>"Voltar"), clients_path %>
 <%= link_to image_tag("edit.png", :size=>"40x40", :border=>0, :title=>"Editar"), edit_client_path(@client) %>

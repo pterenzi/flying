@@ -21,6 +21,10 @@ tr {
 table {
 	width:90%;
 }
+
+td {
+	vertical-align:bottom;
+}
 #table_form {
 	width: 90%;
 	margin: 0px auto;
