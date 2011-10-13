@@ -3,8 +3,12 @@ class FlightsController < ApplicationController
   # GET /flights.json
   def index
     date_params
-    @flights = Flight.by_date(@start_date, @end_date)
-
+    debugger
+    @flights     = Flight.by_date(@start_date, @end_date)
+    if params[:instructor_id] && params[:instructor_id].to_i > 0
+      @flights = @flights.by_instructor(params[:instructor_id])
+    end
+    @instructors = Instructor.all.collect{ |i| [i.name, i.id]}
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @flights }
