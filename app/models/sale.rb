@@ -6,8 +6,7 @@ class Sale < ActiveRecord::Base
   
   after_save :create_balance
   
-  scope :by_date, lambda {|start_date,end_date| 
-                    where("date between  ? and  ? ", start_date, end_date)
+  scope :by_date, lambda {|start_date,end_date| where("date between  ? and  ? ", start_date, end_date)
                   }
   scope :by_client, lambda{|id| where("client_id = ? ", id)}                
 

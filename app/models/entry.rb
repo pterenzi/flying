@@ -7,4 +7,6 @@ class Entry < ActiveRecord::Base
   validates_presence_of :description, :message => "can't be blank"
   
   scope :by_date, lambda {|start_date,end_date| where('date between ? and ? ', start_date, end_date )}
+  
+  scope :by_client, lambda{|id| where("client_id = ? ", id)}
 end

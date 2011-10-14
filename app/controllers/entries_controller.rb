@@ -2,8 +2,12 @@ class EntriesController < ApplicationController
   # GET /entries
   # GET /entries.json
   def index
-    @entries = Entry.all
-
+    date_params
+    @entries = Sale.by_date(@start_date, @end_date).order(:date)
+    if params[:client_id] && params[:client_id].to_i > 0
+      @entries = @entries.by_client(params[:client_id])
+    end
+    @clients     = Client.all.collect{ |c| [c.name, c.id] }
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @entries }

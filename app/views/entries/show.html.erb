@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
 
 
-<%= link_to 'Edit', edit_entry_path(@entry) %> |
-<%= link_to 'Back', entries_path %>
+<%= link_to image_tag("left_arrow.png", :size=>"40x40", :border=>0, :title=>"Voltar"), entries_path %>
+<%= link_to image_tag("edit.png", :size=>"40x40", :border=>0, :title=>"Editar"), edit_entry_path(@entry) %>

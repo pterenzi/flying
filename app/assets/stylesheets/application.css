@@ -76,6 +76,11 @@ td {
 #sidebar ul li a:hover{
   color: #6e9aeb;
 }
+
+#sidebar ul li a:active{
+  color: #6e9aeb;
+}
+
 #sidebar ul ul li a {
   color: #242527;
 }

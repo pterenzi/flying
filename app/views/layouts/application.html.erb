@@ -2,10 +2,18 @@
 <html>
 <head>
   <title>Controle de Vôos</title>
-  <%= stylesheet_link_tag "application" %>
+  <%= stylesheet_link_tag "application"%>
+  <%= stylesheet_link_tag "jquery-ui-1.8.16.custom"%>
   <%= javascript_include_tag "application", "jquery-1.4.js", "jquery-ui.min.js" %>
   <%= javascript_include_tag "#{controller_name}"%>
   <%= csrf_meta_tags %>
+<script type="text/javascript">
+  $(function() {
+		$(".datepicker").datepicker();
+	});
+
+</script>
+
 </head>
 <body>
 	<div id="pagewidth" >

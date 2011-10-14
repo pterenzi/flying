@@ -20,6 +20,7 @@
       });
 
   }
+
 </script>
 
 
@@ -60,7 +61,7 @@
     
     <div class="field">
       <%= f.label :Data %><br />
-      <%= f.date_select :date , :order => [:day,:month,:year] %>
+      <%= text_field_tag :date, @date, :class=>'datepicker' %>
     </div>
 
     <div class='field'> 

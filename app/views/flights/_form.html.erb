@@ -16,10 +16,10 @@
 	<tr class="rowa">
 		<td class="col1 cell"><%= f.label "Aeronave" %><br />
 	    <%= f.select :aircraft_id, @aircrafts %></td>
-		<td class="col2 cell"><%= f.label "Número" %><br />
-	    <%= f.number_field :number %> </td>
+		<td class="col2 cell"><%= f.label "Número do vôo" %><br />
+	    <%= f.text_field :number %> </td>
 		<td class="col3 cell"><%= f.label "tipo" %><br />
-	    <%= f.number_field :type_id %></td>
+	    <%= f.text_field :type_id %></td>
 	</tr>
  	<tr class="rowa">
 		<td class="col1 cell"><%= f.label "Equipamento" %><br />
@@ -47,7 +47,7 @@
 	</tr>
  	<tr class="rowa">
 		<td class="col1 cell"><%= f.label "Pessoas a bordo" %><br />
-	    <%= f.number_field :persons_on_board %></td>
+	    <%= f.text_field :persons_on_board %></td>
 		<td class="col2 cell">
 	    <%= f.label "Cores e marcas da aeronave" %><br />
 	    <%= f.text_field :aircraft_colors_and_marks %></td>
@@ -61,7 +61,7 @@
 	    <%= f.label "Instrutor" %><br />
 	    <%= f.select :instructor_id, @instructors %></td>
 		<td class="col3 cell"><%= f.label "DAC do Instrutor" %><br />
-	    <%= f.number_field :instructor_dac %></td>
+	    <%= f.text_field :instructor_dac %></td>
 	</tr>
  	<tr class="rowa">
 		<td class="col1 cell"><%= f.label "Registro" %><br />
@@ -75,12 +75,13 @@
 	</tr>
  	<tr class="rowa">
 		<td class="col1 cell"><%= f.label "Data do vôo" %><br />
-	    <%= f.date_select :flight_date %></td>
+		<%= text_field_tag :flight_date, @flight_date, :order=>[:day, :month, :year], :class=>'datepicker' %>
+
 		<td class="col2 cell">
 		  <%= f.label "Duração de vôo" %><br />
 	    <%= f.select :duration , [0.5,1,1.5,2,2.5,3,3.5,4,4.5]%></td>
 		<td class="col3 cell"><%= f.label "Velocidade de cruzeiro" %><br />
-	    <%= f.number_field :cruising_speed %>
+	    <%= f.text_field :cruising_speed %>
 		</td>
 	</tr>
  	<tr class="rowa">
@@ -99,15 +100,15 @@
 	    <%= f.text_area :comments %></td>
 		<td class="col2 cell">
 	    <%= f.label "Grau" %><br />
-	    <%= f.number_field :degree %></td>
+	    <%= f.text_field :degree %></td>
 		<td class="col3 cell">
 	    <%= f.label "Inspeções" %><br />
-	    <%= f.number_field :inspections %>
+	    <%= f.text_field :inspections %>
 		</td>
 	</tr>
  	<tr class="rowa">
 		<td class="col1 cell"><%= f.label "Partida" %><br />
-	    <%= f.number_field :departure %></td>
+	    <%= f.text_field :departure %></td>
 		<td class="col2 cell">
 	    <%= f.label "Checagem" %><br />
 	    <%= f.text_field :checks %></td>
@@ -118,164 +119,164 @@
 	</tr>
  	<tr class="rowa">
 		<td class="col1 cell"><%= f.label :vertical_drop %><br />
-	    <%= f.number_field :vertical_drop %></td>
+	    <%= f.text_field :vertical_drop %></td>
 		<td class="col2 cell">
 	    <%= f.label :normal_drop %><br />
-	    <%= f.number_field :normal_drop %></td>
+	    <%= f.text_field :normal_drop %></td>
 		<td class="col3 cell">
 	    <%= f.label :drop_down %><br />
-	    <%= f.number_field :drop_down %>
+	    <%= f.text_field :drop_down %>
 		</td>
 	</tr>
  	<tr class="rowa">
 		<td class="col1 cell"><%= f.label :max_performance_drop %><br />
-	    <%= f.number_field :max_performance_drop %></td>
+	    <%= f.text_field :max_performance_drop %></td>
 		<td class="col2 cell">
 	    <%= f.label "Nível de vôo" %><br />
-	    <%= f.number_field :level_flight %></td>
+	    <%= f.text_field :level_flight %></td>
 		<td class="col3 cell">
 	    <%= f.label :hovering_flight %><br />
-	    <%= f.number_field :hovering_flight %>
+	    <%= f.text_field :hovering_flight %>
 		</td>
 	</tr>
  	<tr class="rowa">
 		<td class="col1 cell"><%= f.label :back_flight %><br />
-	    <%= f.number_field :back_flight %></td>
+	    <%= f.text_field :back_flight %></td>
 		<td class="col2 cell">
 	    <%= f.label :side_flying %><br />
-	    <%= f.number_field :side_flying %></td>
+	    <%= f.text_field :side_flying %></td>
 		<td class="col3 cell">
 	    <%= f.label "Correções" %><br />
-	    <%= f.number_field :corrections %>
+	    <%= f.text_field :corrections %>
 		</td>
 	</tr>
  	<tr class="rowa">
 		<td class="col1 cell"><%= f.label :turns %><br />
-	    <%= f.number_field :turns %></td>
+	    <%= f.text_field :turns %></td>
 		<td class="col2 cell">
 	    <%= f.label "Variação de velocidade" %><br />
-	    <%= f.number_field :speed_variation %></td>
+	    <%= f.text_field :speed_variation %></td>
 		<td class="col3 cell">
 	    <%= f.label "Auto rotação direta" %><br />
-	    <%= f.number_field :direct_autorotation %>
+	    <%= f.text_field :direct_autorotation %>
 		</td>
 	</tr>
  	<tr class="rowa">
 		<td class="col1 cell"><%= f.label "Auto rotação 90º" %><br />
-	    <%= f.number_field :autorotation_90º %></td>
+	    <%= f.text_field :autorotation_90º %></td>
 		<td class="col2 cell">
 	    <%= f.label "Auto rotação 180º" %><br />
-	    <%= f.number_field :autorotation_180º %></td>
+	    <%= f.text_field :autorotation_180º %></td>
 		<td class="col3 cell">
 	    <%= f.label "Auto rotação 360º" %><br />
-	    <%= f.number_field :autorotation_360º %>
+	    <%= f.text_field :autorotation_360º %>
 		</td>
 	</tr>
  	<tr class="rowa">
 		<td class="col1 cell"><%= f.label :autorotation_Hovering_DES %><br />
-	    <%= f.number_field :autorotation_Hovering_DES %></td>
+	    <%= f.text_field :autorotation_Hovering_DES %></td>
 		<td class="col2 cell">
 	    <%= f.label :autorotation_Hovering_FES %><br />
-	    <%= f.number_field :autorotation_Hovering_FES %></td>
+	    <%= f.text_field :autorotation_Hovering_FES %></td>
 		<td class="col3 cell">
 	    <%= f.label "Aproximação normal" %><br />
-	    <%= f.number_field :normal_approach %>
+	    <%= f.text_field :normal_approach %>
 		</td>
 	</tr>
  	<tr class="rowa">
 		<td class="col1 cell"><%= f.label "Aproximação grande ângulo" %><br />
-	    <%= f.number_field :big_angle_approach %></td>
+	    <%= f.text_field :big_angle_approach %></td>
 		<td class="col2 cell">
 	    <%= f.label "Aproximação restrita" %><br />
-	    <%= f.number_field :restrict_approach %></td>
+	    <%= f.text_field :restrict_approach %></td>
 		<td class="col3 cell">
 	    <%= f.label "Pouso normal" %><br />
-	    <%= f.number_field :normal_landing %>
+	    <%= f.text_field :normal_landing %>
 		</td>
 	</tr>
  	<tr class="rowa">
 		<td class="col1 cell"><%= f.label :landing_in_4_noses %><br />
-	    <%= f.number_field :landing_in_4_noses %></td>
+	    <%= f.text_field :landing_in_4_noses %></td>
 		<td class="col2 cell">
 	    <%= f.label :run_landing %><br />
-	    <%= f.number_field :run_landing %></td>
+	    <%= f.text_field :run_landing %></td>
 		<td class="col3 cell">
 	    <%= f.label :landing_incline_land %><br />
-	    <%= f.number_field :landing_incline_land %>
+	    <%= f.text_field :landing_incline_land %>
 		</td>
 	</tr>
  	<tr class="rowa">
 		<td class="col1 cell"><%= f.label "Pouso direto" %><br />
-	    <%= f.number_field :direct_landing %></td>
+	    <%= f.text_field :direct_landing %></td>
 		<td class="col2 cell">
 	    <%= f.label :constant_square_nose %><br />
-	    <%= f.number_field :constant_square_nose %></td>
+	    <%= f.text_field :constant_square_nose %></td>
 		<td class="col3 cell">
 	    <%= f.label :variable_square_nose %><br />
-	    <%= f.number_field :variable_square_nose %>
+	    <%= f.text_field :variable_square_nose %>
 		</td>
 	</tr>
  	<tr class="rowa">
 		<td class="col1 cell"><%= f.label "Tráfego normal" %><br />
-	    <%= f.number_field :normal_traffic %></td>
+	    <%= f.text_field :normal_traffic %></td>
 		<td class="col2 cell">
 	    <%= f.label :hovered_1000ft %><br />
-	    <%= f.number_field :hovered_1000ft %></td>
+	    <%= f.text_field :hovered_1000ft %></td>
 		<td class="col3 cell">
 	    <%= f.label "Pouso em heliponto" %><br />
-	    <%= f.number_field :landing_on_helipad %>
+	    <%= f.text_field :landing_on_helipad %>
 		</td>
 	</tr>
  	<tr class="rowa">
 		<td class="col1 cell"><%= f.label "Parada rápida" %><br />
-	    <%= f.number_field :quick_stop %></td>
+	    <%= f.text_field :quick_stop %></td>
 		<td class="col2 cell">
 	    <%= f.label :parking_cutting %><br />
-	    <%= f.number_field :parking_cutting %></td>
+	    <%= f.text_field :parking_cutting %></td>
 		<td class="col3 cell">
 	    <%= f.label "Operação em montanha" %><br />
-	    <%= f.number_field :oper_in_mountain %>
+	    <%= f.text_field :oper_in_mountain %>
 		</td>
 	</tr>
  	<tr class="rowa">
 		<td class="col1 cell"><%= f.label "Operação com vento contrário" %><br />
-	    <%= f.number_field :oper_with_crosswind %></td>
+	    <%= f.text_field :oper_with_crosswind %></td>
 		<td class="col2 cell">
 	    <%= f.label "Meteorologia" %><br />
-	    <%= f.number_field :meteorology %></td>
+	    <%= f.text_field :meteorology %></td>
 		<td class="col3 cell">
 	    <%= f.label "Planejamento" %><br />
-	    <%= f.number_field :planning %>
+	    <%= f.text_field :planning %>
 		</td>
 	</tr>
  	<tr class="rowa">
 		<td class="col1 cell"><%= f.label "Notificação de vôo" %><br />
-	    <%= f.number_field :plan_notification %></td>
+	    <%= f.text_field :plan_notification %></td>
 		<td class="col2 cell">
 	    <%= f.label :fonia %><br />
-	    <%= f.number_field :fonia %></td>
+	    <%= f.text_field :fonia %></td>
 		<td class="col3 cell">
 	    <%= f.label "Regras de tráfego" %><br />
-	    <%= f.number_field :traffic_rules %>
+	    <%= f.text_field :traffic_rules %>
 		</td>
 	</tr>
  	<tr class="rowa">
 		<td class="col1 cell"><%= f.label "Rota de vôo" %><br />
-	    <%= f.number_field :flight_route %></td>
+	    <%= f.text_field :flight_route %></td>
 		<td class="col2 cell">
 	    <%= f.label "Navegação visual" %><br />
-	    <%= f.number_field :visual_navigation %>	</td>
+	    <%= f.text_field :visual_navigation %>	</td>
 		<td class="col3 cell">
 	    <%= f.label "Precedimentos de pernoite" %><br />
-	    <%= f.number_field :overnight_procedure %>
+	    <%= f.text_field :overnight_procedure %>
 		</td>
 	</tr>
  	<tr class="rowa">
 		<td class="col1 cell"><%= f.label :handling_publications %><br />
-	    <%= f.number_field :handling_publications %></td>
+	    <%= f.text_field :handling_publications %></td>
 		<td class="col2 cell">
 	    <%= f.label "Iniciativa" %><br />
-	    <%= f.number_field :initiative %>
+	    <%= f.text_field :initiative %>
 		</td>
 		<td class="col3 cell"> </td>
 	</tr>
