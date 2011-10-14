@@ -27,7 +27,7 @@
     <th>Cliente</th>
     <th>Instrutor</th>
     <th>Data</th>
-    <th>Tempo de vôo</th>
+    <th align='center'>Tempo <br />de vôo</th>
     <th></th>
     <th></th>
     <th></th>
@@ -37,12 +37,12 @@
   <tr>
     <td><%= flight.aircraft.prefix %></td>
     <td><%= link_to flight.number, flight %></td>
-    <td><%= flight.type_id %></td>
+    <td><%= flight.aircraft.aircraft_type.name %></td>
     <td><%= flight.equipment %></td>
     <td><%= link_to flight.client.name, client_path(flight.client) %></td>
     <td><%= link_to flight.instructor.name, instructor_path(flight.instructor) %></td>
     <td><%= flight.flight_date.to_s_br %></td>
-    <td><%= flight.duration %></td>
+    <td align='center'><%= flight.duration %></td>
     <td align="right" width="25px"><%= link_to image_tag("info.png", :size=>"20x20", :border=>0, :title=>"Detalhes"), flight %></td>
     <td align="center" width="25px"><%= link_to image_tag("edit.png", :size=>"20x20", :border=>0, :title=>"Editar"), edit_flight_path(flight) %></td>
     <td align="left" width="25px"><%= link_to image_tag("trash.jpg",:size=>"20x20", :border=>0, :title=>"Excluir"), flight, :confirm => 'Tem certeza que quer excluir o registro?', :method => :delete %></td>

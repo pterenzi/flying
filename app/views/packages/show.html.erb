@@ -8,18 +8,23 @@
 </p>
 
 <p>
+  <b>tipo:</b>
+  <%= @package.aircraft_type.name %>
+</p>
+
+<p>
   <b>Horas do pacote:</b>
   <%= @package.quantity %>
 </p>
 
 <p>
   <b>Valor:</b>
-  <%= @package.price %>
+  <%= @package.price.real %>
 </p>
 
 <p>
   <b>Valor da hora:</b>
-  <%= @package.hourly_price %>
+  <%= @package.hourly_price.real %>
 </p>
 
 <p>

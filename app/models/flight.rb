@@ -17,15 +17,15 @@ class Flight < ActiveRecord::Base
   attr_accessor :flight_date_br
   
   def flight_date_br
-    if Date.valid?(self.fligh_date)
-      self.fligh_date.to_s_br
+    if Date.valid?(self.flight_date)
+      self.flight_date.to_s_br
     else
       Date.today.to_s_br
     end
   end
   
-  def fligh_date_br=(val)
-    self.fligh_date = val.to_date rescue nil
+  def flight_date_br=(val)
+    self.flight_date = val.to_date rescue nil
   end
 
   
