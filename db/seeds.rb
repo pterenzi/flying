@@ -24,7 +24,7 @@ Supplier.create(:name => 'salário')
 Supplier.create(:name => 'contador')
 
 Sale.delete_all
-Payment.delete_all
+# Payment.delete_all
 Account.delete_all
 Balance.delete_all
 Entry.delete_all

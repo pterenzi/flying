@@ -4,7 +4,7 @@
 <table class="table" id="table_form" cellspacing="0" cellpadding="0">
 	<tr class="rowa">
 		<td class="col1 cell"><b>Prefixo:</b> <%= @aircraft.prefix %></td>
-		<td class="col2 cell"><b>Tipo:</b> <%= @aircraft.type %> </td>
+		<td class="col2 cell"><b>Tipo:</b> <%= @aircraft.aircraft_type.name %> </td>
 		<td class="col3 cell"><b>Pertence à escola:</b> <%= @aircraft.owner %></td>
 	</tr>
  	<tr class="rowa">
@@ -18,7 +18,7 @@
 		<td class="col3 cell"><b>Última manutenção:</b> <%= @aircraft.last_maintenance %> </td>
 	</tr>
  	<tr class="rowa">
-		<td class="col1 cell">Horas de vôo:</b> <%= @aircraft.flyght_hours %> </td>
+		<td class="col1 cell"><b>Horas de vôo:</b> <%= @aircraft.flyght_hours %> </td>
 		<td class="col2 cell"><b>Detalhes:</b> <%= @aircraft.details %> </td>
 		<td class="col3 cell"><b>Equipamento:</b> <%= @aircraft.equipment %> </td>
 	</tr>

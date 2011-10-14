@@ -10,7 +10,11 @@ Flying::Application.routes.draw do
 
   resources :debts
 
-  resources :accounts
+  resources :accounts do
+    collection do
+      get 'cash_flow'
+    end
+  end
 
   resources :flights
 

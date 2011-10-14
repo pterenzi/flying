@@ -1,13 +1,15 @@
+<h1>Fluxo de Caixa</h1>
 <table>
 	<tr>
+		<th>Cliente:</th>
 		<th>Fornecedor:</th>
 		<th>Data:</th>
 	</tr>
 	<tr>
+		<td><%= select_tag :client_id, options_for_select(@clients, params[:client_id]), :include_blank => true %></td>
 		<td><%= select_tag :supplier_id, options_for_select(@suppliers, params[:supplier_id]), :include_blank => true %></td>
 		<td><%= render :partial => '/shared/date_range' %></td>
 	</tr>
 </table>
 
-
-<%= render :partial => 'payments' , :locals => {:data => @payments}  %>
+<%= render :partial => 'cash_flow' , :locals => {:data => @sales + @payments} %>

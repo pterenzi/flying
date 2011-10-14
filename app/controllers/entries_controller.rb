@@ -28,7 +28,11 @@ class EntriesController < ApplicationController
   # GET /entries/new
   # GET /entries/new.json
   def new
-    @entry = Entry.new
+    @entry = Entry.new(:client_id  => params[:client_id],
+                       :date       => params[:date],
+                       :value      => params[:value],
+                       :description => params[:description])
+    
     @clients     = Client.all.collect{ |c| [c.name, c.id] }
 
     respond_to do |format|

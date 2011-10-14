@@ -14,7 +14,7 @@
 <% @aircrafts.each do |aircraft| %>
   <tr>
     <td><%= link_to aircraft.prefix, aircraft %></td>
-    <td><%= aircraft.type %></td>
+    <td><%= aircraft.aircraft_type.name %></td>
     <td><%= aircraft.manufacturer %></td>
     <td><%= aircraft.model %></td>
     <td align="right" width="25px"><%= link_to image_tag("info.png", :size=>"20x20", :border=>0, :title=>"Detalhes"), aircraft %></td>
