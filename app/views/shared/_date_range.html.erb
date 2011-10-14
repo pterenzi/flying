@@ -4,7 +4,7 @@
 	});
 </script>
 <div>
-<%= text_field_tag :start_date, @start_date, :class=>'datepicker'%>
-<%= text_field_tag :end_date, @end_date, :class=>'datepicker'%>
+<%= text_field_tag :start_date, @start_date, :class=>'datepicker', :size=>10 %>
+<%= text_field_tag :end_date, @end_date, :class=>'datepicker', :size => 10   %>
 <%= submit_tag :search , :onclick => "javascript:search('#{action_name}');" %>
 </div>

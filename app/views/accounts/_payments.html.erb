@@ -16,6 +16,7 @@
     <th>Fornecedor</th>
     <th>Descritivo</th>
     <th>Valor</th>
+    <th>Pago</th>
     <th></th>
     <th></th>
     <th></th>
@@ -23,10 +24,11 @@
 
 <% data.each do |account| %>
   <tr>
-    <td><%= account.payment_date %></td>
+    <td><%= account.payment_date.to_s_br %></td>
     <td><%= account.supplier && account.supplier.name %></td>
     <td><%= account.description %></td>
-    <td><%= account.value %></td>
+    <td><%= account.value.real %></td>
+    <td><%= account.payed? ? 'sim' : 'não' %></td>
     <td align="right" width="25px"><%= link_to image_tag("info.png", :size=>"20x20", :border=>0, :title=>"Detalhes"), account %></td>
     <td align="center" width="25px"><%= link_to image_tag("edit.png", :size=>"20x20", :border=>0, :title=>"Editar"), edit_account_path(account) %></td>
     <td align="left" width="25px"><%= link_to image_tag("trash.jpg",:size=>"20x20", :border=>0, :title=>"Excluir"), account, :confirm => 'Tem certeza que quer excluir o registro?', :method => :delete %></td>

@@ -26,11 +26,11 @@
 <tr>
     <td><%= link_to instructor.name, instructor %></td>
     <td><%= instructor.level %></td>
-    <td><%= instructor.birthday %></td>
+    <td><%= instructor.birthday.to_s_br %></td>
     <td><%= instructor.phone %></td>
     <td><%= instructor.cel %></td>
     <td><%= instructor.email %></td>
-    <td><%= instructor.hour_price %></td>
+    <td><%= instructor.hour_price.real %></td>
     <td align="right"><%= link_to image_tag("info.png", :size=>"20x20", :border=>0, :title=>"Detalhes"), instructor %></td>
     <td align="center"><%= link_to image_tag("edit.png", :size=>"20x20", :border=>0, :title=>"Editar"), edit_instructor_path(instructor) %></td>
     <td align="left"><%= link_to image_tag("trash.jpg",:size=>"20x20", :border=>0, :title=>"Excluir"), instructor, :confirm => 'Tem certeza que quer excluir o registro?', :method => :delete %></td>

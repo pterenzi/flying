@@ -18,8 +18,8 @@
     <td><%= package.aircraft_type.name %></td>
     <td><%= link_to package.name, package %></td>
     <td><%= package.quantity %></td>
-    <td><%= package.price %></td>
-    <td><%= package.hourly_price %></td>
+    <td><%= package.price.real %></td>
+    <td><%= package.hourly_price.real %></td>
     <td><%= package.active %></td>
     <td align="right" width="25px"><%= link_to image_tag("info.png", :size=>"20x20", :border=>0, :title=>"Detalhes"), package %></td>
     <td align="center" width="25px"><%= link_to image_tag("edit.png", :size=>"20x20", :border=>0, :title=>"Editar"), edit_package_path(package) %></td>

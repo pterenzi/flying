@@ -6,7 +6,7 @@ Flying::Application.routes.draw do
 
   resources :suppliers
 
-  root :to => 'accounts#index'
+  root :to => 'accounts#cash_flow'
 
   resources :debts
 
@@ -30,7 +30,7 @@ Flying::Application.routes.draw do
 
   resources :clients
   
-  get :autocomplete_client_name, :on => :collection
+  # get :autocomplete_client_name, :on => :collection
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

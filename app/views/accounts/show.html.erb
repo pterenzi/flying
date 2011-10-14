@@ -1,11 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Cliente:</b>
-  <%= @account.client_id %>
-</p>
-
-<p>
+<!-- <p>
   <b>Tipo:</b>
   <%= @account.type %>
 </p>
@@ -18,7 +13,7 @@
 <p>
   <b>Data de vencimento:</b>
   <%= @account.due_date %>
-</p>
+</p> -->
 
 <p>
   <b>Descritivo:</b>
@@ -27,25 +22,25 @@
 
 <p>
   <b>Valor:</b>
-  <%= @account.value %>
+  <%= @account.value.real %>
 </p>
 
-<p>
+<!-- <p>
   <b>Código de barras:</b>
   <%= @account.barcode %>
-</p>
+</p> -->
 
 <p>
-  <b>Status:</b>
-  <%= @account.status %>
+  <b>Pago:</b>
+  <%= @account.payed ? 'sim' : 'não' %>
 </p>
 
 <p>
   <b>Data de pagamento:</b>
-  <%= @account.payment_date %>
+  <%= @account.payment_date_br %>
 </p>
 
-<p>
+<!-- <p>
   <b>Juros:</b>
   <%= @account.interest %>
 </p>
@@ -58,7 +53,7 @@
 <p>
   <b>Observações:</b>
   <%= @account.comments %>
-</p>
+</p> -->
 
 
 

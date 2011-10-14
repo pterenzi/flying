@@ -10,12 +10,12 @@ gem 'sqlite3'
 
 # Asset template engines
 gem 'json', '1.4.6'
-gem 'sass-rails', "~> 3.1.0.rc"
+# gem 'sass-rails', "~> 3.1.0.rc"
 gem 'coffee-script'
 gem 'uglifier'
 
-gem 'jquery-rails'
-gem 'rails3-jquery-autocomplete'
+# gem 'jquery-rails'
+# gem 'rails3-jquery-autocomplete'
 
 # Use unicorn as the web server
 # gem 'unicorn'

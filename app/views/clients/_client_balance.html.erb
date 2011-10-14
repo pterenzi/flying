@@ -5,6 +5,7 @@
 <table>
   <tr>
     <th>Data</th>
+    <th>Pacote/Voo</th>
     <th>Crédito</th>
     <th>Débito</th>
     <th>Saldo</th>
@@ -12,12 +13,14 @@
 <% total = 0 %>
 <% @client.balances.order(:date).each do |balance| %>
   <tr>
-    <td><%= balance.date %></td>
+    <td><%= balance.date.to_s_br %></td>
     <% if balance.credit? %>
-      <td><%= balance.hours.to_s + balance.sale.package.name %></td>
+      <td><%= balance.sale.package.name %></td>
+      <td><%= balance.hours.to_s %></td>
       <td>&nbsp;</td>
       <% total += balance.hours %>
     <% else %>
+      <td><%= balance.flight.aircraft.prefix %></td>
       <td>&nbsp;</td>
       <td><%= balance.hours   %></td>
       <% total -= balance.hours %>

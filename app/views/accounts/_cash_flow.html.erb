@@ -6,11 +6,13 @@
     <th>Descritivo</th>
     <th align='right'>Débito</th>
     <th align='right'>Crédito</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th align='right'>Saldo</th>
+    <th>&nbsp;</th>
+    <th>&nbsp;</th>
+    <th>&nbsp;</th>
   </tr>
-
+<% credit = 0 %>
+<% debit  = 0 %>
 <% data.each do |entry| %>
   <tr>
     <% if entry.is_a? Entry %>
@@ -18,14 +20,17 @@
       <td><%= entry.client && entry.client.name %></td>
       <td><%= entry.description %></td>
       <td>&nbsp;</td>
-      <td align='center'><%= entry.value.real %></td>
+      <td align='right'><%= entry.value.real %></td>
+      <% credit += entry.value %>
     <% else %>
       <td><%= entry.payment_date.to_s_br %></td>
       <td><%= entry.supplier && entry.supplier.name %></td>
       <td><%= entry.description %></td>
-      <td align='center'><%= entry.value.real %></td>
+      <td align='right'><%= entry.value.real %></td>
       <td>&nbsp;</td>
+      <% debit += entry.value %>
     <% end %>
+    <td align='right'><%= (credit - debit).real %></td>
     <td align="right" width="25px"><%= link_to image_tag("info.png", :size=>"20x20", :border=>0, :title=>"Detalhes"), entry %></td>
     <td align="center" width="25px">
       <%= link_to image_tag("edit.png", :size=>"20x20", :border=>0, :title=>"Editar"), entry.is_a?(Entry) ? edit_entry_path(entry) : edit_account_path(entry) %>
@@ -33,7 +38,12 @@
     <td align="left" width="25px"><%= link_to image_tag("trash.jpg",:size=>"20x20", :border=>0, :title=>"Excluir"), entry, :confirm => 'Tem certeza que quer excluir o registro?', :method => :delete %></td>
   </tr>
 <% end %>
-
+<tr>
+  <td colspan="3">&nbsp;</td>
+  <td align='right'><%= debit.real %></td>
+  <td align='right'><%= credit.real %></td>
+  <td>&nbsp;</td>
+</tr>
 </table>
 
 <br />

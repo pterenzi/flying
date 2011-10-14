@@ -1,15 +1,11 @@
 class Account < ActiveRecord::Base
   
-  # belongs_to :client
-  # belongs_to :package
   belongs_to :supplier
     
   validates_numericality_of :value, :on => [:create, :update], :message => "is not a number"
   validates_presence_of :value, :on => [:create, :update], :message => "can't be blank"
   
-  # scope :by_client, lambda{|id| where("client_id = ? ", id)}                
-
-  scope :by_date, lambda {|start_date,end_date| 
+  scope :between_dates, lambda {|start_date,end_date| 
                     where("payment_date between  ? and  ? ", start_date, end_date)
                   }
   scope :by_supplier, lambda{|id| where("supplier_id = ? ", id)}  
@@ -17,20 +13,23 @@ class Account < ActiveRecord::Base
   scope :payments, where("credit IS NULL or credit = ?",false)
   scope :sales, where(:credit => true)
   
+  attr_accessor :payment_date_br
+  
+  def payment_date_br
+    if Date.valid?(self.payment_date)
+      self.payment_date.to_s_br
+    else
+      Date.today.to_s_br
+    end
+  end
+  def payment_date_br=(val)
+    self.payment_date = val.to_date rescue nil
+  end
   
   def to_label
     "#{client_id} (#{company_id})"
   end
   
-  def create_balance
-    if self.credit?
-      Balance.create(:client_id  => self.client_id,
-                     :account_id => self.id,
-                     :date       => self.due_date,
-                     :hours      => self.hours,
-                     :aircraft_type_id => self.package.aircraft_type.id)
-    end  
-  end
 
   def due_date
     self.payment_date

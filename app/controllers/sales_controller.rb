@@ -3,7 +3,7 @@ class SalesController < ApplicationController
   # GET /sales.json
   def index
     date_params
-    @sales = Sale.by_date(@start_date, @end_date).order(:date)
+    @sales = Sale.between_date(@start_date.to_date, @end_date.to_date).order(:date)
     if params[:client_id] && params[:client_id].to_i > 0
       @sales = @sales.by_client(params[:client_id])
     end
@@ -29,7 +29,7 @@ class SalesController < ApplicationController
   # GET /sales/new
   # GET /sales/new.json
   def new
-    @sale      = Sale.new
+    @sale      = Sale.new(:date=>Date.today)
     @clients   = Client.all(:order=>:name).collect{|c| [c.name, c.id]}
     @packages  = Package.actives.collect{|c| [c.name, c.id]}
 

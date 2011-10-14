@@ -18,12 +18,12 @@
 
   <div class="field">
     <%= f.label "Data" %><br />
-      <%= text_field_tag :date, @date, :class=>'datepicker' %>
+      <%= f.text_field :date_br, :class=>'datepicker', :size=>9 %>
   </div>
 
   <div class="field">
     <%= f.label "Valor" %><br />
-    <%= f.text_field :value %>
+    <%= f.text_field :value, :size=>9 %>
   </div>
 
   <div class="field">
