@@ -7,12 +7,18 @@ class Client < ActiveRecord::Base
   
   scope :starting_with, lambda { |i| where('name like (?)', i+'%')}
   
-  # def sales
-  #     Account.where(:client_id => self.id)
-  #   end
-  #   
   def flights
     Flight.where(:client_id => self.id)
   end
   
+  def credit
+    hours = 0
+    self.sales.each do |sale|
+      hours += sale.hours
+    end
+    self.flights.each do |flight|
+      hours -= flight.duration
+    end
+    hours
+  end
 end

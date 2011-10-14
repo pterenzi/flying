@@ -1,10 +1,9 @@
 <table>
 	<tr>
 		<td><h1>Clientes</h1><td>
-	<td><%= text_field_tag :client_name, :class=>'autocomplete' %> <%= submit_tag :search, :onclick => 'javascript:search();'%></td>
+	
 	</tr>
 </table>
-f._field :name, autocomplete_client_name_path
 <hr>
 <table>
   <tr>
@@ -22,7 +21,7 @@ f._field :name, autocomplete_client_name_path
 <% @clients.each do |client| %>
   <tr>
     <td><%= link_to client.name, client %></td>
-    <td><%= client.birthday %></td>
+    <td><%= client.birthday.to_s_br %></td>
     <td><%= client.phone %></td>
     <td><%= client.cel %></td>
     <td><%= client.email %></td>
