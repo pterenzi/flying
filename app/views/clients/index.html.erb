@@ -1,10 +1,10 @@
 <table>
 	<tr>
 		<td><h1>Clientes</h1><td>
-	<td><%= text_field_tag :name, params[:initials]%><%= submit_tag :search, :onclick => 'javascript:search();'%></td>
+	<td><%=f.autocomplete_client_name_path%><%= submit_tag :search, :onclick => 'javascript:search();'%></td>
 	</tr>
 </table>
-
+f._field :name, autocomplete_client_name_path
 <hr>
 <table>
   <tr>

@@ -29,6 +29,8 @@ Flying::Application.routes.draw do
   resources :aircrafts
 
   resources :clients
+  
+  get :autocomplete_client_name, :on => :collection
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

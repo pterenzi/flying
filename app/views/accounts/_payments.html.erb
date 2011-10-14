@@ -1,7 +1,15 @@
-
-<hr>
 <h1>Pagamentos</h1>
-
+<table>
+	<tr>
+		<th>Fornecedor:</th>
+		<th>Data:</th>
+	</tr>
+	<tr>
+		<td><%= select_tag :supplier_id, options_for_select(@suppliers, params[:supplier_id]), :include_blank => true %></td>
+		<td><%= render :partial => '/shared/date_range' %></td>
+	</tr>
+</table>
+<hr>
 <table width="90%">
   <tr>
     <th>Data</th>
@@ -28,6 +36,5 @@
 </table>
 
 <br />
-
-<%= link_to image_tag("plus2.png", :size=>"40x40", :border=>0, :title=>"Adicionar"), new_account_path %>
 <hr>
+<%= link_to image_tag("plus2.png", :size=>"40x40", :border=>0, :title=>"Adicionar"), new_account_path %>

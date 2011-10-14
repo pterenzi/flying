@@ -1,13 +1,4 @@
-<table>
-	<tr>
-		<th>Fornecedor:</th>
-		<th>Data:</th>
-	</tr>
-	<tr>
-		<td><%= select_tag :supplier_id, options_for_select(@suppliers, params[:supplier_id]), :include_blank => true %></td>
-		<td><%= render :partial => '/shared/date_range' %></td>
-	</tr>
-</table>
+
 
 
 <%= render :partial => 'payments' , :locals => {:data => @payments}  %>

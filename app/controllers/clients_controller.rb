@@ -1,6 +1,8 @@
 class ClientsController < ApplicationController
   # GET /clients
   # GET /clients.json
+  
+  autocomplete :name
   def index
     if params[:initials]
       @clients = Client.starting_with(params[:initials])
