@@ -10,7 +10,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111015211808) do
+
+
+ActiveRecord::Schema.define(:version => 20111016003429) do
 
   create_table "accounts", :force => true do |t|
     t.integer  "client_id"
@@ -167,9 +169,15 @@ ActiveRecord::Schema.define(:version => 20111015211808) do
     t.integer  "turns"
     t.integer  "speed_variation"
     t.integer  "direct_autorotation"
+<<<<<<< HEAD
     t.integer  "autorotation_90\302\272"
     t.integer  "autorotation_180\302\272"
     t.integer  "autorotation_360\302\272"
+=======
+    t.integer  "autorotation_90º"
+    t.integer  "autorotation_180º"
+    t.integer  "autorotation_360º"
+>>>>>>> aa29177824d386a5c0e6c3c89031c2e8497d8f80
     t.integer  "autorotation_Hovering_DES"
     t.integer  "autorotation_Hovering_FES"
     t.integer  "normal_approach"
@@ -226,6 +234,7 @@ ActiveRecord::Schema.define(:version => 20111015211808) do
   create_table "packages", :force => true do |t|
     t.string   "name"
     t.integer  "quantity"
+<<<<<<< HEAD
     t.decimal  "price"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -240,6 +249,14 @@ ActiveRecord::Schema.define(:version => 20111015211808) do
     t.integer  "client_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+=======
+    t.decimal  "hour_price",       :precision => 6, :scale => 2
+    t.decimal  "decimal",          :precision => 6, :scale => 2
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "aircraft_type_id"
+    t.boolean  "active",                                         :default => true
+>>>>>>> aa29177824d386a5c0e6c3c89031c2e8497d8f80
   end
 
   create_table "sales", :force => true do |t|
@@ -260,6 +277,30 @@ ActiveRecord::Schema.define(:version => 20111015211808) do
     t.datetime "updated_at"
   end
 
+<<<<<<< HEAD
+=======
+  create_table "users", :force => true do |t|
+    t.string   "email",                                 :default => "", :null => false
+    t.string   "encrypted_password",     :limit => 128, :default => "", :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",                         :default => 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.string   "name"
+    t.integer  "level"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+  add_index "users", ["name"], :name => "index_users_on_name", :unique => true
+  add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+>>>>>>> aa29177824d386a5c0e6c3c89031c2e8497d8f80
   create_table "vendas", :force => true do |t|
     t.integer  "client_id"
     t.date     "date"

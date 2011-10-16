@@ -1,5 +1,7 @@
 Flying::Application.routes.draw do
   
+  devise_for :users
+
   resources :sales
 
   resources :entries

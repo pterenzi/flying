@@ -4,9 +4,7 @@
   <tr>
     <th>Tipo de aeronave</th>
     <th>Nome</th>
-    <th align='right'>Quant. horas</th>
     <th align='right'>Preço</th>
-    <th align='right'>Valor da hora</th>
     <th align='center'>Ativo?</th>
     <th></th>
     <th></th>
@@ -17,9 +15,7 @@
   <tr>
     <td><%= package.aircraft_type.name %></td>
     <td><%= link_to package.name, package %></td>
-    <td align='right'><%= package.quantity %></td>
-    <td align='right'><%= package.price.real %></td>
-    <td align='right'><%= package.hourly_price.real %></td>
+    <td align='right'><%= package.hour_price.real %></td>
     <td align='center'><%= package.active ? 'sim' : 'não' %></td>
     <td align="right" width="25px"><%= link_to image_tag("info.png", :size=>"20x20", :border=>0, :title=>"Detalhes"), package %></td>
     <td align="center" width="25px"><%= link_to image_tag("edit.png", :size=>"20x20", :border=>0, :title=>"Editar"), edit_package_path(package) %></td>

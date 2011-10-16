@@ -3,7 +3,7 @@ class CreatePackages < ActiveRecord::Migration
     create_table :packages do |t|
       t.string :name
       t.integer :quantity
-      t.decimal :price
+      t.decimal :hour_price, :decimal, :precision => 6, :scale => 2
 
       t.timestamps
     end

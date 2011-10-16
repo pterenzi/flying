@@ -1,4 +1,6 @@
 class SalesController < ApplicationController
+  
+  before_filter :authenticate_user! 
   # GET /sales
   # GET /sales.json
   def index
@@ -57,7 +59,7 @@ class SalesController < ApplicationController
         # format.html { redirect_to @sale, :notice => 'Sale was successfully created.' }
         format.json { render :json => @sale, :status => :created, :location => @sale }
         format.html {redirect_to new_entry_path(:client_id=> @sale.client_id, 
-                        :date => @sale.date, :value => @sale.value, 
+                        :date => @sale.date, :value => @sale.value * @sale.hours, 
                         :description=>@sale.package.name)}
       else
         @clients   = Client.all(:order=>:name).collect{|c| [c.name, c.id]}

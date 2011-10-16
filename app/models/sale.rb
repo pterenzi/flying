@@ -24,7 +24,9 @@ class Sale < ActiveRecord::Base
     self.date = val.to_date rescue nil
   end
 
-  
+  def total_value
+    self.hours * self.value
+  end
   
   def create_balance
     Balance.create(:client_id    => self.client_id,
