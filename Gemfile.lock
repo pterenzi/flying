@@ -137,7 +137,6 @@ DEPENDENCIES
   brazilian-rails
   coffee-script
   json (= 1.4.6)
-  pdfkit
   rails (= 3.1.0)
   rake (= 0.8.7)
   ruby-debug
