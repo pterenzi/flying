@@ -27,3 +27,5 @@ gem 'uglifier'
 gem 'ruby-debug'
 
 gem 'brazilian-rails'
+
+gem 'devise', '1.4.8'

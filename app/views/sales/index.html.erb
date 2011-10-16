@@ -15,7 +15,9 @@
     <th>Data</th>
     <th>Cliente</th>
     <th>Pacote</th>
-    <th align='right'>Valor</th>
+    <th align='right'>Valor hora</th>
+    <th align='right'>quantidade</th>
+    <th align='right'>Valor total</th>
     <th>&nbsp;</th>
     <th>&nbsp;</th>
     <th>&nbsp;</th>
@@ -27,6 +29,8 @@
     <td><%= link_to sale.client.name, client_path(sale.client) %></td>
     <td><%= sale.package.name + " - " + sale.package.aircraft_type.name %></td>
     <td align='right'><%= sale.value.real %></td>
+    <td align='right'><%= sale.hours %></td>
+    <td align="right"><%= sale.total_value.real %></td>
     <td align="right"><%= link_to image_tag("info.png", :size=>"20x20", :border=>0, :title=>"Detalhes"), sale %></td>
     <td align="center"><%= link_to image_tag("edit.png", :size=>"20x20", :border=>0, :title=>"Editar"), edit_sale_path(sale) %></td>
     <td align="left"><%= link_to image_tag("trash.jpg",:size=>"20x20", :border=>0, :title=>"Excluir"), sale, :confirm => 'Tem certeza que quer excluir o registro?', :method => :delete %></td>

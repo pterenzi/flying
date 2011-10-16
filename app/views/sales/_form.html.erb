@@ -12,10 +12,10 @@
         type: 'GET',
         data: { id: $("#sale_package_id").val() },
         success: function(data){
-          $("#value").html(data.price);
-          $("#hours").html(data.quantity);
-          $("#sale_value").val(data.price);
-          $("#sale_hours").val(data.quantity);
+          $("#value").html(data.hour_price);
+          // $("#hours").html(data.quantity);
+          $("#sale_value").val(data.hour_price);
+          // $("#sale_hours").val(data.quantity);
         }
       });
 
@@ -47,16 +47,16 @@
       <%= f.select :package_id, @packages %>
     </div>
     
+    <div class="field">
+      <%= f.label "Valor Hora" %><br />
+      <span id="value"></span>
+      <%= f.hidden_field :value %>
+    </div>
+
     <div class='field'> 
       <%= f.label "Horas" %><br />
       <span id="hours"></span>
-      <%= f.hidden_field :hours  %>
-    </div>
-
-    <div class="field">
-      <%= f.label "Valor" %><br />
-      <span id="value"></span>
-      <%= f.hidden_field :value %>
+      <%= f.text_field :hours  %>
     </div>
     
     <div class="field">
