@@ -31,7 +31,7 @@
     <td><%= account.payed? ? 'sim' : 'não' %></td>
     <td align="right" width="25px"><%= link_to image_tag("info.png", :size=>"20x20", :border=>0, :title=>"Detalhes"), account %></td>
     <td align="center" width="25px"><%= link_to image_tag("edit.png", :size=>"20x20", :border=>0, :title=>"Editar"), edit_account_path(account) %></td>
-    <td align="left" width="25px"><%= link_to image_tag("trash.jpg",:size=>"20x20", :border=>0, :title=>"Excluir"), account, :confirm => 'Tem certeza que quer excluir o registro?', :method => :delete %></td>
+    <td align="left" width="25px"><%= link_to image_tag("trash.jpg",:size=>"20x20", :border=>0, :title=>"Excluir"), account, :confirm => 'Tem certeza que quer excluir o registro?', :method => :delete if current_user.master? %></td>
   </tr>
 <% end %>
 
