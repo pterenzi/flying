@@ -9,12 +9,15 @@ class Account < ActiveRecord::Base
                     where("payment_date between  ? and  ? ", start_date, end_date)
                   }
   scope :by_supplier, lambda{|id| where("supplier_id = ? ", id)}  
+  scope :payed, where(:payed=>true)
+  scope :not_payed, where(:payed=>false)
+
   scope :pay_by_date, :order => :payment_date
   scope :payments, where("credit IS NULL or credit = ?",false)
   scope :sales, where(:credit => true)
   
-  attr_accessor :payment_date_br
-  
+  attr_accessor :payment_date_br, :due_date_br
+
   def payment_date_br
     if Date.valid?(self.payment_date)
       self.payment_date.to_s_br
@@ -24,6 +27,17 @@ class Account < ActiveRecord::Base
   end
   def payment_date_br=(val)
     self.payment_date = val.to_date rescue nil
+  end
+  
+  def due_date_br
+    if Date.valid?(self.due_date)
+      self.due_date.to_s_br
+    else
+      Date.today.to_s_br
+    end
+  end
+  def due_date_br=(val)
+    self.due_date = val.to_date rescue nil
   end
   
   def to_label
@@ -40,4 +54,12 @@ class Account < ActiveRecord::Base
       self.update_attribute("payment_date", self.due_date)
     end
   end
+  
+  def total
+    result = self.value
+    result += self.interest if self.interest
+    result -= self.discount if self.discount
+    result
+  end
+
 end

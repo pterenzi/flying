@@ -15,17 +15,32 @@
 
 
     <div class="field">
-      <%= f.label :supplier_id %><br />
+      <%= f.label "Fornecedor" %><br />
       <%= f.select :supplier_id , @suppliers %>
     </div>
     <div class="field">
-      <%= f.label :payment_date %><br />
-      <%= f.text_field :payment_date_br, :class=>'datepicker', :size => 9 %>
+      <%= f.label "Vencimento" %><br />
+      <%= f.text_field :due_date_br, :class=>'datepicker', :size => 9 %>
     </div>
 
     <div class="field">
       <%= f.label :value %><br />
       <%= f.text_field :value, :size => 9 %>
+    </div>
+
+    <div class="field">
+      <%= f.label 'Juros' %><br />
+      <%= f.text_field :interest, :size => 9 %>
+    </div>
+
+    <div class="field">
+      <%= f.label 'Desconto' %><br />
+      <%= f.text_field :discount, :size => 9 %>
+    </div>
+
+    <div class="field">
+      <%= f.label 'Código de barras' %><br />
+      <%= f.text_field :barcode, :size => 49 %>
     </div>
 
   <div class="field">
@@ -35,8 +50,11 @@
   
   <div>
     <%= f.check_box :payed %>
-    <%= f.label "Pago"%>
-  </div>
+    <%= f.label "Pago em "%>
+    <%= f.text_field :payment_date_br, :class=>'datepicker', :size => 9 %>  </div>
+
+<br />
+
   <div class="actions">
     <%= f.submit %>
   </div>
