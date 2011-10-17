@@ -14,7 +14,7 @@
   <tr>
     <th>Data</th>
     <th>Cliente</th>
-    <th>Pacote</th>
+    <th>Tipo de aeronave</th>
     <th align='right'>Valor hora</th>
     <th align='right'>quantidade</th>
     <th align='right'>Valor total</th>
@@ -27,7 +27,7 @@
   <tr>
     <td><%= sale.date_br %></td>
     <td><%= link_to sale.client.name, client_path(sale.client) %></td>
-    <td><%= sale.package.name + " - " + sale.package.aircraft_type.name %></td>
+    <td><%= sale.aircraft_type.name %></td>
     <td align='right'><%= sale.value.real %></td>
     <td align='right'><%= sale.hours %></td>
     <td align="right"><%= sale.total_value.real %></td>

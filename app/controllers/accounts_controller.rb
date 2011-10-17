@@ -37,7 +37,7 @@ class AccountsController < ApplicationController
     debugger
     @clients   = Client.all(:order=>:name).collect{|c| [c.name, c.id]}
     @suppliers = Supplier.all(:order=>:name).collect{|c| [c.name, c.id]}
-    @packages  = Package.actives.collect{|c| [c.name, c.id]}
+    # @packages  = Package.actives.collect{|c| [c.name, c.id]}
     respond_to do |format|
       format.html # new.html.erb
       format.json { render :json => @account }
@@ -49,7 +49,7 @@ class AccountsController < ApplicationController
     @account   = Account.find(params[:id])
     @clients   = Client.all(:order=>:name).collect{|c| [c.name, c.id]}
     @suppliers = Supplier.all(:order=>:name).collect{|c| [c.name, c.id]}
-    @packages  = Package.actives.collect{|c| [c.name, c.id]}
+    # @packages  = Package.actives.collect{|c| [c.name, c.id]}
   end
 
   # POST /accounts

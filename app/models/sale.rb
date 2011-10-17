@@ -34,7 +34,7 @@ class Sale < ActiveRecord::Base
                    :sale_id      => self.id,
                    :date         => self.date,
                    :hours        => self.hours,
-                   :aircraft_type_id => self.package.aircraft_type.id)
+                   :aircraft_type_id => self.aircraft_type.id)
   end
   
 end

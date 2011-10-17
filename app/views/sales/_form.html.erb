@@ -1,25 +1,31 @@
 <script type='text/javascript'>
   $(function() {
-    $("#sale_package_id").change(function(){
-      retrieve_package();
+    $("#sale_aircraft_type_id").change(function(){
+      retrieve_aircraft_type();
     });
-    retrieve_package();
+    retrieve_aircraft_type();
   });
   
-  function retrieve_package(){
+  function retrieve_aircraft_type(){
     $.ajax({
-        url: '/packages/' + $("#sale_package_id").val() + '/busca_pacote',
+        url: '/aircraft_types/' + $("#sale_aircraft_type_id").val() + '/busca_aircraft_type',
         type: 'GET',
-        data: { id: $("#sale_package_id").val() },
+        // data: { id: $("#sale_aircraft_type_id").val() },
         success: function(data){
           $("#value").html(data.hour_price);
           // $("#hours").html(data.quantity);
           $("#sale_value").val(data.hour_price);
           // $("#sale_hours").val(data.quantity);
+          calculate_total_sale();
         }
       });
-
   }
+
+   function calculate_total_sale(){
+     // alert('aleluia');
+     total = parseFloat($("#sale_value").val()) * parseFloat($("#sale_hours").val());
+     $("#total_value").html(total);
+   }
 
 </script>
 
@@ -43,8 +49,8 @@
     </div>
 
     <div class="field">
-      <%= f.label "Pacote" %><br />
-      <%= f.select :package_id, @packages %>
+      <%= f.label "Tipo de aeronave" %><br />
+      <%= f.select :aircraft_type_id, @aircraft_types %>
     </div>
     
     <div class="field">
@@ -56,7 +62,8 @@
     <div class='field'> 
       <%= f.label "Horas" %><br />
       <span id="hours"></span>
-      <%= f.text_field :hours  %>
+      <%= f.text_field :hours , :size=>5, :onblur => 'javascript:calculate_total_sale();' %>
+      <span id="total_value"></span>
     </div>
     
     <div class="field">

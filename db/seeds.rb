@@ -41,7 +41,7 @@ Balance.delete_all
 Entry.delete_all
 
 
-puts 'SETTING UP DEFAULT USER LOGIN'
-User.delete_all
-user = User.create! :name => 'miguel', :email => 'user@example.com', :password => '123456', :password_confirmation => '123456', :level=>1
-puts 'New user created: ' << user.name
+# puts 'SETTING UP DEFAULT USER LOGIN'
+# User.delete_all
+# user = User.create! :name => 'miguel', :email => 'user@example.com', :password => '123456', :password_confirmation => '123456', :level=>1
+# puts 'New user created: ' << user.name

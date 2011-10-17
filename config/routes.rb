@@ -2,7 +2,12 @@ Flying::Application.routes.draw do
   
   devise_for :users
 
-  resources :aircraft_types
+  resources :aircraft_types do
+    member do
+      get 'busca_aircraft_type'
+    end
+  end
+  
   resources :sales
 
   resources :entries

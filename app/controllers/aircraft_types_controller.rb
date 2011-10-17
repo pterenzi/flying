@@ -21,4 +21,11 @@ class AircraftTypesController < ApplicationController
   def destroy
   end
 
+  def busca_aircraft_type
+    @aircraft_type = AircraftType.find(params[:id])
+    
+    render :json => @aircraft_type.to_json
+  end
+
+
 end
