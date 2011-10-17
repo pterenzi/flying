@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(:version => 20111016003429) do
 
   create_table "aircraft_types", :force => true do |t|
     t.string   "name"
+    t.decimal  "hour_price", :precision => 8, :scale => 2
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -73,7 +74,6 @@ ActiveRecord::Schema.define(:version => 20111016003429) do
     t.integer  "aircraft_type_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.decimal  "hour_price",                       :precision => 6, :scale => 2
   end
 
   create_table "balances", :force => true do |t|
@@ -115,9 +115,12 @@ ActiveRecord::Schema.define(:version => 20111016003429) do
   end
 
   create_table "entries", :force => true do |t|
-    t.date     "date"
+    t.date     "due_date"
+    t.date     "entry_date"
     t.integer  "client_id"
     t.decimal  "value",       :precision => 8, :scale => 2
+    t.decimal  "interest",    :precision => 8, :scale => 2
+    t.decimal  "discount",    :precision => 8, :scale => 2
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -226,29 +229,23 @@ ActiveRecord::Schema.define(:version => 20111016003429) do
   create_table "packages", :force => true do |t|
     t.string   "name"
     t.integer  "quantity"
-    t.decimal  "price"
+    t.decimal  "hour_price",       :precision => 6, :scale => 2
+    t.decimal  "decimal",          :precision => 6, :scale => 2
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "aircraft_type_id"
-    t.boolean  "active",           :default => true
-  end
-
-  create_table "receives", :force => true do |t|
-    t.date     "date"
-    t.string   "description"
-    t.decimal  "value",       :precision => 8, :scale => 2
-    t.integer  "client_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.boolean  "active",                                         :default => true
   end
 
   create_table "sales", :force => true do |t|
     t.integer  "client_id"
     t.date     "date"
-    t.integer  "package_id"
-    t.decimal  "value",       :precision => 8, :scale => 2
-    t.decimal  "hours",       :precision => 2, :scale => 1
+    t.integer  "aircraft_type_id"
+    t.decimal  "value",            :precision => 8, :scale => 2
+    t.decimal  "hours",            :precision => 2, :scale => 1
     t.string   "description"
+    t.decimal  "discount",         :precision => 8, :scale => 2
+    t.string   "type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -280,16 +277,5 @@ ActiveRecord::Schema.define(:version => 20111016003429) do
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["name"], :name => "index_users_on_name", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
-
-  create_table "vendas", :force => true do |t|
-    t.integer  "client_id"
-    t.date     "date"
-    t.integer  "package_id"
-    t.decimal  "value",       :precision => 8, :scale => 2
-    t.decimal  "hours",       :precision => 2, :scale => 1
-    t.string   "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
 end

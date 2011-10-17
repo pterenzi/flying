@@ -1,5 +1,5 @@
 <h1>Aeronaves</h1>
-
+<hr>
 <table width="90%">
   <tr>
     <th>Prefixo</th>
@@ -21,12 +21,13 @@
     <td align="center" width="25px"><%= link_to image_tag("edit.png", :size=>"20x20", :border=>0, :title=>"Editar"), edit_aircraft_path(aircraft) %></td>
     <td align="left" width="25px"><%= link_to image_tag("trash.jpg",:size=>"20x20", :border=>0, :title=>"Excluir"), aircraft, :confirm => 'Tem certeza que quer excluir o registro?', :method => :delete %></td>
   </tr>
-<hr>
+
 
 <% end %>
-</table>
 
+</table>
 <br />
 <hr>
+
 
 <%= link_to image_tag("plus2.png", :size=>"40x40", :border=>0, :title=>"Adicionar"), new_aircraft_path %>

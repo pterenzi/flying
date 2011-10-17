@@ -1,4 +1,4 @@
-<hr>
+
 <table width="90%">
   <tr>
     <th>Data</th>
@@ -10,7 +10,9 @@
     <th>&nbsp;</th>
     <th>&nbsp;</th>
     <th>&nbsp;</th>
+
   </tr>
+
 <% credit = 0 %>
 <% debit  = 0 %>
 <% data.each do |entry| %>
@@ -38,14 +40,16 @@
     <td align="left" width="25px"><%= link_to image_tag("trash.jpg",:size=>"20x20", :border=>0, :title=>"Excluir"), entry, :confirm => 'Tem certeza que quer excluir o registro?', :method => :delete %></td>
   </tr>
 <% end %>
-<tr>
-  <td colspan="3">&nbsp;</td>
-  <td align='right'><%= debit.real %></td>
-  <td align='right'><%= credit.real %></td>
-  <td>&nbsp;</td>
-</tr>
-</table>
 
+<tr>
+  <td colspan="3">Total</td>
+  <td align='right'><%= debit.real %></td>
+  <td align='right' font-weight='bolder'><%= credit.real %></td>
+
+
+</tr>
+<hr>
+</table>
+<hr>
 <br />
 
-<%= link_to image_tag("plus2.png", :size=>"40x40", :border=>0, :title=>"Adicionar"), new_account_path %>
