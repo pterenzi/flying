@@ -5,7 +5,7 @@
 // the compiled file.
 //
 
-//= require jquery
+//= require jquery-1.4
 //= require jquery_ujs
 //= require jquery.tokeninput
 //= require_tree .

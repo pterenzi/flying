@@ -39,12 +39,12 @@
 
     <div class="field">
       <%= f.label "Cliente" %><br />
-      <%= f.select :client_id , @clients%>
+      <%= f.select :client_id , @clients, :prompt => 'Selecione'%>
     </div>
 
     <div class="field">
       <%= f.label "Pacote" %><br />
-      <%= f.select :package_id, @packages %>
+      <%= f.select :package_id, @packages,:prompt => 'Selecione' %>
     </div>
     
     <div class="field">

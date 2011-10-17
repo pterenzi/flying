@@ -4,7 +4,7 @@
 		<th>Cliente:</th>
 		<th>Data:</th>
 	</tr>
-	 	<td><%= select_tag :client_id, options_for_select(@clients, params[:client_id]), :include_blank => true %></td>
+	 	<td><%= select_tag :client_id, options_for_select(@clients, params[:client_id]), :prompt => 'Selecione' %></td>
 	    <td><%= render :partial => '/shared/date_range' %></td>
 	</tr>
 </table>

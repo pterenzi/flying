@@ -26,10 +26,7 @@ gem 'uglifier'
 # To use debugger
 gem 'ruby-debug'
 
-<<<<<<< HEAD
-gem 'brazilian-rails'
-=======
 gem 'brazilian-rails'
 
 gem 'devise', '1.4.8'
->>>>>>> aa29177824d386a5c0e6c3c89031c2e8497d8f80
+
