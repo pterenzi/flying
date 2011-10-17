@@ -13,14 +13,14 @@ class Entry < ActiveRecord::Base
   attr_accessor :date_br
   
   def date_br
-    if Date.valid?(self.date)
-      self.date.to_s_br
+    if Date.valid?(self.entry_date)
+      self.entry_date.to_s_br
     else
       Date.today.to_s_br
     end
   end
   
   def date_br=(val)
-    self.date = val.to_date rescue nil
+    self.entry_date = val.to_date rescue nil
   end
 end

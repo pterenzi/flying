@@ -8,9 +8,9 @@
     <th>Descrição</th>
     <th>Valor</th>
   </tr>
-<% @client.entries.order(:date).each do |r| %>
+<% @client.entries.order(:entry_date).each do |r| %>
   <tr>
-    <td><%= r.date %></td>
+    <td><%= r.entry_date %></td>
     <td><%= r.description %></td>
     <td><%= r.value %></td>
   </tr>

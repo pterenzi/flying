@@ -53,7 +53,7 @@ class SalesController < ApplicationController
   # POST /sales.json
   def create
     @sale = Sale.new(params[:sale])
-debugger
+
     respond_to do |format|
       if @sale.save
         # format.html { redirect_to @sale, :notice => 'Sale was successfully created.' }
@@ -61,7 +61,7 @@ debugger
         format.html {redirect_to new_entry_path(
                         :client_id=> @sale.client_id, 
                         :date => @sale.date, 
-                        :value => @sale.value , 
+                        :value => @sale.total_value , 
                         :description=>@sale.aircraft_type.name)}
       else
         @clients   = Client.all(:order=>:name).collect{|c| [c.name, c.id]}

@@ -34,7 +34,6 @@ class AccountsController < ApplicationController
   def new
     @account   = Account.new()
     @account.payment_date = Date.today
-    debugger
     @clients   = Client.all(:order=>:name).collect{|c| [c.name, c.id]}
     @suppliers = Supplier.all(:order=>:name).collect{|c| [c.name, c.id]}
     # @packages  = Package.actives.collect{|c| [c.name, c.id]}
@@ -58,7 +57,7 @@ class AccountsController < ApplicationController
     @account = Account.new(params[:account])
     @account.description = params[:account][:description]
     @account.value = params[:account][:value]
-debugger
+
     respond_to do |format|
       if @account.save
         format.html { redirect_to @account, :notice => 'Account was successfully created.' }

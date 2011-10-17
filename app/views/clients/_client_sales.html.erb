@@ -10,7 +10,7 @@
 <% @client.sales.order(:date).each do |sale| %>
   <tr>
     <td><%= sale.date %></td>
-    <td><%= sale.package && sale.package.description %></td>
+    <td><%= sale.aircraft_type.name %></td>
     <td><%= sale.value %></td>
   </tr>
 <% end %>

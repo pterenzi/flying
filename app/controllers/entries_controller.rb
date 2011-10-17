@@ -3,7 +3,7 @@ class EntriesController < ApplicationController
   # GET /entries.json
   def index
     date_params
-    @entries = Entry.between_date(@start_date.to_date, @end_date.to_date).order(:date)
+    @entries = Entry.between_date(@start_date.to_date, @end_date.to_date).order(:entry_date)
     if params[:client_id] && params[:client_id].to_i > 0
       @entries = @entries.by_client(params[:client_id])
     end
@@ -28,9 +28,9 @@ class EntriesController < ApplicationController
   # GET /entries/new
   # GET /entries/new.json
   def new
-    @entry = Entry.new(:client_id  => params[:client_id],
-                       :date       => params[:date],
-                       :value      => params[:value],
+    @entry = Entry.new(:client_id   => params[:client_id],
+                       :due_date    => params[:date],
+                       :value       => params[:value],
                        :description => params[:description])
     
     @clients     = Client.all.collect{ |c| [c.name, c.id] }

@@ -10,7 +10,7 @@
 <% total = 0 %>
 <% all.each do |l| %>
   <tr>
-    <td><%= l.date.to_s_br %></td>
+    <td><%= l.is_a?(Entry) ?  l.entry_date.to_s_br : l.date.to_s_br %></td>
     <td><%= l.description %></td>
     <% if l.is_a? Entry %>
       <td><%= l.value.real %></td>
@@ -18,8 +18,8 @@
       <% total += l.value %>
     <% else %>
       <td>&nbsp;</td>
-      <td><%= l.value.real %></td>
-      <% total -= l.value %>
+      <td><%= l.total_value.real %></td>
+      <% total -= l.total_value %>
     <% end %>
     <td><%= total.real %></td>
   </tr>

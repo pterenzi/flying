@@ -15,7 +15,7 @@
   <tr>
     <td><%= balance.date.to_s_br %></td>
     <% if balance.credit? %>
-      <td><%= balance.sale.package.name %></td>
+      <td><%= balance.sale.aircraft_type.name %></td>
       <td><%= balance.hours.to_s %></td>
       <td>&nbsp;</td>
       <% total += balance.hours %>
