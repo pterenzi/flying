@@ -1,4 +1,7 @@
 class EntriesController < ApplicationController
+
+  before_filter :authenticate_user! 
+
   # GET /entries
   # GET /entries.json
   def index
@@ -7,6 +10,8 @@ class EntriesController < ApplicationController
     if params[:client_id] && params[:client_id].to_i > 0
       @entries = @entries.by_client(params[:client_id])
     end
+    @entries = @entries.confirmed if params[:confirmed] == 'sim'
+    @entries = @entries.not_confirmed if params[:confirmed] == 'não'
     @clients     = Client.all.collect{ |c| [c.name, c.id] }
     respond_to do |format|
       format.html # index.html.erb

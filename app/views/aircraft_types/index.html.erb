@@ -9,6 +9,8 @@
     <tr>
       <td><%= at.name %></td>
       <td align='right'><%= at.hour_price.real %></td>
+      <td align="right" width="25px"><%= link_to image_tag("info.png", :size=>"20x20", :border=>0, :title=>"Detalhes"), at %></td>
+
       <td align="center" width="25px"><%= link_to image_tag("edit.png", :size=>"20x20", :border=>0, :title=>"Editar"), edit_aircraft_type_path(at) %></td>
 
     </tr>

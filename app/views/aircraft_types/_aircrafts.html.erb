@@ -1,0 +1,12 @@
+<table>
+  <tr>
+    <th>Prefixo</th>
+    <th>Fabricante</th>
+    <th>Modelo</th>
+  </tr>
+<% @aircraft_type.aircrafts.each do |air| %>
+  <tr>
+    <td><%= air.prefix %></td>
+  </tr>
+<% end %>
+</table>

@@ -1,2 +1,13 @@
-<h1>AircraftTypes#show</h1>
-<p>Find me in app/views/aircraft_types/show.html.erb</p>
+<h1>AircraftTypes</h1>
+<div>
+<b>Nome  : </b><%= @aircraft_type.name %>
+</div>
+<div>
+<b>Preço hora : </b><%= @aircraft_type.hour_price.real %>
+</div>
+
+<%= render :partial => 'aircrafts'%>
+
+<hr>
+<%= link_to image_tag("left_arrow.png", :size=>"40x40", :border=>0, :title=>"Voltar"), aircraft_types_path %>
+<%= link_to image_tag("edit.png", :size=>"40x40", :border=>0, :title=>"Editar"), edit_aircraft_type_path(@aircraft_type) %>

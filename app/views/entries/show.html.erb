@@ -1,5 +1,20 @@
 <p id="notice"><%= notice %></p>
-
+<b>Cliente : </b><%= @entry.client.name %>
+<br />
+<b>Data : </b><%= @entry.date_br%>
+<br />
+<b>Valor :</b><%= @entry.value.real %>
+<br/>
+<b>Juros :</b><%= @entry.interest.real %>
+<br/>
+<b>Desconto :</b><%= @entry.discount.real %>
+<br/>
+<b>Total :</b><%= @entry.total.real %>
+<br/>
+<b>Descrição : </b><%= @entry.description %>
+<br/>
+<b>Recebido ? </b><%= @entry.received ? 'sim' : 'não' %>
+<br/>
 
 <%= link_to image_tag("left_arrow.png", :size=>"40x40", :border=>0, :title=>"Voltar"), entries_path %>
 <%= link_to image_tag("edit.png", :size=>"40x40", :border=>0, :title=>"Editar"), edit_entry_path(@entry) %>
