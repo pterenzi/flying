@@ -16,7 +16,7 @@
 <% data.each do |entry| %>
   <tr>
     <% if entry.is_a? Entry %>
-      <td><%= entry.date.to_s_br %></td>
+      <td><%= entry.entry_date.to_s_br %></td>
       <td><%= entry.client && entry.client.name %></td>
       <td><%= entry.description %></td>
       <td>&nbsp;</td>

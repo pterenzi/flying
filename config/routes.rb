@@ -2,6 +2,7 @@ Flying::Application.routes.draw do
   
   devise_for :users
 
+  resources :aircraft_types
   resources :sales
 
   resources :entries

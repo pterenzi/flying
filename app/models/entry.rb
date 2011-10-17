@@ -6,7 +6,7 @@ class Entry < ActiveRecord::Base
   validates_numericality_of :value, :message => "is not a number"
   validates_presence_of :description, :message => "can't be blank"
   
-  scope :between_date, lambda {|start_date,end_date| where('date between ? and ? ', start_date, end_date )}
+  scope :between_date, lambda {|start_date,end_date| where('entry_date between ? and ? ', start_date, end_date )}
   
   scope :by_client, lambda{|id| where("client_id = ? ", id)}
   

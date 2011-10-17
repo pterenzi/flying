@@ -10,9 +10,9 @@ Client.create(:name=>'Marcio')
 Client.create(:name=>'Bonifácio')
 
 AircraftType.delete_all
-t1 = AircraftType.create(:name =>"Helicóptero")
-t2 = AircraftType.create(:name =>"Autogyro")
-t3 = AircraftType.create(:name =>"Ultra-leve")
+t1 = AircraftType.create(:name =>"Helicóptero", :hour_price=>120)
+t2 = AircraftType.create(:name =>"Autogyro", :hour_price=>230)
+t3 = AircraftType.create(:name =>"Ultra-leve", :hour_price=>89)
 
 Aircraft.delete_all
 a1 = Aircraft.create(:prefix=>'AG-004', :aircraft_type =>t2)
@@ -20,10 +20,10 @@ a2 = Aircraft.create(:prefix=>'HE-005', :aircraft_type =>t1)
 a3 = Aircraft.create(:prefix=>'UL-006', :aircraft_type =>t3)
 
 
-Package.delete_all
-Package.create(:name => 'heli10', :hour_price=>120,  :aircraft_type => t1, :active => true)
-Package.create(:name => 'gyro15', :hour_price=>230,  :aircraft_type => t2, :active => true)
-Package.create(:name => 'ultra20', :hour_price=>89,  :aircraft_type => t3, :active => true)
+# Package.delete_all
+# Package.create(:name => 'heli10', :hour_price=>120,  :aircraft_type => t1, :active => true)
+# Package.create(:name => 'gyro15', :hour_price=>230,  :aircraft_type => t2, :active => true)
+# Package.create(:name => 'ultra20', :hour_price=>89,  :aircraft_type => t3, :active => true)
 
 Instructor.delete_all
 Instructor.create(:name => 'Joaquim', :instructor_dac => '234532', :hour_price=>90)
