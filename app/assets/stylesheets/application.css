@@ -107,8 +107,19 @@ html, body{
  width:100%;
  display:block;
  overflow:auto;
+}
+
+#header a{
+color:white;
+text-decoration:none;	
+} 
+
+#header a:hover{
+color:#6e9aeb;	
 } 
  
+
+
 #leftcol{
  width:15%; 
  float:left;

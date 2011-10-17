@@ -167,9 +167,9 @@ ActiveRecord::Schema.define(:version => 20111016003429) do
     t.integer  "turns"
     t.integer  "speed_variation"
     t.integer  "direct_autorotation"
-    t.integer  "autorotation_90º"
-    t.integer  "autorotation_180º"
-    t.integer  "autorotation_360º"
+    t.integer  "autorotation_90\302\272"
+    t.integer  "autorotation_180\302\272"
+    t.integer  "autorotation_360\302\272"
     t.integer  "autorotation_Hovering_DES"
     t.integer  "autorotation_Hovering_FES"
     t.integer  "normal_approach"
@@ -226,12 +226,20 @@ ActiveRecord::Schema.define(:version => 20111016003429) do
   create_table "packages", :force => true do |t|
     t.string   "name"
     t.integer  "quantity"
-    t.decimal  "hour_price",       :precision => 6, :scale => 2
-    t.decimal  "decimal",          :precision => 6, :scale => 2
+    t.decimal  "price"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "aircraft_type_id"
-    t.boolean  "active",                                         :default => true
+    t.boolean  "active",           :default => true
+  end
+
+  create_table "receives", :force => true do |t|
+    t.date     "date"
+    t.string   "description"
+    t.decimal  "value",       :precision => 8, :scale => 2
+    t.integer  "client_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "sales", :force => true do |t|

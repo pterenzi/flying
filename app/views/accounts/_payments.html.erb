@@ -5,7 +5,7 @@
 		<th>Data:</th>
 	</tr>
 	<tr>
-		<td><%= select_tag :supplier_id, options_for_select(@suppliers, params[:supplier_id]), :include_blank => true %></td>
+		<td><%= select_tag :supplier_id, options_for_select(@suppliers, params[:supplier_id]), :prompt => 'Selecione' %></td>
 		<td><%= render :partial => '/shared/date_range' %></td>
 	</tr>
 </table>
@@ -14,9 +14,15 @@
   <tr>
     <th>Data</th>
     <th>Fornecedor</th>
-    <th>Descritivo</th>
+    <th>Descritivo</th>	
+    <th>Número do documento</th>
+    <th>Código de barras</th>
     <th>Valor</th>
+    <th>Desconto</th>
+    <th>Juros</th>
+    <th>Total</th>
     <th>Pago</th>
+    <th>Observações</th>
     <th></th>
     <th></th>
     <th></th>

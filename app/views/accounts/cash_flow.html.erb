@@ -6,8 +6,8 @@
 		<th>Data:</th>
 	</tr>
 	<tr>
-		<td><%= select_tag :client_id, options_for_select(@clients, params[:client_id]), :include_blank => true %></td>
-		<td><%= select_tag :supplier_id, options_for_select(@suppliers, params[:supplier_id]), :include_blank => true %></td>
+		<td><%= select_tag :client_id, options_for_select(@clients, params[:client_id]), :prompt => 'Selecione' %></td>
+		<td><%= select_tag :supplier_id, options_for_select(@suppliers, params[:supplier_id]), :prompt => 'Selecione' %></td>
 		<td><%= render :partial => '/shared/date_range' %></td>
 	</tr>
 </table>
