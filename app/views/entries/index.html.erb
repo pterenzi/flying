@@ -19,20 +19,25 @@
     <th>Valor Total</th>
     <th>Recebido</th>
   </tr>
-
+<% total = 0 %>
 <% @entries.each do |entry| %>
   <tr>
     <td><%= entry.date_br %></td>
     <td><%= link_to entry.client.name, client_path(entry.client) if entry.client %></td>
     <td><%= link_to entry.description, entry %></td>
-    <td><%= entry.total.real %></td>
+    <td align="right"><%= entry.total.real %></td>
     <td><%= entry.received ? 'sim' : 'não' %></td>
     <td align="right" width="25px"><%= link_to image_tag("info.png", :size=>"20x20", :border=>0, :title=>"Detalhes"), entry %></td>
     <td align="center" width="25px"><%= link_to image_tag("edit.png", :size=>"20x20", :border=>0, :title=>"Editar"), edit_entry_path(entry) %></td>
     <td align="left" width="25px"><%= link_to image_tag("trash.jpg",:size=>"20x20", :border=>0, :title=>"Excluir"), entry, :confirm => 'Tem certeza que quer excluir o registro?', :method => :delete %></td>
+    <% total += entry.total %>
   </tr>
   </tr>
 <% end %>
+<tr>
+  <td align='center' colspan="3">Total</td>
+  <td align='right'><%= total.real %></td>
+</tr>
 </table>
 
 <br />
