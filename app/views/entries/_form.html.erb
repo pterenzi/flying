@@ -27,8 +27,23 @@
   </div>
 
   <div class="field">
+    <%= f.label "Juros" %><br />
+    <%= f.text_field :interest, :size=>9 %>
+  </div>
+
+  <div class="field">
+    <%= f.label "Desconto" %><br />
+    <%= f.text_field :discount, :size=>9 %>
+  </div>
+
+  <div class="field">
     <%= f.label "Descrição" %><br />
     <%= f.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= f.check_box :received %>
+    <%= f.label "recebido" %>
   </div>
   
   <div class="actions">

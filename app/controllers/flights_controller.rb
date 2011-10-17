@@ -1,4 +1,7 @@
 class FlightsController < ApplicationController
+
+  before_filter :authenticate_user! 
+
   # GET /flights
   # GET /flights.json
   def index

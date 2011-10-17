@@ -1,4 +1,7 @@
 class SuppliersController < ApplicationController
+
+  before_filter :authenticate_user! 
+
   # GET /suppliers
   # GET /suppliers.json
   def index
