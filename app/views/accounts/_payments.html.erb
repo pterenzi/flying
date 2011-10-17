@@ -2,17 +2,20 @@
 <table>
 	<tr>
 		<th>Fornecedor:</th>
+		<th>Pago:</th>
 		<th>Data:</th>
 	</tr>
 	<tr>
 		<td><%= select_tag :supplier_id, options_for_select(@suppliers, params[:supplier_id]), :prompt => 'Selecione' %></td>
+    <td><%= select_tag :confirmed, options_for_select([[''],['sim'], ['não']], params[:confirmed]) %></td>
+
 		<td><%= render :partial => '/shared/date_range' %></td>
 	</tr>
 </table>
 <hr>
 <table width="90%">
   <tr>
-    <th>Data</th>
+    <th>Vencimento</th>
     <th>Fornecedor</th>
     <th>Descritivo</th>	
     <th>Valor</th>
@@ -22,20 +25,28 @@
     <th></th>
     <th></th>
   </tr>
-
+<% total = 0%>
 <% data.each do |account| %>
   <tr>
-    <td><%= account.payment_date.to_s_br %></td>
+    <td><%= account.due_date_br %></td>
     <td><%= account.supplier && account.supplier.name %></td>
     <td><%= account.description %></td>
+    <td><%= account.barcode %></td>
     <td><%= account.value.real %></td>
+    <td><%= account.discount.real %></td>
+    <td><%= account.interest.real %></td>
+    <td><%= account.total.real %></td>
+    <% total += account.total %>
     <td><%= account.payed? ? 'sim' : 'não' %></td>
     <td align="right" width="25px"><%= link_to image_tag("info.png", :size=>"20x20", :border=>0, :title=>"Detalhes"), account %></td>
     <td align="center" width="25px"><%= link_to image_tag("edit.png", :size=>"20x20", :border=>0, :title=>"Editar"), edit_account_path(account) %></td>
     <td align="left" width="25px"><%= link_to image_tag("trash.jpg",:size=>"20x20", :border=>0, :title=>"Excluir"), account, :confirm => 'Tem certeza que quer excluir o registro?', :method => :delete if current_user.master? %></td>
   </tr>
 <% end %>
-
+<tr>
+  <td colspan="7" align="center">Total</td>
+  <td><%= total.real %></td>
+</tr>
 </table>
 
 <br />

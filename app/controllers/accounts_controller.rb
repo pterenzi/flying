@@ -9,10 +9,11 @@ class AccountsController < ApplicationController
     date_params
     @payments   = Account.payments.between_dates(@start_date.to_date, @end_date.to_date).pay_by_date
     @suppliers  = Supplier.all.collect{ |s| [s.name, s.id] }
-
     if params[:supplier_id] && params[:supplier_id].to_i > 0
       @payments = @payments.by_supplier(params[:supplier_id])
     end
+    @payments = @payments.payed if params[:confirmed] == 'sim'
+    @payments = @payments.not_payed if params[:confirmed] == 'não'
 
     respond_to do |format|
       format.html # index.html.erb
@@ -103,7 +104,7 @@ class AccountsController < ApplicationController
   def cash_flow
     date_params
     @sales      = Entry.between_date(@start_date.to_date, @end_date.to_date)
-    @payments   = Account.payments.between_dates(@start_date.to_date, @end_date.to_date).pay_by_date
+    @payments   = Account.payments.between_dates(@start_date.to_date, @end_date.to_date).pay_by_date.payed
     @clients    = Client.all.collect{ |c| [c.name, c.id] }
     @suppliers  = Supplier.all.collect{ |s| [s.name, s.id] }
 
