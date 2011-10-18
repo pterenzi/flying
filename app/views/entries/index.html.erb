@@ -22,7 +22,7 @@
 <% total = 0 %>
 <% @entries.each do |entry| %>
   <tr>
-    <td><%= entry.date_br %></td>
+    <td><%= entry.due_date_br %></td>
     <td><%= link_to entry.client.name, client_path(entry.client) if entry.client %></td>
     <td><%= link_to entry.description, entry %></td>
     <td align="right"><%= entry.total.real %></td>
