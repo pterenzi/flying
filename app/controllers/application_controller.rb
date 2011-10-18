@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
     else
       @start_date = Date.today.to_s_br
       @end_date   = Date.today.to_s_br
+      params[:date_option] = 'due_date'
     end
   end
 end

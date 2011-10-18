@@ -5,14 +5,16 @@ class Account < ActiveRecord::Base
   validates_numericality_of :value, :on => [:create, :update], :message => "is not a number"
   validates_presence_of :value, :on => [:create, :update], :message => "can't be blank"
   
-  scope :between_dates, lambda {|start_date,end_date| 
+  scope :between_due_dates, lambda {|start_date,end_date| 
+                    where("due_date between  ? and  ? ", start_date, end_date)
+                  }
+  scope :between_payment_dates, lambda {|start_date,end_date| 
                     where("payment_date between  ? and  ? ", start_date, end_date)
                   }
   scope :by_supplier, lambda{|id| where("supplier_id = ? ", id)}  
   scope :payed, where(:payed=>true)
   scope :not_payed, where(:payed=>false)
 
-  scope :pay_by_date, :order => :payment_date
   scope :payments, where("credit IS NULL or credit = ?",false)
   scope :sales, where(:credit => true)
   
