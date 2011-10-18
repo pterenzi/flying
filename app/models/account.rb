@@ -22,7 +22,7 @@ class Account < ActiveRecord::Base
     if Date.valid?(self.payment_date)
       self.payment_date.to_s_br
     else
-      Date.today.to_s_br
+      ''
     end
   end
   def payment_date_br=(val)

@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 <b>Cliente : </b><%= @entry.client.name %>
 <br />
-<b>Data : </b><%= @entry.date_br%>
+<b>Vencimento : </b><%= @entry.due_date_br%>
 <br />
 <b>Valor :</b><%= @entry.value.real %>
 <br/>
@@ -13,7 +13,7 @@
 <br/>
 <b>Descrição : </b><%= @entry.description %>
 <br/>
-<b>Recebido ? </b><%= @entry.received ? 'sim' : 'não' %>
+<b>Recebido ? </b><%= @entry.received ? "sim, em #{@entry.entry_date_br}": 'não' %>
 <br/>
 
 <%= link_to image_tag("left_arrow.png", :size=>"40x40", :border=>0, :title=>"Voltar"), entries_path %>

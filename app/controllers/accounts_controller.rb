@@ -35,8 +35,8 @@ class AccountsController < ApplicationController
   # GET /accounts/new
   # GET /accounts/new.json
   def new
-    @account   = Account.new()
-    @account.payment_date = Date.today
+    @account          = Account.new()
+    @account.due_date = Date.today
     @clients   = Client.all(:order=>:name).collect{|c| [c.name, c.id]}
     @suppliers = Supplier.all(:order=>:name).collect{|c| [c.name, c.id]}
     # @packages  = Package.actives.collect{|c| [c.name, c.id]}

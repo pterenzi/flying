@@ -12,18 +12,28 @@ class Entry < ActiveRecord::Base
   scope :by_client, lambda{|id| where("client_id = ? ", id)}
   scope :confirmed, where(:received=>true)
   scope :not_confirmed, where(:received=>false)
-  attr_accessor :date_br
+  attr_accessor :due_date_br, :entry_date_br
   
-  def date_br
-    if Date.valid?(self.entry_date)
-      self.entry_date.to_s_br
+  def due_date_br
+    if Date.valid?(self.due_date)
+      self.due_date.to_s_br
     else
       Date.today.to_s_br
     end
   end
-  
-  def date_br=(val)
-    self.entry_date = val.to_date rescue nil
+  def due_date_br=(val)
+    self.due_date = val.to_date rescue nil
+  end
+
+  def entry_date_br
+    if Date.valid?(self.entry_date)
+      self.entry_date.to_s_br
+    else
+      ''
+    end
+  end
+  def entry_date_br=(new_date)
+    self.entry_date = new_date.to_date #rescue nil
   end
   
   def total

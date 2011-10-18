@@ -75,7 +75,6 @@ class EntriesController < ApplicationController
   # PUT /entries/1.json
   def update
     @entry = Entry.find(params[:id])
-
     respond_to do |format|
       if @entry.update_attributes(params[:entry])
         format.html { redirect_to @entry, :notice => 'Entry was successfully updated.' }
