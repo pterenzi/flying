@@ -7,9 +7,9 @@ class EntriesController < ApplicationController
   def index
     date_params
     if params[:date_option] == 'due_date'
-      @entries = Entry.between_due_date(@start_date.to_date, @end_date.to_date).order(:due_date)
+      @entries = Entry.between_due_dates(@start_date.to_date, @end_date.to_date).order(:due_date)
     else
-      @entries = Entry.between_entry_date(@start_date.to_date, @end_date.to_date).order(:entry_date)
+      @entries = Entry.between_entry_dates(@start_date.to_date, @end_date.to_date).order(:entry_date)
     end
     if params[:client_id] && params[:client_id].to_i > 0
       @entries = @entries.by_client(params[:client_id])
