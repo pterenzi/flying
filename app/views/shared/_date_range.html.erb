@@ -3,11 +3,16 @@
 		$(".datepicker").datepicker();
 	});
 </script>
-<div>
-<%= text_field_tag :start_date, @start_date, :class=>'datepicker', :size=>10 %>
-<%= text_field_tag :end_date, @end_date, :class=>'datepicker', :size => 10   %>
-<%= radio_button_tag :date_option, 'due_date', true %> <%= label_tag :date_option_due_date,  "Vencimento" %>
-<%= radio_button_tag :date_option, 'real_date',  false %> <%= label_tag :date_option_real_date, 'Efetiva' %>
-<%= submit_tag :search , :onclick => "javascript:search('#{action_name}');" %>
-<%= params[:date_option]%>
-</div>
+
+<table>
+	<tr>
+		<td width="130" ><%= text_field_tag :start_date, @start_date, :class=>'datepicker', :size=>10 %><b> Inicial</b> </br>
+		<%= text_field_tag :end_date, @end_date, :class=>'datepicker', :size => 10%> <b>Final</b></td>	
+		<td algin="left"background-color="#cccccc"><b><%= radio_button_tag :date_option, true %> <%= label_tag :date_option_due_date,  "Vencimento" %></br>
+		<%= radio_button_tag :date_option,  false %> <%= label_tag :date_option_real_date, 'Pagamento' %></b></td>
+		<td align="left" width="50"><%= submit_tag :search , :onclick => "javascript:search('#{action_name}');" %></td>
+	</tr>
+</table>
+
+
+
