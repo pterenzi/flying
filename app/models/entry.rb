@@ -11,7 +11,9 @@ class Entry < ActiveRecord::Base
   scope :between_entry_dates, lambda {|start_date,end_date| where('entry_date between ? and ? ', start_date, end_date )}
   
   scope :by_client, lambda{|id| where("client_id = ? ", id)}
-  scope :confirmed, where(:received=>true)
+  # scope :confirmed, where(:received=>true)
+  scope :confirmed, lambda {|received| where('received=?' , received=='sim')}
+
   scope :not_confirmed, where(:received=>false)
   attr_accessor :due_date_br, :entry_date_br
   

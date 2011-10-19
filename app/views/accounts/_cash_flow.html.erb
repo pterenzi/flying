@@ -1,7 +1,9 @@
 <hr>
 <table width="90%">
   <tr>
-    <th>Data</th>
+    <th>Data prevista</th>
+    <th>Data efetiva</th>
+    <th>Confirmado</th>
     <th>Cliente/Fornecedor</th>
     <th>Descritivo</th>
     <th align='right'>Débito</th>
@@ -16,14 +18,18 @@
 <% data.each do |entry| %>
   <tr>
     <% if entry.is_a? Entry %>
-      <td><%= entry.entry_date.to_s_br %></td>
+      <td><%= entry.due_date_br %></td>
+      <td><%= entry.entry_date_br %></td>
+      <td><%= entry.received? ? 'sim' : 'não' %></td>
       <td><%= entry.client && entry.client.name %></td>
       <td><%= entry.description %></td>
       <td>&nbsp;</td>
       <td align='right'><%= entry.value.real %></td>
       <% credit += entry.value %>
     <% else %>
-      <td><%= entry.payment_date.to_s_br %></td>
+      <td><%= entry.due_date_br %></td>
+      <td><%= entry.payment_date_br %></td>
+      <td><%= entry.payed? ? 'sim' : 'não' %></td>
       <td><%= entry.supplier && entry.supplier.name %></td>
       <td><%= entry.description %></td>
       <td align='right'><%= entry.value.real %></td>
@@ -39,7 +45,7 @@
   </tr>
 <% end %>
 <tr>
-  <td colspan="3" align="center"><b>Total</b></td>
+  <td colspan="4" align="center"><b>Total</b></td>
   <td align='right'><b><%= debit.real %></b></td>
   <td align='right'><b><%= credit.real %></b></td>
   <td>&nbsp;</td>
