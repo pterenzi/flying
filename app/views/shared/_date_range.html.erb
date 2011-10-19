@@ -6,5 +6,8 @@
 <div>
 <%= text_field_tag :start_date, @start_date, :class=>'datepicker', :size=>10 %>
 <%= text_field_tag :end_date, @end_date, :class=>'datepicker', :size => 10   %>
+<%= radio_button_tag :date_option, 'due_date', true %> <%= label_tag :date_option_due_date,  "Vencimento" %>
+<%= radio_button_tag :date_option, 'real_date',  false %> <%= label_tag :date_option_real_date, 'Efetiva' %>
 <%= submit_tag :search , :onclick => "javascript:search('#{action_name}');" %>
+<%= params[:date_option]%>
 </div>

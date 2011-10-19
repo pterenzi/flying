@@ -6,11 +6,12 @@ function search(action_name){
     window.location = '/accounts/cash_flow/?start_date=' + $("#start_date").val() + 
     '&end_date=' + $("#end_date").val() + "&client_id=" + 
     $("#client_id").val() + "&supplier_id=" + $("#supplier_id").val() + 
-    "&confirmed=" + $("#confirmed").val();
+    "&confirmed=" + $("#confirmed").val() + "&date_param="  + $("input:checked").val();
   }else {
     window.location = '/accounts?start_date=' + $("#start_date").val() + 
     '&end_date=' + $("#end_date").val() + "&supplier_id=" + 
-    $("#supplier_id").val() + "&confirmed=" + $("#confirmed").val();
+    $("#supplier_id").val() + "&confirmed=" + $("#confirmed").val() +
+    "&date_param=" + $("input:checked").val();
   }
 }
 

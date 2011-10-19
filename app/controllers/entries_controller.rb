@@ -6,7 +6,11 @@ class EntriesController < ApplicationController
   # GET /entries.json
   def index
     date_params
-    @entries = Entry.between_date(@start_date.to_date, @end_date.to_date).order(:entry_date)
+    if params[:date_option] == 'due_date'
+      @entries = Entry.between_due_date(@start_date.to_date, @end_date.to_date).order(:due_date)
+    else
+      @entries = Entry.between_entry_date(@start_date.to_date, @end_date.to_date).order(:entry_date)
+    end
     if params[:client_id] && params[:client_id].to_i > 0
       @entries = @entries.by_client(params[:client_id])
     end
