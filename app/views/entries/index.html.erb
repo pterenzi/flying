@@ -34,12 +34,10 @@
   </tr>
   </tr>
 <% end %>
-<tr>
-  <td align='center' colspan="3">Total</td>
-  <td align='right'><%= total.real %></td>
-</tr>
 </table>
-
-<br />
+<hr>
+<div align="right"><b>Total</b>
+<b><%= total.real %></b>
+</div>
 <hr>
 <%= link_to image_tag("plus2.png", :size=>"40x40", :border=>0, :title=>"Adicionar"), new_entry_path %>

@@ -13,7 +13,7 @@
 	</tr>
 </table>
 <hr>
-<table width="90%">
+<table>
   <tr>
     <th>Vencimento</th>
     <th>Fornecedor</th>
@@ -43,12 +43,11 @@
     <td align="left" width="25px"><%= link_to image_tag("trash.jpg",:size=>"20x20", :border=>0, :title=>"Excluir"), account, :confirm => 'Tem certeza que quer excluir o registro?', :method => :delete if current_user.master? %></td>
   </tr>
 <% end %>
-<tr>
-  <td colspan="7" align="center">Total</td>
-  <td><%= total.real %></td>
-</tr>
-</table>
 
-<br />
+</table>
+<hr>
+<div align="right"><b>Total</b>
+<b><%= total.real %></b>
+</div>
 <hr>
 <%= link_to image_tag("plus2.png", :size=>"40x40", :border=>0, :title=>"Adicionar"), new_account_path %>

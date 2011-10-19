@@ -22,7 +22,7 @@
     <% if entry.is_a? Entry %>
       <td><%= entry.due_date_br %></td>
       <td><%= entry.entry_date_br %></td>
-      <td><%= entry.received? ? 'sim' : 'não' %></td>
+      <td><%= entry.received? ? 'sim' : 'não'%></td>
       <td><%= entry.client && entry.client.name %></td>
       <td><%= entry.description %></td>
       <td>&nbsp;</td>
