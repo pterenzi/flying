@@ -7,9 +7,9 @@ class AccountsController < ApplicationController
   def index
     date_params
     if params[:date_option] == 'due_date'
-      @payments   = Account.payments.between_due_dates(@start_date.to_date, @end_date.to_date).pay_by_date.order(:due_date)
+      @payments   = Account.payments.between_due_dates(@start_date.to_date, @end_date.to_date).order(:due_date)
     else
-      @payments   = Account.payments.between_payment_dates(@start_date.to_date, @end_date.to_date).pay_by_date.order(:payment_date)
+      @payments   = Account.payments.between_payment_dates(@start_date.to_date, @end_date.to_date).order(:payment_date)
     end
     @suppliers  = Supplier.all.collect{ |s| [s.name, s.id] }
     if params[:supplier_id] && params[:supplier_id].to_i > 0
