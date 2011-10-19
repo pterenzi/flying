@@ -1,1 +1,15 @@
+<table>
+	<tr>
+		<th >Fornecedor:</th>
+		<th>Pago:</th>
+		<th>Data:</th>
+	</tr>
+	<tr>
+		<td vertical-align="top"><%= select_tag :supplier_id, options_for_select(@suppliers, params[:supplier_id]), :prompt => 'Selecione' %></td>
+    <td><%= select_tag :confirmed, options_for_select([[''],['Sim'], ['Não']], params[:confirmed]), :prompt => 'Ambos' %></td>
+
+		<td><%= render :partial => '/shared/date_range' %></td>
+	</tr>
+</table>
+
 <%= render :partial => 'payments' , :locals => {:data => @payments}  %>

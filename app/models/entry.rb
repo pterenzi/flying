@@ -12,7 +12,7 @@ class Entry < ActiveRecord::Base
   
   scope :by_client, lambda{|id| where("client_id = ? ", id)}
   # scope :confirmed, where(:received=>true)
-  scope :confirmed, lambda {|received| where('received=?' , received=='sim')}
+  scope :confirmed, lambda {|received| where('received=?' , received)}
 
   scope :not_confirmed, where(:received=>false)
   attr_accessor :due_date_br, :entry_date_br

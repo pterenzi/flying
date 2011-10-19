@@ -107,12 +107,12 @@ class AccountsController < ApplicationController
   
   def cash_flow
     date_params
-    if params[:date_option] == 'due_date'
-      @entries    = Entry.between_due_dates(@start_date.to_date, @end_date.to_date).confirmed(params[:confirmed])
-      @payments   = Account.payments.between_due_dates(@start_date.to_date, @end_date.to_date).order(:due_date).confirmed(params[:confirmed])
+    if params[:confirmed] == 'false'
+      @entries    = Entry.between_due_dates(@start_date.to_date, @end_date.to_date).confirmed(false)
+      @payments   = Account.between_due_dates(@start_date.to_date, @end_date.to_date).order(:due_date).confirmed(false)
     else
-      @entries    = Entry.between_entry_dates(@start_date.to_date, @end_date.to_date).confirmed(params[:confirmed])
-      @payments   = Account.payments.between_payment_dates(@start_date.to_date, @end_date.to_date).order(:payment_date).confirmed(params[:confirmed])
+      @entries    = Entry.between_entry_dates(@start_date.to_date, @end_date.to_date).confirmed(true)
+      @payments   = Account.between_payment_dates(@start_date.to_date, @end_date.to_date).order(:payment_date).confirmed(true)
     end
     @clients    = Client.all.collect{ |c| [c.name, c.id] }
     @suppliers  = Supplier.all.collect{ |s| [s.name, s.id] }
@@ -123,9 +123,14 @@ class AccountsController < ApplicationController
     if params[:supplier_id] && params[:supplier_id].to_i > 0
       @payments = @payments.by_supplier(params[:supplier_id])
     end
-
-    @option_date = params[:option_date]
- 
+    @entry_total = 0
+    @entries.each do |entry|
+      @entry_total += entry.value
+    end
+    @payed_total = 0
+    @payments.each do |pay|
+      @payed_total += pay.value
+    end
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @accounts }

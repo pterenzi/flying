@@ -12,7 +12,7 @@ class Account < ActiveRecord::Base
                     where("payment_date between  ? and  ? ", start_date, end_date)
                   }
   scope :by_supplier, lambda{|id| where("supplier_id = ? ", id)}  
-  scope :confirmed, lambda {|payed| where('payed=?' , payed=='sim')}
+  scope :confirmed, lambda {|payed| where('payed=?' , payed)}
   scope :not_payed, where(:payed=>false)
 
   scope :payments, where("credit IS NULL or credit = ?",false)
