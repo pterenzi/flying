@@ -3,5 +3,6 @@
 function search(){
   window.location = '/entries?start_date=' + $("#start_date").val() + 
   '&end_date=' + $("#end_date").val() + "&client_id=" + 
-  $("#client_id").val() + "&confirmed=" + $("#confirmed").val();
+  $("#client_id").val() + "&confirmed=" + $("#confirmed").val() +
+  "&aircraft_type_id=" + $("#aircraft_type_id").val();
 }

@@ -1,6 +1,7 @@
 class Entry < ActiveRecord::Base
   
   belongs_to :client
+  belongs_to :aircraft_type
 
   before_save :verify_entry_date_when_not_confirmed
   
@@ -13,6 +14,8 @@ class Entry < ActiveRecord::Base
   scope :between_entry_dates, lambda {|start_date,end_date| where('entry_date between ? and ? ', start_date, end_date )}
   
   scope :by_client, lambda{|id| where("client_id = ? ", id)}
+  scope :by_aircraft_type, lambda{|id| where("aircraft_type_id = ? ", id)}
+
   # scope :confirmed, where(:received=>true)
   scope :confirmed, where(:received=>true)
   scope :not_confirmed, where(:received=>false)
