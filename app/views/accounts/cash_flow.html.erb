@@ -1,16 +1,11 @@
 <h1><%= params[:confirmed]=='true' ?  'Fluxo de Caixa' : 'Previsão de Caixa' %></h1>
-<%= text_field_tag :confirmed, params[:confirmed] %>
+<%= hidden_field_tag :confirmed, params[:confirmed] %>
 <table>
 	<tr>
-		<th>Cliente:</th>
-		<th>Fornecedor:</th>
 		<th>Inicial:</th>
 		<th>Final:</th>
 	</tr>
 	<tr>
-		<td><%= select_tag :client_id, options_for_select(@clients, params[:client_id]), :prompt => 'Selecione' %></td>
-		<td><%= select_tag :supplier_id, options_for_select(@suppliers, params[:supplier_id]), :prompt => 'Selecione' %></td>
-
 		<%= render :partial => '/shared/date_range' %>
 	</tr>
 </table>

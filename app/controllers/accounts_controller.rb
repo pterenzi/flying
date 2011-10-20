@@ -8,9 +8,9 @@ class AccountsController < ApplicationController
   def index
     date_params
     if params[:date_option] == 'due_date'
-      @payments   = Account.payments.between_due_dates(@start_date.to_date, @end_date.to_date).order(:due_date)
+      @payments   = Account.between_due_dates(@start_date.to_date, @end_date.to_date).order(:due_date)
     else
-      @payments   = Account.payments.between_payment_dates(@start_date.to_date, @end_date.to_date).order(:payment_date)
+      @payments   = Account.between_payment_dates(@start_date.to_date, @end_date.to_date).order(:payment_date)
     end
     @suppliers  = Supplier.all.collect{ |s| [s.name, s.id] }
     if params[:supplier_id] && params[:supplier_id].to_i > 0
@@ -116,13 +116,7 @@ class AccountsController < ApplicationController
     end
     @clients    = Client.all.collect{ |c| [c.name, c.id] }
     @suppliers  = Supplier.all.collect{ |s| [s.name, s.id] }
-    if params[:client_id] && params[:client_id].to_i > 0
-      @entries = @entries.by_client(params[:client_id])
-    end
 
-    if params[:supplier_id] && params[:supplier_id].to_i > 0
-      @payments = @payments.by_supplier(params[:supplier_id])
-    end
     @entry_total = 0
     @entries.each do |entry|
       @entry_total += entry.value
