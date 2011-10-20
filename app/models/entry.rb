@@ -1,6 +1,8 @@
 class Entry < ActiveRecord::Base
   
   belongs_to :client
+
+  before_save :verify_entry_date_when_not_confirmed
   
   validates_presence_of :client, :message => "can't be blank"
   validates_presence_of :value, :message => "can't be blank"
@@ -12,8 +14,7 @@ class Entry < ActiveRecord::Base
   
   scope :by_client, lambda{|id| where("client_id = ? ", id)}
   # scope :confirmed, where(:received=>true)
-  scope :confirmed, lambda {|received| where('received=?' , received)}
-
+  scope :confirmed, where(:received=>true)
   scope :not_confirmed, where(:received=>false)
   attr_accessor :due_date_br, :entry_date_br
   
@@ -45,4 +46,9 @@ class Entry < ActiveRecord::Base
     result -= self.discount if self.discount
     result
   end
+
+  def verify_entry_date_when_not_confirmed
+    self.entry_date = nil if !self.received?
+  end
+
 end

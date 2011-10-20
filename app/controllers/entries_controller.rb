@@ -2,20 +2,21 @@ class EntriesController < ApplicationController
 
   before_filter :authenticate_user! 
 
+
   # GET /entries
   # GET /entries.json
   def index
     date_params
-    if params[:date_option] == 'due_date'
-      @entries = Entry.between_due_dates(@start_date.to_date, @end_date.to_date).order(:due_date)
+    if params[:confirmed] == 'não'
+      @entries = Entry.between_due_dates(@start_date.to_date, @end_date.to_date).order(:due_date).not_confirmed
     else
-      @entries = Entry.between_entry_dates(@start_date.to_date, @end_date.to_date).order(:entry_date)
+      @entries = Entry.between_entry_dates(@start_date.to_date, @end_date.to_date).order(:entry_date).confirmed
     end
     if params[:client_id] && params[:client_id].to_i > 0
       @entries = @entries.by_client(params[:client_id])
     end
-    @entries = @entries.confirmed if params[:confirmed] == 'sim'
-    @entries = @entries.not_confirmed if params[:confirmed] == 'não'
+    # @entries = @entries.confirmed if params[:confirmed] == 'sim'
+    # @entries = @entries.not_confirmed if params[:confirmed] == 'não'
     @clients     = Client.all.collect{ |c| [c.name, c.id] }
     respond_to do |format|
       format.html # index.html.erb
@@ -61,7 +62,6 @@ class EntriesController < ApplicationController
   # POST /entries.json
   def create
     @entry = Entry.new(params[:entry])
-
     respond_to do |format|
       if @entry.save
         format.html { redirect_to @entry, :notice => 'Entry was successfully created.' }
@@ -101,4 +101,5 @@ class EntriesController < ApplicationController
       format.json { head :ok }
     end
   end
+
 end
