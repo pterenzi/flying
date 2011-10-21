@@ -1,6 +1,9 @@
 class Entry < ActiveRecord::Base
   
   belongs_to :client
+  belongs_to :aircraft_type
+
+  before_save :verify_entry_date_when_not_confirmed
   
   validates_presence_of :client, :message => "can't be blank"
   validates_presence_of :value, :message => "can't be blank"
@@ -11,9 +14,10 @@ class Entry < ActiveRecord::Base
   scope :between_entry_dates, lambda {|start_date,end_date| where('entry_date between ? and ? ', start_date, end_date )}
   
   scope :by_client, lambda{|id| where("client_id = ? ", id)}
-  # scope :confirmed, where(:received=>true)
-  scope :confirmed, lambda {|received| where('received=?' , received)}
+  scope :by_aircraft_type, lambda{|id| where("aircraft_type_id = ? ", id)}
 
+  # scope :confirmed, where(:received=>true)
+  scope :confirmed, where(:received=>true)
   scope :not_confirmed, where(:received=>false)
   attr_accessor :due_date_br, :entry_date_br
   
@@ -45,4 +49,9 @@ class Entry < ActiveRecord::Base
     result -= self.discount if self.discount
     result
   end
+
+  def verify_entry_date_when_not_confirmed
+    self.entry_date = nil if !self.received?
+  end
+
 end

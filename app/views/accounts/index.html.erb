@@ -1,11 +1,13 @@
 <table>
 	<tr>
-		<th >Fornecedor:</th>
+	  <th>Centro de custo</th>
+		<th>Fornecedor:</th>
 		<th>Pago:</th>
 		<th>Inicial:</th>
 		<th>Final:</th>
 	</tr>
 	<tr>
+	  <td><%= select_tag :company_id, options_for_select(@aircraft_types, params[:aircraft_type_id]), :prompt => 'Selecione'  %></td>
 		<td vertical-align="top"><%= select_tag :supplier_id, options_for_select(@suppliers, params[:supplier_id]), :prompt => 'Selecione' %></td>
     <td><%= select_tag :confirmed, options_for_select([[''],['Sim'], ['Não']], params[:confirmed]), :prompt => 'Ambos' %></td>
 

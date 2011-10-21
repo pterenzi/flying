@@ -1,6 +1,7 @@
 class Account < ActiveRecord::Base
   
   belongs_to :supplier
+  belongs_to :company, :class_name => 'AircraftType' 
     
   validates_numericality_of :value, :on => [:create, :update], :message => "is not a number"
   validates_presence_of :value, :on => [:create, :update], :message => "can't be blank"
@@ -11,6 +12,7 @@ class Account < ActiveRecord::Base
   scope :between_payment_dates, lambda {|start_date,end_date| 
                     where("payment_date between  ? and  ? ", start_date, end_date)
                   }
+  scope :by_company, lambda{|id| where("company_id = ? ", id)}  
   scope :by_supplier, lambda{|id| where("supplier_id = ? ", id)}  
   scope :confirmed, lambda {|payed| where('payed=?' , payed)}
   scope :not_payed, where(:payed=>false)

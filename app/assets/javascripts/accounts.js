@@ -11,7 +11,7 @@ function search(action_name){
     window.location = '/accounts?start_date=' + $("#start_date").val() + 
     '&end_date=' + $("#end_date").val() + "&supplier_id=" + 
     $("#supplier_id").val() + "&confirmed=" + $("#confirmed").val() +
-    "&date_option=" + $("input:checked").val();
+    "&date_option=" + $("input:checked").val() + "&aircraft_type_id=" + $("#company_id").val();
   }
 }
 

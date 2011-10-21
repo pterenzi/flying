@@ -6,6 +6,7 @@
     <th>Fornecedor</th>
     <th>Descritivo</th>
     <th align='right'>Valor</th>
+    <th>Centro de custo</th>
     <th>&nbsp;</th>
     <th>&nbsp;</th>
     <th>&nbsp;</th>
@@ -13,11 +14,12 @@
 <% total = 0%>
 <% data.each do |account| %>
   <tr>
-      <td><%= confirmed ? account.payment_date_br : account.due_date_br %></td>
-      <td><%= account.supplier && account.supplier.name %></td>
-      <td><%= account.description %></td>
-      <td align='right'><%= account.value.real %></td>
+    <td><%= confirmed ? account.payment_date_br : account.due_date_br %></td>
+    <td><%= account.supplier && account.supplier.name %></td>
+    <td><%= account.description %></td>
+    <td align='right'><%= account.value.real %></td>
     <% total += account.total if account.total %>
+    <td><%= account.company.name if account.company %></td>
     <td align="right" width="25px"><%= link_to image_tag("info.png", :size=>"20x20", :border=>0, :title=>"Detalhes"), account %></td>
     <td align="center" width="25px"><%= link_to image_tag("edit.png", :size=>"20x20", :border=>0, :title=>"Editar"), edit_account_path(account) %></td>
     <td align="left" width="25px"><%= link_to image_tag("trash.jpg",:size=>"20x20", :border=>0, :title=>"Excluir"), account, :confirm => 'Tem certeza que quer excluir o registro?', :method => :delete if current_user.master? %></td>

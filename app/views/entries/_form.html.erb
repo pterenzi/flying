@@ -15,6 +15,11 @@
     <%= f.label "Cliente" %><br />
     <%= f.select :client_id, @clients, :prompt => 'Selecione' %>
   </div>
+    <div class="field">
+      <%= f.label "Centro de custo" %><br />
+      <%= f.select :aircraft_type_id , @aircraft_types, :include_blank => true %>
+    </div>
+
 
   <div class="field">
     <%= f.label "Data" %><br />

@@ -6,16 +6,24 @@ class AccountsController < ApplicationController
   # GET /accounts
   # GET /accounts.json
   def index
+
+    @suppliers  = Supplier.all.collect{ |s| [s.name, s.id] }
+    @aircraft_types   = AircraftType.all(:order => :name).collect{|c| [c.name, c.id]}
+
     date_params
     if params[:date_option] == 'due_date'
       @payments   = Account.between_due_dates(@start_date.to_date, @end_date.to_date).order(:due_date)
     else
       @payments   = Account.between_payment_dates(@start_date.to_date, @end_date.to_date).order(:payment_date)
     end
-    @suppliers  = Supplier.all.collect{ |s| [s.name, s.id] }
+
     if params[:supplier_id] && params[:supplier_id].to_i > 0
       @payments = @payments.by_supplier(params[:supplier_id])
     end
+    if params[:aircraft_type_id] && params[:aircraft_type_id].to_i > 0
+      @payments = @payments.by_company(params[:aircraft_type_id])
+    end
+    
     @payments = @payments.payed if params[:confirmed] == 'sim'
     @payments = @payments.not_payed if params[:confirmed] == 'não'
 
@@ -41,8 +49,9 @@ class AccountsController < ApplicationController
   def new
     @account          = Account.new()
     @account.due_date = Date.today
-    @clients   = Client.all(:order=>:name).collect{|c| [c.name, c.id]}
-    @suppliers = Supplier.all(:order=>:name).collect{|c| [c.name, c.id]}
+    @suppliers        = Supplier.all(:order=>:name).collect{|c| [c.name, c.id]}
+    @aircraft_types   = AircraftType.all(:order => :name).collect{|c| [c.name, c.id]}
+
     # @packages  = Package.actives.collect{|c| [c.name, c.id]}
     respond_to do |format|
       format.html # new.html.erb
@@ -53,9 +62,8 @@ class AccountsController < ApplicationController
   # GET /accounts/1/edit
   def edit
     @account   = Account.find(params[:id])
-    @clients   = Client.all(:order=>:name).collect{|c| [c.name, c.id]}
     @suppliers = Supplier.all(:order=>:name).collect{|c| [c.name, c.id]}
-    # @packages  = Package.actives.collect{|c| [c.name, c.id]}
+    @aircraft_types   = AircraftType.all(:order => :name).collect{|c| [c.name, c.id]}
   end
 
   # POST /accounts
@@ -70,6 +78,9 @@ class AccountsController < ApplicationController
         format.html { redirect_to @account, :notice => 'Account was successfully created.' }
         format.json { render :json => @account, :status => :created, :location => @account }
       else
+        @suppliers        = Supplier.all(:order=>:name).collect{|c| [c.name, c.id]}
+        @aircraft_types   = AircraftType.all(:order => :name).collect{|c| [c.name, c.id]}
+
         format.html { render :action => "new" }
         format.json { render :json => @account.errors, :status => :unprocessable_entity }
       end
@@ -86,6 +97,9 @@ class AccountsController < ApplicationController
         format.html { redirect_to @account, :notice => 'Account was successfully updated.' }
         format.json { head :ok }
       else
+        @suppliers        = Supplier.all(:order=>:name).collect{|c| [c.name, c.id]}
+        @aircraft_types   = AircraftType.all(:order => :name).collect{|c| [c.name, c.id]}
+
         format.html { render :action => "edit" }
         format.json { render :json => @account.errors, :status => :unprocessable_entity }
       end

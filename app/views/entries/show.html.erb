@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 <b>Cliente : </b><%= @entry.client.name %>
 <br />
+<b>Centro de custo : </b><%= @entry.aircraft_type.name if @entry.aircraft_type %>
+<br />
 <b>Vencimento : </b><%= @entry.due_date_br%>
 <br />
 <b>Valor :</b><%= @entry.value.real %>
