@@ -22,14 +22,22 @@ table {
 	width:95%;
 }
 
-
+.subtitle {
+	-moz-border-bottom-left-radius: 12px;
+	-moz-border-bottom-right-radius:12px;
+  -webkit-border-bottom-left-radius: 12px;
+  -webkit-border-bottom-right-radius: 12px;
+	background:#6e9aeb;
+	height:30px;
+	padding:15px;
+}
 
 td {
-	vertical-align:top;
+	vertical-align:middle;
 }
 
 
-td .result {
+.result {
 	font-weight:bold;
 	text-align:right;
 	
@@ -64,7 +72,7 @@ td .result {
 }
 
 #table_search {
-	background-color:"#ccc";
+	background-color:"#ccc"
 }
 
 #sidebar ul {

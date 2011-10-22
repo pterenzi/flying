@@ -5,34 +5,13 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Emanuel', :city => cities.first)
-Client.delete_all
-Client.create(:name=>'Marcio')
-Client.create(:name=>'Bonifácio')
 
 AircraftType.delete_all
 t1 = AircraftType.create(:name =>"Helicóptero", :hour_price=>120)
 t2 = AircraftType.create(:name =>"Autogyro", :hour_price=>230)
 t3 = AircraftType.create(:name =>"Ultra-leve", :hour_price=>89)
 
-Aircraft.delete_all
-a1 = Aircraft.create(:prefix=>'AG-004', :aircraft_type =>t2)
-a2 = Aircraft.create(:prefix=>'HE-005', :aircraft_type =>t1)
-a3 = Aircraft.create(:prefix=>'UL-006', :aircraft_type =>t3)
 
-
-# Package.delete_all
-# Package.create(:name => 'heli10', :hour_price=>120,  :aircraft_type => t1, :active => true)
-# Package.create(:name => 'gyro15', :hour_price=>230,  :aircraft_type => t2, :active => true)
-# Package.create(:name => 'ultra20', :hour_price=>89,  :aircraft_type => t3, :active => true)
-
-Instructor.delete_all
-Instructor.create(:name => 'Joaquim', :instructor_dac => '234532', :hour_price=>90)
-Instructor.create(:name => 'Manuel', :instructor_dac => 'fsdsf3', :hour_price=>100)
-
-Supplier.delete_all
-Supplier.create(:name => 'luz')
-Supplier.create(:name => 'salário')
-Supplier.create(:name => 'contador')
 
 Sale.delete_all
 # Payment.delete_all
