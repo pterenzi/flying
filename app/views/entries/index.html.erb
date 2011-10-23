@@ -4,11 +4,11 @@
 	  <th>Centro de custo</th>
 		<th>Cliente:</th>
 		<th>Recebido</th>
-		<th>Data inicial:</th>
-		<th>Data final:</th>
+		<th>Data:</th>
 	</tr>
 	  <td><%= select_tag :aircraft_type_id, options_for_select(@aircraft_types, params[:aircraft_type_id]), :prompt => 'Selecione'  %></td>
 	 	<td><%= select_tag :client_id, options_for_select(@clients, params[:client_id]), :prompt => 'Selecione' %></td>
+
     <td><%= select_tag :confirmed, options_for_select([['sim'], ['não']], params[:confirmed])%></td>
     <%= render :partial => '/shared/date_range' %>
 	</tr>
