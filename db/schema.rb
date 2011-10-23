@@ -10,10 +10,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111016003429) do
+ActiveRecord::Schema.define(:version => 20111020192614) do
 
   create_table "accounts", :force => true do |t|
-    t.integer  "client_id"
     t.integer  "type"
     t.integer  "company_id"
     t.date     "due_date"
@@ -26,7 +25,6 @@ ActiveRecord::Schema.define(:version => 20111016003429) do
     t.text     "comments"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "credit",       :default => false
     t.integer  "package_id"
     t.integer  "supplier_id"
     t.integer  "hours"
@@ -118,13 +116,14 @@ ActiveRecord::Schema.define(:version => 20111016003429) do
     t.date     "due_date"
     t.date     "entry_date"
     t.integer  "client_id"
-    t.decimal  "value",       :precision => 8, :scale => 2
-    t.decimal  "interest",    :precision => 8, :scale => 2
-    t.decimal  "discount",    :precision => 8, :scale => 2
+    t.decimal  "value",            :precision => 8, :scale => 2
+    t.decimal  "interest",         :precision => 8, :scale => 2
+    t.decimal  "discount",         :precision => 8, :scale => 2
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "received",                                  :default => false
+    t.boolean  "received",                                       :default => false
+    t.integer  "aircraft_type_id"
   end
 
   create_table "flights", :force => true do |t|
@@ -170,9 +169,9 @@ ActiveRecord::Schema.define(:version => 20111016003429) do
     t.integer  "turns"
     t.integer  "speed_variation"
     t.integer  "direct_autorotation"
-    t.integer  "autorotation_90\302\272"
-    t.integer  "autorotation_180\302\272"
-    t.integer  "autorotation_360\302\272"
+    t.integer  "autorotation_90º"
+    t.integer  "autorotation_180º"
+    t.integer  "autorotation_360º"
     t.integer  "autorotation_Hovering_DES"
     t.integer  "autorotation_Hovering_FES"
     t.integer  "normal_approach"

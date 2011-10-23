@@ -104,6 +104,7 @@ class EntriesController < ApplicationController
   # DELETE /entries/1
   # DELETE /entries/1.json
   def destroy
+    debugger
     @entry = Entry.find(params[:id])
     @entry.destroy
 
