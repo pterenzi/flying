@@ -16,9 +16,6 @@ class Account < ActiveRecord::Base
   scope :by_supplier, lambda{|id| where("supplier_id = ? ", id)}  
   scope :confirmed, lambda {|payed| where('payed=?' , payed)}
   scope :not_payed, where(:payed=>false)
-
-  scope :payments, where("credit IS NULL or credit = ?",false)
-  scope :sales, where(:credit => true)
   
   attr_accessor :payment_date_br, :due_date_br
 
@@ -52,13 +49,7 @@ class Account < ActiveRecord::Base
   def due_date
     self.payment_date
   end
-  
-  def copy_date_when_credit
-    if self.credit?
-      self.update_attribute("payment_date", self.due_date)
-    end
-  end
-  
+    
   def total
     result = self.value
     result += self.interest if self.interest

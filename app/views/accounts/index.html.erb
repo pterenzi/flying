@@ -9,7 +9,7 @@
 	<tr>
 	  <td><%= select_tag :company_id, options_for_select(@aircraft_types, params[:aircraft_type_id]), :prompt => 'Selecione'  %></td>
 		<td vertical-align="top"><%= select_tag :supplier_id, options_for_select(@suppliers, params[:supplier_id]), :prompt => 'Selecione' %></td>
-    <td><%= select_tag :confirmed, options_for_select([[''],['Sim'], ['Não']], params[:confirmed]), :prompt => 'Ambos' %></td>
+    <td><%= select_tag :confirmed, options_for_select([['ambos'],['Sim'], ['Não']], params[:confirmed]) %></td>
 
 		<%= render :partial => '/shared/date_range' %>
 	</tr>
@@ -17,3 +17,6 @@
 
 <%= render :partial => 'payments' , :locals => {:data => @payments,
                :confirmed => params[:confirmed]=='true'}  %>
+               
+               
+<%= link_to image_tag("plus2.png", :size=>"40x40", :border=>0, :title=>"Adicionar"), new_account_path %>
