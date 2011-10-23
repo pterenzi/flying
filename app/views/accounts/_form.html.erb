@@ -50,7 +50,7 @@
   </div>
   
   <div>
-    <%= f.check_box :payed %>
+    <%= f.check_box :payed , :disabled => !@account.new_record? && !current_user.master? %>
     <%= f.label "Pago em "%>
     <%= f.text_field :payment_date_br, :class=>'datepicker', :size => 9 %>  </div>
 
