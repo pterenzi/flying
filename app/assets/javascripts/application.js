@@ -9,12 +9,16 @@
 //= require_tree .
 
 function print(){
+  $("#dialog").empty();
+  
   $("#dialog").append($("#main").html());
   $("#dialog").dialog({
   buttons: { 
     "Print": function() { $('#main').printElement(); },
     "Close": function() { $(this).dialog("close"); }
-  }
+  },
+  height: 500,
+  width: 600
 });
   
     }
