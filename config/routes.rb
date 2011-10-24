@@ -1,5 +1,6 @@
 Flying::Application.routes.draw do
   
+
   devise_for :users
 
   resources :aircraft_types do
@@ -7,6 +8,8 @@ Flying::Application.routes.draw do
       get 'busca_aircraft_type'
     end
   end
+
+  get "admins/manage_permission"
   
   resources :sales
 

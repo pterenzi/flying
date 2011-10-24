@@ -1,0 +1,15 @@
+<h1>Gerencia permissão</h1>
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>email</th>
+    <th>Nível</th>
+  </tr>
+<% @users.each do |user| %>
+  <tr>
+    <td><%= user.name %></td>
+    <td><%= user.email %></td>
+    <td><%= user.level_name %></td>
+  </tr>
+<% end %>
+</table>
