@@ -14,7 +14,7 @@ Flying::Application.routes.draw do
 
   resources :suppliers
 
-  root :to => 'accounts#cash_flow'
+  root :to => 'flights#index'
 
   resources :debts
 

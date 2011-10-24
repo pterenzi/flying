@@ -15,6 +15,10 @@ class User < ActiveRecord::Base
     self.level == 1
   end
   
+  def instructor?
+    self.level == 3
+  end
+  
   def admin?
     self.level < 3
   end
