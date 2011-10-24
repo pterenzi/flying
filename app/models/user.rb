@@ -22,4 +22,12 @@ class User < ActiveRecord::Base
   def admin?
     self.level < 3
   end
+  
+  def level_name
+    return 'master' if master?
+    return 'administrador' if admin?
+    return 'instrutor' if instructor?
+    
+    
+  end
 end

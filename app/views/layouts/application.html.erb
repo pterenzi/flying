@@ -4,7 +4,7 @@
   <title>Controle de Vôos</title>
   <%= stylesheet_link_tag "application"%>
   <%= stylesheet_link_tag "jquery-ui-1.8.16.custom"%>
-  <%= javascript_include_tag "application", "jquery-1.6.min.js", "jquery-ui-1.8.14.custom.min.js", "jquery.ui.datepicker-pt-BR" %>
+  <%= javascript_include_tag "application", "jquery-1.6.min.js", "jquery-ui-1.8.14.custom.min.js", "jquery.ui.datepicker-pt-BR", "jquery-ui-1.8.16.dialog.min.js", "jquery_print.js" %>
   <%= javascript_include_tag "#{controller_name}"%>
   <%= csrf_meta_tags %>
 
@@ -19,7 +19,7 @@
 <body>
 	<div id="pagewidth" >
 		<div id="header"><h2>Controle de Vôos</h2>
-		  	    <div style="float: right;">
+		  	    <div style="float: right; padding-right: 5em;">
         <%= render :partial => '/shared/navigation' %>	
         <%- flash.each do |name, msg| -%>
           <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>

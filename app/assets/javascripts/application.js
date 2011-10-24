@@ -7,3 +7,18 @@
 //= require jquery-1.6.min
 //= require jquery_ujs
 //= require_tree .
+
+function print(){
+  $("#dialog").append($("#main").html());
+  $("#dialog").dialog({
+  buttons: { 
+    "Print": function() { $('#main').printElement(); },
+    "Close": function() { $(this).dialog("close"); }
+  }
+});
+  
+    }
+     
+
+
+

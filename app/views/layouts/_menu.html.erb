@@ -15,6 +15,7 @@
     <li class="header"><%= link_to 'Pagamentos', accounts_path(:confirmed=>true)%></li>
     <li class="header"><%= link_to 'Caixa', cash_flow_accounts_path(:confirmed=>true) %></li>
     <li class="header"><%= link_to 'Previsão de caixa', cash_flow_accounts_path(:confirmed=>false) %></li>
+    <li class="header"><%= link_to 'Gerencia permissões', admins_manage_permission_path if current_user.master? %></li>
   <% end %>
 </ul>
 </div>

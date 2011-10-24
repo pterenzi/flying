@@ -1,48 +1,52 @@
-<h1>Recebimentos</h1>
-<table>
-	<tr>
-	  <th>Centro de custo</th>
-		<th>Cliente:</th>
-		<th>Recebido</th>
-		<th>Data:</th>
-	</tr>
-	  <td><%= select_tag :aircraft_type_id, options_for_select(@aircraft_types, params[:aircraft_type_id]), :prompt => 'Selecione'  %></td>
-	 	<td><%= select_tag :client_id, options_for_select(@clients, params[:client_id]), :prompt => 'Selecione' %></td>
+<div id="main">
+  <h1>Recebimentos</h1>
+  <table>
+  	<tr>
+  	  <th>Centro de custo</th>
+  		<th>Cliente:</th>
+  		<th>Recebido</th>
+  		<th>Data:</th>
+  	</tr>
+  	  <td><%= select_tag :aircraft_type_id, options_for_select(@aircraft_types, params[:aircraft_type_id]), :prompt => 'Selecione'  %></td>
+  	 	<td><%= select_tag :client_id, options_for_select(@clients, params[:client_id]), :prompt => 'Selecione' %></td>
 
-    <td><%= select_tag :confirmed, options_for_select([['sim'], ['não']], params[:confirmed])%></td>
-    <%= render :partial => '/shared/date_range' %>
-	</tr>
-</table>
-<hr>
-<table>
-  <tr>
-    <th>Data</th>
-    <th>Cliente</th>
-    <th>Descrição</th>
-    <th>Valor Total</th>
-    <th>Recebido</th>
-    <th>Centro de custo</th>
-  </tr>
-<% total = 0 %>
-<% @entries.each do |entry| %>
-  <tr>
-    <td><%= entry.due_date_br %></td>
-    <td><%= link_to entry.client.name, client_path(entry.client) if entry.client %></td>
-    <td><%= link_to entry.description, entry %></td>
-    <td align="right"><%= entry.total.real %></td>
-    <td><%= entry.received? ? 'sim' : 'não' %></td>
-    <td> <%= entry.aircraft_type.name if entry.aircraft_type %></td>
-    <td align="right" width="25px"><%= link_to image_tag("info.png", :size=>"20x20", :border=>0, :title=>"Detalhes"), entry %></td>
-    <td align="center" width="25px"><%= link_to image_tag("edit.png", :size=>"20x20", :border=>0, :title=>"Editar"), edit_entry_path(entry) %></td>
-    <td align="left" width="25px"><%= link_to image_tag("trash.jpg",:size=>"20x20", :border=>0, :title=>"Excluir"), entry, :confirm => 'Tem certeza que quer excluir o registro?', :method => :delete if current_user.master? %></td>
-    <% total += entry.total %>
-  </tr>
-  </tr>
-<% end %>
-</table>
-<hr>
-<div align="right"><b>Total</b>
-<b><%= total.real %></b>
+      <td><%= select_tag :confirmed, options_for_select([['sim'], ['não']], params[:confirmed])%></td>
+      <%= render :partial => '/shared/date_range' %>
+  	</tr>
+  </table>
+  <hr>
+  <table>
+    <tr>
+      <th>Data</th>
+      <th>Cliente</th>
+      <th>Descrição</th>
+      <th>Valor Total</th>
+      <th>Recebido</th>
+      <th>Centro de custo</th>
+    </tr>
+  <% total = 0 %>
+  <% @entries.each do |entry| %>
+    <tr>
+      <td><%= entry.due_date_br %></td>
+      <td><%= link_to entry.client.name, client_path(entry.client) if entry.client %></td>
+      <td><%= link_to entry.description, entry %></td>
+      <td align="right"><%= entry.total.real %></td>
+      <td><%= entry.received? ? 'sim' : 'não' %></td>
+      <td> <%= entry.aircraft_type.name if entry.aircraft_type %></td>
+      <td align="right" width="25px"><%= link_to image_tag("info.png", :size=>"20x20", :border=>0, :title=>"Detalhes"), entry %></td>
+      <td align="center" width="25px"><%= link_to image_tag("edit.png", :size=>"20x20", :border=>0, :title=>"Editar"), edit_entry_path(entry) %></td>
+      <td align="left" width="25px"><%= link_to image_tag("trash.jpg",:size=>"20x20", :border=>0, :title=>"Excluir"), entry, :confirm => 'Tem certeza que quer excluir o registro?', :method => :delete if current_user.master? %></td>
+      <% total += entry.total %>
+    </tr>
+    </tr>
+  <% end %>
+  </table>
+  <hr>
+  <div align="right"><b>Total</b>
+  <b><%= total.real %></b>
+  </div>
+  <hr>
+  <%= link_to image_tag("plus2.png", :size=>"40x40", :border=>0, :title=>"Adicionar"), new_entry_path %>
 </div>
-<hr>
-<%= link_to image_tag("plus2.png", :size=>"40x40", :border=>0, :title=>"Adicionar"), new_entry_path %>
+<%= link_to 'imprimir', 'javascript:print();'%>
+ <div id="dialog" title="Basic dialog"></div>
