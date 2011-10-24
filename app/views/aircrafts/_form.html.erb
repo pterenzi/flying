@@ -1,3 +1,8 @@
+<script type="text/javascript">
+  $(function() {
+		$(".datepicker").datepicker();
+	});
+</script>
 <%= form_for(@aircraft) do |f| %>
   <% if @aircraft.errors.any? %>
     <div id="error_explanation">
@@ -41,11 +46,11 @@
   </div>
   <div class="field">
     <%= f.label "Parada p/ manutenção" %><br />
-    <%= f.date_select :maintenance_break %>
+	<%= f.text_field :maintenance_break, :class=>'datepicker', :size=>11 %>
   </div>
   <div class="field">
     <%= f.label "Última manutenção" %><br />
-    <%= f.date_select :last_maintenance %>
+	<%= f.text_field :last_maintenance, :class=>'datepicker', :size=>11 %>
   </div>
   <div class="field">
     <%= f.label "Horas de vôo" %><br />
