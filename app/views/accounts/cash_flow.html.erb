@@ -1,4 +1,6 @@
-<h1><%= params[:confirmed]=='true' ?  'Fluxo de Caixa' : 'Previsão de Caixa' %></h1>
+<div id="title">
+  <h1><%= params[:confirmed]=='true' ?  'Fluxo de Caixa' : 'Previsão de Caixa' %></h1>
+</div>
 <%= hidden_field_tag :confirmed, params[:confirmed] %>
 <table>
 	<tr>
@@ -9,11 +11,13 @@
 		<%= render :partial => '/shared/date_range' %>
 	</tr>
 </table>
-
-<%= render :partial => 'entries' , :locals => {:data => @entries,
-               :confirmed => params[:confirmed]=='true' } %>
-<hr>
-<h1>Pagamentos</h1>
-<%= render :partial => 'payments' , :locals => {:data => @payments,
-               :confirmed => params[:confirmed]=='true' } %>
- 
+<div id="printable-part">
+  <%= render :partial => 'entries' , :locals => {:data => @entries,
+                 :confirmed => params[:confirmed]=='true' } %>
+  <hr>
+  <h1>Pagamentos</h1>
+  <%= render :partial => 'payments' , :locals => {:data => @payments,
+                 :confirmed => params[:confirmed]=='true' } %>
+</div> 
+<%= link_to 'imprimir', "javascript:print('#{@titulo}');"%>
+<div id="dialog" title="Basic dialog"></div>

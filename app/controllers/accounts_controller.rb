@@ -136,6 +136,8 @@ class AccountsController < ApplicationController
     end
     @clients    = Client.all.collect{ |c| [c.name, c.id] }
     @suppliers  = Supplier.all.collect{ |s| [s.name, s.id] }
+    @titulo = "Fluxo de caixa entre #{@start_date} e #{@end_date}"
+
 
     @entry_total = 0
     @entries.each do |entry|
