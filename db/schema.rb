@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111020192614) do
+ActiveRecord::Schema.define(:version => 20111025172903) do
 
   create_table "accounts", :force => true do |t|
     t.integer  "type"
@@ -145,7 +145,7 @@ ActiveRecord::Schema.define(:version => 20111020192614) do
     t.integer  "instructor_dac"
     t.string   "registration"
     t.string   "passenger"
-    t.string   "hourmeter"
+    t.decimal  "hourmeter"
     t.date     "flight_date"
     t.time     "flight_time"
     t.integer  "cruising_speed"
@@ -207,6 +207,45 @@ ActiveRecord::Schema.define(:version => 20111020192614) do
     t.datetime "updated_at"
     t.float    "duration"
     t.integer  "aircraft_id"
+    t.integer  "history"
+    t.integer  "phase"
+    t.integer  "course"
+    t.string   "filled_by"
+    t.integer  "engine_drive"
+    t.integer  "standard_phraseology"
+    t.integer  "outgoing_traffic"
+    t.integer  "ascent_to_instruction_area"
+    t.integer  "control_and_flaps"
+    t.integer  "engine_usage"
+    t.integer  "compensator_usage"
+    t.integer  "small_inclination_curves"
+    t.integer  "medium_inclination_curves"
+    t.integer  "stall_without_engine"
+    t.integer  "stall_without_engine_with_flap"
+    t.integer  "stall_with_engine"
+    t.integer  "simulated_breakdown"
+    t.integer  "low_altitude_simulated_breakdown"
+    t.integer  "s_on_the_road"
+    t.integer  "arround_8_landmarks"
+    t.integer  "gliding_flight"
+    t.integer  "coordinating_first_type"
+    t.integer  "coordinating_second_type"
+    t.integer  "reduced_flight"
+    t.integer  "corridor_entry"
+    t.integer  "traffic_circuit"
+    t.integer  "track_framework"
+    t.integer  "final"
+    t.integer  "final_rush"
+    t.integer  "land_rush"
+    t.integer  "landing_without_flap"
+    t.integer  "short_landing"
+    t.integer  "vertical_approach_180"
+    t.integer  "vertical_approach_360"
+    t.integer  "procedures_after_landing"
+    t.integer  "engine_cut"
+    t.integer  "abandonment_check"
+    t.integer  "speed_and_altiotude_variation"
+    t.integer  "landings"
   end
 
   create_table "instructors", :force => true do |t|

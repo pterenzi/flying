@@ -191,7 +191,7 @@ color:#6e9aeb;
  position: relative; 
  width:79%;
  float:right;
- border:solid thin black;
+ border:solid thin gray;
  }
 #maincol a{
 	background-color:white;
@@ -202,7 +202,8 @@ color:#6e9aeb;
 	background-color:white;
 	color:#6e9aeb;
 }
- 
+
+
 #footer{
  height:70px; 
  padding-left: 20px;
@@ -215,8 +216,70 @@ color:#6e9aeb;
 .form_row {
 	padding-left:5px;
 } 
- 
- 
+
+.col1cell {
+	border-top:solid thin gray;
+	border-left:solid thin gray;
+	border-bottom:solid thin gray;
+	padding:5px;
+	background:#f0f0f0;
+	width:22%;	
+}
+.col2cell {
+	border-top:solid thin gray;
+	border-right:solid thin gray;
+	border-bottom:solid thin gray;
+	padding:5px;
+	background:#f0f0f0;
+	width:3%;
+}
+
+.col3cell {
+	border-top:solid thin gray;
+	border-left:solid thin gray;
+	border-bottom:solid thin gray;
+	padding:5px;
+	width:22%;	
+}
+.col4cell {
+	border-top:solid thin gray;
+	border-right:solid thin gray;
+	border-bottom:solid thin gray;
+	padding:5px;
+	width:3%;
+}
+
+.col5cell {
+	border-top:solid thin gray;
+	border-left:solid thin gray;
+	border-bottom:solid thin gray;
+	padding:5px;
+	background:#f0f0f0;
+	width:22%;	
+}
+.col6cell {
+	border-top:solid thin gray;
+	border-right:solid thin gray;
+	border-bottom:solid thin gray;
+	padding:5px;
+	background:#f0f0f0;
+	width:3%;	
+}
+
+.col7cell {
+	border-top:solid thin gray;
+	border-left:solid thin gray;
+	border-bottom:solid thin gray;
+	padding:5px;
+	width:22%;	
+}
+.col8cell {
+	border-top:solid thin gray;
+	border-right:solid thin gray;
+	border-bottom:solid thin gray;
+	padding:5px;
+	width:3%;
+}
 /* ******************************************************************** */ 
 /* Clearfix: http://csscreator.com/attributes/containedfloat.php        */
 /* ******************************************************************** */
