@@ -1,7 +1,6 @@
 <h2>Sign up</h2>
 
 <%= form_for(@user, :url => admins_create_user_path(@user)) do |f| %>
-  <%= devise_error_messages! %>
 
   <div><%= f.label :name %><br />
   <%= f.text_field :name %></div>
@@ -18,4 +17,3 @@
   <div><%= f.submit "Sign up" %></div>
 <% end %>
 
-<%= render :partial => "devise/shared/links" %>

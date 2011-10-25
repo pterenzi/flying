@@ -22,7 +22,10 @@ class AdminsController < ApplicationController
   end
   
   def create_user
-    
+    @user = User.new(params[:user])
+    @user.level = 3
+    @user.save
+    redirect_to admins_manage_permission_path
   end
 
 end
