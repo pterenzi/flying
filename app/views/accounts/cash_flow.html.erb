@@ -12,6 +12,8 @@
 	</tr>
 </table>
 <div id="printable-part">
+  <span id="print-title"></span>
+
   <%= render :partial => 'entries' , :locals => {:data => @entries,
                  :confirmed => params[:confirmed]=='true' } %>
   <hr>

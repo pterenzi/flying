@@ -10,6 +10,7 @@ Flying::Application.routes.draw do
   end
 
   get "admins/manage_permission"
+  get "admins/change_level"
   
   resources :sales
 

@@ -10,4 +10,11 @@ class AdminsController < ApplicationController
     end
   end
 
+  def change_level
+    u = User.find(params[:user_id])
+    u.level = params[:level].to_i
+    u.save
+    redirect_to admins_manage_permission_path
+  end
+
 end
