@@ -143,15 +143,25 @@ color:#6e9aeb;
  height:auto; 
  background-color:#ffffff;
  color: black;
- padding-left: 20px;
- padding-top: 20px;
- width:98%;
+ padding: 3px;
+ width:99%;
  display:block;
  overflow:auto;
  border: solid thin gray;
  margin-bottom:5px;
 }
-
+#header3{
+ position:relative; 
+ height:auto; 
+ background-color:#f0f0f0;
+ color: black;
+ padding: 3px;
+ width:99%;
+ display:block;
+ overflow:auto;
+ border: solid thin gray;
+ margin-bottom:5px;
+}
 
 #leftcol{
  width:17%; 

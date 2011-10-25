@@ -11,42 +11,84 @@
     </div>
   <% end %>
 <div id="wrapper" class="clearfix">
-	<div id="header2"><b>Notificação de vôo</b><hr>
-	<div>Tipo de Formulário:</br><b>IEPV 100-7</b> 	<table class="table" id="table_form" cellspacing="0" cellpadding="0"><tr><td class="col1 cell"><%= f.label "Aeronave" %><br />
-	    <%= f.select :aircraft_id, @aircrafts, :prompt=> 'selecione' %></td></tr> </table></div>	
-	<div>	</div>	
+	<div id="header2"><h2>Notificação de vôo</h2><hr>
+	<div>
+	<table class="table" id="table_form" cellspacing="0" cellpadding="0">
+		<tr>
+			<td class="col1 cell"> Tipo de Formulário:</br><b>IEPV 100-7</b> </td>
+			<td class="col1 cell"><%= f.label "Aeronave" %><br /> <%= f.select :aircraft_id, @aircrafts, :prompt=> 'selecione' %></td><td class="col3 cell"><%= f.label "tipo" %></br>	    <%= f.text_field :type_id %></td></div></td>
+		</tr>
+		<tr class="rowa">
+			<td class="col1 cell"><%= f.label "Equipamento" %><br />
+		    <%= f.text_field :equipment %></td>
+			<td class="col2 cell"><%= f.label "Aeroporto de partida" %><br />
+		    <%= f.text_field :departure_aerodrome %></td>
+			<td class="col1 cell"><%= f.label "Data do vôo" %><br />
+			<%= f.text_field :flight_date_br, :order=>[:day, :month, :year], :class=>'datepicker', :size=>11 %></td>
+			<td class="col3 cell"><%= f.label "Hora" %><br />
+			    <%= f.time_select :total_ett %></td>
+		<tr>		
+			<td class="col3 cell"><%= f.label "Velocidade de cruzeiro" %><br />
+			    <%= f.text_field :cruising_speed %></td>
+				<td class="col3 cell"><%= f.label "Nível" %><br />
+			    <%= f.text_field :level %></td>
+				<td class="col1 cell"><%= f.label "rota" %><br />
+			    <%= f.text_field :route %></td>
+			
+		</tr>
+			
+	
+</tr> </table>
+
+	</div>
+	<div id="header2" align="center">
+		<table class="table" id="table_form" cellspacing="0" cellpadding="0">
+			<tr>
+				<td class="col2 cell"><%= f.label "Aeroporto de destino" %><br />
+			    <%= f.text_field :destination_aerodrome %></td>
+				<td class="col3 cell"><%= f.label :total_ett %><br />
+				    <%= f.time_select :total_ett %></td>
+					<td class="col1 cell"><%= f.label "Aeroporto alternativo" %><br />
+				    <%= f.text_field :alternate_aerodrome %></td>
+			</tr>
+		</table>	
+		<div><%= f.label "Observações" %><br />
+	    <%= f.text_area :comments, :size =>"120x2" %></div>
+		
+
+	</div>
+	
+	</div>
+		<div id="header3" align="center">
+		    <label for="history"><b>Grau:</b></label>
+		    <%= radio_button_tag 'degree', '1' %> 1- Perigoso 
+		    <%= radio_button_tag 'degree', '2' %> 2- Deficiente
+		    <%= radio_button_tag 'degree', '3' %> 3- Satisfatório
+		    <%= radio_button_tag 'degree', '4' %> 4- Bom
+		    <%= radio_button_tag 'degree', '5' %> 5- Excelente
 	</div>
 	<div id="maincol2">
 
 
 	<table class="table" id="table_form" cellspacing="0" cellpadding="0">
 		<tr class="rowa">
-			<td class="col1 cell"><%= f.label "Aeronave" %><br />
-		    <%= f.select :aircraft_id, @aircrafts, :prompt=> 'selecione' %></td>
+			<td class="col1 cell"></td>
 			<td class="col2 cell"><%= f.label "Número do vôo" %><br />
 		    <%= f.text_field :number %> </td>
-			<td class="col3 cell"><%= f.label "tipo" %><br />
-		    <%= f.text_field :type_id %></td>
+
+			<td class="col3 cell"></td>
+		</tr>
+
+
+			
 		</tr>
 	 	<tr class="rowa">
-			<td class="col1 cell"><%= f.label "Equipamento" %><br />
-		    <%= f.text_field :equipment %></td>
-			<td class="col2 cell"><%= f.label "Aeroporto de partida" %><br />
-		    <%= f.text_field :departure_aerodrome %></td>
-			<td class="col3 cell"><%= f.label "Nível" %><br />
-		    <%= f.text_field :level %></td>
+			
+			
+			
 		</tr>
 	 	<tr class="rowa">
-			<td class="col1 cell"><%= f.label "rota" %><br />
-		    <%= f.text_field :route %></td>
-			<td class="col2 cell"><%= f.label "Aeroporto de destino" %><br />
-		    <%= f.text_field :destination_aerodrome %></td>
-			<td class="col3 cell"><%= f.label :total_ett %><br />
-		    <%= f.time_select :total_ett %></td>
-		</tr>
-	 	<tr class="rowa">
-			<td class="col1 cell"><%= f.label "Aeroporto alternativo" %><br />
-		    <%= f.text_field :alternate_aerodrome %></td>
+			
 			<td class="col2 cell"><%= f.label "Outras informações" %><br />
 		    <%= f.text_field :other_information %></td>
 			<td class="col3 cell"><%= f.label "Duração" %><br />
@@ -81,15 +123,12 @@
 		    <%= f.text_field :hourmeter %></td>
 		</tr>
 	 	<tr class="rowa">
-			<td class="col1 cell"><%= f.label "Data do vôo" %><br />
-			<%= f.text_field :flight_date_br, :order=>[:day, :month, :year], :class=>'datepicker', :size=>11 %>
+			
 
 			<td class="col2 cell">
 			  <%= f.label "Duração de vôo" %><br />
 		    <%= f.select :duration , [0.5,1,1.5,2,2.5,3,3.5,4,4.5]%></td>
-			<td class="col3 cell"><%= f.label "Velocidade de cruzeiro" %><br />
-		    <%= f.text_field :cruising_speed %>
-			</td>
+			
 		</tr>
 	 	<tr class="rowa">
 			<td class="col1 cell"><%= f.label "Partida" %><br />
@@ -103,8 +142,7 @@
 			</td>
 		</tr>
 	 	<tr class="rowa">
-			<td class="col1 cell"><%= f.label "Observações" %><br />
-		    <%= f.text_area :comments %></td>
+			<td class="col1 cell"></td>
 			<td class="col2 cell">
 		    <%= f.label "Grau" %><br />
 		    <%= f.text_field :degree %></td>
