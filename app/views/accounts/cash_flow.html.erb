@@ -12,5 +12,7 @@
 
 <%= render :partial => 'entries' , :locals => {:data => @entries,
                :confirmed => params[:confirmed]=='true' } %>
+
+<h1>Pagamentos</h1>
 <%= render :partial => 'payments' , :locals => {:data => @payments,
                :confirmed => params[:confirmed]=='true' } %>
