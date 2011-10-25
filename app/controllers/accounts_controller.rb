@@ -26,7 +26,13 @@ class AccountsController < ApplicationController
     
     @payments = @payments.payed if params[:confirmed] == 'sim'
     @payments = @payments.not_payed if params[:confirmed] == 'não'
+    @titulo = "Pagamentos entre #{@start_date} e #{@end_date}"
 
+    @payed_total = 0
+    @payments.each do |pay|
+      @payed_total += pay.value
+    end
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @accounts }

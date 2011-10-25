@@ -16,9 +16,13 @@
 		<%= render :partial => '/shared/date_range' %>
 	</tr>
 </table>
-
+ <div id="printable-part">
+    <span id="print-title"></span>
 <%= render :partial => 'payments' , :locals => {:data => @payments,
                :confirmed => params[:confirmed]=='true'}  %>
-               
+</div>              
                
 <%= link_to image_tag("plus2.png", :size=>"40x40", :border=>0, :title=>"Adicionar"), new_account_path %>
+
+<%= link_to 'imprimir', "javascript:print('#{@titulo}');"%>
+<div id="dialog" title="Basic dialog"></div>
