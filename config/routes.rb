@@ -11,6 +11,8 @@ Flying::Application.routes.draw do
 
   get "admins/manage_permission"
   get "admins/change_level"
+  get "admins/new_user"
+  post "admins/create_user"
   
   resources :sales
 
