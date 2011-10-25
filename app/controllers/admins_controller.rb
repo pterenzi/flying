@@ -16,5 +16,13 @@ class AdminsController < ApplicationController
     u.save
     redirect_to admins_manage_permission_path
   end
+  
+  def new_user
+    @user = User.new(:level => 3)
+  end
+  
+  def create_user
+    
+  end
 
 end
