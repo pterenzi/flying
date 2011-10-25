@@ -5,13 +5,13 @@ class AircraftsController < ApplicationController
   # GET /aircrafts
   # GET /aircrafts.json
   def index
-    @aircrafts = Aircraft.all(:order => :prefix)
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render :json => @aircrafts }
+    if params[:initials]
+      @aircrafts = Aircraft.starting_with(params[:initials])
+    else
+      @aircrafts = Aircraft.all
     end
   end
+
 
   # GET /aircrafts/1
   # GET /aircrafts/1.json

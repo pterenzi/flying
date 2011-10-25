@@ -1,4 +1,9 @@
-<h1>Aeronaves</h1>
+<table>
+	<tr>
+		<td><h1>Aeronaves</h1><td>
+	<td><%= text_field_tag :name, params[:initials]%><%= submit_tag :search, :onclick => 'javascript:search();'%></td>
+	</tr>
+</table>
 <table width="90%">
   <tr>
     <th>Prefixo</th>
