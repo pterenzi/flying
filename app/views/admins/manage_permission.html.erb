@@ -4,13 +4,17 @@
   <tr>
     <th>Nome</th>
     <th>email</th>
-    <th>Nível</th>
+    <th>Master</th>
+    <th>Administrativo</th>
+    <th>Instrutor</th>
   </tr>
 <% @users.each do |user| %>
   <tr>
     <td><%= user.name %></td>
     <td><%= user.email %></td>
-    <td><%= user.level_name %></td>
+    <td><%= link_to user.master? ? 'sim': 'não',  admins_change_level_path(:user_id=>user.id, :level=> 1) %></td>
+    <td><%= link_to user.admin? ? 'sim': 'não', admins_change_level_path(:user_id=>user.id, :level=> 2) %></td>
+    <td><%= link_to user.instructor? ? 'sim': 'não', admins_change_level_path(:user_id=>user.id, :level=> 3)%></td>
   </tr>
 <% end %>
 </table>

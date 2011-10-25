@@ -144,8 +144,10 @@ class AccountsController < ApplicationController
       @entry_total += entry.value
     end
     @payed_total = 0
-    @payments.each do |pay|
-      @payed_total += pay.value
+    if @payments
+      @payments.each do |pay|
+        @payed_total += pay.value if pay.value
+      end
     end
     respond_to do |format|
       format.html # index.html.erb
