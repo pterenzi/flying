@@ -22,6 +22,7 @@ class EntriesController < ApplicationController
     # @entries = @entries.not_confirmed if params[:confirmed] == 'não'
     @clients        = Client.all.collect{ |c| [c.name, c.id] }
     @aircraft_types = AircraftType.all(:order => :name).collect{|c| [c.name, c.id]}
+    @titulo = "Recebimento entre #{@start_date} e #{@end_date}"
 
     respond_to do |format|
       format.html # index.html.erb

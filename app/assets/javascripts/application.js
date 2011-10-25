@@ -8,17 +8,19 @@
 //= require jquery_ujs
 //= require_tree .
 
-function print(){
+function print(titulo){
   $("#dialog").empty();
-  
-  $("#dialog").append($("#main").html());
+  $("#print-title").html(titulo);
+  $("#dialog").append($("#printable-part").html());
+  $("#dialog .index_link").remove();
   $("#dialog").dialog({
   buttons: { 
-    "Print": function() { $('#main').printElement(); },
+    "Print": function() { $('#dialog').printElement(); },
     "Close": function() { $(this).dialog("close"); }
   },
+  title: $("#title h1").html(),
   height: 500,
-  width: 600
+  width: 800
 });
   
     }
