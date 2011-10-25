@@ -51,11 +51,12 @@
   </table>
   </div>
   <hr>
+
   <div align="right"><b>Total</b>
   <b><%= total.real %></b>
   </div>
   <hr>
-  <%= link_to image_tag("plus2.png", :size=>"40x40", :border=>0, :title=>"Adicionar"), new_entry_path %>
+  <%= link_to image_tag("plus2.png", :size=>"40x40", :border=>0, :title=>"Adicionar"), new_entry_path %>   <%= link_to image_tag("printer.png", :size=>"40x40", :border=>0, :title=>"Imprimir relatório"), 'javascript:print();'%>
 </div>
 <%= link_to 'imprimir', "javascript:print('#{@titulo}');"%>
 <div id="dialog" title="Basic dialog"></div>

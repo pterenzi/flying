@@ -2,13 +2,14 @@ class Flight < ActiveRecord::Base
   belongs_to :client
   belongs_to :instructor
   belongs_to :aircraft
+  belongs_to :aircraft_type
   
   after_save :create_balance
   
 
   scope :by_aircraft, lambda{|id| where("aircraft_id = ? ", id)}                
   scope :by_client, lambda{|id| where("client_id = ? ", id)}                
-  
+  scope :by_client, lambda{|id| where("aircraft_type_id = ? ", id)}  
   scope :between_date, lambda {|start_date,end_date| 
                     where("flight_date between  ? and  ? ", start_date, end_date)
                   }

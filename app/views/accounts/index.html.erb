@@ -1,5 +1,4 @@
 <h1>Pagamentos</h1>
-
 <table>
 	<tr>
 	  <th>Centro de custo</th>
@@ -21,6 +20,11 @@
 <%= render :partial => 'payments' , :locals => {:data => @payments,
                :confirmed => params[:confirmed]=='true'}  %>
 </div>              
+<hr>
+<%= render :partial => 'payments' , :locals => {:data => @payments,
+               :confirmed => params[:confirmed]=='true'}  %>
+			<hr>
+               
                
 <%= link_to image_tag("plus2.png", :size=>"40x40", :border=>0, :title=>"Adicionar"), new_account_path %>
 
