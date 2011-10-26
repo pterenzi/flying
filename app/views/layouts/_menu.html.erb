@@ -11,11 +11,11 @@
   <% end%>
   <li class="header"><%= link_to 'Vôos', flights_path %></li>
   <% if !current_user.instructor? %>
+  	<li class="header"><%= link_to 'Previsão de caixa', cash_flow_accounts_path(:confirmed=>false) %></li>
+	<li class="header"><%= link_to 'Caixa', cash_flow_accounts_path(:confirmed=>true) %></li>
     <li class="header"><%= link_to 'Vendas', sales_path %></li>
     <li class="header"><%= link_to 'Recebimentos', entries_path %></li>
     <li class="header"><%= link_to 'Pagamentos', accounts_path(:confirmed=>true)%></li>
-    <li class="header"><%= link_to 'Caixa', cash_flow_accounts_path(:confirmed=>true) %></li>
-    <li class="header"><%= link_to 'Previsão de caixa', cash_flow_accounts_path(:confirmed=>false) %></li>
     <li class="header"><%= link_to 'Usuários', admins_manage_permission_path if current_user.master? %></li>
   <% end %>
 
