@@ -16,10 +16,12 @@
 
   <%= render :partial => 'entries' , :locals => {:data => @entries,
                  :confirmed => params[:confirmed]=='true' } %>
-  <hr>
+
   <h1>Pagamentos</h1>
   <%= render :partial => 'payments' , :locals => {:data => @payments,
                  :confirmed => params[:confirmed]=='true' } %>
-</div> 
-<%= link_to 'imprimir', "javascript:print('#{@titulo}');"%>
+</div>
+<hr> 
+<%= link_to image_tag("printer.png", :size=>"40x40", :border=>0, :title=>"Imprimir relatório"), "javascript:print('#{@titulo}');"%>
+
 <div id="dialog" title="Basic dialog"></div>

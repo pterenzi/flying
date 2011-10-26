@@ -21,3 +21,13 @@ class AddColumnsToEntries < ActiveRecord::Migration
     add_column :entries, :comments, :text    
   end
 end
+<tr class="rowa">		
+	<td class="col1cell"><%= f.label  %></td>
+	<td class="col2cell"><%= f.text_field , :size=>2 %></td>
+	<td class="col3cell"><%= f.label  %></td>
+	<td class="col4cell"><%= f.text_field , :size=>2 %></td>
+	<td class="col5cell"><%= f.label  %></td>
+	<td class="col6cell"><%= f.text_field , :size=>2 %></td>
+	<td class="col7cell"><%= f.label  %></td>
+	<td class="col8cell"><%= f.text_field , :size=>2 %></td>
+</tr>
