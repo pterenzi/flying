@@ -31,7 +31,8 @@ class InstructorsController < ApplicationController
   # GET /instructors/new
   # GET /instructors/new.json
   def new
-    @instructor = Instructor.new
+    @instructor     = Instructor.new
+    @aircraft_types = AircraftType.by_name.collect{|at| [at.name, at.id]}
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,7 +42,8 @@ class InstructorsController < ApplicationController
 
   # GET /instructors/1/edit
   def edit
-    @instructor = Instructor.find(params[:id])
+    @instructor     = Instructor.find(params[:id])
+    @aircraft_types = AircraftType.by_name.collect{|at| [at.name, at.id]}
   end
 
   # POST /instructors
@@ -54,6 +56,8 @@ class InstructorsController < ApplicationController
         format.html { redirect_to @instructor, :notice => 'Instructor was successfully created.' }
         format.json { render :json => @instructor, :status => :created, :location => @instructor }
       else
+        @aircraft_types = AircraftType.by_name.collect{|at| [at.name, at.id]}
+
         format.html { render :action => "new" }
         format.json { render :json => @instructor.errors, :status => :unprocessable_entity }
       end
@@ -70,6 +74,8 @@ class InstructorsController < ApplicationController
         format.html { redirect_to @instructor, :notice => 'Instructor was successfully updated.' }
         format.json { head :ok }
       else
+        @aircraft_types = AircraftType.by_name.collect{|at| [at.name, at.id]}
+
         format.html { render :action => "edit" }
         format.json { render :json => @instructor.errors, :status => :unprocessable_entity }
       end

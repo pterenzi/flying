@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111025172903) do
+ActiveRecord::Schema.define(:version => 20111026005606) do
 
   create_table "accounts", :force => true do |t|
     t.integer  "type"
@@ -169,9 +169,9 @@ ActiveRecord::Schema.define(:version => 20111025172903) do
     t.integer  "turns"
     t.integer  "speed_variation"
     t.integer  "direct_autorotation"
-    t.integer  "autorotation_90\302\272"
-    t.integer  "autorotation_180\302\272"
-    t.integer  "autorotation_360\302\272"
+    t.integer  "autorotation_90º"
+    t.integer  "autorotation_180º"
+    t.integer  "autorotation_360º"
     t.integer  "autorotation_Hovering_DES"
     t.integer  "autorotation_Hovering_FES"
     t.integer  "normal_approach"
@@ -262,6 +262,7 @@ ActiveRecord::Schema.define(:version => 20111025172903) do
     t.decimal  "hour_price"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "aircraft_type_id"
   end
 
   create_table "packages", :force => true do |t|

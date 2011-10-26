@@ -16,6 +16,10 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
+    <%= f.label 'Tipo de aeronave' %><br />
+    <%= f.select :aircraft_type_id, @aircraft_types  %>
+  </div>
+  <div class="field">
     <%= f.label :level %><br />
     <%= f.number_field :level %>
   </div>
