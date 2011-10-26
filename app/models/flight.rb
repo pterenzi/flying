@@ -31,6 +31,8 @@ class Flight < ActiveRecord::Base
 
   
   def create_balance
+    balance = Balance.find_by_flight_id(self.id)
+    balance.destroy if balance
     Balance.create(:client_id  => self.client_id,
                    :flight_id  => self.id,
                    :date       => self.flight_date,
