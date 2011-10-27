@@ -127,13 +127,8 @@ class AccountsController < ApplicationController
   
   def cash_flow
     date_params
-    if params[:confirmed] == 'false'
-      @entries    = Entry.between_due_dates(@start_date.to_date, @end_date.to_date).confirmed(false)
-      @payments   = Account.between_due_dates(@start_date.to_date, @end_date.to_date).order(:due_date).confirmed(false) || []
-    else
-      @entries    = Entry.between_entry_dates(@start_date.to_date, @end_date.to_date).confirmed(true)
-      @payments   = Account.between_payment_dates(@start_date.to_date, @end_date.to_date).order(:payment_date).confirmed(true) || []
-    end
+    @entries    = Entry.between_due_dates(@start_date.to_date, @end_date.to_date).confirmed(false)
+    @payments   = Account.between_due_dates(@start_date.to_date, @end_date.to_date).order(:due_date).confirmed(false) || []
     @clients    = Client.all.collect{ |c| [c.name, c.id] }
     @suppliers  = Supplier.all.collect{ |s| [s.name, s.id] }
     @titulo = "Fluxo de caixa entre #{@start_date} e #{@end_date}"
