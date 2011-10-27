@@ -94,9 +94,9 @@
 		    <%= radio_button_tag :degree, '4' %> 4- Bom
 		    <%= radio_button_tag :degree, '5' %> 5- Excelente
 	</div>
-	<%= render :partial => 'formH' %>
-	<%= render :partial => 'formU' %>
-	<%= render :partial => 'formA' %>
+	<%= render :partial => 'formH', :locals =>{:f => f} %>
+	<%= render :partial => 'formU', :locals =>{:f => f} %>
+	<%= render :partial => 'formA', :locals =>{:f => f} %>
 
 	 <div class="actions">
 	   <%= f.submit %>
