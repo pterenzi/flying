@@ -136,12 +136,12 @@ class AccountsController < ApplicationController
 
     @entry_total = 0
     @entries.each do |entry|
-      @entry_total += entry.value
+      @entry_total += entry.total
     end
     @payed_total = 0
     if @payments
       @payments.each do |pay|
-        @payed_total += pay.value if pay.value
+        @payed_total += pay.total if pay.value
       end
     end
     respond_to do |format|
