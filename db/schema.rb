@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111026005606) do
+ActiveRecord::Schema.define(:version => 20111029201302) do
 
   create_table "accounts", :force => true do |t|
     t.integer  "type"
@@ -135,10 +135,10 @@ ActiveRecord::Schema.define(:version => 20111026005606) do
     t.string   "level"
     t.string   "route"
     t.string   "destination_aerodrome"
-    t.time     "total_ett"
+    t.decimal  "total_ett"
     t.string   "alternate_aerodrome"
     t.string   "other_information"
-    t.time     "endurance"
+    t.decimal  "endurance"
     t.integer  "persons_on_board"
     t.string   "aircraft_colors_and_marks"
     t.string   "client_dac"
@@ -169,9 +169,9 @@ ActiveRecord::Schema.define(:version => 20111026005606) do
     t.integer  "turns"
     t.integer  "speed_variation"
     t.integer  "direct_autorotation"
-    t.integer  "autorotation_90º"
-    t.integer  "autorotation_180º"
-    t.integer  "autorotation_360º"
+    t.integer  "autorotation_90\302\272"
+    t.integer  "autorotation_180\302\272"
+    t.integer  "autorotation_360\302\272"
     t.integer  "autorotation_Hovering_DES"
     t.integer  "autorotation_Hovering_FES"
     t.integer  "normal_approach"

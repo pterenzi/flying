@@ -42,10 +42,22 @@
 				<td class="col2 cell"><%= f.label "Aeroporto de destino" %><br />
 			    <%= f.text_field :destination_aerodrome %></td>
 				<td class="col3 cell"><%= f.label :total_ett %><br />
-				    <%= f.time_select :total_ett %></td>
+				    <%= f.text_field :total_ett %></td>
 				<td class="col1 cell"><%= f.label "Aeroporto alternativo" %><br />
 				    <%= f.text_field :alternate_aerodrome %></td>
 					<td class="col1 cell"></td>
+			</tr
+			<tr class="rowa">
+
+				<td class="col3 cell"><%= f.label "Cliente" %><br />
+			    <%= f.select :client_id, @clients, :prompt=>'selecione' %></td>
+				<td class="col1 cell"><%= f.label "ANAC Cliente" %><br />
+			    <%= f.text_field :client_dac %></td>
+				<td class="col2 cell">
+			    <%= f.label "Instrutor" %><br />
+			    <%= f.select :instructor_id, @instructors, :prompt=>'selecione'%></td>
+				<td class="col3 cell"><%= f.label "ANAC Instrutor" %><br />
+			    <%= f.text_field :instructor_dac %></td>
 			</tr>
 		</table>
 		<table class="table" id="table_form" cellspacing="0" cellpadding="0">
@@ -55,30 +67,23 @@
 	    		<%= f.text_field :other_information, :size =>"160" %></div>
 			</tr>
 		</table>
-		<table class="table" id="table_form" cellspacing="0" cellpadding="0">	
-			<tr>
-				<td class="col3 cell"><%= f.label "Duração" %><br />
-			    <%= f.time_select :endurance %></td>
-				<td class="col1 cell"><%= f.label "Pessoas a bordo" %><br />
-			    <%= f.text_field :persons_on_board %></td>
-				<td class="col1 cell"></td>
-				<td class="col3 cell"></td>
-			</tr>
 		</table>
 		<table class="table" id="table_form" cellspacing="0" cellpadding="0">
 
 			<tr>
 				<td class="col2 cell"><%= f.label "Cores e marcas da aeronave" %><br />
-			    <%= f.text_field :aircraft_colors_and_marks, :size =>"77" %></td>
+			    <%= f.text_field :aircraft_colors_and_marks, :size =>"67" %></td>
 				<td class="col2 cell"><%= f.label "Piloto em comando" %><br />
-			    <%= f.text_field :aircraft_colors_and_marks, :size =>"77" %></td>
+			    <%= f.text_field :aircraft_colors_and_marks, :size =>"57" %></td>
+				<td class="col1 cell"><%= f.label "Pessoas a bordo" %><br />
+			    <%= f.text_field :persons_on_board, :size=>"20" %></td>
 			</tr>
 		</table>
 		<table class="table" id="table_form" cellspacing="0" cellpadding="0">	
 			<tr>
 				<td class="col3 cell"><%= f.label "Preenchido por" %><br />
 			    <%= f.text_field :filled_by %></td>
-				<td class="col1 cell"><%= f.label "Código DAC" %><br />
+				<td class="col1 cell"><%= f.label "Licença ANAC" %><br />
 			    <%= f.text_field :instructor_dac %></td>
 				<td class="col1 cell"></td>
 				<td class="col3 cell"></td>
@@ -88,11 +93,11 @@
 	</div>
 		<div id="header3" align="center">
 		    <label for="history"><b>Grau:</b></label>
-		    <%= radio_button_tag :degree, '1' %> 1- Perigoso 
-		    <%= radio_button_tag :degree, '2' %> 2- Deficiente
-		    <%= radio_button_tag :degree, '3' %> 3- Satisfatório
-		    <%= radio_button_tag :degree, '4' %> 4- Bom
-		    <%= radio_button_tag :degree, '5' %> 5- Excelente
+		    <%= radio_button_tag :degree, '1' %> Perigoso 
+		    <%= radio_button_tag :degree, '2' %> Deficiente
+		    <%= radio_button_tag :degree, '3' %> Satisfatório
+		    <%= radio_button_tag :degree, '4' %> Bom
+		    <%= radio_button_tag :degree, '5' %> Excelente
 	</div>
 	<div id="maincol2">
 

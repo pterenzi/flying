@@ -7,14 +7,14 @@
  	<tr class="rowa">
 		
 		<td class="col3 cell">Cliente<br />
-	    <%= f.select :client_id, @clients, :prompt=>'selecione' %></td>
+	    <%= @flight.client.name %></td>
 		<td class="col1 cell">DAC Cliente<br />
-	    <%= @flight.client_dac %></td>
+	    <%= @flight.client.client_dac %></td>
 		<td class="col2 cell">
 	    Instrutor<br />
-	    <%= f.select :instructor_id, @instructors, :prompt=>'selecione'%></td>
+	    <%= @flight.instructor.name%></td>
 		<td class="col3 cell">DAC do Instrutor<br />
-	    <%= @flight.instructor_dac %></td>
+	    <%= @flight.instructor.instructor_dac %></td>
 	</tr>
  	<tr class="rowa" border="1px">
 
@@ -23,7 +23,7 @@
 	    <%= @flight.passenger %></td>
 		<td class="col2 cell">
 		  Duração de vôo<br />
-	    <%= f.select :duration , [0.5,1,1.5,2,2.5,3,3.5,4,4.5]%></td>
+	    <%= @flight.duration %></td>
 		<td class="col2 cell">
 	    Pousos<br />
 	    <%= @flight.landings %></td>
