@@ -17,7 +17,7 @@
       <td><%= confirmed ? entry.entry_date_br : entry.due_date_br %></td>
       <td><%= entry.client && entry.client.name %></td>
       <td><%= entry.description %></td>
-      <td align='right'><%= entry.value.real %></td>
+      <td align='right'><%= entry.total.real %></td>
       <td><%= entry.aircraft_type.name if entry.aircraft_type %></td>
     <td align="right" width="25px"><%= link_to image_tag("info.png", :size=>"20x20", :border=>0, :title=>"Detalhes"), entry %></td>
     <td align="center" width="25px"><%= link_to image_tag("edit.png", :size=>"20x20", :border=>0, :title=>"Editar"), edit_entry_path(entry) %></td>

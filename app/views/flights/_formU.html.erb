@@ -1,4 +1,4 @@
-<div id="ultraleve" style="display:none;">
+<div id="helicoptero" style="display:none;">
 <table class="table" id="table_form" cellspacing="0" cellpadding="0">
 
  	<tr class="rowa">
@@ -50,19 +50,8 @@
 		<td class="col4cell"><%= f.text_field :departure, :size=>2 %></td>
 		<td class="col5cell"><%= f.label "Checagem" %></td>
 		<td class="col6cell"><%= f.text_field :checks, :size=>2 %></td>
-	    <td class="col7cell"><%= f.label "Acionamento motor" %></td>
-		<td class="col8cell"><%= f.text_field :engine_drive, :size=>2 %></td>
-
-	</tr>
- 	<tr class="rowa">
-		<td class="col1cell"><%= f.label "Fraseologia Padrão" %></td>
-		<td class="col2cell"><%= f.text_field :standard_phraseology, :size=>2 %></td>
-		<td class="col3cell"><%= f.label "Taxi" %></td>
-		<td class="col4cell"><%= f.text_field :taxi, :size=>2 %></td>
-		<td class="col5cell"><%= f.label "Saída de tráfego" %></td>
-		<td class="col6cell"><%= f.text_field :outgoing_traffic, :size=>2 %></td>
-		<td class="col7cell"><%= f.label "Sub.área instrução" %></td>
-		<td class="col8cell"><%= f.text_field :ascent_to_instruction_area, :size=>2 %></td>
+		<td class="col7cell"><%= f.label "Taxi" %></td>
+		<td class="col8cell"><%= f.text_field :taxi, :size=>2 %>
 	</tr>
 	<tr class="rowa">		
 		<td class="col1cell"><%= f.label :vertical_drop %></td>
@@ -73,16 +62,6 @@
 		<td class="col6cell"><%= f.text_field :drop_down, :size=>2 %></td>
 		<td class="col7cell"><%= f.label :run_landing %></td>
 		<td class="col8cell"><%= f.text_field :run_landing, :size=>2 %></td>
-	</tr>
-	<tr class="rowa">		
-		<td class="col1cell"><%= f.label  %></td>
-		<td class="col2cell"><%= f.text_field , :size=>2 %></td>
-		<td class="col3cell"><%= f.label  %></td>
-		<td class="col4cell"><%= f.text_field , :size=>2 %></td>
-		<td class="col5cell"><%= f.label  %></td>
-		<td class="col6cell"><%= f.text_field , :size=>2 %></td>
-		<td class="col7cell"><%= f.label  %></td>
-		<td class="col8cell"><%= f.text_field , :size=>2 %></td>
 	</tr>
 	<tr class="rowa">		
 		<td class="col1cell"><%= f.label "Dec.max.perf"%></td>
