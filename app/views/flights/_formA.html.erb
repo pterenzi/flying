@@ -1,18 +1,5 @@
 <div id="helicoptero" style="display:none;">
 <table class="table" id="table_form" cellspacing="0" cellpadding="0">
-
- 	<tr class="rowa">
-		
-		<td class="col3 cell"><%= f.label "Cliente" %><br />
-	    <%= f.select :client_id, @clients, :prompt=>'selecione' %></td>
-		<td class="col1 cell"><%= f.label "DAC Cliente" %><br />
-	    <%= f.text_field :client_dac %></td>
-		<td class="col2 cell">
-	    <%= f.label "Instrutor" %><br />
-	    <%= f.select :instructor_id, @instructors, :prompt=>'selecione'%></td>
-		<td class="col3 cell"><%= f.label "DAC do Instrutor" %><br />
-	    <%= f.text_field :instructor_dac %></td>
-	</tr>
  	<tr class="rowa" border="1px">
 
 		<td class="col2 cell">
@@ -20,7 +7,7 @@
 	    <%= f.text_field :passenger %></td>
 		<td class="col2 cell">
 		  <%= f.label "Duração de vôo" %><br />
-	    <%= f.select :duration , [0.5,1,1.5,2,2.5,3,3.5,4,4.5]%></td>
+	    <%= f.text_field :duration%></td>
 		<td class="col2 cell">
 	    <%= f.label "Pousos" %><br />
 	    <%= f.text_field :landings %></td>
@@ -156,14 +143,21 @@
 	<tr class="rowa">		
 		<td class="col1cell"><%= f.label "Navegação visual" %></td>
 		<td class="col2cell"><%= f.text_field :visual_navigation, :size=>2 %></td>
-		<td class="col3cell"><%= f.label "Preoedimentos de pernoite" %></td>
+		<td class="col3cell"><%= f.label "Procedimentos de pernoite" %></td>
 		<td class="col4cell"><%= f.text_field :overnight_procedure, :size=>2 %></td>
 		<td class="col5cell"><%= f.label :handling_publications %></td>
 		<td class="col6cell"><%= f.text_field :handling_publications, :size=>2 %></td>
 		<td class="col7cell"><%= f.label "Iniciativa" %></td>
 		<td class="col8cell"><%= f.text_field :initiative, :size=>2 %></td>
 	</tr>
-
+<table>
+	<tr>
+		<td>
+			<%= f.label "Observações" %> </br>
+			<%= f.text_area :comments, :size=>"104x4" %>
+		</td>
+	</tr>
+</table>
 
 </table>
 </div>

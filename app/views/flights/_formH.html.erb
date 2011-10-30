@@ -1,4 +1,4 @@
-<div id="helicoptero" style="display:none;">
+<div id="helicoptero">
 <table class="table" id="table_form" cellspacing="0" cellpadding="0">
  	<tr class="rowa" border="1px">
 
@@ -143,7 +143,7 @@
 	<tr class="rowa">		
 		<td class="col1cell"><%= f.label "Navegação visual" %></td>
 		<td class="col2cell"><%= f.text_field :visual_navigation, :size=>2 %></td>
-		<td class="col3cell"><%= f.label "Preoedimentos de pernoite" %></td>
+		<td class="col3cell"><%= f.label "Procedimentos de pernoite" %></td>
 		<td class="col4cell"><%= f.text_field :overnight_procedure, :size=>2 %></td>
 		<td class="col5cell"><%= f.label :handling_publications %></td>
 		<td class="col6cell"><%= f.text_field :handling_publications, :size=>2 %></td>
@@ -153,8 +153,8 @@
 <table>
 	<tr>
 		<td>
-			<%= f.label "Observações" %></td>
-			<td class="col8cell"><%= f.text_area :comments, :size=>"130x4" %>
+			<%= f.label "Observações" %> </br>
+			<%= f.text_area :comments, :size=>"104x4" %>
 		</td>
 	</tr>
 </table>

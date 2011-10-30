@@ -20,6 +20,7 @@ tr {
 
 table {
 	width:95%;
+	border-color:#FFFACD;
 }
 
 .subtitle {
@@ -34,7 +35,6 @@ table {
 
 td {
 	vertical-align:middle;
-	border:#f0f0f0;
 }
 
 
@@ -47,11 +47,11 @@ td {
 	width: 90%;
 	margin: 0px auto;
 	border-collapse: collapse;
-	border: 1px solid #fff;
  }
 #table_form .rowa {
 	background: #ffffff;
 	height: 20px;
+
 }
 #table_form .rowb {
 	background: #f0f0f0;
@@ -59,8 +59,8 @@ td {
 }
 #table_form .cell {
 	padding: 2px;
-	border: 1px solid #fff;
 	height:25px;
+
 }
 #sidebar ul li.header {
   -moz-border-radius: 4px;
@@ -139,9 +139,11 @@ color:#6e9aeb;
 } 
  
 #header2{
+ 	-moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
  position:relative; 
  height:auto; 
- background-color:#ffffff;
+ background-color:#FFFACD;
  color: black;
  padding: 3px;
  width:99%;
@@ -151,6 +153,8 @@ color:#6e9aeb;
  margin-bottom:5px;
 }
 #header3{
+ 	-moz-border-radius:6px;
+  -webkit-border-radius: 6px;
  position:relative; 
  height:auto; 
  background-color:#f0f0f0;
@@ -170,6 +174,8 @@ color:#6e9aeb;
  background-color:#FFFFFF; 
  }
 #leftcol2{
+ 	-moz-border-radius:6px;
+  -webkit-border-radius: 6px;
  width:17%;
  height:auto;
  float:left;
@@ -186,6 +192,8 @@ color:#6e9aeb;
  float:right;
  }
 #maincol2{
+	-moz-border-radius:6px;
+  -webkit-border-radius: 6px;
  background-color: #FFFFFF; 
  padding-right: 20px;
  position: relative; 
