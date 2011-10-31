@@ -7,11 +7,12 @@ function search(){
 }
 
  function calculate_total_sale(){
-   var hours = $("#sale_hours").val().replace(",", ".");
+   var hours = $("#sale_hours_br").val();
    if (_.isEmpty(hours)){
+     alert(hours)
      $("#total_value").empty();
    }else{
-     total = parseFloat($("#sale_value").val()) * parseFloat(hours);
+     total = parseFloat($("#sale_value").val()) * (parseFloat(hours.replace(",", ".") * 100 / 100));
      $("#total_value").html(total);
    }
  }
