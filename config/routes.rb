@@ -40,7 +40,11 @@ Flying::Application.routes.draw do
 
   resources :instructors
 
-  resources :aircrafts
+  resources :aircrafts do
+    member do
+      get 'retrieve_aircraft_type_name'
+    end
+  end
 
   resources :clients
   

@@ -88,4 +88,9 @@ class AircraftsController < ApplicationController
       format.json { head :ok }
     end
   end
+  
+  def retrieve_aircraft_type_name
+    @aircraft = Aircraft.find(params[:id])
+    render :json => @aircraft.aircraft_type.name.to_json
+  end
 end
