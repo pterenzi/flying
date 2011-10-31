@@ -11,7 +11,7 @@ Flying::Application.routes.draw do
 
   resources :clients do
     member do
-      get 'busca_client_dac'
+      get 'retrieve_client_dac'
     end
   end
 
@@ -52,7 +52,6 @@ Flying::Application.routes.draw do
     end
   end
 
-  resources :clients
   
   # get :autocomplete_client_name, :on => :collection
 

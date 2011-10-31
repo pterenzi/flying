@@ -21,7 +21,7 @@ function change_aircraft(){
 
 function change_client_dac(){
   $.ajax({
-    url: "/clients/" + $("#flight_client_dac").val() + "/retrieve_client_dac",
+    url: "/clients/" + $("#flight_client_id").val() + "/retrieve_client_dac",
     type: "GET",
     success: function(client_dac) {
       $("#client_dac").html(client_dac)
