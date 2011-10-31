@@ -30,7 +30,7 @@ class Sale < ActiveRecord::Base
   end
   
   def hours_br=(new_value)
-    self.hours = new_value.gsub(",", ".").to_decimal if new_value.present?
+    self.hours = new_value.gsub(",", ".").to_d if new_value.present?
   end
   
   def total_value
