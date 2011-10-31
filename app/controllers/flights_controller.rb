@@ -53,7 +53,10 @@ class FlightsController < ApplicationController
 
   # GET /flights/1/edit
   def edit
-    @flight = Flight.find(params[:id])
+    @flight      = Flight.find(params[:id])
+    @clients     = Client.all(:order=>:name).collect{|c| [c.name, c.id]}
+    @instructors = Instructor.all(:order=>:name).collect{|c| [c.name, c.id]}
+    @aircrafts   = Aircraft.all.collect{|c| [c.prefix, c.id]}
   end
 
   # POST /flights
@@ -90,8 +93,10 @@ class FlightsController < ApplicationController
   # DELETE /flights/1
   # DELETE /flights/1.json
   def destroy
-    @flight = Flight.find(params[:id])
+    @flight  = Flight.find(params[:id])
+    @balance = Balance.find_by_fligth_id(@flight.id)
     @flight.destroy
+    @balance.destroy
 
     respond_to do |format|
       format.html { redirect_to flights_url }

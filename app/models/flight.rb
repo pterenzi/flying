@@ -15,7 +15,11 @@ class Flight < ActiveRecord::Base
                   }
   scope :by_instructor, lambda{|id| where("instructor_id = ? ", id)}                
   
-  attr_accessor :flight_date_br
+  attr_accessor :flight_date_br, :flight_time_br
+  
+  def flight_time_br
+    self.flight_time && self.flight_time.to_s_br.split(" ")[1]
+  end
   
   def flight_date_br
     if Date.valid?(self.flight_date)
