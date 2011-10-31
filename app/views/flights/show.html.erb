@@ -1,175 +1,292 @@
-<p id="notice"><%= notice %> </p>
-<h1>Detalhes do Vôo</h1>
-<hr>
-<div id="helicoptero" style="display:none;">
-<table class="table" id="table_form" cellspacing="0" cellpadding="0">
+<h1>Relatório de Vôo</h1>
+<div id="wrapper" class="clearfix">	
+	<div id="header2"><h2>Notificação de vôo</h2><hr>
+	<div>
+	<table class="table" id="table_form" cellspacing="0" cellpadding="0">
+		<tr>
+			<td class="col1 cell"> Tipo de Formulário:</br><b>IEPV 100-7</b> </td>
+			<td class="col1 cell"><b>Aeronave</b><br /> <%= @flight.aircraft_id  %></td>
+			<td class="col3 cell"><b>tipo</b></br> <%= @flight.type_id %></td></div></td>
+		</tr>
+		<tr>
+			<td class="col1 cell"><b>Equipamento</b><br />
+		    <%= @flight.equipment %></td>
+			<td class="col2 cell"><b>Aeroporto de partida</b><br />
+		    <%= @flight.departure_aerodrome %></td>
+			<td class="col1 cell"><b>Data do vôo</b><br />
+			<%= @flight.flight_date_br %></td>
+			<td class="col3 cell"><b>Hora</b><br />
+			    <%= @flight.flight_time.to_s_br %></td>
+		<tr>		
+			<td class="col3 cell"><b>Velocidade de cruzeiro</b><br />
+			    <%= @flight.cruising_speed %></td>
+				<td class="col3 cell"><b>Nível</b><br />
+			    <%= @flight.level %></td>
+				<td class="col1 cell"><b>Rota</b><br />
+			    <%= @flight.route %></td>
+			
+		</tr>
+			
+			<tr>
+				<td class="col2 cell"><b>Aeroporto de destino</b><br />
+			    <%= @flight.destination_aerodrome %></td>
+				<td class="col3 cell"><b>Total ett </b><br />
+				    <%= @flight.total_ett %></td>
+				<td class="col1 cell"><b>Aeroporto alternativo</b><br />
+				    <%= @flight.alternate_aerodrome %></td>
+					<td class="col1 cell"></td>
+			</tr
+			<tr class="rowa">
 
- 	<tr class="rowa">
+				<td class="col3 cell"><b>Cliente</b><br />
+			    <%= @flight.client_id %></td>
+				<td class="col1 cell"><b>ANAC Cliente</b><br />
+			    <%= @flight.client_dac %></td>
+				<td class="col2 cell">
+			    <b>Instrutor</b><br />
+			    <%= @flight.instructor_id %></td>
+				<td class="col3 cell"><b>ANAC Instrutor</b><br />
+			    <%= @flight.instructor_dac %></td>
+			</tr>
+		</table>
+		<table class="table" id="table_form" cellspacing="0" cellpadding="0">
 		
-		<td class="col3 cell">Cliente<br />
-	    <%= @flight.client.name %></td>
-		<td class="col1 cell">DAC Cliente<br />
-	    <%= @flight.client.client_dac %></td>
-		<td class="col2 cell">
-	    Instrutor<br />
-	    <%= @flight.instructor.name%></td>
-		<td class="col3 cell">DAC do Instrutor<br />
-	    <%= @flight.instructor.instructor_dac %></td>
-	</tr>
- 	<tr class="rowa" border="1px">
+			<tr>
+				<td class="col3 cell"><b>Outras informações</b><br />
+	    		<%= @flight.other_information %></div>
+			</tr>
+		</table>
+		</table>
+		<table class="table" id="table_form" cellspacing="0" cellpadding="0">
 
-		<td class="col2 cell">
-	    Passageiro<br />
-	    <%= @flight.passenger %></td>
-		<td class="col2 cell">
-		  Duração de vôo<br />
-	    <%= @flight.duration %></td>
-		<td class="col2 cell">
-	    Pousos<br />
-	    <%= @flight.landings %></td>
+			<tr>
+				<td class="col2 cell"><b>Cores e marcas da aeronave</b><br />
+			    <%= @flight.aircraft_colors_and_marks %></td>
+				<td class="col2 cell"><b>Piloto em comando</b><br />
+			    <%= @flight.aircraft_colors_and_marks %></td>
+				<td class="col1 cell"><b>Pessoas a bordo</b><br />
+			    <%= @flight.persons_on_board %></td>
+			</tr>
+		</table>
+		<table class="table" id="table_form" cellspacing="0" cellpadding="0">	
+			<tr>
+				<td class="col3 cell"><b>Preenchido por</b><br />
+			    <%= @flight.filled_by %></td>
+				<td class="col1 cell"><b>Licença ANAC</b></b><br />
+			    <%= @flight.instructor_dac %></td>
+				<td class="col1 cell"></td>
+				<td class="col3 cell"></td>
+			</tr>
+		</table>
+	</div>	
+	</div>
+		<div id="header3" align="center">
+		    <label for="history"><b>Grau:</b></label>
+		    <%= radio_button_tag :degree, '1' %> Perigoso 
+		    <%= radio_button_tag :degree, '2' %> Deficiente
+		    <%= radio_button_tag :degree, '3' %> Satisfatório
+		    <%= radio_button_tag :degree, '4' %> Bom
+		    <%= radio_button_tag :degree, '5' %> Excelente
+	</div>
 	
+	<div id="maincol2">
+		<p id="notice"><%= notice %></p>
+	
+		<table class="table" id="table_form" cellspacing="0" cellpadding="0">
 
-	</tr>
- 	<tr class="rowa">
-		<td class="col1 cell">Registro<br />
-	    <%= @flight.registration %></td>
+		 	<tr class="rowa">
 
-		<td class="col3 cell">
-	    Horímetro<br />
-	    <%= @flight.hourmeter %></td>
-		<td class="col3 cell">
-	    Licença</br>
-	    <%= @flight.license %>
-		</td>
-		</td>
-	</tr>
-</table>
-<table class="table" id="table_form" cellspacing="0" cellpadding="0" width="100%">
+				<td class="col3 cell"><b>Cliente</b><br />
+			    <%= @flight.client.name %></td>
+				<td class="col1 cell"><b>DAC Cliente</b><br />
+			    <%= @flight.client.client_dac %></td>
+				<td class="col2 cell"><b>Instrutor</b><br />
+			    <%= @flight.instructor.name%></td>
+				<td class="col3 cell"><b>DAC do Instrutor</b><br />
+			    <%= @flight.instructor.instructor_dac %></td>
+			</tr>
+		 	<tr class="rowa" border="1px">
 
- 	<tr class="rowa">
-	    <td class="col1cell"><b>Inspeções</b></td>
-		<td class="col2cell"><%= @flight.inspections %></td>
-		<td class="col3cell"><b>Partida</b></td>
-		<td class="col4cell"><%= @flight.departure %></td>
-		<td class="col5cell"><b>Checagem</b></td>
-		<td class="col6cell"><%= @flight.checks %></td>
-		<td class="col7cell"><b>Taxi</b></td>
-		<td class="col8cell"><%= @flight.taxi %>
-	</tr>
-	<tr class="rowa">		
-		<td class="col1cell"><b>vertical_drop</b></td>
-		<td class="col2cell"><%= @flight.vertical_drop %></td>
-		<td class="col3cell"><b>normal_drop</b></td>
-		<td class="col4cell"><%= @flight.normal_drop %></td>
-		<td class="col5cell"><b>drop_down</b></td>
-		<td class="col6cell"><%= @flight.drop_down %></td>
-		<td class="col7cell"><b>run_landing</b></td>
-		<td class="col8cell"><%= @flight.run_landing %></td>
-	</tr>
-	<tr class="rowa">		
-		<td class="col1cell"><b>Dec.max.perf</b></td>
-		<td class="col2cell"><%= @flight.max_performance_drop %></td>
-		<td class="col3cell"><b>Vôo nivelado</b></td>
-		<td class="col4cell"><%= @flight.level_flight %></td>
-		<td class="col5cell"><b>hovering_flight</b></td>
-		<td class="col6cell"><%= @flight.hovering_flight %></td>
-		<td class="col7cell"><b>back_flight</b></td>
-		<td class="col8cell"><%= @flight.back_flight %></td>
-	</tr>
-	<tr class="rowa">		
-		<td class="col1cell"><b>Vôo lateral</b></td>
-		<td class="col2cell"><%= @flight.side_flying %></td>
-		<td class="col3cell"><b>Correções</b></td>
-		<td class="col4cell"><%= @flight.corrections %></td>
-		<td class="col5cell"><b>turns</b></td>
-		<td class="col6cell"><%= @flight.turns %></td>
-		<td class="col7cell"><b>Var.velocidade<</b>/td>
-		<td class="col8cell"><%= @flight.speed_variation %></td>
-	</tr>
-	<tr class="rowa">		
-		<td class="col1cell"><b>Auto rot. direta</b></td>
-		<td class="col2cell"><%= @flight.direct_autorotation %></td>
-		<td class="col3cell"><b>Auto rot. 90º</b></td>
-		<td class="col4cell"><%= @flight.autorotation_90º %></td>
-		<td class="col5cell"><b>Auto rot. 180º</b></td>
-		<td class="col6cell"><%= @flight.autorotation_180º %></td>
-		<td class="col7cell"><b>Auto rot. 360º</b></td>
-		<td class="col8cell"><%= @flight.autorotation_360º %></td>
-	</tr>
-	<tr class="rowa">		
-		<td class="col1cell"><b>autorotation_Hovering_DES</b></td>
-		<td class="col2cell"><%= @flight.autorotation_Hovering_DES %></td>
-		<td class="col3cell"><b>autorotation_Hovering_FES</b></td>
-		<td class="col4cell"><%= @flight.autorotation_Hovering_FES %></td>
-		<td class="col5cell"><b>Aproximação normal</b></td>
-		<td class="col6cell"><%= @flight.normal_approach %></td>
-		<td class="col7cell"><b>Aproximação grande ângulo</b></td>
-		<td class="col8cell"><%= @flight.big_angle_approach %></td>
-	</tr>
-	<tr class="rowa">		
-		<td class="col1cell"><b>Aproximação restrita</b></td>
-		<td class="col2cell"><%= @flight.restrict_approach %></td>
-		<td class="col3cell"><b>Pouso normal</b></td>
-		<td class="col4cell"><%= @flight.normal_landing %></td>
-		<td class="col5cell"><b>landing_in_4_noses</b></td>
-		<td class="col6cell"><%= @flight.landing_in_4_noses %></td>
-		<td class="col7cell"><b>landing_incline_land</b></td>
-		<td class="col8cell"><%= @flight.landing_incline_land %></td>
-	</tr>
-	<tr class="rowa">		
-		<td class="col1cell"><b>Pouso direto</b></td>
-		<td class="col2cell"><%= @flight.direct_landing %></td>
-		<td class="col3cell"><b>constant_square_nose</b></td>
-		<td class="col4cell"><%= @flight.constant_square_nose %>		</td>
-		<td class="col5cell"><b>variable_square_nose</b></td>
-		<td class="col6cell"><%= @flight.variable_square_nose %></td>
-		<td class="col7cell"><b>Tráfego normal</b></td>
-		<td class="col8cell"><%= @flight.normal_traffic %></td>
-	</tr>
-	<tr class="rowa">		
-		<td class="col1cell"><b>hovered_1000ft</b></td>
-		<td class="col2cell"><%= @flight.hovered_1000ft %></td>
-		<td class="col3cell"><b>Pouso em heliponto</b></td>
-		<td class="col4cell"><%= @flight.landing_on_helipad %></td>
-		<td class="col5cell"><b>Parada rápida</b></td>
-		<td class="col6cell"><%= @flight.quick_stop %></td>
-		<td class="col7cell"><b>parking_cutting</b></td>
-		<td class="col8cell"><%= @flight.parking_cutting %></td>
-	</tr>
-	<tr class="rowa">		
-		<td class="col1cell"><b>Operação em montanha</b></td>
-		<td class="col2cell"><%= @flight.oper_in_mountain %></td>
-		<td class="col3cell"><b>Operação com vento contrário</b></td>
-		<td class="col4cell"><%= @flight.oper_with_crosswind %></td>
-		<td class="col5cell"><b>Meteorologia</b></td>
-		<td class="col6cell"><%= @flight.meteorology %></td>
-		<td class="col7cell"><b>Planejamento</b></td>
-		<td class="col8cell"><%= @flight.planning %></td>
-	</tr>
-	<tr class="rowa">		
-		<td class="col1cell"><b>Notificação de vôo</b></td>
-		<td class="col2cell"><%= @flight.plan_notification %></td>
-		<td class="col3cell"><b>fonia</b></td>
-		<td class="col4cell"><%= @flight.fonia %></td>
-		<td class="col5cell"><b>Regras de tráfego</b></td>
-		<td class="col6cell"><%= @flight.traffic_rules %></td>
-		<td class="col7cell"><b>Rota de vôo</b></td>
-		<td class="col8cell"><%= @flight.flight_route %></td>
-	</tr>
-	<tr class="rowa">		
-		<td class="col1cell"><b>Navegação visual</b></td>
-		<td class="col2cell"><%= @flight.visual_navigation %></td>
-		<td class="col3cell"><b>Procedimentos de pernoite</b></td>
-		<td class="col4cell"><%= @flight.overnight_procedure %></td>
-		<td class="col5cell"><b>handling_publications</b></td>
-		<td class="col6cell"><%= @flight.handling_publications %></td>
-		<td class="col7cell"><b>Iniciativa</b></td>
-		<td class="col8cell"><%= @flight.initiative %></td>
-	</tr>
+				<td class="col2 cell"><b>Passageiro</b><br />
+			    <%= @flight.passenger %></td>
+				<td class="col2 cell"><b>Duração de vôo</b><br />
+			    <%= @flight.duration %></td>
+				<td class="col2 cell"><b>Pousos</b><br />
+			    <%= @flight.landings %></td>
 
 
-</table>
+			</tr>
+		 	<tr class="rowa">
+				<td class="col1 cell"><b>Registro</b><br />
+			    <%= @flight.registration %></td>
+
+				<td class="col3 cell"><b>Horímetro</b><br />
+			    <%= @flight.hourmeter %></td>
+				<td class="col3 cell"><b>Licença</b></br>
+			    <%= @flight.license %>
+				</td>
+				</td>
+			</tr>
+		</table>
+		<table class="table" id="table_form" cellspacing="0" cellpadding="0" width="90%">
+
+		 	<tr class="rowa">
+			    <td class="col1cell"><b>Inspeções</b></td>
+				<td class="col2cell"><%= @flight.inspections %></td>
+				<td class="col3cell"><b>Partida</b></td>
+				<td class="col4cell"><%= @flight.departure %></td>
+				<td class="col5cell"><b>Checagem</b></td>
+				<td class="col6cell"><%= @flight.checks %></td>
+				<td class="col7cell"><b>Taxi</b></td>
+				<td class="col8cell"><%= @flight.taxi %>
+			</tr>
+			<tr class="rowa">		
+				<td class="col1cell"><b>vertical_drop</b></td>
+				<td class="col2cell"><%= @flight.vertical_drop %></td>
+				<td class="col3cell"><b>normal_drop</b></td>
+				<td class="col4cell"><%= @flight.normal_drop %></td>
+				<td class="col5cell"><b>drop_down</b></td>
+				<td class="col6cell"><%= @flight.drop_down %></td>
+				<td class="col7cell"><b>run_landing</b></td>
+				<td class="col8cell"><%= @flight.run_landing %></td>
+			</tr>
+			<tr class="rowa">		
+				<td class="col1cell"><b>Dec.max.perf</b></td>
+				<td class="col2cell"><%= @flight.max_performance_drop %></td>
+				<td class="col3cell"><b>Vôo nivelado</b></td>
+				<td class="col4cell"><%= @flight.level_flight %></td>
+				<td class="col5cell"><b>hovering_flight</b></td>
+				<td class="col6cell"><%= @flight.hovering_flight %></td>
+				<td class="col7cell"><b>back_flight</b></td>
+				<td class="col8cell"><%= @flight.back_flight %></td>
+			</tr>
+			<tr class="rowa">		
+				<td class="col1cell"><b>Vôo lateral</b></td>
+				<td class="col2cell"><%= @flight.side_flying %></td>
+				<td class="col3cell"><b>Correções</b></td>
+				<td class="col4cell"><%= @flight.corrections %></td>
+				<td class="col5cell"><b>turns</b></td>
+				<td class="col6cell"><%= @flight.turns %></td>
+				<td class="col7cell"><b>Var.velocidade<</b>/td>
+				<td class="col8cell"><%= @flight.speed_variation %></td>
+			</tr>
+			<tr class="rowa">		
+				<td class="col1cell"><b>Auto rot. direta</b></td>
+				<td class="col2cell"><%= @flight.direct_autorotation %></td>
+				<td class="col3cell"><b>Auto rot. 90º</b></td>
+				<td class="col4cell"><%= @flight.autorotation_90º %></td>
+				<td class="col5cell"><b>Auto rot. 180º</b></td>
+				<td class="col6cell"><%= @flight.autorotation_180º %></td>
+				<td class="col7cell"><b>Auto rot. 360º</b></td>
+				<td class="col8cell"><%= @flight.autorotation_360º %></td>
+			</tr>
+			<tr class="rowa">		
+				<td class="col1cell"><b>autorotation_Hovering_DES</b></td>
+				<td class="col2cell"><%= @flight.autorotation_Hovering_DES %></td>
+				<td class="col3cell"><b>autorotation_Hovering_FES</b></td>
+				<td class="col4cell"><%= @flight.autorotation_Hovering_FES %></td>
+				<td class="col5cell"><b>Aproximação normal</b></td>
+				<td class="col6cell"><%= @flight.normal_approach %></td>
+				<td class="col7cell"><b>Aproximação grande ângulo</b></td>
+				<td class="col8cell"><%= @flight.big_angle_approach %></td>
+			</tr>
+			<tr class="rowa">		
+				<td class="col1cell"><b>Aproximação restrita</b></td>
+				<td class="col2cell"><%= @flight.restrict_approach %></td>
+				<td class="col3cell"><b>Pouso normal</b></td>
+				<td class="col4cell"><%= @flight.normal_landing %></td>
+				<td class="col5cell"><b>landing_in_4_noses</b></td>
+				<td class="col6cell"><%= @flight.landing_in_4_noses %></td>
+				<td class="col7cell"><b>landing_incline_land</b></td>
+				<td class="col8cell"><%= @flight.landing_incline_land %></td>
+			</tr>
+			<tr class="rowa">		
+				<td class="col1cell"><b>Pouso direto</b></td>
+				<td class="col2cell"><%= @flight.direct_landing %></td>
+				<td class="col3cell"><b>constant_square_nose</b></td>
+				<td class="col4cell"><%= @flight.constant_square_nose %>		</td>
+				<td class="col5cell"><b>variable_square_nose</b></td>
+				<td class="col6cell"><%= @flight.variable_square_nose %></td>
+				<td class="col7cell"><b>Tráfego normal</b></td>
+				<td class="col8cell"><%= @flight.normal_traffic %></td>
+			</tr>
+			<tr class="rowa">		
+				<td class="col1cell"><b>hovered_1000ft</b></td>
+				<td class="col2cell"><%= @flight.hovered_1000ft %></td>
+				<td class="col3cell"><b>Pouso em heliponto</b></td>
+				<td class="col4cell"><%= @flight.landing_on_helipad %></td>
+				<td class="col5cell"><b>Parada rápida</b></td>
+				<td class="col6cell"><%= @flight.quick_stop %></td>
+				<td class="col7cell"><b>parking_cutting</b></td>
+				<td class="col8cell"><%= @flight.parking_cutting %></td>
+			</tr>
+			<tr class="rowa">		
+				<td class="col1cell"><b>Operação em montanha</b></td>
+				<td class="col2cell"><%= @flight.oper_in_mountain %></td>
+				<td class="col3cell"><b>Operação com vento contrário</b></td>
+				<td class="col4cell"><%= @flight.oper_with_crosswind %></td>
+				<td class="col5cell"><b>Meteorologia</b></td>
+				<td class="col6cell"><%= @flight.meteorology %></td>
+				<td class="col7cell"><b>Planejamento</b></td>
+				<td class="col8cell"><%= @flight.planning %></td>
+			</tr>
+			<tr class="rowa">		
+				<td class="col1cell"><b>Notificação de vôo</b></td>
+				<td class="col2cell"><%= @flight.plan_notification %></td>
+				<td class="col3cell"><b>fonia</b></td>
+				<td class="col4cell"><%= @flight.fonia %></td>
+				<td class="col5cell"><b>Regras de tráfego</b></td>
+				<td class="col6cell"><%= @flight.traffic_rules %></td>
+				<td class="col7cell"><b>Rota de vôo</b></td>
+				<td class="col8cell"><%= @flight.flight_route %></td>
+			</tr>
+			<tr class="rowa">		
+				<td class="col1cell"><b>Navegação visual</b></td>
+				<td class="col2cell"><%= @flight.visual_navigation %></td>
+				<td class="col3cell"><b>Procedimentos de pernoite</b></td>
+				<td class="col4cell"><%= @flight.overnight_procedure %></td>
+				<td class="col5cell"><b>handling_publications</b></td>
+				<td class="col6cell"><%= @flight.handling_publications %></td>
+				<td class="col7cell"><b>Iniciativa</b></td>
+				<td class="col8cell"><%= @flight.initiative %></td>
+			</tr>
+
+
+		</table>
+
+
+ </div>
+<div id="leftcol2"></br>
+	<div class="form_row">
+	    <label for="history"><b>Histórico:</b></label>
+	    <br><%= radio_button_tag 'history', '1' %> Instrução 
+	    <br><%= radio_button_tag 'history', '2' %> Transporte
+	    <br><%= radio_button_tag 'history', '3' %> Manutenção
+	    <br><%= radio_button_tag 'history', '4' %> Treinamento
+	</div>
+	</br><hr></br>
+	<div class="form_row">
+	    <label for="history"><b>Fase:</b></label>
+	    <br><%= radio_button_tag 'phase', '1' %> Pré-solo 
+	    <br><%= radio_button_tag 'phase', '2' %> Manobras
+	    <br><%= radio_button_tag 'phase', '3' %> Navegação
+	    <br><%= radio_button_tag 'phase', '4' %> Solo
+	    <br><%= radio_button_tag 'phase', '5' %> Cheque
+	</div>
+</br><hr></br>
+	<div class="form_row">
+	    <label for="curse"><b>Curso:</b></label>
+	    <br><%= radio_button_tag 'course', '1' %> PPH 
+	    <br><%= radio_button_tag 'course', '2' %> PCH
+	    <br><%= radio_button_tag 'course', '3' %> INVH
+	    <br><%= radio_button_tag 'course', '4' %> CPD 
+	    <br><%= radio_button_tag 'course', '5' %> CPR
+	</div>
+	</br>
+	</div>
 </div>
+
+<p id="notice"><%= notice %> </p>
 
 
 <hr>
