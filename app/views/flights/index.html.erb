@@ -41,7 +41,7 @@
     <td><%= link_to flight.client.name, client_path(flight.client) %></td>
     <td><%= link_to flight.instructor.name, instructor_path(flight.instructor) %></td>
     <td><%= flight.flight_date.to_s_br %></td>
-    <td><%= link_to flight.flight_time.to_s_br, flight %></td>
+    <td><%= link_to flight.flight_time_br, flight %></td>
     <td align='center'><%= flight.duration %></td>
     <td align="right" width="25px"><%= link_to image_tag("info.png", :size=>"20x20", :border=>0, :title=>"Detalhes"), flight %></td>
     <td align="center" width="25px"><%= link_to image_tag("edit.png", :size=>"20x20", :border=>0, :title=>"Editar"), edit_flight_path(flight) %></td>
