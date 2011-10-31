@@ -53,9 +53,9 @@
 			<tr class="rowa">
 
 				<td class="col3 cell"><%= f.label "Cliente" %><br />
-			    <%= f.select :client_id, @clients, :prompt=>'selecione' %></td>
+			    <%= f.select :client_id, @clients, {:prompt=>'selecione'}, html_options={ :onchange => "change_client_dac();" }%></td>
 				<td class="col1 cell"><%= f.label "ANAC Cliente" %><br />
-			    <%= f.text_field :client_dac %></td>
+			    <span id="cliente_dac">&nbsp;</span></td>
 				<td class="col2 cell">
 			    <%= f.label "Instrutor" %><br />
 			    <%= f.select :instructor_id, @instructors, :prompt=>'selecione'%></td>

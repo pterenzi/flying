@@ -76,7 +76,16 @@ class ClientsController < ApplicationController
       end
     end
   end
-
+  
+  def busca_client_dac
+    @client = Client.find(params[:client_dac])
+    
+    render :json => @client.to_json
+  end
+  def retrieve_client_dac
+    @client = Client.find(params[:id])
+    render :json => @client.client_dac.to_json
+  end
   # DELETE /clients/1
   # DELETE /clients/1.json
   def destroy

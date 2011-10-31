@@ -9,6 +9,12 @@ Flying::Application.routes.draw do
     end
   end
 
+  resources :clients do
+    member do
+      get 'busca_client_dac'
+    end
+  end
+
   get "admins/manage_permission"
   get "admins/change_level"
   get "admins/new_user"

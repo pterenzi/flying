@@ -18,3 +18,14 @@ function change_aircraft(){
     error: $("#aircraft_type_name").html("&nbsp;")
   });
 }
+
+function change_client_dac(){
+  $.ajax({
+    url: "/clients/" + $("#flight_client_dac").val() + "/retrieve_client_dac",
+    type: "GET",
+    success: function(client_dac) {
+      $("#client_dac").html(client_dac)
+    },
+    error: $("#client_dac").html("&nbsp;")
+  });
+}
