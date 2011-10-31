@@ -11,7 +11,7 @@ Flying::Application.routes.draw do
 
   resources :clients do
     member do
-      get 'busca_client_dac'
+      get 'retrieve_client_dac'
     end
   end
 
