@@ -5,8 +5,8 @@
 	<table class="table" id="table_form" cellspacing="0" cellpadding="0">
 		<tr>
 			<td class="col1 cell"> Tipo de Formulário:</br><b>IEPV 100-7</b> </td>
-			<td class="col1 cell"><b>Aeronave</b><br /> <%= @flight.aircraft_id  %></td>
-			<td class="col3 cell"><b>tipo</b></br> <%= @flight.type_id %></td></div></td>
+			<td class="col1 cell"><b>Aeronave</b><br /> <%= @flight.aircraft.prefix  %></td>
+			<td class="col3 cell"><b>tipo</b></br> <%= @flight.aircraft.aircraft_type.name %></td></div></td>
 		</tr>
 		<tr>
 			<td class="col1 cell"><b>Equipamento</b><br />
