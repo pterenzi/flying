@@ -58,9 +58,9 @@
 			    <span id="client_dac">&nbsp;</span></td>
 				<td class="col2 cell">
 			    <%= f.label "Instrutor" %><br />
-			    <%= f.select :instructor_id, @instructors, :prompt=>'selecione'%></td>
+			    <%= f.select :instructor_id, @instructors, {:prompt=>'selecione'}, html_options={ :onchange => "change_instructor_dac();" }%></td>
 				<td class="col3 cell"><%= f.label "ANAC Instrutor" %><br />
-			    <%= f.text_field :instructor_dac %></td>
+			    <span id="instructor_dac">&nbsp;</span></td>
 			</tr>
 		</table>
 		<table class="table" id="table_form" cellspacing="0" cellpadding="0">
@@ -96,17 +96,15 @@
 	</div>
 		<div id="header3" align="center">
 		    <label for="history"><b>Grau:</b></label>
-		    <%= radio_button_tag :degree, '1' %> Perigoso 
-		    <%= radio_button_tag :degree, '2' %> Deficiente
-		    <%= radio_button_tag :degree, '3' %> Satisfatório
-		    <%= radio_button_tag :degree, '4' %> Bom
-		    <%= radio_button_tag :degree, '5' %> Excelente
+		    <%= f.radio_button :degree, '1' %> Perigoso 
+		    <%= f.radio_button :degree, '2' %> Deficiente
+		    <%= f.radio_button :degree, '3' %> Satisfatório
+		    <%= f.radio_button :degree, '4' %> Bom
+		    <%= f.radio_button :degree, '5' %> Excelente
 	</div>
 	<div id="maincol2">
 
 	<%= render :partial => 'formH', :locals =>{:f => f} %>
-	<%= render :partial => 'formU', :locals =>{:f => f} %>
-	<%= render :partial => 'formA', :locals =>{:f => f} %>
 
 	 <div class="actions">
 	   <%= f.submit %>
@@ -116,28 +114,28 @@
 <div id="leftcol2"></br>
 	<div class="form_row">
 	    <label for="history"><b>Histórico:</b></label>
-	    <br><%= radio_button_tag 'history', '1' %> Instrução 
-	    <br><%= radio_button_tag 'history', '2' %> Transporte
-	    <br><%= radio_button_tag 'history', '3' %> Manutenção
-	    <br><%= radio_button_tag 'history', '4' %> Treinamento
+	    <br><%= f.radio_button :history, '1' %> Instrução 
+	    <br><%= f.radio_button :history, '2' %> Transporte
+	    <br><%= f.radio_button :history, '3' %> Manutenção
+	    <br><%= f.radio_button :history, '4' %> Treinamento
 	</div>
 	</br><hr></br>
 	<div class="form_row">
 	    <label for="history"><b>Fase:</b></label>
-	    <br><%= radio_button_tag 'phase', '1' %> Pré-solo 
-	    <br><%= radio_button_tag 'phase', '2' %> Manobras
-	    <br><%= radio_button_tag 'phase', '3' %> Navegação
-	    <br><%= radio_button_tag 'phase', '4' %> Solo
-	    <br><%= radio_button_tag 'phase', '5' %> Cheque
+	    <br><%= f.radio_button :phase, '1' %> Pré-solo 
+	    <br><%= f.radio_button :phase, '2' %> Manobras
+	    <br><%= f.radio_button :phase, '3' %> Navegação
+	    <br><%= f.radio_button :phase, '4' %> Solo
+	    <br><%= f.radio_button :phase, '5' %> Cheque
 	</div>
 </br><hr></br>
 	<div class="form_row">
 	    <label for="curse"><b>Curso:</b></label>
-	    <br><%= radio_button_tag 'course', '1' %> PPH 
-	    <br><%= radio_button_tag 'course', '2' %> PCH
-	    <br><%= radio_button_tag 'course', '3' %> INVH
-	    <br><%= radio_button_tag 'course', '4' %> CPD 
-	    <br><%= radio_button_tag 'course', '5' %> CPR
+	    <br><%= f.radio_button :course, '1' %> PPH 
+	    <br><%= f.radio_button :course, '2' %> PCH
+	    <br><%= f.radio_button :course, '3' %> INVH
+	    <br><%= f.radio_button :course, '4' %> CPD 
+	    <br><%= f.radio_button :course, '5' %> CPR
 	</div>
 	</br>
 	</div>

@@ -27,7 +27,10 @@ class InstructorsController < ApplicationController
       format.json { render :json => @instructor }
     end
   end
-
+  def retrieve_instructor_dac
+    @instructor = Instructor.find(params[:id])
+    render :json => @instructor.instructor_dac.to_json
+  end
   # GET /instructors/new
   # GET /instructors/new.json
   def new

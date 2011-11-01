@@ -15,6 +15,11 @@ Flying::Application.routes.draw do
     end
   end
 
+  resources :instructors do
+    member do
+      get 'retrieve_instructor_dac'
+    end
+  end
   get "admins/manage_permission"
   get "admins/change_level"
   get "admins/new_user"
@@ -44,7 +49,6 @@ Flying::Application.routes.draw do
     end
   end
 
-  resources :instructors
 
   resources :aircrafts do
     member do

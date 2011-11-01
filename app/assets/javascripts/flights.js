@@ -29,3 +29,14 @@ function change_client_dac(){
     error: $("#client_dac").html("&nbsp;")
   });
 }
+
+function change_instructor_dac(){
+  $.ajax({
+    url: "/instructors/" + $("#flight_instructor_id").val() + "/retrieve_instructor_dac",
+    type: "GET",
+    success: function(instructor_dac) {
+      $("#instructor_dac").html(instructor_dac)
+    },
+    error: $("#instructor_dac").html("&nbsp;")
+  });
+}
