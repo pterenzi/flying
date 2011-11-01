@@ -30,11 +30,13 @@ class Sale < ActiveRecord::Base
   end
   
   def hours_br=(new_value)
-    self.hours = new_value.gsub(",", ".").to_d if new_value.present?
+    self.hours = new_value.gsub(",", ".").to_d  if new_value.present?
   end
   
   def total_value
-    self.hours * self.value
+    result = (self.hours * self.value)
+    result += result - self.discount if self.discount
+    result
   end
   
   def create_balance
