@@ -41,7 +41,11 @@ Flying::Application.routes.draw do
     end
   end
 
-  resources :flights
+  resources :flights do
+    member do
+      get 'load_aircraft_type_form'
+    end
+  end
 
   resources :packages do
     member do

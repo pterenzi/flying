@@ -41,7 +41,8 @@ class FlightsController < ApplicationController
   # GET /flights/new
   # GET /flights/new.json
   def new
-    @flight      = Flight.new(:duration => 2)
+    @aircraft    = Aircraft.find(params[:aircraft_id])
+    @flight      = Flight.new(:duration => 2, :aircraft => @aircraft)
     @clients     = Client.all(:order=>:name).collect{|c| [c.name, c.id]}
     @instructors = Instructor.all(:order=>:name).collect{|c| [c.name, c.id]}
     @aircrafts   = Aircraft.all.collect{|c| [c.prefix, c.id]}
@@ -103,4 +104,14 @@ class FlightsController < ApplicationController
       format.json { head :ok }
     end
   end
+  
+  def load_aircraft_type_form
+    @aircraft = Aircraft.find(params[:id])
+    case @aircraft.aircraft_type.name
+    when 'Ultra-leve': render :partial => 'formU', :locals => {:f => params[:f]}
+    when 'Autogyro': render :partial => 'formA', :locals => {:f => params[:f]}
+    when 'Helicóptero': render :partial => 'formH', :locals => {:f => params[:f]}
+    end
+  end
+  
 end

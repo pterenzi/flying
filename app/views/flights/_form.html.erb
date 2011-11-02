@@ -1,3 +1,6 @@
+	  <%= button_to_function "imprime notificação" , "#" %>  
+	  <%= button_to_function "imprime relatório" , "#" %>  
+
 <%= form_for(@flight) do |f| %>
   <% if @flight.errors.any? %>
     <div id="error_explanation">
@@ -11,16 +14,18 @@
     </div>
   <% end %>
 <div id="wrapper" class="clearfix">	
-	<div id="header2"><h2>Notificação de vôo</h2><hr>
+	<div id="header2" ><h2>Notificação de vôo</h2>
+	<hr>
 	<div>
 	<table class="table" id="table_form" cellspacing="0" cellpadding="0">
 		<tr>
 			<td class="col1 cell"> Tipo de Formulário:</br><b>IEPV 100-7</b> </td>
 			<td class="col1 cell">
 			  <%= f.label "Aeronave" %><br /> 
-			  <%= f.select :aircraft_id, @aircrafts, options={:prompt =>  "selecione"}, html_options={ :onchange => "change_aircraft();" }%>
+			  <%= @aircraft.prefix %>
+			  <!-- <%= f.select :aircraft_id, @aircrafts, options={:prompt =>  "selecione"}, html_options={ :onchange => "change_aircraft();load_form(#{f});" }%> -->
 			</td>
-			<td class="col3 cell"><%= f.label "tipo" %></br> <span id="aircraft_type_name">&nbsp;</span></td></div></td>
+			<td class="col3 cell"><%= f.label "tipo" %></br> <span id="aircraft_type_name"><%= @aircraft.aircraft_type.name %></span></td></div></td>
 		</tr>
 		<tr>
 			<td class="col1 cell"><%= f.label "Equipamento" %><br />
@@ -104,7 +109,9 @@
 	</div>
 	<div id="maincol2">
 
-	<%= render :partial => 'formH', :locals =>{:f => f} %>
+    <div id="partial">
+      <%= render :partial => "form#{@aircraft.aircraft_type.name[0,1]}", :locals => {:f => f} %>
+    </div>
 
 	 <div class="actions">
 	   <%= f.submit %>
