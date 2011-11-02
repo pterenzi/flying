@@ -22,10 +22,10 @@
 			<td class="col1 cell"> Tipo de Formulário:</br><b>IEPV 100-7</b> </td>
 			<td class="col1 cell">
 			  <%= f.label "Aeronave" %><br /> 
-			  <%= @aircraft.prefix %>
-			  <!-- <%= f.select :aircraft_id, @aircrafts, options={:prompt =>  "selecione"}, html_options={ :onchange => "change_aircraft();load_form(#{f});" }%> -->
+
+ 			<%= f.select :aircraft_id, @aircrafts, options={:prompt =>  "selecione"}, html_options={ :onchange => "change_aircraft();load_form(#{f});" }%>
 			</td>
-			<td class="col3 cell"><%= f.label "tipo" %></br> <span id="aircraft_type_name"><%= @aircraft.aircraft_type.name %></span></td></div></td>
+			<td class="col3 cell"><%= f.label "tipo" %></br> <span id="aircraft_type_name"></span></td></div></td>
 		</tr>
 		<tr>
 			<td class="col1 cell"><%= f.label "Equipamento" %><br />
@@ -110,7 +110,7 @@
 	<div id="maincol2">
 
     <div id="partial">
-      <%= render :partial => "form#{@aircraft.aircraft_type.name[0,1]}", :locals => {:f => f} %>
+      <%= render :partial => "form#{@aircraft_type.name[0,1]}", :locals => {:f => f} %>
     </div>
 
 	 <div class="actions">
