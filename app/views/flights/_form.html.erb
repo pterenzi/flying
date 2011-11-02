@@ -25,7 +25,7 @@
 			  <%= @aircraft.prefix %>
 			  <!-- <%= f.select :aircraft_id, @aircrafts, options={:prompt =>  "selecione"}, html_options={ :onchange => "change_aircraft();load_form(#{f});" }%> -->
 			</td>
-			<td class="col3 cell"><%= f.label "tipo" %></br> <span id="aircraft_type_name">&nbsp;</span></td></div></td>
+			<td class="col3 cell"><%= f.label "tipo" %></br> <span id="aircraft_type_name"><%= @aircraft.aircraft_type.name %></span></td></div></td>
 		</tr>
 		<tr>
 			<td class="col1 cell"><%= f.label "Equipamento" %><br />
@@ -108,7 +108,6 @@
 		    <%= radio_button_tag :degree, '5' %> Excelente
 	</div>
 	<div id="maincol2">
-	  XXXXXXXXXXxX
     <div id="partial">
       <%= render :partial => "form#{@aircraft.aircraft_type.name[0,1]}", :locals => {:f => f} %>
     </div>
