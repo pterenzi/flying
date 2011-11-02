@@ -29,3 +29,16 @@ function change_client_dac(){
     error: $("#client_dac").html("&nbsp;")
   });
 }
+
+function load_form(f){
+  $.ajax({
+    url: "/flights/" + $("#flight_aircraft_id").val() + "/load_aircraft_type_form",
+    type: "GET",
+    data: {f: f},
+    success: function(form) {
+      $("#partial").empty();
+      $("#partial").html(form);
+    },
+    error: $("#partial").html("&nbsp;")
+  });
+}

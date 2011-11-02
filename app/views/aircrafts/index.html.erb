@@ -11,9 +11,10 @@
     <th>Tipo</th>
     <th>Fabricante</th>
     <th>Modelo</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>&nbsp;</th>
+    <th>&nbsp;</th>
+    <th>&nbsp;</th>
+    <th>&nbsp;</th>
   </tr>
 
 <% @aircrafts.each do |aircraft| %>
@@ -22,6 +23,7 @@
     <td><%= aircraft.aircraft_type.name %></td>
     <td><%= aircraft.manufacturer %></td>
     <td><%= aircraft.model %></td>
+    <td><%= link_to "voo", new_flight_path(:aircraft_id => aircraft.id) %></td>
     <td align="right" width="25px"><%= link_to image_tag("info.png", :size=>"20x20", :border=>0, :title=>"Detalhes"), aircraft %></td>
     <td align="center" width="25px"><%= link_to image_tag("edit.png", :size=>"20x20", :border=>0, :title=>"Editar"), edit_aircraft_path(aircraft) %></td>
     <td align="left" width="25px"><%= link_to image_tag("trash.jpg",:size=>"20x20", :border=>0, :title=>"Excluir"), aircraft, :confirm => 'Tem certeza que quer excluir o registro?', :method => :delete %></td>
