@@ -30,7 +30,6 @@ function change_client_dac(){
   });
 }
 
-<<<<<<< HEAD
 function change_instructor_dac(){
   $.ajax({
     url: "/instructors/" + $("#flight_instructor_id").val() + "/retrieve_instructor_dac",
@@ -39,17 +38,6 @@ function change_instructor_dac(){
       $("#instructor_dac").html(instructor_dac)
     },
     error: $("#instructor_dac").html("&nbsp;")
-=======
-function load_form(f){
-  $.ajax({
-    url: "/flights/" + $("#flight_aircraft_id").val() + "/load_aircraft_type_form",
-    type: "GET",
-    data: {f: f},
-    success: function(form) {
-      $("#partial").empty();
-      $("#partial").html(form);
-    },
-    error: $("#partial").html("&nbsp;")
->>>>>>> 351db39e2e75e500b5b61a06ff4d2f3866ce3a64
+
   });
 }
