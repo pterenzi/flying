@@ -92,8 +92,10 @@ class SalesController < ApplicationController
   # DELETE /sales/1
   # DELETE /sales/1.json
   def destroy
-    @sale = Sale.find(params[:id])
+    @sale    = Sale.find(params[:id])
+    @balance = Balance.find_by_sale_id(@sale.id)
     @sale.destroy
+    @balance.destroy
 
     respond_to do |format|
       format.html { redirect_to sales_url }

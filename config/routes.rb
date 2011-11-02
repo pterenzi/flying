@@ -56,7 +56,6 @@ Flying::Application.routes.draw do
     end
   end
 
-  
   # get :autocomplete_client_name, :on => :collection
 
   # The priority is based upon order of creation:

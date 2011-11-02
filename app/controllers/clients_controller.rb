@@ -81,6 +81,7 @@ class ClientsController < ApplicationController
     @client = Client.find(params[:id])
     render :json => @client.client_dac.to_json
   end
+  
   # DELETE /clients/1
   # DELETE /clients/1.json
   def destroy

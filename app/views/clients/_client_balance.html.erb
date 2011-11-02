@@ -13,7 +13,7 @@
 <% total = 0 %>
 <% @client.balances.order(:date).each do |balance| %>
   <tr>
-    <td><%= balance.date.to_s_br %></td>
+    <td><%= balance.date_br %>- <%= balance.sale_id%></td>
     <% if balance.credit? %>
       <td><%= balance.sale.aircraft_type.name %></td>
       <td><%= balance.hours.to_s %></td>
