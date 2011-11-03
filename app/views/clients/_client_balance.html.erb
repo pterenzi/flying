@@ -1,11 +1,10 @@
-<p>
+
   <h2>Crédito de horas</h2>
-</p>
 
 <table>
   <tr>
     <th>Data</th>
-    <th>Pacote/Voo</th>
+    <th>Aeronave</th>
     <th>Crédito</th>
     <th>Débito</th>
     <th>Saldo</th>
@@ -13,20 +12,18 @@
 <% total = 0 %>
 <% @client.balances.order(:date).each do |balance| %>
   <tr>
-    <td><%= balance.date_br %>- <%= balance.sale_id%></td>
+    <td><%= balance.date.to_s_br %></td>
     <% if balance.credit? %>
       <td><%= balance.sale.aircraft_type.name %></td>
       <td><%= balance.hours.to_s %></td>
       <td>&nbsp;</td>
       <% total += balance.hours %>
     <% else %>
-      <td><%= balance.flight.aircraft.prefix %></td>
-      <td>&nbsp;</td>
+      <td><%= balance.flight && balance.flight.aircraft.prefix %></td>
       <td><%= balance.hours   %></td>
-      <% total -= balance.hours %>
+      <% total -= balance.hours if balance.hours %>
     <% end %>
     <td><%= total %></td>
   </tr>
-  <br />
 <% end %>
 </table>

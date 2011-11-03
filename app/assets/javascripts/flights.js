@@ -41,3 +41,20 @@ function change_instructor_dac(){
 
   });
 }
+
+function print(notificacao){
+  $("#dialog").empty();
+  $("#print-title").html(titulo);
+  $("#dialog").append($("#header2").html());
+  $("#dialog .index_link").remove();
+  $("#dialog").dialog({
+  buttons: { 
+    "Print": function() { $('#dialog').printElement(); },
+    "Close": function() { $(this).dialog("close"); }
+  },
+  title: $("#title h1").html(),
+  height: 500,
+  width: 800
+});
+  
+    }

@@ -25,9 +25,7 @@ ActiveRecord::Schema.define(:version => 20111029201302) do
     t.text     "comments"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "package_id"
     t.integer  "supplier_id"
-    t.integer  "hours"
     t.boolean  "payed",        :default => false
   end
 
@@ -263,17 +261,6 @@ ActiveRecord::Schema.define(:version => 20111029201302) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "aircraft_type_id"
-  end
-
-  create_table "packages", :force => true do |t|
-    t.string   "name"
-    t.integer  "quantity"
-    t.decimal  "hour_price",       :precision => 6, :scale => 2
-    t.decimal  "decimal",          :precision => 6, :scale => 2
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "aircraft_type_id"
-    t.boolean  "active",                                         :default => true
   end
 
   create_table "sales", :force => true do |t|

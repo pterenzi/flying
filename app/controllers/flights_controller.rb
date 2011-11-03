@@ -55,6 +55,7 @@ class FlightsController < ApplicationController
   # GET /flights/1/edit
   def edit
     @flight      = Flight.find(params[:id])
+    @aircraft_type = @flight.aircraft.aircraft_type
     @clients     = Client.all(:order=>:name).collect{|c| [c.name, c.id]}
     @instructors = Instructor.all(:order=>:name).collect{|c| [c.name, c.id]}
     @aircrafts   = Aircraft.all.collect{|c| [c.prefix, c.id]}

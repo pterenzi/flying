@@ -17,7 +17,7 @@ class Client < ActiveRecord::Base
       hours += sale.hours
     end
     self.flights.each do |flight|
-      hours -= flight.duration
+      hours -= flight.duration if flight.duration.present?
     end
     hours
   end

@@ -15,6 +15,7 @@ class Flight < ActiveRecord::Base
                   }
   scope :by_instructor, lambda{|id| where("instructor_id = ? ", id)}                
   
+  validates :aircraft_id, :presence => true
   attr_accessor :flight_date_br, :flight_time_br
   
   def flight_time_br

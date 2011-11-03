@@ -17,7 +17,7 @@
 </table>
 
 <hr>
-
+  <div id="printable-part">
 <table>
   <tr>
     <th>Prefixo</th>
@@ -50,9 +50,11 @@
 <% end %>
 
 </table>
-
+</div>
 <br />
 <hr>
 <%= link_to image_tag("helicopter.png", :size=>"60x60", :border=>0, :title=>"Adicionar vôo de Helicóptero"), new_flight_path(:aircraft_type_id  =>1) %>
-<%= link_to image_tag("autogyro.jpg", :size=>"50x50", :border=>0, :title=>"Adicionar vôo de Autogyro"), new_flight_path(:aircraft_type_id => 2) %>
+<%= link_to image_tag("autogyro.png", :size=>"60x60", :border=>0, :title=>"Adicionar vôo de Autogyro"), new_flight_path(:aircraft_type_id => 2) %>
 <%= link_to image_tag("ultraleve.png", :size=>"50x50", :border=>0, :title=>"Adicionar vôo de Ultraleve"), new_flight_path(:aircraft_type_id => 3) %>
+<%= link_to image_tag("printer.png", :size=>"40x40", :border=>0, :title=>"Imprimir relatório"), "javascript:print('#{@titulo}');"%>
+<div id="dialog" title="Basic dialog"></div>

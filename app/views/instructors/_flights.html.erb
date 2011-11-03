@@ -1,12 +1,20 @@
 <div>
-  <p><b>Flights</b></p>
+  <p><b>Vôos</b></p>
   <table>
+	<tr>
+		<th>Aeronave</th>
+		<th>Data</th>
+		<th>Hora</th>
+		<th>Cliente</th>		
+		<th>Duração</th>
+	</tr>
     <% @instructor.flights.each do |fl| %>
       <tr>
         <td><%= link_to fl.aircraft.prefix, aircraft_path(fl.aircraft) %></td>
         <td><%= fl.flight_date %></td>
+        <td><%= fl.flight_time_br %></td>
+        <td><%= fl.client.name %></td>
         <td><%= fl.duration %></td>
-        <td><%= fl.aircraft.aircraft_type.name %></td>
       </tr>
     <% end %>
   </table>
