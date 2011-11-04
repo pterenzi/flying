@@ -83,12 +83,12 @@
 	</div>	
 	</div>
 		<div id="header3" align="center">
-		    <label for="history"><b>Grau:</b></label>
-		    <%= radio_button_tag :degree, '1' %> Perigoso 
-		    <%= radio_button_tag :degree, '2' %> Deficiente
-		    <%= radio_button_tag :degree, '3' %> Satisfatório
-		    <%= radio_button_tag :degree, '4' %> Bom
-		    <%= radio_button_tag :degree, '5' %> Excelente
+		    <label for="history"><b>Grau:</b></label> 
+		    <%= radio_button_tag 'degree', '1', @flight.degree == 1 %> Perigoso 
+		    <%= radio_button_tag 'degree', '2', @flight.degree == 2 %> Deficiente
+		    <%= radio_button_tag 'degree', '3', @flight.degree == 3 %> Satisfatório
+		    <%= radio_button_tag 'degree', '4', @flight.degree == 4 %> Bom
+		    <%= radio_button_tag 'degree', '5', @flight.degree == 5 %> Excelente
 	</div>
 	
 	<div id="maincol2">
@@ -254,34 +254,41 @@
 
 
 		</table>
+		<table>
+			<tr>
+				<td><b>Observações</b></br>
+					<%=  @flight.comments %>
+				</td>
+			</tr>
+		</table>
 
 
  </div>
 <div id="leftcol2"></br>
 	<div class="form_row">
 	    <label for="history"><b>Histórico:</b></label>
-	    <br><%= radio_button_tag 'history', '1' %> Instrução 
-	    <br><%= radio_button_tag 'history', '2' %> Transporte
-	    <br><%= radio_button_tag 'history', '3' %> Manutenção
-	    <br><%= radio_button_tag 'history', '4' %> Treinamento
+	    <br><%= radio_button_tag 'history', '1', @flight.history == 1 %> Instrução 
+	    <br><%= radio_button_tag 'history', '2', @flight.history == 2 %> Transporte
+	    <br><%= radio_button_tag 'history', '3', @flight.history == 3 %> Manutenção
+	    <br><%= radio_button_tag 'history', '4', @flight.history == 4 %> Treinamento
 	</div>
 	</br><hr></br>
 	<div class="form_row">
-	    <label for="history"><b>Fase:</b></label>
-	    <br><%= radio_button_tag 'phase', '1' %> Pré-solo 
-	    <br><%= radio_button_tag 'phase', '2' %> Manobras
-	    <br><%= radio_button_tag 'phase', '3' %> Navegação
-	    <br><%= radio_button_tag 'phase', '4' %> Solo
-	    <br><%= radio_button_tag 'phase', '5' %> Cheque
+	    <label for="history"><b>Fase:</b></label>              
+	    <br><%= radio_button_tag 'phase', '1',@flight.phase == 1 %> Pré-solo 
+	    <br><%= radio_button_tag 'phase', '2',@flight.phase == 2 %> Manobras
+	    <br><%= radio_button_tag 'phase', '3',@flight.phase == 3 %> Navegação
+	    <br><%= radio_button_tag 'phase', '4',@flight.phase == 4 %> Solo
+	    <br><%= radio_button_tag 'phase', '5',@flight.phase == 5 %> Cheque
 	</div>
 </br><hr></br>
 	<div class="form_row">
 	    <label for="curse"><b>Curso:</b></label>
-	    <br><%= radio_button_tag 'course', '1' %> PPH 
-	    <br><%= radio_button_tag 'course', '2' %> PCH
-	    <br><%= radio_button_tag 'course', '3' %> INVH
-	    <br><%= radio_button_tag 'course', '4' %> CPD 
-	    <br><%= radio_button_tag 'course', '5' %> CPR
+	    <br><%= radio_button_tag 'course', '1',@flight.course == 1 %> PPH 
+	    <br><%= radio_button_tag 'course', '2',@flight.course == 2 %> PCH
+	    <br><%= radio_button_tag 'course', '3',@flight.course == 3 %> INVH
+	    <br><%= radio_button_tag 'course', '4',@flight.course == 4 %> CPD 
+	    <br><%= radio_button_tag 'course', '5',@flight.course == 5 %> CPR
 	</div>
 	</br>
 	</div>
