@@ -6,14 +6,12 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery_ui
-//= require autocomplete-rails
 //= require_tree .
 
-function print(titulo){
+function print(titulo,element){
   $("#dialog").empty();
   $("#print-title").html(titulo);
-  $("#dialog").append($("#printable-part").html());
+  $("#dialog").append($("#"+element).html());
   $("#dialog .index_link").remove();
   $("#dialog").dialog({
   buttons: { 
