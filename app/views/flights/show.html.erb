@@ -2,6 +2,10 @@
 <div id="wrapper" class="clearfix">	
 	  <%= button_to_function "Imprimir notificação" , "javascript:print('#{@notificacao}')"; %>  
 	  <%= button_to_function "imprime relatório" , "javascript:print('#{@relatorio}')"; %>  
+<div id="relatorio">
+	
+<div id="notificacao">
+	
 	<div id="header2"><h2>Notificação de vôo</h2><hr>
 	<div>
 	<table class="table" id="table_form" cellspacing="0" cellpadding="0">
@@ -262,8 +266,9 @@
 			</tr>
 		</table>
 
-
+	</div>
  </div>
+</div>
 <div id="leftcol2"></br>
 	<div class="form_row">
 	    <label for="history"><b>Histórico:</b></label>
