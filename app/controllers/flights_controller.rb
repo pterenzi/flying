@@ -44,7 +44,7 @@ class FlightsController < ApplicationController
     @flight      = Flight.new(:duration => 2, :aircraft => @aircraft)
     @clients     = Client.all(:order=>:name).collect{|c| [c.name, c.id]}
     @instructors = Instructor.all(:order=>:name).collect{|c| [c.name, c.id]}
-    @aircrafts   = Aircraft.where (:aircraft_type_id => params[:aircraft_type_id]).collect{|c| [c.prefix, c.id]}
+    @aircrafts   = Aircraft.where(:aircraft_type_id => params[:aircraft_type_id]).collect{|c| [c.prefix, c.id]}
     @aircraft_type = AircraftType.find(params[:aircraft_type_id])
     respond_to do |format|
       format.html # new.html.erb

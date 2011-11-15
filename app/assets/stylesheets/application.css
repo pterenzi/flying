@@ -315,6 +315,120 @@ height: 0;
      
  @media print{ 
 /*hide the left column when printing*/ 
+#header{display: none;}
+#buttons{display: none;}
+#sidebar{display:none;}
 #leftcol{display:none;} 
-#twocols, #maincol{width:100%; float:none;}
+#maincol{width:100%; float:none;}
+#maincol2{width:78%; float:right;}
+#leftcol2{
+ 	-moz-border-radius:6px;
+  -webkit-border-radius: 6px;
+ width:17%;
+ height:auto;
+ float:left;
+ position:relative; 
+ background-color:#F0f0f0;
+ border:solid thin gray;
+ font-size: 10px;
+ }
+#header2{
+ 	-moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+ position:relative; 
+ height:auto; 
+ background-color: #FFFACD;
+ color: black;
+ padding: 3px;
+ width:98%;
+ display:block;
+ overflow:auto;
+ border: solid thin gray;
+ margin-bottom:5px;
 }
+#header3{
+ 	-moz-border-radius:6px;
+  -webkit-border-radius: 6px;
+ position:relative; 
+ height:auto; 
+ background-color:#f0f0f0;
+ color: black;
+ padding: 3px;
+ width:98%;
+ display:block;
+ overflow:auto;
+ border: solid thin gray;
+ margin-bottom:5px;
+}
+html, body{ 
+ margin:0;
+ padding:0; 
+ font-family:verdana;
+ font-size: 10px;
+ }
+
+.col1cell {
+	border-top:solid thin gray;
+	border-left:solid thin gray;
+	border-bottom:solid thin gray;
+	padding:2px;
+background-color: #f0f0f0;
+	font-size: 10px;
+}
+.col2cell {
+	border-top:solid thin gray;
+	border-right:solid thin gray;
+	border-bottom:solid thin gray;
+	padding:2px;
+	background:#f0f0f0;
+	font-size: 10px;
+}
+
+.col3cell {
+	border-top:solid thin gray;
+	border-left:solid thin gray;
+	border-bottom:solid thin gray;
+	padding:2px;
+	font-size: 10px;
+}
+.col4cell {
+	border-top:solid thin gray;
+	border-right:solid thin gray;
+	border-bottom:solid thin gray;
+	padding:2px;
+	font-size: 10px;
+}
+
+.col5cell {
+	border-top:solid thin gray;
+	border-left:solid thin gray;
+	border-bottom:solid thin gray;
+	padding:2px;
+	background:#f0f0f0;
+	font-size: 10px;
+}
+.col6cell {
+	border-top:solid thin gray;
+	border-right:solid thin gray;
+	border-bottom:solid thin gray;
+	padding:2px;
+	background:#f0f0f0;
+	font-size: 10px;
+}
+
+.col7cell {
+	border-top:solid thin gray;
+	border-left:solid thin gray;
+	border-bottom:solid thin gray;
+	padding:2px;
+	font-size: 10px;
+}
+.col8cell {
+	border-top:solid thin gray;
+	border-right:solid thin gray;
+	border-bottom:solid thin gray;
+	padding:2px;
+	font-size: 10px;
+}
+}
+

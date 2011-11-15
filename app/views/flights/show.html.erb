@@ -1,7 +1,9 @@
 <h1>Relatório de Vôo</h1>
 <div id="wrapper" class="clearfix">	
-	  <%= button_to_function "Imprimir notificação" , "javascript:print('notificacao', 'notificacao')"; %>  
-	  <%= button_to_function "imprime relatório" , "javascript:print('relatorio','relatorio')"; %>  
+<div id="buttons">
+	<%= button_to_function "Imprimir notificação" , "javascript:print('notificacao', 'notificacao')"; %>
+	<%= button_to_function "imprime relatório" , "javascript:print('relatorio','relatorio')"; %>
+</div>	    
 <div id="relatorio">
 	
 <div id="notificacao">
@@ -134,7 +136,7 @@
 				</td>
 			</tr>
 		</table>
-		<table class="table" id="table_form" cellspacing="0" cellpadding="0" width="90%">
+		<table class="table" id="table_form" cellspacing="0" cellpadding="0">
 
 		 	<tr class="rowa">
 			    <td class="col1cell">Inspeções</td>
@@ -299,11 +301,13 @@
 	</div>
 </div>
 </div>
-<p id="notice"><%= notice %> </p>
 
 
+<div id="buttons">
+<p id="notice"><%= notice %> </p>	
 <hr>
-
 <%= link_to image_tag("left_arrow.png", :size=>"40x40", :border=>0, :title=>"Voltar"), flights_path %>
 <%= link_to image_tag("edit.png", :size=>"40x40", :border=>0, :title=>"Editar"), edit_flight_path(@flight) %>
+</div>
+
 <div id="dialog" title="Basic dialog"></div>

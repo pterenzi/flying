@@ -54,7 +54,7 @@ function change_instructor_dac(){
 //   },
 //   title: $("#title h1").html(),
 //   height: 500,
-//   width: 960
+//   width: 800
 // });
 //   
 //     }
