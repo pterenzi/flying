@@ -1,6 +1,6 @@
 <h1>Relatório de Vôo</h1>
 <div id="wrapper" class="clearfix">	
-	  <%= button_to_function "Imprimir notificação" , "javascript:print('notificacao', 'notificacao')"; %>  
+	  <%= link_to "Imprimir notificação" , print_notification_flight_path(@flight)  %>  
 	  <%= button_to_function "imprime relatório" , "javascript:print('relatorio','relatorio')"; %>  
 <div id="relatorio">
 	

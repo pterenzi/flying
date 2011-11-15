@@ -31,3 +31,5 @@ gem 'brazilian-rails'
 gem 'devise', '1.4.8'
 
 gem 'jquery-rails', '>= 1.0.12'
+
+gem 'prawn'
