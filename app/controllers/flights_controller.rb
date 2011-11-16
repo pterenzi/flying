@@ -229,6 +229,7 @@ class FlightsController < ApplicationController
 
       print_level(pdf)
       print_history(pdf)
+      print_manobras(pdf)
     end
     send_file "hello.pdf"
 
@@ -236,6 +237,102 @@ class FlightsController < ApplicationController
 
   private
 
+  def print_manobras(pdf)
+    pdf.fill_color "FFFFFF" # RGB
+    pdf.fill_polygon [120, 290], [550, 290], 
+                 [550, 10], [120, 10]
+    
+    pdf.stroke_color "000000" #50, 100, 0, 0 # CMYK
+    pdf.stroke_rectangle [120, 291], 430, 280
+   
+    pdf.fill_color "000000"
+    
+    y = 280
+    pdf.font_size = 11
+    pdf.draw_text "Cliente", :at => [140, 280]
+    pdf.draw_text "DAC Cliente", :at => [240, 280]
+    pdf.draw_text "Instrutor", :at => [340, 280]
+    pdf.draw_text "DAC Instrutor", :at => [440, 280]
+    y-= 12
+    pdf.font_size = 10
+    pdf.draw_text @flight.client.name, :at => [140, y]
+    pdf.draw_text @flight.client.client_dac, :at => [240, y]
+    pdf.draw_text @flight.instructor.name, :at => [340, y]
+    pdf.draw_text @flight.instructor.instructor_dac, :at => [440, y]
+    
+    y -= 15
+    pdf.font_size = 11
+    pdf.draw_text "Passageiro", :at => [140, y]
+    pdf.draw_text "Duração de vôo", :at => [240, y]
+    pdf.draw_text "Pouso", :at => [340, y]
+    y-= 12
+    pdf.font_size = 10
+    pdf.draw_text @flight.passenger, :at => [140, y]
+    pdf.draw_text @flight.duration, :at => [240, y]
+    pdf.draw_text @flight.landings, :at => [340, y]
+
+    y -= 15
+    pdf.font_size = 11
+    pdf.draw_text "Registro", :at => [140, y]
+    pdf.draw_text "Horímetro", :at => [240, y]
+    pdf.draw_text "Licença", :at => [340, y]
+    y-= 12
+    pdf.font_size = 10
+    pdf.draw_text @flight.registration, :at => [140, y]
+    pdf.draw_text @flight.hourmeter, :at => [240, y]
+    pdf.draw_text @flight.license, :at => [340, y]
+
+    y -= 13
+    pdf.fill_color "F0F0F0" # RGB
+    pdf.fill_polygon [124, y], [240, y], 
+                 [240, 20], [124, 20]
+    
+    pdf.stroke_color "000000" #50, 100, 0, 0 # CMYK
+    pdf.stroke_rectangle [123, y + 1], 117, 180
+   
+    y -= 8
+    pdf.fill_color "000000"
+    pdf.font_size = 8
+
+    pdf.draw_text "Inspeções", :at => [126, y]
+    pdf.draw_text @flight.inspections, :at => [232, y]
+    y -= 14
+    pdf.draw_text "Vertical drop", :at => [126, y]
+    pdf.draw_text @flight.vertical_drop, :at => [232, y]
+    y -= 14
+    pdf.draw_text "Dec.max.perf", :at => [126, y]
+    pdf.draw_text @flight.max_performance_drop, :at => [232, y]
+    y -= 14
+    pdf.draw_text "Vôo lateral", :at => [126, y]
+    pdf.draw_text @flight.side_flying, :at => [232, y]
+    y -= 14
+    pdf.draw_text "Auto rot. direta", :at => [126, y]
+    pdf.draw_text @flight.direct_autorotation, :at => [232, y]
+    y -= 14
+    pdf.draw_text "autorotation_Hovering_DES", :at => [126, y]
+    pdf.draw_text @flight.autorotation_Hovering_DES, :at => [232, y]
+    y -= 14
+    pdf.draw_text "Aproximação restrita", :at => [126, y]
+    pdf.draw_text @flight.restrict_approach, :at => [232, y]
+    y -= 14
+    pdf.draw_text "Pouso direto", :at => [126, y]
+    pdf.draw_text @flight.direct_landing, :at => [232, y]
+    y -= 14
+    pdf.draw_text "hovered_1000ft", :at => [126, y]
+    pdf.draw_text @flight.hovered_1000ft, :at => [232, y]
+    y -= 14
+    pdf.draw_text "Operação em montanha", :at => [126, y]
+    pdf.draw_text @flight.oper_in_mountain, :at => [232, y]
+    y -= 14
+    pdf.draw_text "Notificação de vôo", :at => [126, y]
+    pdf.draw_text @flight.plan_notification, :at => [232, y]
+    y -= 14
+    pdf.draw_text "Navegação visual", :at => [126, y]
+    pdf.draw_text @flight.visual_navigation, :at => [232, y]
+
+
+  end
+  
   def print_history(pdf)
     pdf.fill_color "F0F0F0" # RGB
     pdf.fill_polygon [1, 290], [110, 290], 
