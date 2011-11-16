@@ -32,7 +32,4 @@ gem 'devise', '1.4.8'
 
 gem 'jquery-rails', '>= 1.0.12'
 
-<<<<<<< HEAD
-=======
 gem 'prawn'
->>>>>>> e6943254b079997e93c0c0568f746d12eebc7917
