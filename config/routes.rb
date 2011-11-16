@@ -44,6 +44,7 @@ Flying::Application.routes.draw do
   resources :flights do
     member do
       get 'load_aircraft_type_form'
+      get 'print_notification'
     end
   end
 

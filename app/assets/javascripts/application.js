@@ -26,5 +26,7 @@ function print(titulo,element){
     }
      
 
-
+function print_prawn(){
+  
+}
 
