@@ -104,4 +104,13 @@ class ClientsController < ApplicationController
     @client = Client.find_by_name(params[:id])
     render 'show'
   end
+  
+  def id_by_name
+    client = Client.find_by_name(params[:id])
+    if client
+      render :json => client.id
+    else
+      render :json => nil
+    end
+  end
 end
