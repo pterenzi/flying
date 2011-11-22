@@ -5,11 +5,7 @@ class SuppliersController < ApplicationController
   # GET /suppliers
   # GET /suppliers.json
   def index
-    if params[:initials]
-      @suppliers = Supplier.starting_with(params[:initials])
-    else
-      @suppliers = Supplier.all
-    end
+    @suppliers = Supplier.all(:order => :name)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -87,4 +83,16 @@ class SuppliersController < ApplicationController
       format.json { head :ok }
     end
   end
+  
+  def search_names
+    result = Supplier.all(:conditions=>["name like ?", params[:term] + '%'],
+                        :select => 'name')
+    render :json => result.map(&:name).to_json
+  end
+
+  def show_by_name
+    @supplier = Supplier.find_by_name(params[:id])
+    render 'show'
+  end
+
 end

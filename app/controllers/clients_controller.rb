@@ -6,11 +6,7 @@ class ClientsController < ApplicationController
   # GET /clients.json
   
   def index
-    if params[:initials]
-      @clients = Client.starting_with(params[:initials])
-    else
-      @clients = Client.all
-    end
+    @clients = Client.all(:order => :name)
     
     respond_to do |format|
       format.html # index.html.erb

@@ -35,7 +35,10 @@ Flying::Application.routes.draw do
 
   resources :entries
 
-  resources :suppliers
+  resources :suppliers do
+    get 'show_by_name', :on => :member
+    get 'search_names', :on => :collection
+  end
 
   root :to => 'flights#index'
 

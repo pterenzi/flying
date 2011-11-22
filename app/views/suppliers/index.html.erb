@@ -1,7 +1,36 @@
+<style type='text/css'>
+    .ui-autocomplete {
+      max-height: 180px;
+      overflow-y: auto;
+    }
+</style>
+<script type="text/javascript">
+  $(function() {
+    
+      function retrieve_supplier(name){
+        window.location = "/suppliers/"+ name + "/show_by_name/";
+      }
+      
+      $("#name").autocomplete({
+        source: "suppliers/search_names",
+        minLength: 2,
+        maxRows: 7,
+        select: function(event,ui){
+          name = ui.item.value;
+          retrieve_supplier(name);
+          return false;
+        },
+        focus: function(e,ui){
+          return false;
+        },
+      });
+
+  });
+</script>
 <table>
 	<tr>
 		<td><h1>Fornecedores</h1><td>
-	<td><%= text_field_tag :name, params[:initials]%><%= submit_tag :search, :onclick => 'javascript:search();'%></td>
+	<td>Pesquisa por nome : <%= text_field_tag :name, params[:initials] , :class => 'autocomplete' %></td>
 	</tr>
 </table>
 <hr>
