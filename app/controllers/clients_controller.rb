@@ -1,7 +1,7 @@
 class ClientsController < ApplicationController
  
   before_filter :authenticate_user!
- 
+  
   # GET /clients
   # GET /clients.json
   
@@ -92,5 +92,16 @@ class ClientsController < ApplicationController
       format.html { redirect_to clients_url }
       format.json { head :ok }
     end
+  end
+  
+  def pesquisa_nomes
+    result = Client.all(:conditions=>["name like ?", params[:term] + '%'],
+                        :select => 'name')
+    render :json => result.map(&:name).to_json
+  end
+  
+  def show_by_name
+    @client = Client.find_by_name(params[:id])
+    render 'show'
   end
 end

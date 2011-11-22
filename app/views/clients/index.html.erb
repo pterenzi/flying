@@ -1,7 +1,38 @@
+<%= stylesheet_link_tag "application" %>
+<style type='text/css'>
+    .ui-autocomplete {
+      max-height: 180px;
+      overflow-y: auto;
+    }
+</style>
+<script type="text/javascript">
+  $(function() {
+    
+      function retrieve_client(name){
+        window.location = "/clients/"+ name + "/show_by_name/";
+      }
+      
+      $("#name").autocomplete({
+        source: "clients/pesquisa_nomes",
+        minLength: 2,
+        maxRows: 7,
+        select: function(event,ui){
+          name = ui.item.value;
+          retrieve_client(name);
+         // alert('buscou' + ui.item.value);
+          return false;
+        },
+        focus: function(e,ui){
+          return false;
+        },
+      });
+
+  });
+</script>
 <table>
 	<tr>
 		<td><h1>Clientes</h1><td>
-	<td><%= text_field_tag :name, params[:initials]%><%= submit_tag :search, :onclick => 'javascript:search();'%></td>
+	<td>Pesquisa por nome : <%= text_field_tag :name, params[:initials] , :class => 'autocomplete' %></td>
 	</tr>
 </table>
 <hr>

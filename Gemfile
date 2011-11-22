@@ -15,7 +15,7 @@ gem 'coffee-script'
 gem 'uglifier'
 
 # gem 'jquery-rails'
-gem 'rails3-jquery-autocomplete'
+#gem 'rails3-jquery-autocomplete'
 
 # Use unicorn as the web server
 # gem 'unicorn'

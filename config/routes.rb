@@ -12,7 +12,9 @@ Flying::Application.routes.draw do
   resources :clients do
     member do
       get 'retrieve_client_dac'
+      get 'show_by_name'
     end
+    get 'pesquisa_nomes', :on => :collection
   end
 
   resources :instructors do
