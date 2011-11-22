@@ -8,6 +8,7 @@ class SalesController < ApplicationController
     @sales = Sale.between_date(@start_date.to_date, @end_date.to_date).order(:date)
     if params[:client_id] && params[:client_id].to_i > 0
       @sales = @sales.by_client(params[:client_id])
+      params[:initials] = Client.find( params[:client_id]).name
     end
     @clients     = Client.all.collect{ |c| [c.name, c.id] }
 

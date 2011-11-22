@@ -14,6 +14,7 @@ class EntriesController < ApplicationController
     end
     if params[:client_id] && params[:client_id].to_i > 0
       @entries = @entries.by_client(params[:client_id])
+      params[:initials] = Client.find( params[:client_id]).name
     end
     if params[:aircraft_type_id] && params[:aircraft_type_id].to_i > 0
       @entries = @entries.by_aircraft_type(params[:aircraft_type_id])
