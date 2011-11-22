@@ -37,6 +37,7 @@ Flying::Application.routes.draw do
 
   resources :suppliers do
     get 'show_by_name', :on => :member
+    get 'id_by_name',   :on => :member
     get 'search_names', :on => :collection
   end
 

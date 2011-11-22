@@ -17,8 +17,10 @@ class AccountsController < ApplicationController
       @payments   = Account.between_payment_dates(@start_date.to_date, @end_date.to_date).order(:payment_date)
     end
 
+      debugger
     if params[:supplier_id] && params[:supplier_id].to_i > 0
       @payments = @payments.by_supplier(params[:supplier_id])
+      params[:initials] = Supplier.find(params[:supplier_id]).name
     end
     if params[:aircraft_type_id] && params[:aircraft_type_id].to_i > 0
       @payments = @payments.by_company(params[:aircraft_type_id])

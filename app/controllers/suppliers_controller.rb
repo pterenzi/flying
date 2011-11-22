@@ -95,4 +95,13 @@ class SuppliersController < ApplicationController
     render 'show'
   end
 
+  def id_by_name
+    supplier = Supplier.find_by_name(params[:id])
+    if supplier
+      render :json => supplier.id
+    else
+      render :json => nil
+    end
+  end
+  
 end
