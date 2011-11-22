@@ -20,7 +20,10 @@ Flying::Application.routes.draw do
   resources :instructors do
     member do
       get 'retrieve_instructor_dac'
+      get 'show_by_name'
     end
+    get 'search_names', :on => :collection
+
   end
   get "admins/manage_permission"
   get "admins/change_level"

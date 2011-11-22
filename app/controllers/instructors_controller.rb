@@ -96,4 +96,16 @@ class InstructorsController < ApplicationController
       format.json { head :ok }
     end
   end
+
+  def search_names
+    result = Instructor.all(:conditions=>["name like ?", params[:term] + '%'],
+                        :select => 'name')
+    render :json => result.map(&:name).to_json
+  end
+  
+  def show_by_name
+    @instructor = Instructor.find_by_name(params[:id])
+    render 'show'
+  end
+
 end
